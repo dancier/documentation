@@ -21,10 +21,10 @@ jobs:
       uses: sebastianpopp/ftp-action@v1.1.0
       with:
         # FTP host
-        host: schrebergarten06.de
+        host: ${{ secrets.DOCU_FTP_HOST }}
         # FTP userg
-        user: schrebq_1
+        user: ${{ secrets.DOCU_FTP_USER }}
         # FTP password
-        password: BYYEV8WM7jBDTA3f
+        password:  ${{ secrets.DOCU_FTP_PASS }}
         # Local directory
         localDir: target/doc-1.0.0-SNAPSHOT

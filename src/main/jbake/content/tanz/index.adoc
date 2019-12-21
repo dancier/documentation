@@ -8,6 +8,24 @@
 ## Namen finden
 TBD
 
+## Code of Conduct
+
+### Respektvoller
+
+## Marketing Ideen
+
+Um am Anfang Nutzer zu finden, am besten verschiedene Individuen
+persöhnlich einladen sich anzumelden.
+
+## Infrastruktur
+
+### Dokumentation
+
+### Deployment
+
+
+
+
 ## Project Abschnitte
 
 ### Erste Version
@@ -15,7 +33,8 @@ Was die erste Version können soll
 
  . Benutzer sollen sich anmelden können
  . Angemeldete Benutzer können ein Kurzprofil angeben. Z.B.
-    * ksdjf
-    *
- . Unangemeldete Benutzer sollen keine Informationen
- .
+    * Nickname (öffentlicher Name)
+    * Postleitzahl oder Stadt
+    * Tanz (Tango, Salsa, ...)
+    * gesucht für Kurz und/oder Tanzabend
+ . Unangemeldete Benutzer sollen keine Informationen sehen
