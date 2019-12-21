@@ -15,6 +15,13 @@ persöhnlich einladen sich anzumelden.
 
 ## Infrastruktur
 
+### Source Code
+
+Wir nutzen https://github.com[Github] für alle Repositories.
+
+ * https://github.com/gorzala/frubumi[Dokumentation]
+ * https://github.com/gorzala/dance[Hauptkomponente]
+
 ## Techstack
 
 ### Backend
