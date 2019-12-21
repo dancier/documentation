@@ -1,0 +1,21 @@
+# Tanzende einfach zusammen bringen
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: blog, asciidoc
+:idprefix:
+
+
+## Namen finden
+TBD
+
+## Project Abschnitte
+
+### Erste Version
+Was die erste Version können soll
+
+ . Benutzer sollen sich anmelden können
+ . Angemeldete Benutzer können ein Kurzprofil angeben. Z.B.
+    * ksdjf
+    *
+ . Unangemeldete Benutzer sollen keine Informationen
+ .
