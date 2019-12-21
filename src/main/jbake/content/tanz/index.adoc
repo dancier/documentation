@@ -8,10 +8,6 @@
 ## Namen finden
 TBD
 
-## Code of Conduct
-
-### Respektvoller
-
 ## Marketing Ideen
 
 Um am Anfang Nutzer zu finden, am besten verschiedene Individuen
@@ -22,18 +18,32 @@ persöhnlich einladen sich anzumelden.
 ## Techstack
 
 ### Backend
- * Spring Boot
- * Spring Security
- * PostgreSQL
+
+ * https://spring.io/projects/spring-boot[Spring Boot]
+ * https://spring.io/projects/spring-security[Spring Security]
+ * https://www.postgresql.org/[PostgreSQL]
 
 ### Frontend
  * Spring WebMVC
- * React
+ * https://reactjs.org/[React]
 
-### Dokumentatio
- * Asciidoctor
- * JBake
+### Dokumentation
+We are using Asciidoctor to document everything like:
 
+ * Projekt Plan
+ * Project Rules
+ * Next Bigger Tasks
+ * Technial Documentation
+
+The asciidoctor files are processed via JBake and
+uploaded after every push on the documentation-repository to this website.
+
+See as a reference how this works:
+
+ * http://https://asciidoctor.org/[Asciidoctor]
+ * https://jbake.org[JBake]
+ * https://github.com/gorzala/frubumi[Documentation Repository]
+ * https://github.com/gorzala/frubumi/blob/master/.github/workflows/publish-doc.yml[Github Action to upload the pages]
 
 ### Deployment
  * Docker
