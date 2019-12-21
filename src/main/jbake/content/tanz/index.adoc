@@ -19,10 +19,23 @@ persöhnlich einladen sich anzumelden.
 
 ## Infrastruktur
 
-### Dokumentation
+## Techstack
+
+### Backend
+ * Spring Boot
+ * Spring Security
+ * PostgreSQL
+### Frontend
+ * Spring WebMVC
+ * React
+
+### Dokumentatio
+ * Asciidoctor
+ * JBake
+
 
 ### Deployment
-
+ * Docker
 
 
 
