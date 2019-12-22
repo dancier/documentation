@@ -1,7 +1,7 @@
 # Tanzende, einfach zusammen bringen
-:jbake-type: post
+:jbake-type: page
 :jbake-status: published
-:jbake-tags: blog, asciidoc
+:jbake-tags: dance
 :idprefix:
 
 Beschreibe ein wenig das Projekt
