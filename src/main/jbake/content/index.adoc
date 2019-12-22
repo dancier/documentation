@@ -5,7 +5,7 @@
 
 # Projekte
 
-Zur Zeit gibt es hier Informationen zum link:tanz/index.adoc[Tanzprojekt]
+Zur Zeit gibt es hier Informationen zum link:tanz/index.html[Tanzprojekt]
 
 
 

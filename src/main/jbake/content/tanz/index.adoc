@@ -6,11 +6,11 @@
 
 Beschreibe ein wenig das Projekt
 
- * link:team.adoc[Das Team]
- * link:namen.adoc[Finden eines Names]
- * link:marketing.adoc[Marketing]
- * link:technic.adoc[Technisches]
- * link:project.adoc[Projekt plan]
+ * link:team.html[Das Team]
+ * link:namen.html[Finden eines Names]
+ * link:marketing.html[Marketing]
+ * link:technic.html[Technisches]
+ * link:project.html[Projekt plan]
 
 
 
