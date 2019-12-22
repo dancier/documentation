@@ -1,0 +1,12 @@
+:jbake-type: page
+:jbake-status: published
+:jbake-tags: dance
+:idprefix:
+
+# Projekte
+
+Zur Zeit gibt es hier Informationen zum link:tanz/index.adoc[Tanzprojekt]
+
+
+
+
