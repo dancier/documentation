@@ -5,8 +5,7 @@
 :idprefix:
 
  * Jan
+ ** Frontend developer
  * Julius
  * Marc
  * Xiaofei
-
-
