@@ -1,0 +1,49 @@
+# Technisches
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: blog, asciidoc
+:idprefix:
+
+## Infrastruktur
+
+### Source Code
+
+Wir nutzen https://github.com[Github] für alle Repositories.
+
+* https://github.com/gorzala/frubumi[Dokumentation]
+* https://github.com/gorzala/dance[Hauptkomponente]
+
+## Techstack
+
+### Backend
+
+* https://spring.io/projects/spring-boot[Spring Boot]
+* https://spring.io/projects/spring-security[Spring Security]
+* https://www.postgresql.org/[PostgreSQL]
+
+### Frontend
+* Spring WebMVC
+* https://reactjs.org/[React]
+
+
+### Dokumentation
+We are using Asciidoctor to document everything like:
+
+* Projekt Plan
+* Project Rules
+* Next Bigger Tasks
+* Technial Documentation
+
+The asciidoctor files are processed via JBake and
+uploaded after every push on the documentation-repository to this website.
+
+See as a reference how this works:
+
+* http://https://asciidoctor.org/[Asciidoctor]
+* https://jbake.org[JBake]
+* https://github.com/gorzala/frubumi[Documentation Repository]
+* https://github.com/gorzala/frubumi/blob/master/.github/workflows/publish-doc.yml[Github Action to upload the pages]
+
+### Deployment
+* Docker
+

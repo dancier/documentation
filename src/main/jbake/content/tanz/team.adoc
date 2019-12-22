@@ -1,0 +1,12 @@
+# Das Kern Team
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: blog, asciidoc
+:idprefix:
+
+ * Jan
+ * Julius
+ * Marc
+ * Xiaofei
+
+

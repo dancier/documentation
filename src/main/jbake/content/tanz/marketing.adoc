@@ -1,0 +1,10 @@
+# Ideen zur Vermarktung
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: blog, asciidoc
+:idprefix:
+
+Um am Anfang Nutzer zu finden, am besten verschiedene Individuen
+persöhnlich einladen sich anzumelden.
+
+

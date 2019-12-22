@@ -1,0 +1,21 @@
+# Project
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: blog, asciidoc
+:idprefix:
+
+Beschreibe den Vorgang des Projektes
+
+
+## Project Abschnitte
+
+### Erste Version
+Was die erste Version können soll
+
+. Benutzer sollen sich anmelden können
+. Angemeldete Benutzer können ein Kurzprofil angeben. Z.B.
+* Nickname (öffentlicher Name)
+* Postleitzahl oder Stadt
+* Tanz (Tango, Salsa, ...)
+* gesucht für Kurz und/oder Tanzabend
+. Unangemeldete Benutzer sollen keine Informationen sehen

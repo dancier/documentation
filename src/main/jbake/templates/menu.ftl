@@ -13,19 +13,18 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>about.html">About</a></li>
-            <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>tanz/index.html">Tanz</a></li>
-            <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>minecraft.html">Minecraft</a></li>
             <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>${config.feed_file}">Subscribe</a></li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Minecraft <b class="caret"></b></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tanz <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
+                <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>tanz/index.html">Übersicht</a></li>
+                <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>tanz/team.html">Das Team</a></li>
+                <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>tanz/marketing.html">Marketing</a></li>
+                <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>tanz/technic.html">Technisches</a></li>
+                <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>tanz/project.html">Projekt</a> </li>
                 <li class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
+                <li class="dropdown-header">Sonstiges</li>
+                <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>tanz/namen.html">Namen finden</a></li>
               </ul>
             </li>
           </ul>
