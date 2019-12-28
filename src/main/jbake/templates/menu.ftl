@@ -8,7 +8,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>/">Dance</a>
+          <a class="navbar-brand" href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>/">Dancier</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -17,8 +17,12 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Technology <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>technology/index.html">Base</a></li>
-                <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>technology/code.html">Code</a></li>
-                <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>technology/infrastructure.html">Infrastructure</a></li>
+                <li>
+                  <a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>technology/infrastructure.html">Infrastructure</a>
+                  <ul>
+                    <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>technology/code.html">Code</a></li>
+                  </ul>
+                </li>
                 <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>technology/main.html">Main</a></li>
                 <li class="divider"></li>
                 <li class="dropdown-header">Sonstiges</li>
