@@ -1,8 +1,48 @@
-# Technisches
+# Technical Decisions
 :jbake-type: post
 :jbake-status: published
 :jbake-tags: blog, asciidoc
 :idprefix:
+
+In this section, the decisions for choosing things like:
+
+ * the version control system (VCS)
+ * the database system
+ * programming language
+ * ....
+
+## Key Drivers for technical decisions
+
+ 1. *Any decision should be as less opinionated as possible* +
+    We should never choose a technology, just because we consider
+    it eg. as cool or experienced it as a good fit for another use case.
+    Decisions, should be made depending on the use case. +
+    Considering other options, the chosen one should be the best fit.
+ 1. *Keep it simple stupid* +
+    Based on our interpretation of
+    https://en.wikipedia.org/wiki/Agile_software_development[Agile Development]
+    we thing, that we should choose the https://en.wikipedia.org/wiki/KISS_principle[simplest] approach to tackle a task.
+    Especially we try always to avoid to optimize things before it turns out,
+    that optimization is really needed (https://ubiquity.acm.org/article.cfm?id=1513451[see Donal Knuth]).
+    This applies to in the same way for "small" things like
+     * optimizing algorithms like SQL-queries
+     * choosing frameworks for persistence, offering rest endpoints, frontend frameworks
+     * infrastructural topics like, VCS build system +
+    As well for "bigger" things like
+     * Deciding architectural things, like using CQRS
+     * Using Mircoservices or putting things in a Monolith
+ 1. *Choosing standard* +
+    Try to use standard options. Eg. when there are some similar Webframeworks,
+    go for the more prominent one. Because for the more prominent one:
+      * we will get more support from other developers if we ran into problems
+      * expect more support from the project itself and also that the project itself will exist longer
+      * better tooling support (if applicable)
+      * will have it easier to find more developers
+ 1. *Make a match with skills of Core team* +
+    The choosen technique should be either already known be the team (or parts) or the team have to
+    be willing to learn it.
+
+It is obvious, that some criteria could be in conflict with others. Then we use just common sense.
 
 ## Infrastruktur
 
