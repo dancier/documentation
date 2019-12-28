@@ -1,0 +1,15 @@
+# Code Repositories
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: blog, asciidoc
+:idprefix:
+
+ * https://github.com/gorzala/dance[Hauptkomponente] +
+   This repository contains the code for our main component. The backend as well as the frontent code.
+
+ * https://github.com/gorzala/frubumi[Dokumentation] +
+   This repository contains the source of the website you are reading just now
+
+ * https://github.com/gorzala/dast[Tools] +
+   This repository contains tools/scripts that helps the developer
+

@@ -1,8 +1,0 @@
-# Code
-:jbake-type: post
-:jbake-status: published
-:jbake-tags: blog, asciidoc
-:idprefix:
-
- * https://github.com/gorzala/frubumi[Dokumentation]
- * https://github.com/gorzala/dance[Hauptkomponente]

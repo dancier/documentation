@@ -1,4 +1,4 @@
-# Technical Decisions
+= What we use and why
 :jbake-type: post
 :jbake-status: published
 :jbake-tags: blog, asciidoc
@@ -11,7 +11,7 @@ In this section, the decisions for choosing things like:
  * programming language
  * ....
 
-## Key Drivers for technical decisions
+== Key drivers for technical decisions
 
  1. *Any decision should be as less opinionated as possible* +
     We should never choose a technology, just because we consider
@@ -24,11 +24,12 @@ In this section, the decisions for choosing things like:
     we thing, that we should choose the https://en.wikipedia.org/wiki/KISS_principle[simplest] approach to tackle a task.
     Especially we try always to avoid to optimize things before it turns out,
     that optimization is really needed (https://ubiquity.acm.org/article.cfm?id=1513451[see Donal Knuth]).
-    This applies to in the same way for "small" things like
+    This applies to in the same way for _small_ things like
      * optimizing algorithms like SQL-queries
      * choosing frameworks for persistence, offering rest endpoints, frontend frameworks
      * infrastructural topics like, VCS build system +
-    As well for "bigger" things like
++
+As well for "bigger" things like
      * Deciding architectural things, like using CQRS
      * Using Mircoservices or putting things in a Monolith
  1. *Choosing standard* +
@@ -44,10 +45,8 @@ In this section, the decisions for choosing things like:
 
 It is obvious, that some criteria could be in conflict with others. Then we use just common sense.
 
-
-
-
-
-
-
-
+== Read more about concrete decisions that have been taken
+ * link:infrastructure.html[Infrastructure]
+ ** link:code.html[Code]
+ * link:main.index[Main]
+ * link:etc.index[etc]
