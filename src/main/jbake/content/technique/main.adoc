@@ -1,0 +1,15 @@
+# Main
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: blog, asciidoc
+:idprefix:
+
+### Backend
+
+* https://spring.io/projects/spring-boot[Spring Boot]
+* https://spring.io/projects/spring-security[Spring Security]
+* https://www.postgresql.org/[PostgreSQL]
+
+### Frontend
+* Spring WebMVC
+* https://reactjs.org/[React]

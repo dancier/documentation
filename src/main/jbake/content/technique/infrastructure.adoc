@@ -1,0 +1,16 @@
+# Infrastructure
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: blog, asciidoc
+:idprefix:
+
+### Source Code
+
+Wir nutzen https://github.com[Github] für alle Repositories.
+
+* https://github.com/gorzala/frubumi[Dokumentation]
+* https://github.com/gorzala/dance[Hauptkomponente]
+
+
+### Deployment
+* Docker

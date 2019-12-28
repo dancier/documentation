@@ -1,11 +1,18 @@
+# Tanzende, einfach zusammen bringen
 :jbake-type: page
 :jbake-status: published
 :jbake-tags: dance
 :idprefix:
 
-# Projekte
+Beschreibe ein wenig das Projekt
 
-Zur Zeit gibt es hier Informationen zum link:tanz/index.html[Tanzprojekt]
+ * link:team.html[Das Team]
+ * link:namen.html[Finden eines Names]
+ * link:marketing.html[Marketing]
+ * link:technic.html[Technisches]
+ * link:project.html[Projekt plan]
+
+
 
 
 

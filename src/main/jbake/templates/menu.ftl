@@ -8,25 +8,23 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>/">Frubumi</a>
+          <a class="navbar-brand" href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>/">Dance</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>about.html">About</a></li>
-            <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>${config.feed_file}">Subscribe</a></li>
+            <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>team.html">The core team</a></li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tanz <b class="caret"></b></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Used techniques <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>tanz/index.html">Übersicht</a></li>
-                <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>tanz/team.html">Das Team</a></li>
-                <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>tanz/marketing.html">Marketing</a></li>
-                <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>tanz/technic.html">Technisches</a></li>
-                <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>tanz/project.html">Projekt</a> </li>
+                <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>technique/index.html">Base</a></li>
+                <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>technique/infrastructure.html">Infrastructure</a></li>
+                <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>technique/main.html">Main</a></li>
                 <li class="divider"></li>
                 <li class="dropdown-header">Sonstiges</li>
-                <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>tanz/namen.html">Namen finden</a></li>
+                <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>technique/etc.html">etc</a></li>
               </ul>
             </li>
+            <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>${config.feed_file}">Subscribe</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
