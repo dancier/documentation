@@ -12,6 +12,7 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
+            <li><a href="https://github.com/dancier">GitHub</a></li>
             <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>team.html">Core team</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Technology <b class="caret"></b></a>
