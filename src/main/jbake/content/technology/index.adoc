@@ -1,24 +1,27 @@
-= What we use and why
+= What we use and why we use it
 :jbake-type: post
 :jbake-status: published
 :jbake-tags: blog, asciidoc
 :idprefix:
 
-In this section, the decisions for choosing things like:
+In this section, we describe the basic rules we try to follow when making decisions like:
 
- * the version control system (VCS)
- * the database system
- * programming language
+ * what kind of version control system (VCS) we use
+ * what database we will use
+ * what basic frameworks will be used
+ * what should be the programming language(s)
  * ....
+
+To have some guidance in the process of making decisions we have
+written down the following rules as a _rough_ guide.
 
 == Key drivers for technical decisions
 
  1. *Any decision should be as less opinionated as possible* +
     We should never choose a technology, just because we consider
-    it eg. as cool or experienced it as a good fit for another use case.
+    it eg. cool or only we experienced it as a good fit for _another_ use case.
     Decisions, should be made depending on the use case. +
-    Considering other options, the chosen one should be the best fit.
- 1. *Keep it simple stupid* +
+ 1. *Keep it simple stupid (KISS)* +
     Based on our interpretation of
     https://en.wikipedia.org/wiki/Agile_software_development[Agile Development]
     we thing, that we should choose the https://en.wikipedia.org/wiki/KISS_principle[simplest] approach to tackle a task.
@@ -47,6 +50,5 @@ It is obvious, that some criteria could be in conflict with others. Then we use 
 
 == Read more about concrete decisions that have been taken
  * link:infrastructure.html[Infrastructure]
- ** link:code.html[Code]
  * link:main.index[Main]
  * link:etc.index[etc]

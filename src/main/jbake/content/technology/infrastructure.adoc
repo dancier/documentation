@@ -1,14 +1,61 @@
-# Infrastructure
+= Infrastructure
 :jbake-type: post
 :jbake-status: published
 :jbake-tags: blog, asciidoc
 :idprefix:
 
-### Source Code
+In the first Section, everything that we use is being described,
+and in the second one, why we have chosen them.
 
-Wir nutzen https://github.com[Github] für alle Repositories.
+== What we are using
+=== Source Code
+We are using link:https::/gitbub.com[Github] for:
+
+* all code repositories
+* tickets/issues
+
+==== Overview over the repositories
+
+The project is being organized as an own link:https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/about-organizations[Github Organization]: link:https://github.com/dancier[got to organization]
+
+Find in the following direct links to the main repositories:
+
+* https://github.com/dancier/dancer[Dancer] +
+   This repository contains the code for our main component. The backend as well as the frontent code.
+
+* https://github.com/dancier/documentation[Documentation] +
+   This repository contains the source of the website you are reading just now
+
+* https://github.com/gorzala/code-dancer[Code Dancer] +
+   This repository contains tools/scripts that helps the developer
+
+Please use the ticket/issue system of the repositories to file a bug if you found one.
 
 
+== Why we are using it
+We tried to following our basic rule for making decisons for technologie as described link:/technologie/index.html[Technology Base].
 
-### Deployment
-* Docker
+=== Why we choose Github/Git
+Check link:/technology/index.html[this] to read the base for our reasoning.
+
+==== Why Git
+This is more a reasoning for a link:https://en.wikipedia.org/wiki/Distributed_Concurrent_Versions_System[DVCS].
+Working in a project like this together, with multiple developers contributing, requires an that each developer
+can work on different branches until he finishes his task. Than he merge his changes into to main branch (the master)
+to make them available to others.
+
+CCVS (centralized version control systems) support this process just not as good.
+However worked with multiple branches in eg. SVN knows how complicated it is there to merge branches.
+
+The drawback of DCVS, that they are admittedly harder to understand, does not count too much for us,
+as the whole link:/team.html[core team] already knows GIT.
+We also consider DCVS/GIT as the defacte standard in Software Development. So this should not stop other from
+contributing.
+
+We have choosen GIT as the concret representative of DCVS, as this we consider it as
+the most used system with the best tooling support.
+
+==== Why GitHub
+GitHub, is just the most used public available service the offer Git. It is free of use for open source
+projects like this one. It offers also issues/tickets, some ci/cd functionality via link:https://github.com/features/actions[actions]
+and is due to it's popularity well knows among developers.
