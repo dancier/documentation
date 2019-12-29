@@ -4,41 +4,21 @@
 :jbake-tags: blog, asciidoc
 :idprefix:
 
-In the first Section, everything that we use is being described,
-and in the second one, why we have chosen them.
+:toc:
+:toc-placement: macro
+toc::[]
 
-== What we are using
-=== Source Code
+== How/Where to manage Source Code
 We are using link:https::/gitbub.com[Github] for:
 
 * all code repositories
 * tickets/issues
+* code reviews
+* building our components
 
-==== Overview over the repositories
+link:https://github.com/dancier[got to organization]
 
-The project is being organized as an own link:https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/about-organizations[Github Organization]: link:https://github.com/dancier[got to organization]
-
-Find in the following direct links to the main repositories:
-
-* https://github.com/dancier/dancer[Dancer] +
-   This repository contains the code for our main component. The backend as well as the frontent code.
-
-* https://github.com/dancier/documentation[Documentation] +
-   This repository contains the source of the website you are reading just now
-
-* https://github.com/gorzala/code-dancer[Code Dancer] +
-   This repository contains tools/scripts that helps the developer
-
-Please use the ticket/issue system of the repositories to file a bug if you found one.
-
-
-== Why we are using it
-We tried to following our basic rule for making decisons for technologie as described link:/technologie/index.html[Technology Base].
-
-=== Why we choose Github/Git
-Check link:/technology/index.html[this] to read the base for our reasoning.
-
-==== Why Git
+=== Why Git/GitHub?
 This is more a reasoning for a link:https://en.wikipedia.org/wiki/Distributed_Concurrent_Versions_System[DVCS].
 Working in a project like this together, with multiple developers contributing, requires an that each developer
 can work on different branches until he finishes his task. Than he merge his changes into to main branch (the master)
@@ -55,7 +35,16 @@ contributing.
 We have choosen GIT as the concret representative of DCVS, as this we consider it as
 the most used system with the best tooling support.
 
-==== Why GitHub
 GitHub, is just the most used public available service the offer Git. It is free of use for open source
 projects like this one. It offers also issues/tickets, some ci/cd functionality via link:https://github.com/features/actions[actions]
 and is due to it's popularity well knows among developers.
+
+
+== Deploy/Package
+We plan to package all our deployable units into link:https://cloud.google.com/containers/[Container].
+Concrete we are using link:https://www.docker.com/[Docker] as the container technologie.
+
+== Build
+We use link:https://maven.apache.org/[Maven] to build the project and remotely link:https://github.com/features/actions[GitHub-Actions] to execute the build.
+
+

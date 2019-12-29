@@ -1,15 +1,40 @@
-# Main
+= Main
 :jbake-type: post
 :jbake-status: published
 :jbake-tags: blog, asciidoc
 :idprefix:
 
-### Backend
+:toc:
+:toclevels: 5
+:toc-placement: macro
+toc::[]
 
+== General
+Python
+
+== Backend
+=== Languages
+=== Frameworks
 * https://spring.io/projects/spring-boot[Spring Boot]
 * https://spring.io/projects/spring-security[Spring Security]
+
+==== Basic
+Spring Boot
+
+Spring Data Rest
+
+==== Security
+Spring Security
+
+==== Persistence
+JPA
+
 * https://www.postgresql.org/[PostgreSQL]
 
-### Frontend
+== Frontend
 * Spring WebMVC
 * https://reactjs.org/[React]
+
+=== Language
+ * HTML
+ * JavaScript (version?)

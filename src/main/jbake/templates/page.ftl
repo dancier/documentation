@@ -7,7 +7,7 @@
 		<h1><#escape x as x?xml>${content.title}</#escape></h1>
 	</div>
 	<#else></#if>
-	
+
 	<p>${content.body}</p>
 
 	<hr />
