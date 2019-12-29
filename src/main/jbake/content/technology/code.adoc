@@ -15,7 +15,7 @@ The project is being organized as an own link:https://help.github.com/en/github/
 
 Find in the following direct links to the main repositories:
 
- * https://github.com/dancier/dance[Dancer] +
+ * https://github.com/dancier/dancer[Dancer] +
    This repository contains the code for our main component. The backend as well as the frontent code.
 
  * https://github.com/dancier/documentation[Documentation] +
