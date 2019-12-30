@@ -49,5 +49,5 @@ As well for "bigger" things like
 It is obvious, that some criteria could be in conflict with others. Then we use just common sense.
 
 == Read more about concrete decisions that have been taken
- * link:main.index[Main]
+ * link:main.html[Main]
  * link:infrastructure.html[Infrastructure]
