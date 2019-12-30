@@ -18,8 +18,8 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Technology <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>technology/index.html">Base</a></li>
-                <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>technology/infrastructure.html">Infrastructure</a></li>
                 <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>technology/main.html">Main</a></li>
+                <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>technology/infrastructure.html">Infrastructure</a></li>
                 <li class="divider"></li>
                 <li class="dropdown-header">Sonstiges</li>
                 <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>technique/etc.html">etc</a></li>
