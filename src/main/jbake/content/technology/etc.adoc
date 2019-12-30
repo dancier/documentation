@@ -1,24 +1,17 @@
-# etc
+= etc
 :jbake-type: post
 :jbake-status: published
 :jbake-tags: blog, asciidoc
 :idprefix:
 
 
-### Dokumentation
-We are using Asciidoctor to document everything like:
+== Documentation
+We are using link:https://asciidoctor.org/[Asciidoctor] to document everything like:
 
-* Projekt Plan
-* Project Rules
-* Next Bigger Tasks
-* Technial Documentation
+* project plan
+* the site you are just reading
+* technical documentation
 
-The asciidoctor files are processed via JBake and
-uploaded after every push on the documentation-repository to this website.
-
-See as a reference how this works:
-
-* http://https://asciidoctor.org/[Asciidoctor]
-* https://jbake.org[JBake]
-* https://github.com/gorzala/frubumi[Documentation Repository]
-* https://github.com/gorzala/frubumi/blob/master/.github/workflows/publish-doc.yml[Github Action to upload the pages]
+The asciidoctor files are processed via link:https://jbake.org/[JBake]
+uploaded after every push on the link:https://github.com/dancier/documentation[documentation-repository] via https://github.com/gorzala/frubumi/blob/master/.github/workflows/publish-doc.yml[this GitHub-action]
+to this website.
