@@ -4,6 +4,8 @@
 :jbake-tags: dance
 :idprefix:
 
+image::dancer.png[align=right]
+
 The Purpose of this project is manifold:
 
 Connect People via dance::
