@@ -8,7 +8,7 @@
 :toc-placement: macro
 toc::[]
 
-== How/Where to manage Source Code
+== How we to manage Source Code
 We are using link:https::/gitbub.com[Github] for:
 
 * all code repositories
@@ -16,29 +16,29 @@ We are using link:https::/gitbub.com[Github] for:
 * code reviews
 * building our components
 
-link:https://github.com/dancier[got to organization]
+(link:https://github.com/dancier[got to organization])
 
-=== Why Git/GitHub?
-This is more a reasoning for a link:https://en.wikipedia.org/wiki/Distributed_Concurrent_Versions_System[DVCS].
-Working in a project like this together, with multiple developers contributing, requires an that each developer
-can work on different branches until he finishes his task. Than he merge his changes into to main branch (the master)
+Working in a project like this together, with multiple developers contributing, requires that each developer
+can work on different branches until he finishes his task. Than he merges his changes into to main branch (the master)
 to make them available to others.
 
-CCVS (centralized version control systems) support this process just not as good.
-However worked with multiple branches in eg. SVN knows how complicated it is there to merge branches.
+CCVS (centralized version control systems) support this process just not as good as
+link:https://en.wikipedia.org/wiki/Distributed_Concurrent_Versions_System[DVCS].
+Whoever worked with multiple branches in eg. SVN knows how complicated it is there to
+merge branches.
 
 The drawback of DCVS, that they are admittedly harder to understand, does not count too much for us,
 as the whole link:/team.html[core team] already knows GIT.
-We also consider DCVS/GIT as the defacte standard in Software Development. So this should not stop other from
+We also consider DCVS/GIT as the defacto standard in Software Development. So this should not stop others from
 contributing.
 
-We have choosen GIT as the concret representative of DCVS, as this we consider it as
+We have chosen GIT as the concrete representative of a DCVS, as we consider it as
 the most used system with the best tooling support.
 
-GitHub, is just the most used public available service the offer Git. It is free of use for open source
-projects like this one. It offers also issues/tickets, some ci/cd functionality via link:https://github.com/features/actions[actions]
-and is due to it's popularity well knows among developers.
-
+link:https://github.com[GitHub], is just the most used public available service that offer Git.
+It is free for usage in open source projects like this one. It offers additional issues/tickets,
+some ci/cd functionality via link:https://github.com/features/actions[actions]
+and is due to it's popularity well known among developers.
 
 == Deploy/Package
 We plan to package all our deployable units into link:https://cloud.google.com/containers/[Container].

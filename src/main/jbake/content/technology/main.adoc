@@ -27,7 +27,6 @@ the most recent version of Java, that has mature tooling support and works with 
 libraries/frameworks we want to use, we decided to use version 12 of Java.
 
 
-
 === Frameworks
 ==== Basic
 https://spring.io/projects/spring-boot[Spring Boot]::
@@ -55,9 +54,13 @@ link:https://en.wikipedia.org/wiki/JavaScript[JavaScript]/link:https://en.wikipe
 We are not sure if we should use Typscript. But HTLM/CSS is out of question.
 
 === Frameworks
-link:Spring WebMVC[]::
-stab
+link:https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#mvc[Spring WebMVC]::
+Use for the server side rendering of page with the help of:
+
 link:https://www.thymeleaf.org/[Thymeleaf]::
-temp
-* https://reactjs.org/[React]
+As the templating engine
+
+link:https://reactjs.org/[React]::
+Used to deal with user interaction rich parts of the site. For the current MVP, this
+will be the part were the user enters his profile.
 
