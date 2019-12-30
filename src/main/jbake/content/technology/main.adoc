@@ -16,7 +16,7 @@ importer/exporter, tools for building, deploying.
 
 == Backend
 === Language
-link:https://www.java.com/de/download/[Java 12] as the main Backend programming language::
+link:https://www.java.com/de/download/[Java 12]::
 
 Java is well known, not only considering the current core team. It has certainly one of
 best tooling support. We assume it to be the most popular language for programming modern
