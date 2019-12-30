@@ -26,7 +26,6 @@ to start with a pretty modular system even, when staring with monolith. As we wa
 the most recent version of Java, that has mature tooling support and works with other
 libraries/frameworks we want to use, we decided to use version 12 of Java.
 
-
 === Frameworks
 ==== Basic
 https://spring.io/projects/spring-boot[Spring Boot]::

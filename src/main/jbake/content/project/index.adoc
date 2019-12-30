@@ -1,21 +1,35 @@
-# Project
+= Project
 :jbake-type: post
 :jbake-status: published
 :jbake-tags: blog, asciidoc
 :idprefix:
 
-Beschreibe den Vorgang des Projektes
+As we are all not paid for what we are doing here (and we are
+also not planning that this changes in the (nearer) future.
 
+Let' define the link:https://en.wikipedia.org/wiki/Minimum_viable_product[MVP] for our project.
 
-## Project Abschnitte
+== First version 0.1 our link:https://en.wikipedia.org/wiki/Minimum_viable_product[MVP]
 
-### Erste Version
-Was die erste Version können soll
+This version should already by useful, in that way that people should
+be able to find partners to dance with.
 
-. Benutzer sollen sich anmelden können
-. Angemeldete Benutzer können ein Kurzprofil angeben. Z.B.
-* Nickname (öffentlicher Name)
-* Postleitzahl oder Stadt
-* Tanz (Tango, Salsa, ...)
-* gesucht für Kurz und/oder Tanzabend
-. Unangemeldete Benutzer sollen keine Informationen sehen
+The following functionality should be implemented:
+
+ * User should have the ability to create an account
+ * Users with account should have the ability to create a profile with the at least the following information
+ ** Nickname (öffentlicher Name)
+ ** Zip Code and or City
+ ** type of dance (Tango, Salza, Standard, ...)
+ ** searching for just an evening and/or a course
+ * User with an account should be able to see a list of all other users
+ * Users without an account should only see a landing page with
+   information about what this page is about.
+ * Users should be able to create an account by email adress and password,
+   as well as with facebook
+
+TBD: create Mockups to indicate the planned flow through the site.
+
+== Ideas for versions after the MVP
+ * Add dancing schools to the project, that can be displayed on
+   relevant pages.
