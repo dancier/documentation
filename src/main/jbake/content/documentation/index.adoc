@@ -1,11 +1,15 @@
-# Technical documentation
+= Documentation
 :jbake-type: page
 :jbake-status: published
 :jbake-tags: dance
 :idprefix:
 
 
+== Usefull links
 
+Curated list of awesome GitHub Actions::
+Find here a list of cool actions groupped by use case:
+link:https://github.com/sdras/awesome-actions[here]
 
 
 
