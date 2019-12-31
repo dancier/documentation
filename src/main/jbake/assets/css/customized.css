@@ -13,10 +13,6 @@ a {
     margin: -6px 9px;
 }
 
-.navbar-default .navbar-header {
-    display: flex;
-}
-
 .navbar-default .navbar-brand {
     color: white;
     display: flex;
@@ -25,6 +21,14 @@ a {
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-nav > li > a:hover {
     color: white;
     text-decoration: underline;
+}
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+    color: white;
+}
+
+.dropdown-menu {
+    background-color: #b40720;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
@@ -37,6 +41,29 @@ a {
 
 .navbar-default .navbar-toggle {
     border-color: white;
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background-color: black;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: white;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    color: white;
+    background-color: transparent;
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: white;
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: white;
+    text-decoration: underline;
+    background: transparent;
 }
 
 .footer-container {
