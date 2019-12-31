@@ -53,7 +53,7 @@ Provide reusable examples for the community::
  * All code is Open Source  +
    Gif the community a real life working example for common tasks, instead
    of just lecture examples.
- * All design is Open Source
+ * All design is Open Source +
    We are more, than our code/design, we are one team. Copying our design,
    copies the least important part of us, while helping others.
  * The whole project plan is open +
