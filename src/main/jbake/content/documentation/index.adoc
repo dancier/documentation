@@ -4,7 +4,39 @@
 :jbake-tags: dance
 :idprefix:
 
+== Infrastucture
+When plantuml works here, provide some nice diagramms. Until then,
+we will describe the environment.
+
+At least for the link:/project/index.html[first iteration] our running
+setup in the cloud will cover three different services:
+
+ 1. link:https://www.nginx.com[NGINX] Loadbalancer +
+    NGINX will be the only component the will receive direct traffic
+    from the internet. It will sit on the the limes of our
+    link:https://en.wikipedia.org/wiki/Virtual_private_cloud[VPC]
+    and act as an link:https://en.wikipedia.org/wiki/TLS_termination_proxy[SSL terminating proxy].
+    The traffic will be then forwarded into the VPC unencrypted and
+    possible in a link:https://www.nginx.com/resources/glossary/round-robin-load-balancing/[round robin]
+    fashion forward it into internal components.
+ 1. our Database Server +
+    will be one link:https://www.postgresql.org/[PostgreSQL] instance
+ 1. our one one only main component
+
+Communication will happen in the following way:
+
+1 <-> 2 <-> 3
+
+We will wrap all above mentioned components into Docker Containers, to
+unify the process of deploying each of them.
+
+
 == Useful links
+
+All that relates to using link:https://www.nginx.com/[NGINX]::
+ * link:https://github.com/jwilder/nginx-proxy[Docker image from J Wilder] +
+   Use NGINX in Docker to act as an SSL teminating proxy for eg internal Web-Hosts
+ * link:https://www.freecodecamp.org/news/docker-nginx-letsencrypt-easy-secure-reverse-proxy-40165ba3aee2/[Howto NGINX Docker letsencript]
 
 Curated list of awesome GitHub Actions::
 Find here a list of cool actions groupped by use case:
