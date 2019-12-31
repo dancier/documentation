@@ -16,9 +16,9 @@ Working in the project enables every team member to contribute in as
 many areas that he is willing to contribute:
  * *Software engineering*
  ** _Software architecture_ +
-    Starting, with a classical monolithic architecture
+    Although we will start, with a classical monolithic architecture
     (link:https://martinfowler.com/bliki/MonolithFirst.html[see M. Fowler])
-    engineer with future in mind. Eg. we aim for an modular monolith, that
+    we will have the future in mind. Eg. we aim for an modular monolith, that
     could be split in to Microservices when the project will profit
     from it. +
     In the same way, we will use containers to package and deploy in
