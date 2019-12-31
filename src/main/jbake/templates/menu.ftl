@@ -8,8 +8,11 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
           </button>
-          <img class="navbar-icon" src="<#if (content.rootpath)??>${content.rootpath}<#else></#if>favicon.png">
-          <a class="navbar-brand" href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>/">Dancier</a>
+
+          <a class="navbar-brand" href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>/">
+            <img class="navbar-icon" src="<#if (content.rootpath)??>${content.rootpath}<#else></#if>dancer-white.png">
+            Dancier
+          </a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">

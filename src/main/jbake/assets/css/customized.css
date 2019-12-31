@@ -8,9 +8,9 @@ a {
 }
 
 .navbar-icon {
-    background-color: white;
-    padding: 14px;
-    margin-right: 12px;
+    width: 26px;
+    height: 30px;
+    margin: -6px 9px;
 }
 
 .navbar-default .navbar-header {
@@ -19,6 +19,7 @@ a {
 
 .navbar-default .navbar-brand {
     color: white;
+    display: flex;
 }
 
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-nav > li > a:hover {
@@ -26,8 +27,16 @@ a {
     text-decoration: underline;
 }
 
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: white;
+}
+
 .navbar-default .navbar-nav > li > a {
     color: white;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: white;
 }
 
 .footer-container {
@@ -35,5 +44,5 @@ a {
 }
 
 .dance-love {
-    margin: 12px auto;
+    margin: 18px auto;
 }
