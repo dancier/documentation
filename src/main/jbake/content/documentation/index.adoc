@@ -36,7 +36,8 @@ unify the process of deploying each of them.
 All that relates to using link:https://www.nginx.com/[NGINX]::
  * link:https://github.com/jwilder/nginx-proxy[Docker image from J Wilder] +
    Use NGINX in Docker to act as an SSL teminating proxy for eg internal Web-Hosts
- * link:https://www.freecodecamp.org/news/docker-nginx-letsencrypt-easy-secure-reverse-proxy-40165ba3aee2/[Howto NGINX Docker letsencript]
+ * link:https://www.freecodecamp.org/news/docker-nginx-letsencrypt-easy-secure-reverse-proxy-40165ba3aee2/[Howto NGINX Docker letsencript (codecamp)]
+ * link:https://www.embarc.de/services-verbinden-nginx-reverse-proxy-docker-micro-moves-bauteil-4/[Howto NGINX Docker(embarc)]
 
 Curated list of awesome GitHub Actions::
 Find here a list of cool actions groupped by use case:
