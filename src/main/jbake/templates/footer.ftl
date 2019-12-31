@@ -3,8 +3,9 @@
     </div>
     
     <div id="footer">
-      <div class="container">
-        <p class="muted credit">&copy; 2019 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake ${version}</a></p>
+      <div class="footer-container">
+      <style>.heart{color:#e25555;}</style>
+      <p class="dance-love">Danced with <span class="heart">❤</span></p>
       </div>
     </div>
     

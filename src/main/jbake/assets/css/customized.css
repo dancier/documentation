@@ -1,0 +1,39 @@
+a {
+    text-decoration: none;
+}
+
+.navbar-default {
+    background-color: #b40720;
+    border-color: black;
+}
+
+.navbar-icon {
+    background-color: white;
+    padding: 14px;
+    margin-right: 12px;
+}
+
+.navbar-default .navbar-header {
+    display: flex;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+}
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-nav > li > a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: white;
+}
+
+.footer-container {
+    display: flex;
+}
+
+.dance-love {
+    margin: 12px auto;
+}
