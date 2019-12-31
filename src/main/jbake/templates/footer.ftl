@@ -5,7 +5,7 @@
     <div id="footer">
       <div class="footer-container">
       <style>.heart{color:#e25555;}</style>
-      <p class="dance-love">Danced with <span class="heart">❤</span></p>
+      <p class="dance-love">Dance with <span class="heart">❤</span>!</p>
       </div>
     </div>
     
