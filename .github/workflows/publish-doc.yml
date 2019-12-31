@@ -27,4 +27,4 @@ jobs:
         # FTP password
         password:  ${{ secrets.DOCU_FTP_PASS }}
         # Local directory
-        localDir: target/documentation-1.0.0-SNAPSHOT
+        localDir: target/site

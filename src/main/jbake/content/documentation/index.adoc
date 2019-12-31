@@ -4,8 +4,7 @@
 :jbake-tags: dance
 :idprefix:
 
-
-== Usefull links
+== Useful links
 
 Curated list of awesome GitHub Actions::
 Find here a list of cool actions groupped by use case:
