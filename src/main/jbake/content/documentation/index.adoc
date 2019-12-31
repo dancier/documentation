@@ -11,7 +11,7 @@ we will describe the environment.
 At least for the link:/project/index.html[first iteration] our running
 setup in the cloud will cover three different services:
 
- 1. link:https://www.nginx.com[NGINX] Loadbalancer +
+ 1. link:https://www.nginx.com[NGINX] or link:https://containo.us/traefik/[Traefik] Loadbalancer +
     NGINX will be the only component the will receive direct traffic
     from the internet. It will sit on the the limes of our
     link:https://en.wikipedia.org/wiki/Virtual_private_cloud[VPC]
