@@ -1,0 +1,7 @@
+= Howtos
+:jbake-type: page
+:jbake-status: published
+:jbake-tags: dance
+:idprefix:
+
+ * link:asciidoctor/index.html[Publishing an documentation repository with GitHub]

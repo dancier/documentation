@@ -1,0 +1,89 @@
+= Publishing an Asciidoctor Repo
+:jbake-type: page
+:jbake-status: published
+:jbake-tags: dance
+:idprefix:
+
+Author: Marc Gorzala
+
+This post explain how you can create your own (static) website. I creates the
+website from easy to learn and understand text files. The files are written in
+the asciidoctor markup language. From a collection of those files, a nice
+website wit a menu will be rendered and automatically published.
+
+:toc:
+:toc-placement: macro
+toc::[]
+
+== Problem Statement
+I want to maintain documentation via some
+link:https://en.wikipedia.org/wiki/List_of_document_markup_languages[Markup]
+language, instead of using some kind of
+link:https://en.wikipedia.org/wiki/Content_management_system[CMS] as link:https://wordpress.com[Wordpress] because:
+
+ * I am faster in writing such a markup language, than using even a fancy UI from an CMS
+ * comparing versions of documents, is easier (this applies maybe only for developer that are
+   used to tools like diff and less for normal users)
+ * I am less bound to the CMS. When eg. I could not use Wordpress anymore, it will
+   be someway tricky to migrate the content.
+ * I want easily export parts of my documentation isolated and in several formats (like PDF, ebub)
+
+The chossen Markup language should be:
+
+ * Easy to read in source code
+ * Powerful enough to cover all normal use cases
+ * Should also cover creating things like link:https://en.wikipedia.org/wiki/Sequence_diagram[Sequence Diagramms]
+   and other small kind of illustration by coding them in readable text.
+
+=== Chosen Asciidoctor
+After comparing some of the existing Markup Languages, I have choosen to go for
+link:https://asciidoctor.org/[Asciidoctor] for the following reasons:
+
+ * Easy to read and well link:https://asciidoctor.org/docs/user-manual/[documented] Markup Language
+ * Powerful link:https://github.com/asciidoctor/asciidoctor-diagram/[extensions] that support enormous
+   things to render just from code.
+ * Good tooling support (eg. via an IntelliJ plugin)
+
+Although I also could use Asciidoctor eg. in combination with Wordpress via a plugin, I decided
+(after trying it out) against it, because:
+
+ * Asciidoctor is not a first class functionality of Wordpress. I would run into
+   trouble if the plugin will not be mainted properly. Especially I would run into trouble,
+   when the most recent version of Wordpress would not be supported via the plugin.
+   I would need to get the most recent version of Wordpress for security updates and
+   also as I am using a managed Wordpress installation, that receives automatic updates.
+
+=== Chosen GibHub
+Du have some version control for the documentation, and also offering others the chance to contribute
+to documentation, I decided to have a public available link:https://git-scm.com/[Git] service
+for maintaining the source of the site.
+I have chosen GitHub, because it is widely used and offered recently with
+link:https://github.com/features/actions[GitHub-actions] an easy way to run code when
+something changes in source code.
+I will use this feature to build the site from the ascii-doctor pages and upload them to
+me website.
+
+=== Chosen JBake for building the site
+What is left is a decision for a tool to create the static site from the asciidoctor content.
+From the link:https://github.com/myles/awesome-static-generators[list of available generator]
+I have selected link:http://jbake.org[JBake] for the following reasons:
+
+ * Extremely easy to use
+ * Well documented
+ * Can render a static site from Asciidoctor/Markdown and HTML
+ * As my dominant programming language is Java, I considered it as a plus that
+   Jbake is implemented in that language in case I have to add or fix funcionality.
+ * integrations for link:http://maven.apache.org[Maven] and
+   link:https://gradle.org[Gradle] exist, to have a standard way of generating
+
+== The implementation
+
+=== Create a GitHub-repository
+
+=== Create skeleton of a Jbake project
+
+=== Configure building the site with gradle
+
+=== Configuring Webspace
+
+=== Configure GitHub actions to build and deploy page
