@@ -1,4 +1,4 @@
-= Publishing an Asciidoctor Repo
+= Publishing a static Website with Asciidoctor
 :jbake-type: page
 :jbake-status: published
 :jbake-tags: dance
