@@ -406,5 +406,5 @@ the repository content (eg be enforcing PRs). Because everyone with write access
 to the workflow file, can also use the secrects to be handed into other actions, which
 could reveal the content.
 
-=== Recap
+== Recap
 What have we done.
