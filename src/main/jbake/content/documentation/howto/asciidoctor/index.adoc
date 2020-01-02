@@ -35,7 +35,7 @@ The chosen Markup language should be:
  * Should also cover creating things like link:https://en.wikipedia.org/wiki/Sequence_diagram[Sequence Diagramms]
    and other small kind of illustration by coding them in readable text.
 
-=== Chosen Asciidoctor
+=== Why Asciidoctor
 After comparing some of the existing Markup Languages, I have choosen to go for
 link:https://asciidoctor.org/[Asciidoctor] for the following reasons:
 
@@ -53,8 +53,8 @@ Although I also could use Asciidoctor eg. in combination with Wordpress via a pl
    I would need to get the most recent version of Wordpress for security updates and
    also as I am using a managed Wordpress installation, that receives automatic updates.
 
-=== Chosen GibHub
-Du have some version control for the documentation, and also offering others the chance to contribute
+=== Why GibHub
+To have some version control for the documentation, and also offering others the chance to contribute
 to documentation, I decided to have a public available link:https://git-scm.com/[Git] service
 for maintaining the source of the site.
 I have chosen GitHub, because it is widely used and offered recently with
@@ -63,7 +63,7 @@ something changes in source code.
 I will use this feature to build the site from the ascii-doctor pages and upload them to
 me website.
 
-=== Chosen JBake for building the site
+=== Why JBake for building the site
 What is left is a decision for a tool to create the static site from the asciidoctor content.
 From the link:https://github.com/myles/awesome-static-generators[list of available generator]
 I have selected link:http://jbake.org[JBake] for the following reasons:
@@ -83,6 +83,7 @@ I have selected link:http://jbake.org[JBake] for the following reasons:
  * About 30 minutes
  * Your favourite IDE (I would recommend link:https://www.jetbrains.com/idea/[IntelliJ], not only for the nice link:https://plugins.jetbrains.com/plugin/7391-asciidoc/[Asciidoctor-Plugin])
  * link:https://www.oracle.com/technetwork/java/javase/downloads/index.html[JDK 1.8] or later
+ * link:https://git-scm.com/[Git] installed and configured locally
 
 === Install SDKMAN
 For installing later Gradle and Jbake, I strongly recommend to use link:
@@ -273,6 +274,137 @@ this snippet:
 If you now generate (`./gradlew bake`) the project again and view it
 with `./gradlew bakePreview` (link:http://localhost:8080/blog/2013/fourth-post.html[open the fourth blog page]).
 
-You should see now the rendered component diagram.
+You should see now the rendered component diagram. Commit your changes and
+you are done for this section.
 
-=== Configure GitHub actions to build and deploy page
+
+=== Pushing your local repository to GitHub
+
+If you do not have a link:https://github.com[GitHub] account, get it now.
+
+If you want to use the ssh-protocol for cloning and pushing to the
+repository, you would have to give github your public ssh-key.
+
+Then create a new repository. Let it be public of private. Just as you want.
+
+In my case I created link:https://github.com/gorzala/minecraft[]
+
+As we already have a local repository, we now have to link our local one with the
+newly created one:
+
+[source, bash]
+----
+cd ~/websites/minecraft
+# you have to use the url of your repository of course:
+git remote add origin git@github.com:gorzala/minecraft.git
+git push -u origin master
+----
+
+=== Making GitHub build your site on every push to the repository
+
+Since 2019, GitHub is offering with
+link:https://github.com/features/actions[GitHub-actions] a service, that can
+run code, when _something_ happens with your repository.
+
+This _something_ can be
+
+ * pushing to the repository
+ * creating a pull request
+ * creating an issue
+ * ...
+
+To create such an GitHub-action just do the following
+
+ 1. click on the action-tab of your repository
+ 1. then click on "Skip this: Set up a workflow yourself"
+ 1. Github, created a small "hello world repository", accept that default
+    by clicking on `Start Commit`
+
+If you wait some seconds, you can click again on the actions tab. You should
+see now the created workflow (with name `CI`). You can click on it. Depending
+on wether the action has already been run, you can either see the action running,
+or see the result. If you click on the nodes in the view, you will be able to
+see the "hello world", that the action has action has executed.
+
+But we do not want to have hello world printed, we want the website to be baked.
+The action configuration happened in the file `.github/workflows/main.yml` in the
+repository.
+
+It is an ordinary file in the repository. You can edit it as any other file. I
+would recommend at least in the beginning, to edit this in GitHub itself, as
+GitHub offers you nice context help and code completion on this file.
+So, locate the file in GitHub and click on edit.
+
+In this file replace `echo "hello world` with `./gradlew bake`. Commit this change.
+Now the action will be triggered again. You can watch again the output and should
+see that the bake has been run.
+
+=== Make GitHub publish your static site to your Webspace
+
+As we are now building our site on every push, we only have to upload the
+build to our webspace.
+
+I configured for my minecraft site and ftp resource, to feed the webserver:
+
+|===
+
+|Username, ftp-geheimer-user
+|Password, ftp-geheimes-password
+|Host, ftp-geheimer-host
+|===
+
+We can now configure our action. Edit the workflow-file
+`.github/workflows/main.yml` now so, that it contain the following:
+
+[source, yaml]
+----
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Run a one-line script
+      run: ./gradlew bake
+    - name: ftp-action
+      uses: sebastianpopp/ftp-action@v1.1.0
+      with:
+        # FTP host
+        host: ${{ secrets.MINECRAFT_FTP_HOST }}
+        # FTP userg
+        user: ${{ secrets.MINECRAFT_FTP_USER }}
+        # FTP password
+        password:  ${{ secrets.MINECRAFT_FTP_PASS }}
+        # Local directory
+        localDir: build/docs/html5/site/
+----
+
+Compared with the previous version, I deleted the action with the multiline action
+and added the ftp-action for uploading.
+
+You will notice, that I did not enter the password (and even not host and username)
+as clear text.
+Instead, I provided references to something that is called secret:
+
+ * secrets.MINECRAFT_FTP_HOST
+ * secrets.MINECRAFT_FTP_USER
+ * secrets.MINECRAFT_FTP_PASS
+
+Those secrets has to be configured. Just open the `Settings`-dialog from your repository.
+In the section for `Secrets` you can add those variables and values (use only
+the part after the `"secrets."`).
+
+After adding secrets, you can not see that value again. You can only pass them
+around in the actions. By doing it in that way, you can have the repository public
+still not leaking your credentials. You should make sure, that only people can change
+the repository content (eg be enforcing PRs). Because everyone with write access
+to the workflow file, can also use the secrects to be handed into other actions, which
+could reveal the content.
+
+=== Recap
+What have we done.
