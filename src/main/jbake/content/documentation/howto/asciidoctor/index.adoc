@@ -1,4 +1,4 @@
-= Publishing a static Website with Asciidoctor
+= Publishing a static website with Asciidoctor
 :jbake-type: page
 :jbake-status: published
 :jbake-tags: dance
@@ -28,7 +28,7 @@ link:https://en.wikipedia.org/wiki/Content_management_system[CMS] as link:https:
    be someway tricky to migrate the content.
  * I want easily export parts of my documentation isolated and in several formats (like PDF, ebub)
 
-The chossen Markup language should be:
+The chosen Markup language should be:
 
  * Easy to read in source code
  * Powerful enough to cover all normal use cases
@@ -78,12 +78,201 @@ I have selected link:http://jbake.org[JBake] for the following reasons:
 
 == The implementation
 
-=== Create a GitHub-repository
+=== What you will need
 
-=== Create skeleton of a Jbake project
+ * About 30 minutes
+ * Your favourite IDE (I would recommend link:https://www.jetbrains.com/idea/[IntelliJ], not only for the nice link:https://plugins.jetbrains.com/plugin/7391-asciidoc/[Asciidoctor-Plugin])
+ * link:https://www.oracle.com/technetwork/java/javase/downloads/index.html[JDK 1.8] or later
 
-=== Configure building the site with gradle
+=== Install SDKMAN
+For installing later Gradle and Jbake, I strongly recommend to use link:
+link:https://sdkman.io/[SDKMAN]. With SDKMAN you can easily not only install
+the mentioned programms, you can also handle eg. different versions of JAVA.
 
-=== Configuring Webspace
+If you do not want to install SDKMAN, than you will have to install Gradle
+and JBake by other means and can skip to XXXX when you are done with those
+installations.
+
+You are still here?
+
+So You want to install SDKMAN. This is easy:
+
+[source,bash]
+----
+curl -s "https://get.sdkman.io" | bash
+----
+=== Install Gradle
+Assuming you have link:https://sdkman.io[SDKMAN] installation is pretty easy:
+[source,bash]
+----
+sdk install gradle
+----
+
+=== Install Jbake
+Assuming you have link:https://sdkman.io[SDKMAN] installation is pretty easy:
+[source,bash]
+----
+sdk install jbake
+----
+
+=== Setup your local GIT repo
+
+[source, bash]
+----
+# switch to home folder
+cd ~
+# create one folder for all your future websites
+mkdir websites
+cd websites
+# create the folder that hold your site (I want to publish an repository for minecraft)
+mkdir minecraft
+cd minecraft
+# initialise the folder as a git repo
+git init
+# initialise the folder as a gradle project
+gradle init
+# You will be asked what kind of project you are generation
+# say you want to have a basic project with Groovy as the DSL
+# accept the default for the rest
+----
+
+You have now a basic gradle project. You should commmit this:
+[source,bash]
+----
+cd ~/websites/minecraft
+git add .
+git commit -a -m "basic gradle project"
+----
+
+Now try out if your gradle project works (by using the gradle wrapper). We are
+using the gradle wrapper, because he is also used by GitHub to build the site later.
+[source, bash]
+----
+cd ~/websites/minecraft
+./gradlew tasks
+----
+The first invocation will take some time, as the gradle wrapper will be downloaded.
+In the end you should see a list of available gradle tasks. You should also see that
+this "build" was successful.
+
+With only have a pretty virgin gradle project. So the just created `build.gradle`
+is essentially empty.
+
+Use your editor/IDE to let your `build.gradle` contain the following:
+
+[source,groovy]
+----
+// get the dependency to draw uml and all the
+// other fancy stuff
+buildscript {
+    dependencies {
+        classpath 'org.asciidoctor:asciidoctorj-diagram:1.5.4.1'
+    }
+}
+
+// get the plugin for gradle to build the site
+plugins {
+    id 'org.jbake.site' version '5.0.0'
+}
+
+// set default repositories to get dependencies
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+jbake {
+    version = '2.6.4'
+    // where the source code will be stored
+    srcDirName = 'src/site'
+    // where the rendered page will be stored
+    destDirName = 'docs/html5/site'
+    // activate the diagramm extension for the fancy uml and other stuff
+    configuration['asciidoctor.option.requires'] = "asciidoctor-diagram"
+}
+
+----
+
+Now with this `build.gradle` in place you can run in the repo `./gradlew tasks` again.
+Now you should see some more _tasks_ available:
+
+ * bake - Bake a jbake project
+ * bakeInit - Setup a jbake project
+ * bakePreview - Preview a jbake project
+
+You can now try to _bake_ your site by executing `./gradlew bake'. You will get
+an error. The build failed. This happens because you have no content that could
+be rendered.
+
+If you have a look in your `build.gradle` you will see, that the content is
+expected in `src/site` in the repo. But this folder does not even exist.
+
+Let's create it:
+[source, bash]
+----
+cd ~/websites/minecraft
+mkdir -p src/site
+----
+
+Still, running `./gradlew bake` will not work. The now existing folder has to be initialised:
+[source, bash]
+----
+cd ~/websites/minecraft/src/site
+# now initilise the jbake project (for this reason you have installed jbake)
+jbake -i
+----
+
+Now you should be able to generate (_bake_) your site: `./gradlew bake`.
+The rendered site will be stored in `build/docs/html5/site`.
+
+Opening the `index.html` in this folder will display your first version of the page.
+It contains example blog posts. And also some links are not working.
+
+To let the links work, run the build with this task `./gradlew bakePreview`. This
+will start a small server on port 8080 on localhost.(make sure that another server
+is not running already on this port)
+
+link:localhost:8080[show the page]
+
+Now we are almost done.
+
+I will now, just update in `src/site/jbake.properties` the entry for `site.host`
+and set the value to https://minecraft.frubumi.de as I want to publish my static
+site to a place under this address.
+
+Last step and our (local) setup is done, is to check if we could also
+render 'plantuml' stuff.
+
+Copy to the end of the following file `src/site/content/blog/2013/fourth-post.adoc`
+this snippet:
+
+[source, bash]
+----
+[ditaa]
+....
+                   +-------------+
+                   | Asciidoctor |-------+
+                   |   diagram   |       |
+                   +-------------+       | PNG out
+                       ^                 |
+                       | ditaa in        |
+                       |                 v
+ +--------+   +--------+----+    /---------------\
+ |        | --+ Asciidoctor +--> |               |
+ |  Text  |   +-------------+    |   Beautiful   |
+ |Document|   |   !magic!   |    |    Output     |
+ |     {d}|   |             |    |               |
+ +---+----+   +-------------+    \---------------/
+     :                                   ^
+     |          Lots of work             |
+     +-----------------------------------+
+....
+
+----
+
+If you now generate (`./gradlew bake`) the project again and view it
+with `./gradlew bakePreview` (link:http://localhost:8080/blog/2013/fourth-post.html[open the fourth blog page]).
+
+You should see now the rendered component diagram.
 
 === Configure GitHub actions to build and deploy page
