@@ -117,6 +117,28 @@ Assuming you have link:https://sdkman.io[SDKMAN] installation is pretty easy:
 sdk install jbake
 ----
 
+=== Install Graphviz
+link:https://www.graphviz.org/[Graphviz] is needed by some diagramm types
+for link:https://plantuml.com/[PlanUML] that is being used by asciidoctor.
+
+Install on debian based linux distributions
+[source, bash]
+----
+sudo apt install graphviz
+----
+
+Install on Mac with brew:
+[source, bash]
+----
+brew cask install graphviz.
+----
+
+Install on windows with link:https://chocolatey.org/packages/Graphviz[Graphviz]
+[source, bash]
+----
+choco install graphviz
+----
+
 === Setup your local GIT repo
 
 [source, bash]
@@ -370,7 +392,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Run a one-line script
+    - name: install graphviz
+      run: sudo apt-get install graphviz
+    - name: Bake the site
       run: ./gradlew bake
     - name: ftp-action
       uses: sebastianpopp/ftp-action@v1.1.0
@@ -386,7 +410,10 @@ jobs:
 ----
 
 Compared with the previous version, I deleted the action with the multiline action
-and added the ftp-action for uploading.
+and added two actions:
+
+ - the ftp-action for uploading.
+ - an action that installs link:https://www.graphviz.org/[Graphviz]
 
 You will notice, that I did not enter the password (and even not host and username)
 as clear text.
