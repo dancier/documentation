@@ -20,6 +20,7 @@ We are planing to deploy our project in the link:https://www.hetzner.de/cloud[He
 [plantuml]
 ....
 @startuml
+left to right direction
 actor user
 actor deployer
 component browser

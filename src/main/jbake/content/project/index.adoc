@@ -4,6 +4,7 @@
 :jbake-tags: blog, asciidoc
 :idprefix:
 
+
 As we are all not being paid for what we are doing here (and we are
 also not planning that this changes in the (nearer) future, we will
 not define project plan that includes dates.
