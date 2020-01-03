@@ -1,3 +1,9 @@
+:jbake-type: page
+:jbake-status: published
+:jbake-tags: dance
+:idprefix:
+
+
 // header file for arc42-template,
 // including all help texts
 //
