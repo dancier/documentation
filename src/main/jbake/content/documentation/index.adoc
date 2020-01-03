@@ -85,6 +85,8 @@ Curated list of awesome GitHub Actions::
 Find here a list of cool actions groupped by use case:
 link:https://github.com/sdras/awesome-actions[here]
 
+Document as code::
+  link:https://docs-as-co.de/[Doc as code]
 
 
 
