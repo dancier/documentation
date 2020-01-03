@@ -84,6 +84,7 @@ I have selected link:http://jbake.org[JBake] for the following reasons:
  * Your favourite IDE (I would recommend link:https://www.jetbrains.com/idea/[IntelliJ], not only for the nice link:https://plugins.jetbrains.com/plugin/7391-asciidoc/[Asciidoctor-Plugin])
  * link:https://www.oracle.com/technetwork/java/javase/downloads/index.html[JDK 1.8] or later
  * link:https://git-scm.com/[Git] installed and configured locally
+ * Webspace that could serve static content
 
 === Install SDKMAN
 For installing later Gradle and Jbake, I strongly recommend to use link:
@@ -407,4 +408,8 @@ to the workflow file, can also use the secrects to be handed into other actions,
 could reveal the content.
 
 == Recap
-What have we done.
+What have we done?
+
+ * We can now easily publish content from AsciiDoctor/Markdown content
+ * We can also create Sequensdiagramm, Flowcharts and other stuff, based on text files
+ * Publishing works automatically by pushing to the repository
