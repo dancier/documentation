@@ -4,12 +4,20 @@
 :jbake-tags: blog, asciidoc
 :idprefix:
 
-As we are all not paid for what we are doing here (and we are
-also not planning that this changes in the (nearer) future.
+As we are all not being paid for what we are doing here (and we are
+also not planning that this changes in the (nearer) future, we will
+not define project plan that includes dates.
 
-Let' define the link:https://en.wikipedia.org/wiki/Minimum_viable_product[MVP] for our project.
+We are defining the content of the next release and will just work
+towards it.
 
-== First version 0.1 our link:https://en.wikipedia.org/wiki/Minimum_viable_product[MVP]
+As the project was just kicked of, we have not released anything.
+The first release will be what is call an
+
+link:https://en.wikipedia.org/wiki/Minimum_viable_product[MVP] and
+this is being defined in the next section.
+
+== Our first version
 
 This version should already by useful, in that way that people should
 be able to find partners to dance with.
