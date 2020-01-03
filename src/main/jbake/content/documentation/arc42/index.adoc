@@ -18,11 +18,9 @@ toc::[]
 
 include::src/config.adoc[]
 
-include::src/about-arc42.adoc[]
 
 // horizontal line
-***
-
+//***
 
 
 

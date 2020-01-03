@@ -4,6 +4,7 @@
 :jbake-tags: dance
 :idprefix:
 
+[link=http://mumble.frubumi.de:8080]
 image::/dancer.png[align=center]
 
 The Purpose of this project is manifold:
