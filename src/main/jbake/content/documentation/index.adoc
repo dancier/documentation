@@ -11,9 +11,7 @@ we will describe the environment.
 [plantuml]
 ....
 @startuml
-object "load balancer" as o1
-object "database" as o2
-object "service" as o3
+Bob->Alive
 @enduml
 ....
 
