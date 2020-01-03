@@ -1,9 +1,8 @@
-= Project
 :jbake-type: post
 :jbake-status: published
 :jbake-tags: blog, asciidoc
 :idprefix:
-
+= Project
 
 As we are all not being paid for what we are doing here (and we are
 also not planning that this changes in the (nearer) future, we will

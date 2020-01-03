@@ -42,6 +42,7 @@ user -- browser
 browser -- loadbalancer
 loadbalancer -- dancer1
 loadbalancer -- dancer2
+loadbalancer -- dancern
 dancer1 -- db
 dancer2 -- db
 dancern -- db
@@ -91,7 +92,8 @@ Find here a list of cool actions groupped by use case:
 link:https://github.com/sdras/awesome-actions[here]
 
 Document as code::
-  link:https://docs-as-co.de/[Doc as code]
+  * link:https://docs-as-co.de/[Doc as code]
+  * link:https://www.informatik-aktuell.de/entwicklung/methoden/docs-as-code-alles-unter-einem-dach.html[Second link, same topic]
 
 
 
