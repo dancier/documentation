@@ -5,8 +5,41 @@
 
 
 
-=== Infrastructure Level 1
+=== The running application
 
+We are planing to deploy our project in the link:https://www.hetzner.de/cloud[Hetzner Cloud].
+
+[plantuml, cloud-architecture, svg]
+....
+@startuml
+left to right direction
+actor user
+actor deployer
+component browser
+cloud VPC {
+   database db
+   boundary loadbalancer
+   node {
+     node dancer1
+     node dancer2
+     node dancern
+   }
+}
+user -- browser
+browser -- loadbalancer
+loadbalancer -- dancer1
+loadbalancer -- dancer2
+loadbalancer -- dancern
+dancer1 -- db
+dancer2 -- db
+dancern -- db
+
+deployer -- dancer1
+deployer -- dancer2
+deployer -- dancern
+
+@enduml
+....
 
 
 _**<Overview Diagram>**_
