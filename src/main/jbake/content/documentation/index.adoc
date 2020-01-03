@@ -22,7 +22,7 @@ To be written
 
 We are planing to deploy our project in the link:https://www.hetzner.de/cloud[Hetzner Cloud].
 
-[plantuml,svg]
+[plantuml, cloud-architecture, svg]
 ....
 @startuml
 left to right direction
