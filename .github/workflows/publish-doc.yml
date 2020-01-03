@@ -13,6 +13,8 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
+    - name: install graphviz
+      run: sudo apt-get install graphviz
     - name: Bake the site
       run: ./gradlew bake
     - name: ftp-action

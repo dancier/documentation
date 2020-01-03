@@ -11,7 +11,11 @@ we will describe the environment.
 [plantuml]
 ....
 @startuml
-Bob->Alive
+
+[Load Balancer] as com
+[Dancer] as Comp2
+Database Comp3
+
 @enduml
 ....
 
