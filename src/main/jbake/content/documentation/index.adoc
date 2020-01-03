@@ -40,33 +40,35 @@ deployer -- dancer
 At least for the link:/project/index.html[first iteration] our running
 setup in the cloud will cover three different services:
 
- 1. link:https://www.nginx.com[NGINX] or link:https://containo.us/traefik/[Traefik] Loadbalancer +
-    NGINX will be the only component the will receive direct traffic
-    from the internet. It will sit on the the limes of our
+ 1. A load balancer like link:https://containo.us/traefik/[Traefik] +
+    This will be the only component the will receive direct traffic
+    from users from the internet. It will sit on the limes of our
     link:https://en.wikipedia.org/wiki/Virtual_private_cloud[VPC]
     and act as an link:https://en.wikipedia.org/wiki/TLS_termination_proxy[SSL terminating proxy].
-    The traffic will be then forwarded into the VPC unencrypted and
-    possible in a link:https://www.nginx.com/resources/glossary/round-robin-load-balancing/[round robin]
-    fashion forward it into internal components.
- 1. our Database Server +
-    will be one link:https://www.postgresql.org/[PostgreSQL] instance
- 1. our one one only main component
+    The traffic will be forwarded into the VPC to the dancer component, that
+    contain our main application. +
+    When the traffic demand it (not in the nearer future, we are not that
+    optimistic) the loadbalancer will distribute the incoming request in a
+link:https://www.nginx.com/resources/glossary/round-robin-load-balancing/[round robin]
+    fashion.
+ 1. Our one one only main component the *dancer* +
+    Sits between the load balancer and the database. Is reachable for
+    deployment from the deployer for releasing new versions.
+ 1. Our Database Server like link:https://www.postgresql.org/[PostgreSQL] +
+    Will have a connection
 
-Communication will happen in the following way:
-
-1 <-> 2 <-> 3
 
 We will wrap all above mentioned components into Docker Containers, to
 unify the process of deploying each of them.
 
-
 == Useful links
 
-All that relates to using link:https://www.nginx.com/[NGINX]::
+All that relates to using setting up a loacbalancer/reverse proxy::
  * link:https://github.com/jwilder/nginx-proxy[Docker image from J Wilder] +
    Use NGINX in Docker to act as an SSL teminating proxy for eg internal Web-Hosts
  * link:https://www.freecodecamp.org/news/docker-nginx-letsencrypt-easy-secure-reverse-proxy-40165ba3aee2/[Howto NGINX Docker letsencript (codecamp)]
  * link:https://www.embarc.de/services-verbinden-nginx-reverse-proxy-docker-micro-moves-bauteil-4/[Howto NGINX Docker(embarc)]
+ * link:https://docs.traefik.io/v1.7/user-guide/docker-and-lets-encrypt/[Traefik/SSL/Docker]
 
 Curated list of awesome GitHub Actions::
 Find here a list of cool actions groupped by use case:
