@@ -13,10 +13,8 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-    - name: Build with Maven
-      run: | 
-        mvn -B --file pom.xml
-
+    - name: Bake the site
+      run: ./gradlew bake
     - name: ftp-action
       uses: sebastianpopp/ftp-action@v1.1.0
       with:
@@ -27,4 +25,4 @@ jobs:
         # FTP password
         password:  ${{ secrets.DOCU_FTP_PASS }}
         # Local directory
-        localDir: target/site
+        localDir: build/docs/html5/site/

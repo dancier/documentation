@@ -1,0 +1,28 @@
+// get the dependency to draw uml and all the
+// other fancy stuff
+buildscript {
+    dependencies {
+        classpath 'org.asciidoctor:asciidoctorj-diagram:1.5.4.1'
+    }
+}
+
+// get the plugin for gradle to build the site
+plugins {
+    id 'org.jbake.site' version '5.0.0'
+}
+
+// set default repositories to get dependencies
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+jbake {
+    version = '2.6.4'
+    // where the source code will be stored
+    srcDirName = 'src/main/jbake'
+    // where the rendered page will be stored
+    destDirName = 'docs/html5/site'
+    // activate the diagramm extension for the fancy uml and other stuff
+    configuration['asciidoctor.option.requires'] = "asciidoctor-diagram"
+}

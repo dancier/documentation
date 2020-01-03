@@ -8,6 +8,15 @@
 When plantuml works here, provide some nice diagramms. Until then,
 we will describe the environment.
 
+[plantuml]
+....
+@startuml
+object "load balancer" as o1
+object "database" as o2
+object "service" as o3
+@enduml
+....
+
 At least for the link:/project/index.html[first iteration] our running
 setup in the cloud will cover three different services:
 
