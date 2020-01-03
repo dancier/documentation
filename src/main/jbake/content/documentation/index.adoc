@@ -4,18 +4,36 @@
 :jbake-tags: dance
 :idprefix:
 
-== Infrastucture
-When plantuml works here, provide some nice diagramms. Until then,
-we will describe the environment.
+== Infrastructure
+Here everything will be described, what we utilize to
+
+ 1. develop our project
+ 1. deploy and run our project
+
+=== Develop
+
+
+=== Deploy and Run
+
+We are planing to deploy our project in the link:https://www.hetzner.de/cloud[Hetzner Cloud].
 
 [plantuml]
 ....
 @startuml
+actor user
+actor deployer
+component browser
+cloud VPC {
+   database db
+   boundary loadbalancer
+   node dancer
 
-[Load Balancer] as com
-[Dancer] as Comp2
-Database Comp3
-
+}
+user -- browser
+browser -- loadbalancer
+loadbalancer -- dancer
+dancer -- db
+deployer -- dancer
 @enduml
 ....
 
