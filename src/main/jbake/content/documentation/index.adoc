@@ -27,14 +27,24 @@ component browser
 cloud VPC {
    database db
    boundary loadbalancer
-   node dancer
-
+   node {
+     node dancer1
+     node dancer2
+     node dancern
+   }
 }
 user -- browser
 browser -- loadbalancer
-loadbalancer -- dancer
-dancer -- db
-deployer -- dancer
+loadbalancer -- dancer1
+loadbalancer -- dancer2
+dancer1 -- db
+dancer2 -- db
+dancern -- db
+
+deployer -- dancer1
+deployer -- dancer2
+deployer -- dancern
+
 @enduml
 ....
 
