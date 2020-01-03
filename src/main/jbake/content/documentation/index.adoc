@@ -4,6 +4,11 @@
 :jbake-tags: dance
 :idprefix:
 
+:toc:
+:toclevels: 5
+:toc-placement: macro
+toc::[]
+
 == Infrastructure
 Here everything will be described, what we utilize to
 
@@ -11,7 +16,7 @@ Here everything will be described, what we utilize to
  1. deploy and run our project
 
 === Develop
-
+To be written
 
 === Deploy and Run
 
