@@ -80,20 +80,20 @@ unify the process of deploying each of them.
 
 == Useful links
 
-All that relates to using setting up a loacbalancer/reverse proxy::
- * link:https://github.com/jwilder/nginx-proxy[Docker image from J Wilder] +
+* All that relates to using setting up a loacbalancer/reverse proxy
+** link:https://github.com/jwilder/nginx-proxy[Docker image from J Wilder] +
    Use NGINX in Docker to act as an SSL teminating proxy for eg internal Web-Hosts
- * link:https://www.freecodecamp.org/news/docker-nginx-letsencrypt-easy-secure-reverse-proxy-40165ba3aee2/[Howto NGINX Docker letsencript (codecamp)]
- * link:https://www.embarc.de/services-verbinden-nginx-reverse-proxy-docker-micro-moves-bauteil-4/[Howto NGINX Docker(embarc)]
- * link:https://docs.traefik.io/v1.7/user-guide/docker-and-lets-encrypt/[Traefik/SSL/Docker]
+** link:https://www.freecodecamp.org/news/docker-nginx-letsencrypt-easy-secure-reverse-proxy-40165ba3aee2/[Howto NGINX Docker letsencript (codecamp)]
+** link:https://www.embarc.de/services-verbinden-nginx-reverse-proxy-docker-micro-moves-bauteil-4/[Howto NGINX Docker(embarc)]
+** link:https://docs.traefik.io/v1.7/user-guide/docker-and-lets-encrypt/[Traefik/SSL/Docker]
 
-Curated list of awesome GitHub Actions::
-Find here a list of cool actions groupped by use case:
-link:https://github.com/sdras/awesome-actions[here]
+* CI/CD
+** Curated list of awesome GitHub Actions: list of cool actions
+   grouped by use case: link:https://github.com/sdras/awesome-actions[here]
 
-Document as code::
-  * link:https://docs-as-co.de/[Doc as code]
-  * link:https://www.informatik-aktuell.de/entwicklung/methoden/docs-as-code-alles-unter-einem-dach.html[Second link, same topic]
+* Document as code
+** link:https://docs-as-co.de/[Doc as code]
+** link:https://www.informatik-aktuell.de/entwicklung/methoden/docs-as-code-alles-unter-einem-dach.html[Second link, same topic]
 
-
-
+* Spring related
+** link:https://spring.io/guides/tutorials/react-and-spring-data-rest/[React and Spring Data Rest] Tutorial
