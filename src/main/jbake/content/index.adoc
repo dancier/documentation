@@ -4,7 +4,7 @@
 :jbake-tags: dance
 :idprefix:
 
-[link=http://staging.dancier.net:8080]
+[link=http://staging.dancier.net:8080/index.html]
 image::/dancer.png[align=center]
 
 The Purpose of this project is manifold:
