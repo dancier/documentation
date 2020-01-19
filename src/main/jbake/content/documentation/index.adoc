@@ -104,3 +104,6 @@ unify the process of deploying each of them.
 
 * Python
 ** link:https://janakiev.com/blog/python-shell-commands/[Invoke Shell commands in Python]
+
+* Bash
+** link:https://stackoverflow.com/questions/1378274/in-a-bash-script-how-can-i-exit-the-entire-script-if-a-certain-condition-occurs[Exit on error]
