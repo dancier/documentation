@@ -115,6 +115,8 @@ unify the process of deploying each of them.
 * General Coding
 ** link:https://medium.com/refactor-zone/why-immutability-matters-b43d370fea75[Why Immutability Matters]
 ** link:https://blogs.oracle.com/javamagazine/records-come-to-java[Records come to Java]
+** link:https://medium.com/swlh/exception-handling-in-java-streams-5947e48f671c[Expections in Java Streams]
+** link:https://medium.com/mobidroid/java-design-patterns-creational-patterns-overview-b03617c1e939[Java Design Patterns: Creational Patterns Overview]
 
 * Team
 ** link:https://hbr.org/2019/03/the-feedback-fallacy[The feedback fallacy]
