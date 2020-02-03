@@ -117,6 +117,9 @@ unify the process of deploying each of them.
 ** link:https://blogs.oracle.com/javamagazine/records-come-to-java[Records come to Java]
 ** link:https://medium.com/swlh/exception-handling-in-java-streams-5947e48f671c[Expections in Java Streams]
 ** link:https://medium.com/mobidroid/java-design-patterns-creational-patterns-overview-b03617c1e939[Java Design Patterns: Creational Patterns Overview]
+** link:https://medium.com/@jubin.kuriakose/modular-programming-in-java-42788ec02268[Modular Programming in Java]
+** link:https://medium.com/swlh/multi-tenancy-implementation-using-spring-boot-hibernate-6a8e3ecb251a[Multi Tenancy Implementation]
+
 
 * Team
 ** link:https://hbr.org/2019/03/the-feedback-fallacy[The feedback fallacy]
