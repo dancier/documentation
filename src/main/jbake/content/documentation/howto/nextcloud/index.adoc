@@ -1,0 +1,76 @@
+= Setting up your own nextcloud
+:jbake-type: page
+:jbake-status: published
+:jbake-tags: dance
+:idprefix:
+
+Author: Marc Gorzala
+
+This post explain you how you _could_ setup your own link:https://nextcloud.com/[Nextcloud].
+
+*The installed system will:*
+
+* use link:https://de.wikipedia.org/wiki/Hypertext_Transfer_Protocol_Secure[HTTPS]
+  to make your communication with your Nextcloud save
+* include an office via link:https://www.collaboraoffice.com/code/[Collabora Office]
+  to enable to you to edit office
+  documents online in paralell with other users of your Nextcloud
+* separate Code/App from your data, to make it easy for you to
+** make backups
+** perform updates
+* works at home behind a (DSL) router, or on any other server in the cloud
+  or hosted else where
+
+:toc:
+:toc-placement: macro
+toc::[]
+
+
+== Prerequisites
+
+* a server that runs linux (this post will assume you are using a Debian/Ubuntu based distribution)
+* the DNS names that points to your server. You will need two of
+  them. I am using for myself:
+** cloud.becheftigt.de - pointing to your nextcloud installation
+** collabora.becheftigt.de - pointing to your online office tool.
+  (If you do not want to install the option for editing office files, you can also
+skip this in this post)
+** Basis knowledge of linux and docker
+
+== Used technologies
+
+* link:https://www.docker.com/[Docker] for easy installation of the needed software
+* link:https://docs.docker.com/compose/[Docker Compose] for a convenient configuration
+  of the docker containers
+* link:https://docs.traefik.io/[Traefik] for automatically maintaining SSL Certificates,
+  and forwarding Request to either Nextcloud of Collabora Online as an edge router
+* link:https://mysql.com/[MySQL] to be used as the database for Nextcloud
+
+== Architecture
+
+[plantuml, cloud-architecture, svg]
+....
+@startuml
+left to right direction
+actor user
+component browser
+cloud server {
+   database db
+   boundary edge_router
+   node nextcloud
+   node collabora
+}
+user -- browser
+browser -- edge_router
+edge_router --> nextcloud
+edge_router --> collabora
+nextcloud --> db
+nextcloud --> collabora
+
+@enduml
+....
+
+== Let's start
+
+
+

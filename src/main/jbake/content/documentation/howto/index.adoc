@@ -5,3 +5,4 @@
 :idprefix:
 
  * link:asciidoctor/index.html[Publishing an documentation repository with GitHub]
+ * link:nextcloud/index.html[Setting up your own Nextcloud]
