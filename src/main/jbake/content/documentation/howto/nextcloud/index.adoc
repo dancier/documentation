@@ -8,23 +8,23 @@ Author: Marc Gorzala
 
 image::nextcloud-logo-white.png[align="center"]
 
-This post explain you how you _could_ setup your own link:https://nextcloud.com/[Nextcloud]
+This post explains how you _could_ setup your own link:https://nextcloud.com/[Nextcloud]
 with link:https://www.collaboraoffice.com/code/[Collabora Office].
 
 
 *What is Nextcloud?*
 
-Nextcloud offers you to host your own something like link:https://www.dropbox.com/[DropBox].
-You can have you files sync between different devices like your Desktop/Laptop and
-your mobile.
+Nextcloud offers you to host a service like link:https://www.dropbox.com/[DropBox].
+You can have you files synced between different devices like your Desktop/Laptop and
+mobile.
 
-You have also a calendar, a todo list your contacts and many other things synced
+You have also a calendar, a todo-list, your contacts and many other things synced
 across your devices.
 
 *What is Collabora?*
 
 Collabora, offers you the functionality of link:https://www.libreoffice.org/[Libre Office]
-in your browser. In this tutorial we will integrate Collabora in you Nextcloud
+in your browser. In this tutorial we will integrate Collabora in your Nextcloud
 installation, so that you can edit office files directly in your Nextcloud!
 
 *The installed system will...*
@@ -35,7 +35,7 @@ installation, so that you can edit office files directly in your Nextcloud!
 * ... separate Code/App from your data, to make it easy for you to
 ** make backups (we will have a basic script for doing backups).
 ** perform updates.
-* ... works at home behind a (DSL) router, or on any other server in the cloud
+* ... works behind a (DSL) router as well as on any other server in the cloud
   or elsewhere.
 
 ---
@@ -49,28 +49,27 @@ toc::[]
 
 * A server that runs link:https://www.linux.org/[Linux]
   (this post will assume you are using a Debian/Ubuntu based distribution).
-* DNS names that point to your server. You will need two of
-  them. In this tutorial I will assume that you will use
-  link:https://en.wikipedia.org/wiki/Subdomain[Subdomains] under `dancier.net`:
+* You can edit DNS entries for a domain you own. In this tutorial I will assume that
+  you will use link:https://en.wikipedia.org/wiki/Subdomain[Subdomains] under `dancier.net`:
 ** `cloud.dancier.net` - pointing to your Nextcloud installation
 ** `collabora.dancier.net` - pointing to the installation of the office suite.
   (If you do not want to install the option for editing office files, you can also
 skip this in this post)
 +
-NOTE: As we will install everything on one machine with one IP-Adress, both
-      Subdomains should point to the same IP (the one of your server)
+NOTE: As this is an domain that I own, you have of course change this to your own domain.
 
 
-* Basis knowledge of Linux and link:https://www.docker.com/[Docker].
+* Basic knowledge of Linux and link:https://www.docker.com/[Docker].
 
 == We will use the following technologies
 
 * link:https://www.docker.com/[Docker] for easy installation/updating of the needed
-       software. I will assume you have this installed.
+       software. I will assume you have it link:https://docs.docker.com/install/linux/docker-ce/ubuntu/[installed].
 * link:https://docs.docker.com/compose/[Docker Compose] for a convenient configuration
        of the docker containers. I will assume you have this installed too.
 * link:https://docs.traefik.io/[Traefik] for automatically maintaining SSL Certificates,
-       and forwarding Request to either Nextcloud of Collabora Online as an edge router.
+       and forwarding Request to either Nextcloud of Collabora Online as an
+       link:https://docs.docker.com/install/linux/docker-ce/ubuntu/[reverse proxy].
        We will install this in the course of this tutorial.
 * link:https://mysql.com/[MySQL] to be used as the database for Nextcloud. This in the
        next item will also be installed.
@@ -86,17 +85,16 @@ NOTE: As we will install everything on one machine with one IP-Adress, both
  boundary wlan_router
  cloud docker {
    database db
-   boundary edge_router
+   boundary reverse_proxy
    node nextcloud
    node collabora
  }
 user --> browser
 browser --> wlan_router
-wlan_router --> edge_router
-edge_router --> nextcloud
-edge_router --> collabora
+wlan_router --> reverse_proxy
+reverse_proxy --> nextcloud
+reverse_proxy --> collabora
 nextcloud --> db
-nextcloud --> collabora
 
 @enduml
 ....
@@ -106,25 +104,26 @@ Let me short describe you this architecture briefly.
 . The `user` that is connecting to nextcloud.
 . He is using a `browser` (or any other device) to make this connection
 . The browser connects to the `wlan_router` at your home. This is your
-only component with an public IP-address. The `wlan_router` is configured
-to link:https://en.wikipedia.org/wiki/Port_forwarding[forward every traffic]
-that it receives on it's public IP-address on
-Port 443 (the HTTPS port) to the IP-address of you local machine that
-will host your nextcloud installation (also on Port 443).
+  only component with a public IP-address. The `wlan_router` is configured
+  to link:https://en.wikipedia.org/wiki/Port_forwarding[forward every traffic]
+  that it receives on its public IP-address on
+  Port 443 (the HTTPS port) to the IP-address of you local machine that
+  will host your Nextcloud installation on Port 443(to the `reverse_proxy`).
 +
 NOTE: If you are installing Nextcloud on a server that is directly
-      connected to the internet, then this component does not exist
-      and the browser directly connects to the `edge_router`.
-. The `edge_router` is receiving the incoming traffic. It
-will inspect the request to find out to which host it should be forwarded.
+      connected to the internet, then this component does not exist,
+      and the browser directly connects to the `reverse_proxy`.
+. The `reverse_proxy` is receiving the incoming traffic. It
+  will inspect the request to find out to which host it should be forwarded.
 +
-TIP: If you want to know how the `edge_router` could do this, as the Request is
+TIP: If you want to know how the `reverse_proxy` could do this, as the Request is
 encrypted, you can read link:https://cwiki.apache.org/confluence/display/HTTPD/NameBasedSSLVHostsWithSNI[this].
 (It is using SNI)
-. The `nextcloud` node containns just what the name implies. The main
-programm. It will store all your files locally too this
-
-
+. The `nextcloud` node contains just what the name implies. The main
+  program. It will store all your files locally to this.
+. The `db` node is the database that is used by `nextcloud` to store everything but files
+  (contacts, calendar, ...)
+. `collabora` contains the office suite.
 
 == Setting it up
 First of all we will make sure that traffic to our planned domains `cloud.dancier.net`
