@@ -1,25 +1,40 @@
-= Setting up your own nextcloud
+= Setting up your own Nextcloud with Collabora Office
 :jbake-type: page
 :jbake-status: published
-:jbake-tags: dance
+:jbake-tags: nextcloud, traefik, docker, docker-compose, collabora, code
 :idprefix:
 
 Author: Marc Gorzala
 
-This post explain you how you _could_ setup your own link:https://nextcloud.com/[Nextcloud].
+This post explain you how you _could_ setup your own link:https://nextcloud.com/[Nextcloud]
+with link:https://www.collaboraoffice.com/code/[Collabora Office].
 
-*The installed system will:*
+NOTE: What is Nextcloud?
+      +
+      Nextcloud offers you to host your own something like link:https://www.dropbox.com/[DropBox].
+      You can have you files sync between different devices like your Desktop/Laptop and
+      your mobile.
+      +
+      You have also a calendar, a todo list your contacts and many other things synced
+      across your devices.
 
-* use link:https://de.wikipedia.org/wiki/Hypertext_Transfer_Protocol_Secure[HTTPS]
-  to make your communication with your Nextcloud save
-* include an office via link:https://www.collaboraoffice.com/code/[Collabora Office]
-  to enable to you to edit office
-  documents online in paralell with other users of your Nextcloud
-* separate Code/App from your data, to make it easy for you to
-** make backups
-** perform updates
-* works at home behind a (DSL) router, or on any other server in the cloud
-  or hosted else where
+NOTE: What is Collabora?
+      +
+      Collabora, offers you the functionality of link:https://www.libreoffice.org/[Libre Office]
+      in your browser. In this tutorial we will integrate Collabora in you Nextcloud
+      installation, so that you can edit office files directly in your Nextcloud!
+
+
+*The installed system will...*
+
+* ... use link:https://de.wikipedia.org/wiki/Hypertext_Transfer_Protocol_Secure[HTTPS]
+  to make your communication with your Nextcloud secure.
+* ... include the Office Suite  link:https://www.collaboraoffice.com/code/[Collabora Office]
+* ... separate Code/App from your data, to make it easy for you to
+** make backups (we will have a basic script for doing backups).
+** perform updates.
+* ... works at home behind a (DSL) router, or on any other server in the cloud
+  or elsewhere.
 
 :toc:
 :toc-placement: macro
@@ -28,23 +43,31 @@ toc::[]
 
 == Prerequisites
 
-* a server that runs linux (this post will assume you are using a Debian/Ubuntu based distribution)
-* the DNS names that points to your server. You will need two of
-  them. I am using for myself:
-** cloud.becheftigt.de - pointing to your nextcloud installation
-** collabora.becheftigt.de - pointing to your online office tool.
+* A server that runs link:https://www.linux.org/[Linux]
+  (this post will assume you are using a Debian/Ubuntu based distribution).
+* DNS names that points to your server. You will need two of
+  them. In this tutorial I will assume that you will use
+  link:https://en.wikipedia.org/wiki/Subdomain[Subdomains] under `dancier.net`:
+** `cloud.dancier.net` - pointing to your Nextcloud installation
+** `collabora.dancier.net` - pointing to the installation of the office suite.
   (If you do not want to install the option for editing office files, you can also
 skip this in this post)
-** Basis knowledge of linux and docker
++
+NOTE: As we will install everything on one machine with one IP-Adress, both
+      Subdomains should point to the same IP (the one of your server)
 
-== Used technologies
 
-* link:https://www.docker.com/[Docker] for easy installation of the needed software
+* Basis knowledge of Linux and link:https://www.docker.com/[Docker].
+
+== We will use the following technologies
+
+* link:https://www.docker.com/[Docker] for easy installation/updating of the needed software
 * link:https://docs.docker.com/compose/[Docker Compose] for a convenient configuration
   of the docker containers
 * link:https://docs.traefik.io/[Traefik] for automatically maintaining SSL Certificates,
   and forwarding Request to either Nextcloud of Collabora Online as an edge router
 * link:https://mysql.com/[MySQL] to be used as the database for Nextcloud
+* link:https://www.collaboraoffice.com/code/[Collabora Office]
 
 == Architecture
 
@@ -54,12 +77,13 @@ skip this in this post)
 left to right direction
 actor user
 component browser
-cloud server {
+ cloud docker {
    database db
    boundary edge_router
    node nextcloud
    node collabora
-}
+ }
+
 user -- browser
 browser -- edge_router
 edge_router --> nextcloud
@@ -70,7 +94,46 @@ nextcloud --> collabora
 @enduml
 ....
 
-== Let's start
+== Basic Setup
+You need to have docker and docker-compose installed on your system.
+If you don't have it
+
+You can access all the code/config in via the following github-repository.
+
+You can clone it, or recreate it on your own.
+
+[source, bash]
+----
+git clone git@github.com:gorzala/nextcloud.git
+
+----
 
 
 
+
+
+
+-- chang in config.php
+
+'overwritehost' => 'cloud.becheftigt.de',
+'overwriteprotocol' => 'https',
+'overwrite.cli.url' => 'https://cloud.becheftigt.de',
+
+
+for apple support
+
+in nextcloud core.htaccess
+
+RewriteRule ^\.well-known/host-meta https://%{HTTP_HOST}/public.php?service=host-meta [QSA,L]
+RewriteRule ^\.well-known/host-meta\.json https://%{HTTP_HOST}/public.php?service=host-meta-json [QSA,L]
+RewriteRule ^\.well-known/webfinger https://%{HTTP_HOST}/public.php?service=webfinger [QSA,L]
+RewriteRule ^\.well-known/nodeinfo https://%{HTTP_HOST}/public.php?service=nodeinfo [QSA,L]
+RewriteRule ^\.well-known/carddav https://%{HTTP_HOST}/remote.php/dav/ [R=301,L]
+RewriteRule ^\.well-known/caldav https://%{HTTP_HOST}/remote.php/dav/ [R=301,L]
+
+
+
+
+https://github.com/jowave/vcard2to3
+
+2.1 3.1
