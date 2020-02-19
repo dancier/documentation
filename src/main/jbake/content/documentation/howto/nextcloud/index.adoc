@@ -6,25 +6,26 @@
 
 Author: Marc Gorzala
 
+image::nextcloud-logo-white.png[align="center"]
+
 This post explain you how you _could_ setup your own link:https://nextcloud.com/[Nextcloud]
 with link:https://www.collaboraoffice.com/code/[Collabora Office].
 
-image::nextcloud-logo-white.png[align="center"]
 
-NOTE: *What is Nextcloud?*
-      +
-      Nextcloud offers you to host your own something like link:https://www.dropbox.com/[DropBox].
-      You can have you files sync between different devices like your Desktop/Laptop and
-      your mobile.
-      +
-      You have also a calendar, a todo list your contacts and many other things synced
-      across your devices.
+*What is Nextcloud?*
 
-NOTE: *What is Collabora?*
-      +
-      Collabora, offers you the functionality of link:https://www.libreoffice.org/[Libre Office]
-      in your browser. In this tutorial we will integrate Collabora in you Nextcloud
-      installation, so that you can edit office files directly in your Nextcloud!
+Nextcloud offers you to host your own something like link:https://www.dropbox.com/[DropBox].
+You can have you files sync between different devices like your Desktop/Laptop and
+your mobile.
+
+You have also a calendar, a todo list your contacts and many other things synced
+across your devices.
+
+*What is Collabora?*
+
+Collabora, offers you the functionality of link:https://www.libreoffice.org/[Libre Office]
+in your browser. In this tutorial we will integrate Collabora in you Nextcloud
+installation, so that you can edit office files directly in your Nextcloud!
 
 *The installed system will...*
 
