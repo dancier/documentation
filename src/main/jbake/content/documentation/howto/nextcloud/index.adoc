@@ -9,9 +9,9 @@ Author: Marc Gorzala
 This post explain you how you _could_ setup your own link:https://nextcloud.com/[Nextcloud]
 with link:https://www.collaboraoffice.com/code/[Collabora Office].
 
-image::nextcloud-logo-white.png[]
+image::nextcloud-logo-white.png[align="center"]
 
-NOTE: What is Nextcloud?
+NOTE: *What is Nextcloud?*
       +
       Nextcloud offers you to host your own something like link:https://www.dropbox.com/[DropBox].
       You can have you files sync between different devices like your Desktop/Laptop and
@@ -20,7 +20,7 @@ NOTE: What is Nextcloud?
       You have also a calendar, a todo list your contacts and many other things synced
       across your devices.
 
-NOTE: What is Collabora?
+NOTE: *What is Collabora?*
       +
       Collabora, offers you the functionality of link:https://www.libreoffice.org/[Libre Office]
       in your browser. In this tutorial we will integrate Collabora in you Nextcloud
@@ -62,15 +62,24 @@ NOTE: As we will install everything on one machine with one IP-Adress, both
 
 == We will use the following technologies
 
-* link:https://www.docker.com/[Docker] for easy installation/updating of the needed software
+* link:https://www.docker.com/[Docker] for easy installation/updating of the needed
+       software. I will assume you have this installed.
 * link:https://docs.docker.com/compose/[Docker Compose] for a convenient configuration
-  of the docker containers
+       of the docker containers. I will assume you have this installed too.
 * link:https://docs.traefik.io/[Traefik] for automatically maintaining SSL Certificates,
-  and forwarding Request to either Nextcloud of Collabora Online as an edge router
-* link:https://mysql.com/[MySQL] to be used as the database for Nextcloud
+       and forwarding Request to either Nextcloud of Collabora Online as an edge router.
+       We will install this in the course of this tutorial.
+* link:https://mysql.com/[MySQL] to be used as the database for Nextcloud. This in the
+       next item will also be installed.
 * link:https://www.collaboraoffice.com/code/[Collabora Office]
 
-== Architecture
+== Basic Setup
+
+=== Check your DNS/IP configuration
+I will consider two different scenarios
+
+==== You are installing Nextcloud behind you router at home
+In this case the Setup will look like this:
 
 [plantuml, cloud-architecture, svg]
 ....
@@ -78,15 +87,16 @@ NOTE: As we will install everything on one machine with one IP-Adress, both
 left to right direction
 actor user
 component browser
+ boundary wlan_router
  cloud docker {
    database db
    boundary edge_router
    node nextcloud
    node collabora
  }
-
-user -- browser
-browser -- edge_router
+user --> browser
+browser --> wlan_router
+wlan_router --> edge_router
 edge_router --> nextcloud
 edge_router --> collabora
 nextcloud --> db
@@ -95,9 +105,38 @@ nextcloud --> collabora
 @enduml
 ....
 
-== Basic Setup
+Let me short describe you this architecture briefly.
+
+. The `user` that is connecting to nextcloud...
+. He is using a `browser` (or any other device) to make this connection
+. The browser connects to the `wlan_router` at your home. This is your
+  only component with an public IP-address. The `wlan_router` is configured
+  to link:https://en.wikipedia.org/wiki/Port_forwarding[forward every traffic]
+  that it receives on it's public IP-address on
+  Port 443 (the HTTPS port) to the IP-address of you local machine that
+  will host your nextcloud installation (also on Port 443).
++
+NOTE: How you configure this port forwarding will not be described in this
+      tutorial as this varies from router to router. I recommend you google for
+      something like "configure port forwarding <your brand of router>"
+. The `edge_router` is receiving this traffic from the `wlan-router`. It
+  will inspect the Request to find you to which host it should be forwarded.
++
+TIP: If you want to know how the `edge_router` could do this, as the Request is
+     encrypted, you can read link:https://cwiki.apache.org/confluence/display/HTTPD/NameBasedSSLVHostsWithSNI[this].
+     (It is using SNI)
+. The `nextcloud` node containns just what the name implies. The main
+  programm. It will store all your files locally too this
+
+In this example only the `wlan_router` has a public routable IP-address.
+The docker host will have only a private IP-address, letting him not receive any
+direct traffic from the internet.
+But we need this of course, to let the `edge_router`
+
+==== You are installing Nextcloud directly
+
 You need to have docker and docker-compose installed on your system.
-If you don't have it
+
 
 You can access all the code/config in via the following github-repository.
 
