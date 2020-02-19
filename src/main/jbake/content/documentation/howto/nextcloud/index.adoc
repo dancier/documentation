@@ -38,6 +38,8 @@ installation, so that you can edit office files directly in your Nextcloud!
 * ... works at home behind a (DSL) router, or on any other server in the cloud
   or elsewhere.
 
+---
+
 :toc:
 :toc-placement: macro
 toc::[]
