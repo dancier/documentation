@@ -42,6 +42,7 @@ installation, so that you can edit office files directly in your Nextcloud!
 
 :toc:
 :toc-placement: macro
+:toclevels: 4
 toc::[]
 
 
@@ -166,17 +167,142 @@ Name:	 collabora.dancier.net
 Address: 5.61.144.190
 ----
 
-=== Install
-You can access all the code/config in via the following github-repository.
+=== Getting the project
 
-You can clone it, or recreate it on your own.
+TIP: You need to have link:https://git-scm.com/[git]
+     installed on your system. If you can not install it (or just don't want it)
+     you can also download the project as a ZIP file.
 
 [source, bash]
 ----
 git clone git@github.com:gorzala/nextcloud.git
-
 ----
 
+Let's see what is contained in this project:
+
+[source, bash]
+----
+marc@ryzen:~/tmp/nextcloud$ ls -la
+insgesamt 40
+drwxr-xr-x 3 marc marc 4096 Feb 20 08:55 .
+drwxr-xr-x 3 marc marc 4096 Feb  9 20:06 ..
+-rw-r--r-- 1 marc marc 2241 Feb 20 08:55 docker-compose.yml
+-rwxr-xr-x 1 marc marc  119 Feb  9 20:07 .env-template
+drwxr-xr-x 8 marc marc 4096 Feb 20 08:55 .git
+-rw-r--r-- 1 marc marc   86 Feb  9 20:07 .gitignore
+-rw-r--r-- 1 marc marc  305 Feb 20 08:55 .maintenance.config
+-rwxr-xr-x 1 marc marc 2489 Feb 20 08:55 maintenance.sh
+-rw-r--r-- 1 marc marc 5708 Feb 20 08:55 README.adoc
+----
+
+Brief description of the purpose of the files:
+
+ * *docker-compose.yml* configures all the containers that we use and how they work together
+ * *.env-template* template for the config file that will hold your database credentials
+ * *.maintenance.config* configures you will backup your system
+ * *maintenance.sh* the backup script
+ * *README.adco* very short explanation how to use this project
+
+==== docker-compose.yml
+This is a very central file so I will explain this in detail:
+[source, bash, linenumbers]
+----
+version: "3"
+services:
+  traefik:
+    image: "traefik:v2.0.0-rc3"
+    container_name: "traefik"
+    command:
+      #- "--log.level=DEBUG"
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.websecure.address=:443"
+      - "--certificatesresolvers.mytlschallenge.acme.tlschallenge=true"
+      #- "--certificatesresolvers.mytlschallenge.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory"
+      - "--certificatesresolvers.mytlschallenge.acme.email=marc@becheftigt.de"
+      - "--certificatesresolvers.mytlschallenge.acme.storage=/letsencrypt/acme.json"
+    ports:
+      - "443:443"
+      - "8080:8080"
+    volumes:
+      - "./letsencrypt:/letsencrypt"
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+
+  nextcloud:
+    image: nextcloud
+    environment:
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+    links:
+      - mysql
+    restart: always
+    volumes:
+      - ./nextcloud-core:/var/www/html
+      - ./nextcloud-apps:/var/www/html/custom_apps
+      - /mnt/nextcloud-data/:/var/www/html/data
+      - ./nextcloud-config:/var/www/html/config
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.nextcloud.rule=Host(`cloud.becheftigt.de`)"
+      - "traefik.http.routers.nextcloud.entrypoints=websecure"
+      - "traefik.http.routers.nextcloud.tls.certresolver=mytlschallenge"
+      - "traefik.http.middlewares.nextcloud.headers.customresponseheaders.Strict-Transport-Security=max-age=15552000; includeSubDomains"
+
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mariadb:latest
+    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
+    volumes:
+      - ./nextcloud-mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD
+      - MYSQL_PASSWORD
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+
+  collabora:
+    image: collabora/code
+    restart: always
+    environment:
+      - domain=cloud\\.becheftigt\\.de
+      - extra_params=--o:ssl.enable=false --o:ssl.termination=true
+    depends_on:
+      - traefik
+    cap_add:
+      - MKNOD
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.collabora.rule=Host(`collabora.becheftigt.de`)"
+      - "traefik.http.routers.collabora.entrypoints=websecure"
+      - "traefik.http.routers.collabora.tls.certresolver=mytlschallenge"
+----
+
+==== .env-template
+
+[source, bash, linenumbers]
+----
+MYSQL_ROOT_PASSWORD=<your-my-sql-root-passwort>
+MYSQL_PASSWORD=<the password for accessing the database for nextcloud>
+----
+
+==== maintenance.sh
+
+==== .maintenance.config
+[source, bash, linenumbers]
+----
+BASE_FOLDER=/home/marc/programm/nextcloud
+NEXTCLOUD_DATA_FOLDER=/mnt/nextcloud-data
+LETSENCRYPT=letsencrypt
+NEXTCLOUD_APPS=nextcloud-apps
+NEXTCLOUD_CONFIG=nextcloud-config
+NEXTCLOUD_CORE=nextcloud-core
+NEXTCLOUD_MYSQL=nextcloud-mysql
+
+BACKUP_FOLDER=/media/marc/0519a4be-d9ce-4725-81f3-a26d9e577d13/backup
+----
 
 
 
