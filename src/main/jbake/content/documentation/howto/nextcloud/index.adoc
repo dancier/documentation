@@ -204,6 +204,28 @@ Brief description of the purpose of the files:
  * *README.adco* very short explanation how to use this project
 
 ==== docker-compose.yml
+To really understand what you are installing here, it is important that you have some knowledge about docker-compose.
+
+First of all, that name of the folder that contains the docker-compose file is *important*, in this way is
+docker-compose will use this to create things like networks and so for you. If you have cloned the project like I told
+you, the name is `nextcloud`.
+
+In general you can think of docker-compose as a way to configure different services that should act together to fulfill
+a certain use case. In this case the use case is to have a full featured Nextcloud installation with an office suite running.
+
+The different services that we have to configure in this docker compose file are:
+
+ * *Traeffik* that acts as the reverse proxy, forwarding incoming requests to the different internal systems
+ * *Nextcloud* that is our main component
+ * *Mysql database* that stores all the data for and is used by the Nextcloud service
+ * *Collabora* the service that is used to provide the office suite
+
+So already 4 services. Those services will comunicate with each other as shown in figure 1. The service to service
+communication happens via a private network that docker-compose will create for them. By doing so, this communication
+and the services are shielded from the rest of the docker host (and with this also from the internet).
+
+
+
 This is a very central file so I will explain this in detail:
 [source, bash, linenumbers]
 ----
@@ -279,7 +301,6 @@ services:
       - "traefik.http.routers.collabora.entrypoints=websecure"
       - "traefik.http.routers.collabora.tls.certresolver=mytlschallenge"
 ----
-
 ==== .env-template
 
 [source, bash, linenumbers]
