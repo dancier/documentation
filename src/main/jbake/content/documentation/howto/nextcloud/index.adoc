@@ -226,16 +226,17 @@ So already 4 services. Those services will comunicate with each other as shown i
 communication happens via a private network that docker-compose will create for them. By doing so, this communication
 and the services are shielded from the rest of the docker host (and with this also from the internet).
 
+So let's see how these four services are configured in the compose-file:
 
-
-This is a very central file so I will explain this in detail:
+NOTE: The compose-file is being written in link:https://yaml.org/[Yaml]-Syntax. This is becoming someway standard
+      for more and more systems. So if you are not familiar with how to write YAML files, it will pay off not only
+      for writing docker-compose files.
 [source, bash, linenumbers]
 ----
 version: "3"
 services:
   traefik:
     image: "traefik:v2.0.0-rc3"
-    container_name: "traefik"
     command:
       #- "--log.level=DEBUG"
       - "--api.insecure=true"
@@ -303,6 +304,22 @@ services:
       - "traefik.http.routers.collabora.entrypoints=websecure"
       - "traefik.http.routers.collabora.tls.certresolver=mytlschallenge"
 ----
+
+* *line 1: version* +
+  specifies that we are using version 3 of the file syntax. This is not the version of docker-compose
+  or docker.
+* *line 2: introduces the services* +
+  specifies that everything under this node will be the configured services. We will configure 4 of them
+** *line 3-22 traefik* +
+  configured traefik as the `reverse_proxy`
+*** line 3: sets the name of the service to traefik. As we do not specifiy a container name explicitly,
+    docker-compose will generate this name: _nextcloud_traefik_1_. Compose will the name of the compose
+    project (from the folder-name, see above) and concatenates it with the name of the service and the
+    number starting with a 1. If you would scale up your setup, the next service name would end with a 2.
+** *line 24-46 nextcloud* +
+** *line 48-57 mysql*
+** *line 59-70 collabora*
+
 ====  Configuring your database credentials with .env-template
 
 [source, bash, linenumbers]
