@@ -231,6 +231,8 @@ So let's see how these four services are configured in the compose-file:
 NOTE: The compose-file is being written in link:https://yaml.org/[Yaml]-Syntax. This is becoming someway standard
       for more and more systems. So if you are not familiar with how to write YAML files, it will pay off not only
       for writing docker-compose files.
+
+.docker-compose.yml
 [source, bash, linenumbers]
 ----
 version: "3"
@@ -316,6 +318,26 @@ services:
     docker-compose will generate this name: _nextcloud_traefik_1_. Compose will the name of the compose
     project (from the folder-name, see above) and concatenates it with the name of the service and the
     number starting with a 1. If you would scale up your setup, the next service name would end with a 2.
+*** line 4: defines which link:https://hub.docker.com/_/traefik[docker image] to get for traefik
+*** line 5-14 configures cli parameters for traefik +
+    In short: the configuration of traefik is being clustered into static configuration (everything that
+    changes rarely(are we working with docker, or kubernetes,...) and dynamic configuration for the
+    stuff that changes more frequently. +
+    For the static configuration traefik offers three ways:
+**** File based configuration
+**** Command line parameter bases configuration (I chossed to use this)
+**** Environment variable configuration.
+*** *line 6 debug mode* +
+    This passed the command-line parameter to traefik when it starts that enables debug logging mode.
+    Use this when you have problems. This is commented out in this example.
+*** *line 7 api insecure*
+*** *line 8 provider docker*
+*** *line 9 docker expose by default*
+*** *line 10 entry points*
+*** *line 11*
+*** *line 12*
+*** *line 13*
+*** *line 14*
 ** *line 24-46 nextcloud* +
 ** *line 48-57 mysql*
 ** *line 59-70 collabora*
