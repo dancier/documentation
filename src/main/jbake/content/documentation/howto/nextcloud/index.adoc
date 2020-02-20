@@ -203,7 +203,9 @@ Brief description of the purpose of the files:
  * *maintenance.sh* the backup script
  * *README.adco* very short explanation how to use this project
 
-==== docker-compose.yml
+Let's have a more in deep look into the files in the following sections.
+
+==== Composing your service with docker-compose.yml
 To really understand what you are installing here, it is important that you have some knowledge about docker-compose.
 
 First of all, that name of the folder that contains the docker-compose file is *important*, in this way is
@@ -215,7 +217,7 @@ a certain use case. In this case the use case is to have a full featured Nextclo
 
 The different services that we have to configure in this docker compose file are:
 
- * *Traeffik* that acts as the reverse proxy, forwarding incoming requests to the different internal systems
+ * *Traefik* that acts as the reverse proxy, forwarding incoming requests to the different internal systems
  * *Nextcloud* that is our main component
  * *Mysql database* that stores all the data for and is used by the Nextcloud service
  * *Collabora* the service that is used to provide the office suite
@@ -301,7 +303,7 @@ services:
       - "traefik.http.routers.collabora.entrypoints=websecure"
       - "traefik.http.routers.collabora.tls.certresolver=mytlschallenge"
 ----
-==== .env-template
+====  Configuring your database credentials with .env-template
 
 [source, bash, linenumbers]
 ----
@@ -309,9 +311,9 @@ MYSQL_ROOT_PASSWORD=<your-my-sql-root-passwort>
 MYSQL_PASSWORD=<the password for accessing the database for nextcloud>
 ----
 
-==== maintenance.sh
+==== Maintaining the system with maintenance.sh
 
-==== .maintenance.config
+==== Configuring the backup with .maintenance.config
 [source, bash, linenumbers]
 ----
 BASE_FOLDER=/home/marc/programm/nextcloud
