@@ -76,6 +76,7 @@ NOTE: As this is an domain that I own, you have of course change this to your ow
 * link:https://www.collaboraoffice.com/code/[Collabora Office]
 
 == Architectural Overview
+.architectural overview
 [plantuml, cloud-architecture, svg]
 ....
 @startuml
@@ -125,32 +126,47 @@ encrypted, you can read link:https://cwiki.apache.org/confluence/display/HTTPD/N
   (contacts, calendar, ...)
 . `collabora` contains the office suite.
 
+Everything that is depicted in the cloud `docker`will be installed on one (docker-)host.
+
 == Setting it up
 First of all we will make sure that traffic to our planned domains `cloud.dancier.net`
 and `collabora.dancier.net` could reach our system.
 
 === Check your DNS/IP configuration
-If you are installing on an public accessible server, you can skip the next section.
-Although I would recoomend to read it, as I will describe the
+All incoming traffic has to reach the `reverse_proxy`. So the DNS should normally
+point to the machine you are going to install the system.
 
-In this example only the `wlan_router` has a public routable IP-address.
-The docker host will have only a private IP-address, letting him not receive any
-direct traffic from the internet.
-But we need this of course, to let the `edge_router`
+TIP: In case you are installing the system on a host behind a `wlan-router`
+     than you have to find out the public IP-address of the router. Use than
+     this IP-adress to configure your DNS entries and forward all traffic
+     that reaches your `wlan-router` on PORT 443 to the machine in your
+     local net where you going to install nextcloud.
+     +
+     Google for <router brand/type> port forwarding how to do this.
 
-==== You are installing Nextcloud behind you router at home
-In this case the Setup will look like this:
+Assuming that the public IP-address is `5.61.144.190` you should get
+the following responses when making an nslookup on the domains:
 
+[source, bash]
+----
+marc@marc-VirtualBox:~/programm/dancier/documentation$ nslookup cloud.dancier.net
+Server:   127.0.0.53
+Address:  127.0.0.53#53
 
-How you configure this port forwarding will not be described in this
-tutorial as this varies from router to router. I recommend you google for
-something like "configure port forwarding <your brand of router>"
+Non-authoritative answer:
+Name:	 cloud.dancier.net
+Address: 5.61.144.190
 
-==== You are installing Nextcloud directly
+marc@marc-VirtualBox:~/programm/dancier/documentation$ nslookup collabora.dancier.net
+Server:   127.0.0.53
+Address:  127.0.0.53#53
 
-You need to have docker and docker-compose installed on your system.
+Non-authoritative answer:
+Name:	 collabora.dancier.net
+Address: 5.61.144.190
+----
 
-
+=== Install
 You can access all the code/config in via the following github-repository.
 
 You can clone it, or recreate it on your own.
