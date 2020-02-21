@@ -232,75 +232,19 @@ NOTE: The compose-file is being written in link:https://yaml.org/[Yaml]-Syntax. 
       for more and more systems. So if you are not familiar with how to write YAML files, it will pay off not only
       for writing docker-compose files.
 
-.docker-compose.yml
+.docker-compose.yml (schema)
 [source, bash, linenumbers]
 ----
 version: "3"
 services:
   traefik:
-    image: "traefik:v2.0.0-rc3"
-    command:
-      #- "--log.level=DEBUG"
-      - "--api.insecure=true"
-      - "--providers.docker=true"
-      - "--providers.docker.exposedbydefault=false"
-      - "--entrypoints.websecure.address=:443"
-      - "--certificatesresolvers.mytlschallenge.acme.tlschallenge=true"
-      #- "--certificatesresolvers.mytlschallenge.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory"
-      - "--certificatesresolvers.mytlschallenge.acme.email=marc@becheftigt.de"
-      - "--certificatesresolvers.mytlschallenge.acme.storage=/letsencrypt/acme.json"
-    ports:
-      - "443:443"
-      - "8080:8080"
-    volumes:
-      - "./letsencrypt:/letsencrypt"
-      - "/var/run/docker.sock:/var/run/docker.sock:ro"
-
+    [...]
   nextcloud:
-    image: nextcloud
-    environment:
-      - MYSQL_DATABASE=nextcloud
-      - MYSQL_USER=nextcloud
-    restart: always
-    volumes:
-      - ./nextcloud-core:/var/www/html
-      - ./nextcloud-apps:/var/www/html/custom_apps
-      - /mnt/nextcloud-data/:/var/www/html/data
-      - ./nextcloud-config:/var/www/html/config
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.nextcloud.rule=Host(`cloud.becheftigt.de`)"
-      - "traefik.http.routers.nextcloud.entrypoints=websecure"
-      - "traefik.http.routers.nextcloud.tls.certresolver=mytlschallenge"
-      - "traefik.http.middlewares.nextcloud.headers.customresponseheaders.Strict-Transport-Security=max-age=15552000; includeSubDomains"
-    depends_on:
-      - mysql
+    [...]
   mysql:
-    image: mariadb:latest
-    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
-    volumes:
-      - ./nextcloud-mysql:/var/lib/mysql
-    environment:
-      - MYSQL_ROOT_PASSWORD
-      - MYSQL_PASSWORD
-      - MYSQL_DATABASE=nextcloud
-      - MYSQL_USER=nextcloud
-
+    [...]
   collabora:
-    image: collabora/code
-    restart: always
-    environment:
-      - domain=cloud\\.becheftigt\\.de
-      - extra_params=--o:ssl.enable=false --o:ssl.termination=true
-    depends_on:
-      - traefik
-    cap_add:
-      - MKNOD
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.collabora.rule=Host(`collabora.becheftigt.de`)"
-      - "traefik.http.routers.collabora.entrypoints=websecure"
-      - "traefik.http.routers.collabora.tls.certresolver=mytlschallenge"
+    [...]
 ----
 
 * *line 1: version* +
@@ -336,11 +280,19 @@ services:
 *** *line 14 acme storage*
 *** *line 15 - 17 ports to be exposed*
 *** *line 18 - 20 volumes*
-*** *line 24 - 26 environment*
-*** *line 24 -
 ** *line 24-46 nextcloud* +
 ** *line 24 -26 environement* +
-    The nextcloud image will be configured via environment variables that are passed to the container.
+    The nextcloud container will be configured via environment variables that are passed to the container.
+*** *line 25* restart always
+*** *lines 28 - 32 volumes*
+*** *lines 33 - 38 labels*
+**** *line 34 traefik.enable*
+**** *line 35 rule*
+**** *line 36 entrypoint*
+**** *line 37 certresolver*
+**** *line 38 Strict-Header*
+*** *lines 39 - 40 depends on*
+
 ** *line 48-57 mysql*
 ** *line 59-70 collabora*
 
