@@ -261,8 +261,6 @@ services:
     environment:
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
-    links:
-      - mysql
     restart: always
     volumes:
       - ./nextcloud-core:/var/www/html
@@ -275,10 +273,8 @@ services:
       - "traefik.http.routers.nextcloud.entrypoints=websecure"
       - "traefik.http.routers.nextcloud.tls.certresolver=mytlschallenge"
       - "traefik.http.middlewares.nextcloud.headers.customresponseheaders.Strict-Transport-Security=max-age=15552000; includeSubDomains"
-
     depends_on:
       - mysql
-
   mysql:
     image: mariadb:latest
     command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
@@ -334,11 +330,17 @@ services:
 *** *line 8 provider docker*
 *** *line 9 docker expose by default*
 *** *line 10 entry points*
-*** *line 11*
-*** *line 12*
-*** *line 13*
-*** *line 14*
+*** *line 11 tls-challenge* +
+*** *line 12 staging*
+*** *line 13 acme email*
+*** *line 14 acme storage*
+*** *line 15 - 17 ports to be exposed*
+*** *line 18 - 20 volumes*
+*** *line 24 - 26 environment*
+*** *line 24 -
 ** *line 24-46 nextcloud* +
+** *line 24 -26 environement* +
+    The nextcloud image will be configured via environment variables that are passed to the container.
 ** *line 48-57 mysql*
 ** *line 59-70 collabora*
 
