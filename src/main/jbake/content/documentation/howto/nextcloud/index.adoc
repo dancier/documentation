@@ -246,12 +246,102 @@ services:
   collabora:
     [...]
 ----
-
 * *line 1: version* +
   specifies that we are using version 3 of the file syntax. This is not the version of docker-compose
   or docker.
 * *line 2: introduces the services* +
-  specifies that everything under this node will be the configured services. We will configure 4 of them
+  specifies that everything under this node will be the configured services. We will define 4 of them. Let's
+  see each definition in detail
+
+===== Traefik
+.docker-compose.yml (Traefik part)
+[source, bash, linenumbers]
+----
+  traefik:
+    image: "traefik:v2.0.0-rc3"
+    command:
+      - "--log.level=DEBUG"
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.websecure.address=:443"
+      - "--certificatesresolvers.mytlschallenge.acme.tlschallenge=true"
+      #- "--certificatesresolvers.mytlschallenge.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory"
+      - "--certificatesresolvers.mytlschallenge.acme.email=marc@becheftigt.de"
+      - "--certificatesresolvers.mytlschallenge.acme.storage=/letsencrypt/acme.json"
+    restart: always
+    ports:
+      - "443:443"
+      - "8080:8080"
+    volumes:
+      - "./letsencrypt:/letsencrypt"
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+----
+
+===== Nextcloud
+.docker-compose.yml (Nextcloud part)
+[source, bash, linenumbers]
+----
+  nextcloud:
+    image: nextcloud
+    environment:
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+    restart: always
+    volumes:
+      - ./nextcloud-core:/var/www/html
+      - ./nextcloud-apps:/var/www/html/custom_apps
+      - /mnt/nextcloud-data/:/var/www/html/data
+      - ./nextcloud-config:/var/www/html/config
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.nextcloud.rule=Host(`cloud.becheftigt.de`)"
+      - "traefik.http.routers.nextcloud.entrypoints=websecure"
+      - "traefik.http.routers.nextcloud.tls.certresolver=mytlschallenge"
+      - "traefik.http.middlewares.nextcloud.headers.customresponseheaders.Strict-Transport-Security=max-age=15552000; includeSubDomains"
+    depends_on:
+      - mysql
+      - traefik
+----
+
+===== MySQL
+.docker-compose.yml (MySQL part)
+[source, bash, linenumbers]
+----
+  mysql:
+    image: mariadb:latest
+    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
+    volumes:
+      - ./nextcloud-mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD
+      - MYSQL_PASSWORD
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+----
+
+===== Collabora
+.docker-compose.yml (Collabora part)
+[source, bash, linenumbers]
+----
+  collabora:
+    image: collabora/code
+    restart: always
+    environment:
+      - domain=cloud\\.becheftigt\\.de
+      - extra_params=--o:ssl.enable=false --o:ssl.termination=true
+    depends_on:
+      - traefik
+    cap_add:
+      - MKNOD
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.collabora.rule=Host(`collabora.becheftigt.de`)"
+      - "traefik.http.routers.collabora.entrypoints=websecure"
+      - "traefik.http.routers.collabora.tls.certresolver=mytlschallenge"
+----
+
+
 ** *line 3-22 traefik* +
   configured traefik as the `reverse_proxy`
 *** line 3: sets the name of the service to traefik. As we do not specifiy a container name explicitly,
