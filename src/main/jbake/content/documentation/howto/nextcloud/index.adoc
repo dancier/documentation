@@ -277,6 +277,34 @@ services:
       - "./letsencrypt:/letsencrypt"
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
 ----
+** *line 3-22 traefik* +
+  configured traefik as the `reverse_proxy`
+*** line 3: sets the name of the service to traefik. As we do not specifiy a container name explicitly,
+docker-compose will generate this name: _nextcloud_traefik_1_. Compose will the name of the compose
+project (from the folder-name, see above) and concatenates it with the name of the service and the
+number starting with a 1. If you would scale up your setup, the next service name would end with a 2.
+*** line 4: defines which link:https://hub.docker.com/_/traefik[docker image] to get for traefik
+*** line 5-14 configures cli parameters for traefik +
+    In short: the configuration of traefik is being clustered into static configuration (everything that
+changes rarely(are we working with docker, or kubernetes,...) and dynamic configuration for the
+stuff that changes more frequently. +
+    For the static configuration traefik offers three ways:
+**** File based configuration
+**** Command line parameter bases configuration (I chossed to use this)
+**** Environment variable configuration.
+*** *line 6 debug mode* +
+    This passed the command-line parameter to traefik when it starts that enables debug logging mode.
+Use this when you have problems. This is commented out in this example.
+*** *line 7 api insecure*
+*** *line 8 provider docker*
+*** *line 9 docker expose by default*
+*** *line 10 entry points*
+*** *line 11 tls-challenge* +
+*** *line 12 staging*
+*** *line 13 acme email*
+*** *line 14 acme storage*
+*** *line 15 - 17 ports to be exposed*
+*** *line 18 - 20 volumes*
 
 ===== Nextcloud
 .docker-compose.yml (Nextcloud part)
@@ -303,6 +331,20 @@ services:
       - mysql
       - traefik
 ----
+** *line 24-46 nextcloud* +
+** *line 24 -26 environement* +
+    The nextcloud container will be configured via environment variables that are passed to the container.
+*** *line 25* restart always
+*** *lines 28 - 32 volumes*
+*** *lines 33 - 38 labels*
+**** *line 34 traefik.enable*
+**** *line 35 rule*
+**** *line 36 entrypoint*
+**** *line 37 certresolver*
+**** *line 38 Strict-Header*
+*** *lines 39 - 40 depends on*
+
+
 
 ===== MySQL
 .docker-compose.yml (MySQL part)
@@ -340,51 +382,6 @@ services:
       - "traefik.http.routers.collabora.entrypoints=websecure"
       - "traefik.http.routers.collabora.tls.certresolver=mytlschallenge"
 ----
-
-
-** *line 3-22 traefik* +
-  configured traefik as the `reverse_proxy`
-*** line 3: sets the name of the service to traefik. As we do not specifiy a container name explicitly,
-    docker-compose will generate this name: _nextcloud_traefik_1_. Compose will the name of the compose
-    project (from the folder-name, see above) and concatenates it with the name of the service and the
-    number starting with a 1. If you would scale up your setup, the next service name would end with a 2.
-*** line 4: defines which link:https://hub.docker.com/_/traefik[docker image] to get for traefik
-*** line 5-14 configures cli parameters for traefik +
-    In short: the configuration of traefik is being clustered into static configuration (everything that
-    changes rarely(are we working with docker, or kubernetes,...) and dynamic configuration for the
-    stuff that changes more frequently. +
-    For the static configuration traefik offers three ways:
-**** File based configuration
-**** Command line parameter bases configuration (I chossed to use this)
-**** Environment variable configuration.
-*** *line 6 debug mode* +
-    This passed the command-line parameter to traefik when it starts that enables debug logging mode.
-    Use this when you have problems. This is commented out in this example.
-*** *line 7 api insecure*
-*** *line 8 provider docker*
-*** *line 9 docker expose by default*
-*** *line 10 entry points*
-*** *line 11 tls-challenge* +
-*** *line 12 staging*
-*** *line 13 acme email*
-*** *line 14 acme storage*
-*** *line 15 - 17 ports to be exposed*
-*** *line 18 - 20 volumes*
-** *line 24-46 nextcloud* +
-** *line 24 -26 environement* +
-    The nextcloud container will be configured via environment variables that are passed to the container.
-*** *line 25* restart always
-*** *lines 28 - 32 volumes*
-*** *lines 33 - 38 labels*
-**** *line 34 traefik.enable*
-**** *line 35 rule*
-**** *line 36 entrypoint*
-**** *line 37 certresolver*
-**** *line 38 Strict-Header*
-*** *lines 39 - 40 depends on*
-
-** *line 48-57 mysql*
-** *line 59-70 collabora*
 
 ====  Configuring your database credentials with .env-template
 
