@@ -42,6 +42,8 @@
                     <ul class="dropdown-menu">
                         <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>documentation/index.html">Base</a>
                         </li>
+                        <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>documentation/bookmarks.html">Bookmarks</a>
+                        </li>
                         <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>documentation/howto/index.html">Howtos</a>
                         </li>
                     </ul>
