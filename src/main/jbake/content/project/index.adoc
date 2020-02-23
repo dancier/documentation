@@ -1,6 +1,8 @@
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: blog, asciidoc
+:jbake-tags: dance, partner, project
+:jbake-date: 2020-02-23
+:jbake_description: Contains a description of the current state of the project
 :idprefix:
 = Project
 

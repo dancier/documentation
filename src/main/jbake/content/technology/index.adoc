@@ -1,7 +1,9 @@
 = What we use and why we use it
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: blog, asciidoc
+:jbake-date: 2020-02-23
+:jbake-tags: desgin pattern, architecture, java, kiss, agile, decision making
+:jbake-description: Describe how we are making (not only technial) decisions
 :idprefix:
 
 In this section, we describe the basic rules we try to follow when making decisions like:

@@ -1,7 +1,10 @@
 = Documentation
 :jbake-type: page
 :jbake-status: published
-:jbake-tags: dance
+:jbake-date: 2020-02-23
+:jbake-tags: architecture, microservice, cloud, links
+:jbake-description: Functional and technial description of the project and some usefull links
+:jbake-author: Marc Gorzala
 :idprefix:
 
 :toc:
@@ -108,6 +111,7 @@ unify the process of deploying each of them.
 
 * Python
 ** link:https://janakiev.com/blog/python-shell-commands/[Invoke Shell commands in Python]
+** link:http://libzx.so/main/learning/2016/03/13/best-practice-for-virtualenv-and-git-repos.html[Virtualenv and GIT]
 
 * Bash
 ** link:https://stackoverflow.com/questions/1378274/in-a-bash-script-how-can-i-exit-the-entire-script-if-a-certain-condition-occurs[Exit on error]

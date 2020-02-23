@@ -1,7 +1,9 @@
 = Infrastructure
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: blog, asciidoc
+:jbake-tags: infrastructur, ccvs, dvcs, git, cloud, deployment
+:jbake-date: 2020-02-23
+:jbake-description: Describe the infrastructure we use for development and deployment
 :idprefix:
 
 :toc:

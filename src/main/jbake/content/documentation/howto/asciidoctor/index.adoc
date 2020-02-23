@@ -1,7 +1,10 @@
 = Publishing a static website with Asciidoctor
 :jbake-type: page
 :jbake-status: published
-:jbake-tags: dance
+:jbake-tags: dance, document as code, asciidoctor, ci/cd, gradle
+:jbake-author: Marc Gorzala
+:jbake-date: 2020-02-23
+:jbake-description: Howto create a static websiite with Asciidoctor with ci/cd
 :idprefix:
 
 Author: Marc Gorzala

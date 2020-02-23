@@ -1,7 +1,9 @@
 = etc
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: blog, asciidoc
+:jbake-date: 2020-02-23
+:jbake-tags: documentation, asciidoctor, document-as-code
+:jbake-description: Technologie decisions that does not pay into the core aspects of the project.
 :idprefix:
 
 
@@ -13,7 +15,7 @@ We are using link:https://asciidoctor.org/[Asciidoctor] to document everything l
 * technical documentation
 
 We decided for Asciidoctor over eg. Markdown as we consider
-the the first one to be much more potent. Eg. we could include UML
+the first one to be much more potent. Eg. we could include UML
 diagram directly in the code. There are also extensions for Markdown
 available but Asciidoctor seems just more mature in this area to us.
 

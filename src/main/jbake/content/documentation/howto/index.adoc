@@ -1,7 +1,9 @@
 = Howtos
 :jbake-type: page
 :jbake-status: published
-:jbake-tags: dance
+:jbake-tags: dance, howto, code, cloud, admin
+:jbake-date: 2020-02-23
+:jbake-description: Some howtows that are not necessarily related to the dancier project.
 :idprefix:
 
  * link:asciidoctor/index.html[Publishing an documentation repository with GitHub]

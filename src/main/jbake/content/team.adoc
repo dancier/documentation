@@ -1,16 +1,18 @@
 = Core team
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: blog, asciidoc
+:jbake-date: 2020-02-23
+:jbake-tags: team, project, members
+:jbake-description: Core members of the team
 :idprefix:
 
- * Jan +
+ * link:https://twitter.com/jans0510[Jan] +
    Frontend developer, React Enthusiast, Docker community guide.
  * Julius +
    Design
  * link:https://juplo.de/[Kai Moritz] +
    Architect, Frontend, Backend
- * Marc +
+ * link:https://twitter.com/MarcGorzala[Marc] +
    Backend developer, Spring Boot Enthusiast, Team motivator.
  * Xiaofei +
    Frontend, Design, Just keeps things done

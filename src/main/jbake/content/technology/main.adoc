@@ -1,7 +1,9 @@
 = Main
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: blog, asciidoc
+:jbake-tags: technology, python, java, jpa, react, postgres
+:jbake-description: Decisions for core parts of the project
+:jbake-date: 2020-02-23
 :idprefix:
 
 :toc:
