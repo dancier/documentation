@@ -2,8 +2,8 @@
 :jbake-type: page
 :jbake-status: published
 :jbake-date: 2020-02-23
-:jbake-tags: nextcloud, traefik, docker, docker-compose, collabora, code, cloud, ssl, office, backup, ubunutu, linux
-:jbake-description: How to setup you Nextcloud with docker, traefik, Collabora, office
+:jbake-tags: nextcloud, traefik, docker, docker-compose, collabora, code, cloud, letsencrypt,  ssl, office, backup, ubunutu, linux
+:jbake-description: How to setup you Nextcloud with docker, traefik, Collabora, office and letsencrypt
 :jbake-author: Marc Gorzala
 :idprefix:
 
