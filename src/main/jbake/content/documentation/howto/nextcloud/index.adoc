@@ -12,7 +12,8 @@ Author: Marc Gorzala
 image::nextcloud-logo-white.png[align="center"]
 
 This post explains how you _could_ setup your own link:https://nextcloud.com/[Nextcloud]
-with link:https://www.collaboraoffice.com/code/[Collabora Office].
+with link:https://www.collaboraoffice.com/code/[Collabora Office] encrypted with
+link:https://letsencrypt.org[Letsencrypt] and link:https://containo.us/traefik/[Traefik].
 
 
 *What is Nextcloud?*
