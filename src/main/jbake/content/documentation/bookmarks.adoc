@@ -21,6 +21,12 @@ toc::[]
 * link:https://jaxenter.de/sql-nosql-microservices-java-apis-top-10-januar-91339[Jaxcenter: Top topics of January sql nosql microservices java apis]
 * link:https://towardsdatascience.com/evolution-from-monolithic-architecture-to-microservice-architecture-c58246822ea4[Migrating a Monolithic Architecture to Microservice Architecture]
 
+=== Document as code
+* link:https://docs-as-co.de/[Doc as code]
+* link:https://plantuml.com/[Plant UML]
+* link:https://asciidoctor.org/[Asciidoctor]
+* link:https://www.informatik-aktuell.de/entwicklung/methoden/docs-as-code-alles-unter-einem-dach.html[Second link, same topic]
+
 == Bash
 * link:https://stackoverflow.com/questions/1378274/in-a-bash-script-how-can-i-exit-the-entire-script-if-a-certain-condition-occurs[Exit on error]
 * link:https://devhints.io/bash[Bash Cheat Sheet]
@@ -49,12 +55,6 @@ toc::[]
 * link:https://medium.com/faun/dockerize-your-java-application-ec7ac056d066[Dockerize your Java Application]
 * link:https://spring.io/guides/gs/spring-boot-docker/[Spring Guides: create Docker image from Boot Application]
 
-== Document as code
-* link:https://docs-as-co.de/[Doc as code]
-* link:https://plantuml.com/[Plant UML]
-* link:https://asciidoctor.org/[Asciidoctor]
-* link:https://www.informatik-aktuell.de/entwicklung/methoden/docs-as-code-alles-unter-einem-dach.html[Second link, same topic]
-
 == Go Lang
 * link:https://medium.com/@kevalpatel2106/why-should-you-learn-go-f607681fad65[Why should I learn go]
 
@@ -72,7 +72,6 @@ toc::[]
 * link:https://spring.io/guides/tutorials/react-and-spring-data-rest/[React and Spring Data Rest Tutorial]
 * link:https://medium.com/@asegu/why-a-spring-boot-developer-could-die-without-spring-boot-starter-properties-11c5d6bf459a[Why a spring boot developer could die without spring boot starter properties]
 * link:https://jaxenter.de/spring/spring-boot-autoconfiguration-video-91456[Spring Boot Autoconfiguratioon]
-
 
 == JavaScript
 * link:https://javascript.info/[JavaScript Tutorial]
