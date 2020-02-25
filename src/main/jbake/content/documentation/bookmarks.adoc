@@ -7,6 +7,11 @@
 :jbake-author: Marc Gorzala
 :idprefix:
 
+:toc:
+:toclevels: 5
+:toc-placement: macro
+toc::[]
+
 == Architecture
 * link:https://engineering.etermax.com/clean-microservice-architecture-in-practice-63051aeb016b[Clean microservice architecture in practice]
 * link:https://thenewstack.io/this-week-in-programming-forget-microservices-monoliths-are-the-way-forward[Forget Microservices, Monoliths Are the Way Forward]
@@ -32,7 +37,14 @@
 * link:https://medium.com/@animeshgaitonde/how-https-works-part-1-building-blocks-64f9915b1f39[How HTTPS works Part 1 — Building Blocks]
 * link:https://blog-alexellis-io.cdn.ampproject.org/v/s/blog.alexellis.io/building-a-linux-desktop-for-cloud-native-development/amp/?usqp=mq331AQCKAE%3D&amp_js_v=0.1#referrer=https%3A%2F%2Fwww.google.com&amp_tf=Von%20%251%24s&ampshare=https%3A%2F%2Fblog.alexellis.io%2Fbuilding-a-linux-desktop-for-cloud-native-development%2F[Building a Linux Desktop for Cloud Native Development]
 
-== Docker
+=== Loadbalancer/Reverse proxy
+* link:https://github.com/jwilder/nginx-proxy[Docker image from J Wilder] +
+   Use NGINX in Docker to act as an SSL teminating proxy for eg internal Web-Hosts
+* link:https://www.freecodecamp.org/news/docker-nginx-letsencrypt-easy-secure-reverse-proxy-40165ba3aee2/[Howto NGINX Docker letsencript (codecamp)]
+* link:https://www.embarc.de/services-verbinden-nginx-reverse-proxy-docker-micro-moves-bauteil-4/[Howto NGINX Docker(embarc)]
+* link:https://docs.traefik.io/v1.7/user-guide/docker-and-lets-encrypt/[Traefik/SSL/Docker]
+
+=== Docker
 * link:https://medium.com/@shrikarvk/creating-a-docker-container-for-spring-boot-app-d5ff1050c14f[Medium: Create Docker Images for Spring Boot Applications]
 * link:https://medium.com/faun/dockerize-your-java-application-ec7ac056d066[Dockerize your Java Application]
 * link:https://spring.io/guides/gs/spring-boot-docker/[Spring Guides: create Docker image from Boot Application]
@@ -53,26 +65,18 @@
 * link:https://medium.com/swlh/exception-handling-in-java-streams-5947e48f671c[Expections in Java Streams]
 * link:https://medium.com/mobidroid/java-design-patterns-creational-patterns-overview-b03617c1e939[Java Design Patterns: Creational Patterns Overview]
 * link:https://medium.com/@jubin.kuriakose/modular-programming-in-java-42788ec02268[Modular Programming in Java]
-* link:https://medium.com/swlh/multi-tenancy-implementation-using-spring-boot-hibernate-6a8e3ecb251a[Multi Tenancy Implementation]
-* link:https://devhints.io/bash[Bash Cheat Sheet]
 * link:https://opensource.com/article/20/2/java-streams[Don't like loops? Try Java Streams]
+
+=== Spring related
+* link:https://medium.com/swlh/multi-tenancy-implementation-using-spring-boot-hibernate-6a8e3ecb251a[Multi Tenancy Implementation]
+* link:https://spring.io/guides/tutorials/react-and-spring-data-rest/[React and Spring Data Rest Tutorial]
+* link:https://medium.com/@asegu/why-a-spring-boot-developer-could-die-without-spring-boot-starter-properties-11c5d6bf459a[Why a spring boot developer could die without spring boot starter properties]
 * link:https://jaxenter.de/spring/spring-boot-autoconfiguration-video-91456[Spring Boot Autoconfiguratioon]
 
 
 == JavaScript
 * link:https://javascript.info/[JavaScript Tutorial]
 * link:https://www.w3schools.com/js/[W3 School]
-
-== Loadbalancer/Reverse proxy
-* link:https://github.com/jwilder/nginx-proxy[Docker image from J Wilder] +
-   Use NGINX in Docker to act as an SSL teminating proxy for eg internal Web-Hosts
-* link:https://www.freecodecamp.org/news/docker-nginx-letsencrypt-easy-secure-reverse-proxy-40165ba3aee2/[Howto NGINX Docker letsencript (codecamp)]
-* link:https://www.embarc.de/services-verbinden-nginx-reverse-proxy-docker-micro-moves-bauteil-4/[Howto NGINX Docker(embarc)]
-* link:https://docs.traefik.io/v1.7/user-guide/docker-and-lets-encrypt/[Traefik/SSL/Docker]
-
-== Spring related
-* link:https://spring.io/guides/tutorials/react-and-spring-data-rest/[React and Spring Data Rest Tutorial]
-* link:https://medium.com/@asegu/why-a-spring-boot-developer-could-die-without-spring-boot-starter-properties-11c5d6bf459a[Why a spring boot developer could die without spring boot starter properties]
 
 == Python
 * link:https://janakiev.com/blog/python-shell-commands/[Invoke Shell commands in Python]
