@@ -448,3 +448,6 @@ https://github.com/jowave/vcard2to3
 cat 'trusted_proxies' => array('172.18.0.0/16'),
 
 docker network inspect nextcloud_default ^
+
+
+docker pull
