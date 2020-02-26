@@ -33,6 +33,7 @@ toc::[]
 * link:https://www-howtogeek-com.cdn.ampproject.org/v/s/www.howtogeek.com/533406/how-to-use-the-uniq-command-on-linux/amp/?usqp=mq331AQCKAE%3D&amp_js_v=0.1#referrer=https%3A%2F%2Fwww.google.com&amp_tf=Von%20%251%24s&ampshare=https%3A%2F%2Fwww.howtogeek.com%2F533406%2Fhow-to-use-the-uniq-command-on-linux%2F[Using uniq]
 * link:https://www-howtogeek-com.cdn.ampproject.org/v/s/www.howtogeek.com/529219/how-to-parse-json-files-on-the-linux-command-line-with-jq/amp/?usqp=mq331AQCKAE%3D&amp_js_v=0.1#referrer=https%3A%2F%2Fwww.google.com&amp_tf=Von%20%251%24s&ampshare=https%3A%2F%2Fwww.howtogeek.com%2F529219%2Fhow-to-parse-json-files-on-the-linux-command-line-with-jq%2F[Parse Json with jq]
 * link:https://www-howtogeek-com.cdn.ampproject.org/v/s/www.howtogeek.com/542677/how-to-use-the-join-command-on-linux/amp/?usqp=mq331AQCKAE%3D&amp_js_v=0.1#referrer=https%3A%2F%2Fwww.google.com&amp_tf=Von%20%251%24s&ampshare=https%3A%2F%2Fwww.howtogeek.com%2F542677%2Fhow-to-use-the-join-command-on-linux%2F[How to use join]
+* link:https://www.howtogeek.com/562941/how-to-use-the-awk-command-on-linux/[How to use awk]
 
 == Infrastructure
 * Curated list of awesome GitHub Actions: list of cool actions
