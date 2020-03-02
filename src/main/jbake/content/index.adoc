@@ -19,7 +19,7 @@ Working in the project enables every team member to contribute in as
 many areas as he is willing to contribute:
  * *Software engineering*
  ** _Software architecture_ +
-    Although we start with a classical monolithic architecture
+    Although we start with a classic monolithic architecture
     (link:https://martinfowler.com/bliki/MonolithFirst.html[see M. Fowler])
     we have the future in mind. E.g. we aim for a modular monolith that
     could be split into microservices when the project will profit
@@ -27,12 +27,12 @@ many areas as he is willing to contribute:
     In the same way we will use containers to package and deploy in
     the cloud. While at the beginning a kubernetes setup seems unnecessary because it is unlikely to
     pay off, it is easily achievable if we make things right from the start and can make things easier later. +
-    The same applies for a data lake, that will start being useful once
+    The same applies to a data lake that will start being useful once
     we have some traffic on the site. So with this in mind, we
     are not going to waste resources by working on this yet, but for the start work on other tasks
     with immediate payoff.
  ** _Backend development_ +
-    Although in the very near future we are not expecting high load which would require special consideration, we should keep that in mind
+    Although in the very near future we are not expecting high loads which would require special consideration, we should keep that in mind
     and start being e.g. asynchronous quite soon.
  ** _Frontend development_
  * *Design*
