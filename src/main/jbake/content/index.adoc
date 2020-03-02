@@ -9,20 +9,20 @@
 [link=http://staging.dancier.net:8080/index.html]
 image::/dancer.png[align=center]
 
-The Purpose of this project is manifold:
+The purpose of this project is manifold:
 
 Connecting People by dancing::
 Do everything we can do, to make people dance.
 
 Having a holistic learning experience::
 Working in the project enables every team member to contribute in as
-many areas that he is willing to contribute:
+many areas as he is willing to contribute:
  * *Software engineering*
  ** _Software architecture_ +
-    Although we will start, with a classical monolithic architecture
+    Although we start with a classical monolithic architecture
     (link:https://martinfowler.com/bliki/MonolithFirst.html[see M. Fowler])
-    we will have the future in mind. Eg. we aim for an modular monolith, that
-    could be split in to Microservices when the project will profit
+    we have the future in mind. E.g. we aim for a modular monolith that
+    could be split in to microservices when the project will profit
     from it. +
     In the same way, we will use containers to package and deploy in
     the cloud. But for the start a kubernetes setup if less likely to
