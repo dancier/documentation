@@ -11,8 +11,8 @@ image::/dancer.png[align=center]
 
 The purpose of this project is manifold:
 
-Connecting People by dancing::
-Do everything we can do, to make people dance.
+Connecting people by dancing::
+Do everything we can do to make people dance.
 
 Having a holistic learning experience::
 Working in the project enables every team member to contribute in as
@@ -22,60 +22,59 @@ many areas as he is willing to contribute:
     Although we start with a classical monolithic architecture
     (link:https://martinfowler.com/bliki/MonolithFirst.html[see M. Fowler])
     we have the future in mind. E.g. we aim for a modular monolith that
-    could be split in to microservices when the project will profit
+    could be split into microservices when the project will profit
     from it. +
-    In the same way, we will use containers to package and deploy in
-    the cloud. But for the start a kubernetes setup if less likely to
-    pay off, but easily achievable, if we make things right already now. +
-    The same applies for a Datalake, that will start being useful, once
-    we have some traffic on the site. So we will have this in mind, but
-    will not waste resources to start working in this now, but other tasks
-    with immediate values.
+    In the same way we will use containers to package and deploy in
+    the cloud. While at the beginning a kubernetes setup seems unnecessary because it is unlikely to
+    pay off, it is easily achievable if we make things right from the start and can make things easier later. +
+    The same applies for a data lake, that will start being useful once
+    we have some traffic on the site. So with this in mind, we
+    are not going to waste resources by working on this yet, but for the start work on other tasks
+    with immediate payoff.
  ** _Backend development_ +
-    Although we are not expecting load in the very near future, that
-    would require special considerations here, we should have that in mind,
-    and start being asynchronous eg. quite soon.
+    Although in the very near future we are not expecting high load which would require special consideration, we should keep that in mind
+    and start being e.g. asynchronous quite soon.
  ** _Frontend development_
  * *Design*
  ** _Webdesign_ +
-    Be able to react fast on needs from Product. Provide an UI, that is
+    Be able to react fast on needs from the product owner. Provide an UI that is
     fun to use.
- ** _Advertisment_ +
-    Use Advertisment that does not feel as advertisement. Offer dancing
-    schools stuff they must use. Be the nice guy. Be what
-    link:htts://google.com[Goolge] claims to be.
- * *Project Management*
+ ** _Advertisements_ +
+    Use advertisements that do not feel like advertisements. Offer dancing
+    schools stuff which is attractive to users. Be the nice guy. Be what
+    link:htts://google.com[Google] claims to be.
+ * *Project management*
  ** _Document the project_ +
-    Have a documentation that is easy do unterstand. That invites
-    people in contributing to the project.
+    Have a documentation that is easy to understand, one that invites
+    people to contribute to the project.
  ** _Steer the project_ +
     Motivate the team to focus on things that brings the project further
-    and establish a culture where everyone feels welcome and were working is fun.
+    and establish a culture where everyone feels welcome and where working is fun.
 
 Provide reusable examples for the community::
- * All code is Open Source  +
-   Gif the community a real life working example for common tasks, instead
+ * All code is open source  +
+   Give the community a real life working example for common tasks instead
    of just lecture examples.
- * All design is Open Source +
-   We are more, than our code/design, we are one team. Copying our design,
-   copies the least important part of us, while helping others.
+ * All design is open source +
+   We are more than our code/design, we are one team. Copying our design
+   copies the least important part of us while helping others.
  * The whole project plan is open +
-   Be transparent especially to the team and other considering to
+   Be transparent, especially towards the team and others considering to
    contribute.
 
-By this we are providing public accessible examples that hopefully can
-help others to eg. setup a Software project on it's own and can use this
+By this we are providing publicly accessible examples that hopefully can
+help others to e.g. setup a software project on their own and that can be used
 as guidance.
 
 == Want to contribute?
 Great!
 
-please read link:technology/index.html[technology base] to check if we are
+Please read link:technology/index.html[technology base] to check if we are
 already using something where you can contribute.
 
-Contributing is not only possible by technical help. You can also:
+Contributing is not only possible through technical help. You can also:
 
 * Help us with design in general
 * Help us with translations
-* Promote us, eg. tell friends that look for dance partners, connect us to dancing schools, distribute fliers ... , share us on instagramm, facebook,...
+* Promote us, e.g. tell friends who are looking for dance partners about our site, connect us to dancing schools, distribute flyers, share us on instagramm, facebook, etc.
 * Donate money ;-)
