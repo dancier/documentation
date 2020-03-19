@@ -4,8 +4,9 @@
 :jbake-date: 2020-02-23
 :jbake-tags: documentation, asciidoctor, document-as-code
 :jbake-description: Technologie decisions that does not pay into the core aspects of the project.
-:idprefix:
-
+:jbake-disqus_enabled: true
+:jbake-disqus_identifier:
+:idprefix: 59ba274c-69e1-11ea-8d33-0f9436981d6a
 
 == Documentation
 We are using link:https://asciidoctor.org/[Asciidoctor] to document everything like:

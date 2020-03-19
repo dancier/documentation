@@ -3,6 +3,8 @@
 :jbake-tags: dance, partner, project
 :jbake-date: 2020-02-23
 :jbake_description: Contains a description of the current state of the project
+:jbake-disqus_enabled: true
+:jbake-disqus_identifier: 7f3844e0-69e1-11ea-a129-175420c74207
 :idprefix:
 = Project
 

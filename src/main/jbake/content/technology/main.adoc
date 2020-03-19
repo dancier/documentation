@@ -4,6 +4,8 @@
 :jbake-tags: technology, python, java, jpa, react, postgres
 :jbake-description: Decisions for core parts of the project
 :jbake-date: 2020-02-23
+:jbake-disqus_enabled: true
+:jbake-disqus_identifier: 76d5e65e-69e1-11ea-ba34-33325c56153f
 :idprefix:
 
 :toc:

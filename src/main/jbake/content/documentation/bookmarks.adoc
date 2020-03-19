@@ -5,6 +5,8 @@
 :jbake-tags: architecture, microservice, cloud, bookmarks
 :jbake-description: Links that need not be directly realted to the project
 :jbake-author: Marc Gorzala
+:jbake-disqus_enabled: true
+:jbake-disqus_identifier: 94350158-69e1-11ea-a2d0-337d6563be89
 :idprefix:
 
 :toc:

@@ -5,6 +5,8 @@
 :jbake-author: Marc Gorzala
 :jbake-date: 2020-02-23
 :jbake-description: Howto create a static websiite with Asciidoctor with ci/cd
+:jbake-disqus_enabled: true
+:jbake-disqus_identifier: 4fbbd330-69e1-11ea-b15d-bbf026328091
 :idprefix:
 
 Author: Marc Gorzala

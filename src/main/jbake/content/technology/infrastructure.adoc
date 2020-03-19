@@ -4,6 +4,8 @@
 :jbake-tags: infrastructur, ccvs, dvcs, git, cloud, deployment
 :jbake-date: 2020-02-23
 :jbake-description: Describe the infrastructure we use for development and deployment
+:jbake-disqus_enabled: true
+:jbake-disqus_identifier: 6ef41d66-69e1-11ea-8467-b30d35089e34
 :idprefix:
 
 :toc:

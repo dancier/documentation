@@ -5,6 +5,8 @@
 :jbake-tags: architecture, microservice, cloud
 :jbake-description: Functional and technial description of the project
 :jbake-author: Marc Gorzala
+:jbake-disqus_enabled: true
+:jbake-disqus_identifier: 8aa2a992-69e1-11ea-9148-6b22f65ee646
 :idprefix:
 
 :toc:
