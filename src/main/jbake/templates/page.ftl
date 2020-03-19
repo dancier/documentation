@@ -9,6 +9,10 @@
 	<#else></#if>
 
 	<p>${content.body}</p>
+    <!-- Disqus Comments Section -->
+    <#if (content.disqus_enabled)?? && (content.disqus_enabled == "true") && (content.disqus_identifier)??>
+        <#include "disqus.ftl">
+    </#if>
 
 	<hr />
 
