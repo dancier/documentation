@@ -1,10 +1,12 @@
 = Setting up your own Nextcloud with Collabora Office
 :jbake-type: page
 :jbake-status: published
-:jbake-date: 2020-02-23
+:jbake-date: 2020-03-15
 :jbake-tags: nextcloud, traefik, docker, docker-compose, collabora, code, cloud, letsencrypt,  ssl, office, backup, ubunutu, linux
 :jbake-description: How to setup you Nextcloud with docker, traefik, Collabora, office and letsencrypt
 :jbake-author: Marc Gorzala
+:jbake-disqus_enabled: true
+:jbake-disqus_identifier: f184187c-69d1-11ea-b388-87b974545588
 :idprefix:
 
 Author: Marc Gorzala
@@ -19,10 +21,11 @@ link:https://letsencrypt.org[Letsencrypt] and link:https://containo.us/traefik/[
 *What is Nextcloud?*
 
 Nextcloud offers you to host a service like link:https://www.dropbox.com/[DropBox].
+
 You can have you files synced between different devices like your Desktop/Laptop and
 mobile.
 
-You have also a calendar, a todo-list, your contacts and many other things synced
+Additionally you have also a calendar, a todo-list, your contacts and many other things synced
 across your devices.
 
 *What is Collabora?*
