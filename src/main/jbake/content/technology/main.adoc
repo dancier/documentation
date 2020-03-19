@@ -1,5 +1,5 @@
 = Main
-:jbake-type: post
+:jbake-type: page
 :jbake-status: published
 :jbake-tags: technology, python, java, jpa, react, postgres
 :jbake-description: Decisions for core parts of the project

@@ -1,5 +1,5 @@
 = What we use and why we use it
-:jbake-type: post
+:jbake-type: page
 :jbake-status: published
 :jbake-date: 2020-02-23
 :jbake-tags: desgin pattern, architecture, java, kiss, agile, decision making

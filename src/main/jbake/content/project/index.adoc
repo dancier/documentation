@@ -1,4 +1,4 @@
-:jbake-type: post
+:jbake-type: page
 :jbake-status: published
 :jbake-tags: dance, partner, project
 :jbake-date: 2020-02-23

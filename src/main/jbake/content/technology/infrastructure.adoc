@@ -1,5 +1,5 @@
 = Infrastructure
-:jbake-type: post
+:jbake-type: page
 :jbake-status: published
 :jbake-tags: infrastructur, ccvs, dvcs, git, cloud, deployment
 :jbake-date: 2020-02-23
