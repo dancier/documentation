@@ -14,7 +14,7 @@ Author: Marc Gorzala
 image::nextcloud-logo-white.png[align="center"]
 
 This post explains how you _could_ setup your own link:https://nextcloud.com/[Nextcloud]
-with link:https://www.collaboraoffice.com/code/[Collabora Office] encrypted with
+with link:https://www.collaboraoffice.com/code/[Collabora Office] having SSL automatically managed via
 link:https://letsencrypt.org[Letsencrypt] and link:https://containo.us/traefik/[Traefik].
 
 
@@ -23,27 +23,27 @@ link:https://letsencrypt.org[Letsencrypt] and link:https://containo.us/traefik/[
 Nextcloud offers you to host a service like link:https://www.dropbox.com/[DropBox].
 
 You can have you files synced between different devices like your Desktop/Laptop and
-mobile.
-
-Additionally you have also a calendar, a todo-list, your contacts and many other things synced
+mobile. Additionally you have also a calendar, a todo-list, your contacts and many other things synced
 across your devices.
 
 *What is Collabora?*
 
-Collabora, offers you the functionality of link:https://www.libreoffice.org/[Libre Office]
-in your browser. In this tutorial we will integrate Collabora in your Nextcloud
-installation, so that you can edit office files directly in your Nextcloud!
+link:https://www.collaboraoffice.com/code/[Collabora], offers you the functionality of link:https://www.libreoffice.org/[Libre Office]
+in your browser. In this tutorial we will integrate Collabora into your Nextcloud
+installation, so that you can edit office documents directly in your Nextcloud!
 
 *The installed system will...*
 
 * ... use link:https://de.wikipedia.org/wiki/Hypertext_Transfer_Protocol_Secure[HTTPS]
-  to make your communication with your Nextcloud secure.
+  to secure the communication with your Nextcloud.
 * ... include the Office Suite  link:https://www.collaboraoffice.com/code/[Collabora Office]
-* ... separate Code/App from your data, to make it easy for you to
+* ... separate Code/App from your data, making it easy for you to
 ** make backups (we will have a basic script for doing backups).
 ** perform updates.
 * ... works behind a (DSL) router as well as on any other server in the cloud
   or elsewhere.
+
+Ready to go? Great!
 
 ---
 
@@ -55,7 +55,7 @@ toc::[]
 
 == Prerequisites
 
-* A server that runs link:https://www.linux.org/[Linux]
+* A server that is able to run link:https://www.linux.org/[Linux]
   (this post will assume you are using a Debian/Ubuntu based distribution).
 * You can edit DNS entries for a domain you own. In this tutorial I will assume that
   you will use link:https://en.wikipedia.org/wiki/Subdomain[Subdomains] under `dancier.net`:
