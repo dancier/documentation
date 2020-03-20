@@ -134,26 +134,28 @@ encrypted, you can read link:https://cwiki.apache.org/confluence/display/HTTPD/N
   (contacts, calendar, ...)
 . `collabora` contains the office suite.
 
-Everything that is depicted in the cloud `docker`will be installed on one (docker-)host.
+Everything that is depicted in the cloud `docker` will be installed on one (docker-)host.
 
 == Setting it up
-First of all we will make sure that traffic to our planned domains `cloud.dancier.net`
+First of all, we will make sure traffic to our planned domains `cloud.dancier.net`
 and `collabora.dancier.net` could reach our system.
 
 === Check your DNS/IP configuration
+
 All incoming traffic has to reach the `reverse_proxy`. So the DNS should normally
 point to the machine you are going to install the system.
 
 TIP: In case you are installing the system on a host behind a `wlan-router`
-     than you have to find out the public IP-address of the router. Use than
-     this IP-adress to configure your DNS entries and forward all traffic
+     (as depicted in above architecture diagram)
+     than you have to find out the public IP-address of the router. Use
+     this IP-address to configure your DNS entries and forward all traffic
      that reaches your `wlan-router` on PORT 443 to the machine in your
-     local net where you going to install nextcloud.
+     local net where you are going to install Nextcloud.
      +
      Google for <router brand/type> port forwarding how to do this.
 
 Assuming that the public IP-address is `5.61.144.190` you should get
-the following responses when making an nslookup on the domains:
+the following responses when invoking a `nslookup` on the domains:
 
 [source, bash]
 ----
@@ -174,41 +176,60 @@ Name:	 collabora.dancier.net
 Address: 5.61.144.190
 ----
 
-=== Getting the project
+=== Installing basic tool that you need
 
-TIP: You need to have link:https://git-scm.com/[git]
-     installed on your system. If you can not install it (or just don't want it)
-     you can also download the project as a ZIP file.
+You need the following tools on the server you are going to install Nextcloud.
+
+ * docker
+ * docker-compose
+ * git
+ * vim (not necessarily needed, but good to have ;-) )
+
+You can install the tools on your own or you can download my script and
+execute it with on a fresh Ubuntu-Host that should serve the Nextcloud installation.
+If this script will not run on your system, it could give you hints how to install the tools.
+The script is also already cloning the repository containing the docker setup for Nextcloud.
+The next section will assume the script has been run successfully or at least you have
+performed the equivalent steps manually.
+
+Get the script here:
+
+`https://raw.githubusercontent.com/gorzala/nextcloud/master/bootstrap-os.sh`
+
+Copy this script to your server (or download it from there) and execute it.
+
+=== Inspecting the project
+
+Assuming you have already cloned the repository to `/root/nextcloud/`, let's inspect
+the project structure:
 
 [source, bash]
 ----
-git clone git@github.com:gorzala/nextcloud.git
-----
-
-Let's see what is contained in this project:
-
-[source, bash]
-----
-marc@ryzen:~/tmp/nextcloud$ ls -la
-insgesamt 40
-drwxr-xr-x 3 marc marc 4096 Feb 20 08:55 .
-drwxr-xr-x 3 marc marc 4096 Feb  9 20:06 ..
--rw-r--r-- 1 marc marc 2241 Feb 20 08:55 docker-compose.yml
--rwxr-xr-x 1 marc marc  119 Feb  9 20:07 .env-template
-drwxr-xr-x 8 marc marc 4096 Feb 20 08:55 .git
--rw-r--r-- 1 marc marc   86 Feb  9 20:07 .gitignore
--rw-r--r-- 1 marc marc  305 Feb 20 08:55 .maintenance.config
--rwxr-xr-x 1 marc marc 2489 Feb 20 08:55 maintenance.sh
--rw-r--r-- 1 marc marc 5708 Feb 20 08:55 README.adoc
+root@cloud:~/nextcloud# ls -la
+total 48
+drwxr-xr-x 4 root root 4096 Mar 20 14:28 .
+drwx------ 6 root root 4096 Mar 20 14:28 ..
+-rwxr-xr-x 1 root root 1113 Mar 20 14:28 bootstrap-os.sh
+-rw-r--r-- 1 root root 2379 Mar 20 14:28 docker-compose.yml
+-rwxr-xr-x 1 root root  119 Mar 20 14:28 .env-template
+drwxr-xr-x 8 root root 4096 Mar 20 14:28 .git
+-rw-r--r-- 1 root root   86 Mar 20 14:28 .gitignore
+-rw-r--r-- 1 root root  305 Mar 20 14:28 .maintenance.config
+-rwxr-xr-x 1 root root 3250 Mar 20 14:28 maintenance.sh
+-rw-r--r-- 1 root root 5708 Mar 20 14:28 README.adoc
+drwxr-xr-x 3 root root 4096 Mar 20 14:28 update
 ----
 
 Brief description of the purpose of the files:
 
+ * *bootstrap-os.sh* the script that you maybe already used to install basic tools for this project
  * *docker-compose.yml* configures all the containers that we use and how they work together
  * *.env-template* template for the config file that will hold your database credentials
- * *.maintenance.config* configures you will backup your system
- * *maintenance.sh* the backup script
- * *README.adco* very short explanation how to use this project
+ * *.git* and *.gitignore* git internals, you can ignore them
+ * *.maintenance.config* configures how you will backup/update your system
+ * *maintenance.sh* the script for doing a backup and update (not yet complete)
+ * *README.adoc* very short explanation how to use this project
+ * *update* folder that belongs to updating the system. Maybe not really needed.
 
 Let's have a more in deep look into the files in the following sections.
 
