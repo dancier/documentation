@@ -176,7 +176,7 @@ Name:	 collabora.dancier.net
 Address: 5.61.144.190
 ----
 
-=== Installing basic tool that you need
+=== Installing basic tools that you need
 
 You need the following tools on the server you are going to install Nextcloud.
 
@@ -434,6 +434,8 @@ NEXTCLOUD_MYSQL=nextcloud-mysql
 
 BACKUP_FOLDER=/media/marc/0519a4be-d9ce-4725-81f3-a26d9e577d13/backup
 ----
+
+=== Configuring the system
 
 
 
