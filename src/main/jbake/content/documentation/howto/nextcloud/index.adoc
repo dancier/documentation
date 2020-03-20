@@ -231,24 +231,31 @@ Brief description of the purpose of the files:
  * *README.adoc* very short explanation how to use this project
  * *update* folder that belongs to updating the system. Maybe not really needed.
 
-Let's have a more in deep look into the files in the following sections.
+Let's have a more in deep look into the files in the following sections. If you don't want to
+_waste time_ understanding what you are doing and directly want to configure and start the system,
+feel to skip to <<section-configuring-system>>. But I strongly recommmend that you come back to
+read _and_ understand what you have configured.
 
-==== Composing your service with docker-compose.yml
-To really understand what you are installing here, it is important that you have some knowledge about docker-compose.
+==== Composing your services with docker-compose.yml
+To understand what you are installing here, it is important you have some knowledge about docker-compose.
 
-First of all, that name of the folder that contains the docker-compose file is *important*, in this way is
-docker-compose will use this to create things like networks and so for you. If you have cloned the project like I told
-you, the name is `nextcloud`.
+First of all, that name of the folder that contains the docker-compose file is *important*.
+Docker-compose will use the name of this folder to create things like networks and others for you. If you have cloned the project like I told
+you, this name is `nextcloud`.
 
-In general you can think of docker-compose as a way to configure different services that should act together to fulfill
-a certain use case. In this case the use case is to have a full featured Nextcloud installation with an office suite running.
+So name of created networks and containers will start with this name. So better not change
+the name of this folder.
+
+In general, you can think of docker-compose as a way to configure different services that should act together to fulfill
+a certain use case. In this case it is, having a full featured Nextcloud installation with an office suite running.
 
 The different services that we have to configure in this docker compose file are:
 
- * *Traefik* that acts as the reverse proxy, forwarding incoming requests to the different internal systems
- * *Nextcloud* that is our main component
- * *Mysql database* that stores all the data for and is used by the Nextcloud service
- * *Collabora* the service that is used to provide the office suite
+
+Traefik:: that acts as the reverse proxy, forwarding incoming requests to the different internal systems
+Nextcloud:: that is our main component
+Mysql database:: that stores all the data for and is used by the Nextcloud service
+Collabora:: the service that is used to provide the office suite
 
 So already 4 services. Those services will comunicate with each other as shown in figure 1. The service to service
 communication happens via a private network that docker-compose will create for them. By doing so, this communication
@@ -435,6 +442,7 @@ NEXTCLOUD_MYSQL=nextcloud-mysql
 BACKUP_FOLDER=/media/marc/0519a4be-d9ce-4725-81f3-a26d9e577d13/backup
 ----
 
+[[section-configuring-system]]
 === Configuring the system
 
 
