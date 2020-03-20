@@ -57,30 +57,28 @@ toc::[]
 
 * A server that is able to run link:https://www.linux.org/[Linux]
   (this post will assume you are using a Debian/Ubuntu based distribution).
-* You can edit DNS entries for a domain you own. In this tutorial I will assume that
+* You have control over DNS entries for a domain that you own. In this tutorial I will assume that
   you will use link:https://en.wikipedia.org/wiki/Subdomain[Subdomains] under `dancier.net`:
 ** `cloud.dancier.net` - pointing to your Nextcloud installation
 ** `collabora.dancier.net` - pointing to the installation of the office suite.
-  (If you do not want to install the option for editing office files, you can also
-skip this in this post)
+  (If you do not want to install the option for editing office files, you do not need this of course)
 +
-NOTE: As this is an domain that I own, you have of course change this to your own domain.
+NOTE: The way we are installing the system is that everything is installed on the same machine
+      and we need only one IP-address. So both domain names point to this one address.
 
 
-* Basic knowledge of Linux and link:https://www.docker.com/[Docker].
+* Basic knowledge of link:https://en.wikipedia.org/wiki/Linux[Linux] and link:https://www.docker.com/[Docker].
 
 == We will use the following technologies
 
 * link:https://www.docker.com/[Docker] for easy installation/updating of the needed
-       software. I will assume you have it link:https://docs.docker.com/install/linux/docker-ce/ubuntu/[installed].
+       software.
 * link:https://docs.docker.com/compose/[Docker Compose] for a convenient configuration
-       of the docker containers. I will assume you have this installed too.
-* link:https://docs.traefik.io/[Traefik] for automatically maintaining SSL Certificates,
-       and forwarding Request to either Nextcloud of Collabora Online as an
-       link:https://docs.docker.com/install/linux/docker-ce/ubuntu/[reverse proxy].
-       We will install this in the course of this tutorial.
-* link:https://mysql.com/[MySQL] to be used as the database for Nextcloud. This in the
-       next item will also be installed.
+       of the docker containers.
+* link:https://docs.traefik.io/[Traefik] for automatically maintaining SSL Certificates
+       and forwarding requests to either Nextcloud or Collabora Online. In this way it acts
+       as an link:https://docs.docker.com/install/linux/docker-ce/ubuntu/[Reverse Proxy].
+* link:https://mysql.com/[MySQL] to be used as the database for Nextcloud.
 * link:https://www.collaboraoffice.com/code/[Collabora Office]
 
 == Architectural Overview
@@ -111,7 +109,7 @@ nextcloud --> db
 Let me short describe you this architecture briefly.
 
 . The `user` that is connecting to nextcloud.
-. He is using a `browser` (or any other device) to make this connection
+. He is using a `browser` (or any other device/app) to make a connection
 . The browser connects to the `wlan_router` at your home. This is your
   only component with a public IP-address. The `wlan_router` is configured
   to link:https://en.wikipedia.org/wiki/Port_forwarding[forward every traffic]
@@ -121,13 +119,15 @@ Let me short describe you this architecture briefly.
 +
 NOTE: If you are installing Nextcloud on a server that is directly
       connected to the internet, then this component does not exist,
-      and the browser directly connects to the `reverse_proxy`.
+      and the browser directly connects to the `reverse_proxy`. +
+      In this case you of course also need not to configure the mentioned
+      port forwarding.
 . The `reverse_proxy` is receiving the incoming traffic. It
-  will inspect the request to find out to which host it should be forwarded.
+  will inspect the request to find out to which host it should forward the request to.
 +
 TIP: If you want to know how the `reverse_proxy` could do this, as the Request is
 encrypted, you can read link:https://cwiki.apache.org/confluence/display/HTTPD/NameBasedSSLVHostsWithSNI[this].
-(It is using SNI)
+(It is using link:https://en.wikipedia.org/wiki/Server_Name_Indication[SNI])
 . The `nextcloud` node contains just what the name implies. The main
   program. It will store all your files locally to this.
 . The `db` node is the database that is used by `nextcloud` to store everything but files
