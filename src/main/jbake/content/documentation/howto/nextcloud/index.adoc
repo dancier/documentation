@@ -237,7 +237,7 @@ feel to skip to <<section-configuring-system>>. But I strongly recommmend that y
 read _and_ understand what you have configured.
 
 ==== Composing your services with docker-compose.yml
-To understand what you are installing here, it is important you have some knowledge about docker-compose.
+To understand what you are doing here, it is important you have some knowledge about docker-compose.
 
 First of all, that name of the folder that contains the docker-compose file is *important*.
 Docker-compose will use the name of this folder to create things like networks and others for you. If you have cloned the project like I told
@@ -246,26 +246,31 @@ you, this name is `nextcloud`.
 So name of created networks and containers will start with this name. So better not change
 the name of this folder.
 
-In general, you can think of docker-compose as a way to configure different services that should act together to fulfill
-a certain use case. In this case it is, having a full featured Nextcloud installation with an office suite running.
+In general, you can think of docker-compose as a way to configure different services that
+should act together to fulfill a certain use case. In this case it is, having a full featured
+Nextcloud installation with an office suite running.
 
-The different services that we have to configure in this docker compose file are:
-
+The different services that we need to configure in this docker compose file are:
 
 Traefik:: that acts as the reverse proxy, forwarding incoming requests to the different internal systems
 Nextcloud:: that is our main component
 Mysql database:: that stores all the data for and is used by the Nextcloud service
 Collabora:: the service that is used to provide the office suite
 
-So already 4 services. Those services will comunicate with each other as shown in figure 1. The service to service
-communication happens via a private network that docker-compose will create for them. By doing so, this communication
-and the services are shielded from the rest of the docker host (and with this also from the internet).
+So already 4 services!
 
-So let's see how these four services are configured in the compose-file:
+Those services will communicate with each other as shown in figure 1. The service-to-service
+communication happens via a private network that docker-compose will create. With this private
+network, this communication between these services is shielded from the rest of the docker-host
+(and with this also from the internet).
 
-NOTE: The compose-file is being written in link:https://yaml.org/[Yaml]-Syntax. This is becoming someway standard
-      for more and more systems. So if you are not familiar with how to write YAML files, it will pay off not only
-      for writing docker-compose files.
+So let's see how these four services are configured:
+
+NOTE: The compose-file is being written in link:https://yaml.org/[Yaml]-Syntax. This is becoming
+      someway standard for more and more systems. So if you are not familiar with how to write
+      YAML files, learning this will pay off not only for writing docker-compose files.
+
+Let's see the basic structure of the docker-compose file:
 
 .docker-compose.yml (schema)
 [source, bash, linenumbers]
@@ -282,11 +287,13 @@ services:
     [...]
 ----
 * *line 1: version* +
-  specifies that we are using version 3 of the file syntax. This is not the version of docker-compose
-  or docker.
+  specifies that we are using version 3 of the file syntax. (This is not the version of docker-compose
+  or docker)
 * *line 2: introduces the services* +
-  specifies that everything under this node will be the configured services. We will define 4 of them. Let's
-  see each definition in detail
+  starts with the definitions of the services that we will use. The level under services, contains
+  nodes for each service.
+
+See in the following and deeper explanation for the configuration of each service:
 
 ===== Traefik
 .docker-compose.yml (Traefik part)
@@ -312,27 +319,31 @@ services:
       - "./letsencrypt:/letsencrypt"
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
 ----
-** *line 3-22 traefik* +
-  configured traefik as the `reverse_proxy`
-*** line 3: sets the name of the service to traefik. As we do not specifiy a container name explicitly,
-docker-compose will generate this name: _nextcloud_traefik_1_. Compose will the name of the compose
-project (from the folder-name, see above) and concatenates it with the name of the service and the
-number starting with a 1. If you would scale up your setup, the next service name would end with a 2.
-*** line 4: defines which link:https://hub.docker.com/_/traefik[docker image] to get for traefik
-*** line 5-14 configures cli parameters for traefik +
-    In short: the configuration of traefik is being clustered into static configuration (everything that
-changes rarely(are we working with docker, or kubernetes,...) and dynamic configuration for the
-stuff that changes more frequently. +
-    For the static configuration traefik offers three ways:
-**** File based configuration
-**** Command line parameter bases configuration (I chossed to use this)
-**** Environment variable configuration.
-*** *line 6 debug mode* +
-    This passed the command-line parameter to traefik when it starts that enables debug logging mode.
-Use this when you have problems. This is commented out in this example.
-*** *line 7 api insecure*
-*** *line 8 provider docker*
-*** *line 9 docker expose by default*
+
+configures traefik as the `reverse_proxy`
+
+line 1:: set the service-name to traefik. As we do not specify a container name explicitly,
+         docker-compose will generate this name: _nextcloud_traefik_1_. Compose will the take
+         the name of the folder that contains the compose file, concatenates it with the name
+         of the service and a number for that node(we will have only one noce per service, so
+         this will be always 1)
+line 4:: defines which link:https://hub.docker.com/_/traefik[docker image] to get for traefik
+lines 5-14:: configures cli parameters for traefik +
+         In short: the configuration of traefik is being grouped into static configuration
+         (everything that changes rarely(are we working with docker, or kubernetes,...) and
+         dynamic configuration for the stuff that changes more frequently. +
+         For the static configuration traefik offers three ways:
+* File based configuration
+* Environment variable configuration.
+* _Command line parameter bases configuration_ (I choose to use this option)
+
+line 6:: *debug mode* +
+    This command-line parameter configured traefik to start in debug mode. This will
+     increase the logging volume heavily. Use this when you have problems.
+     This is commented out in this example.
+line 7:: *api insecure*
+line 8:: *provider docker*
+line 9:: *docker expose by default*
 *** *line 10 entry points*
 *** *line 11 tls-challenge* +
 *** *line 12 staging*
