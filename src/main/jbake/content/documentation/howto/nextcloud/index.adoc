@@ -313,7 +313,6 @@ In the following we will have a deeper look onto the configuration of each servi
     restart: always
     ports:
       - "443:443"
-      - "8080:8080"
     volumes:
       - "./letsencrypt:/letsencrypt"
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
@@ -337,25 +336,30 @@ lines 4-12:: configures cli parameters for traefik +
 * _Command line parameter bases configuration_ (I choose to use this option)
 
 line 4:: *debug mode* +
-    This command-line parameter configured traefik to start in debug mode. This will
-    increase the logging volume heavily. Use this when you have problems.
-    This is commented out in this example.
+         This command-line parameter configured traefik to start in debug mode. This will
+         increase the logging volume heavily. Use this when you have problems.
+         This is commented out in this example.
 line 5:: *provider docker* +
-    This will setup traefik to use the docker-plugin, the provider. Essentially this,
-    makes Traefik listen to every container that is started/stopped by Docker.
-    Whenever a container starts, it checks if this container is being configured to
-    used with Traefik. If so, it creates a route so that incoming traffic will be
-    forworded to this service/container. It will also make sure that a valid
-    ssl-certifcate is being used.
+         This will setup traefik to use the docker-plugin, the provider. Essentially this,
+         makes Traefik listen to every container that is started/stopped by Docker.
+         Whenever a container starts, it checks if this container is being configured to
+         used with Traefik. If so, it creates a route so that incoming traffic will be
+         forworded to this service/container. It will also make sure that a valid
+         ssl-certifcate is being used.
 line 9:: *docker expose by default*
-*** *line 10 entry points*
-*** *line 11 tls-challenge* +
-*** *line 12 staging*
-*** *line 13 acme email*
-*** *line 14 acme storage*
-*** *line 15 - 17 ports to be exposed*
-*** *line 18 - 20 volumes*
-
+         you explizitly have to enable containers so that they will be handled by traefik.
+line 10:: *entry points*
+         makes traefik to create an endpoint names websecure that listens on port 443. traefik will
+         use this endpoint to handle all incoming traefik in route it to the respective containers
+         (see figure one what is menat with this)
+line 11-14:: ssl-configuration* +
+         configures how traefik should manage certifcates
+line 15 - 17:: ports to be exposed*
+         We will only expose (listing on that port on the docker-host) the port 443. This is the
+         default for for https/ssl
+line 18 - 20:: *volumes*
+         * the letsencrypt volume
+         * docker socket
 ===== Nextcloud
 .docker-compose.yml (Nextcloud part)
 [source, bash, linenumbers]
