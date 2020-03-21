@@ -360,9 +360,12 @@ line 12:: restart always
 line 13 - 14:: ports to be exposed*
          We will only expose (listing on that port on the docker-host) the port 443. This is the
          default for for https/ssl
-line 15 - 17:: *volumes*
-         * the letsencrypt volume https://docs.docker.com/storage/volumes/
-         * docker socket
+line 15 - 17:: *link:https://docs.docker.com/storage/volumes/[Volumes]*
+         * the letsencrypt volume is used to store the ssl certificate related things
+         * docker link:https://en.wikipedia.org/wiki/Unix_domain_socket[socket] is someway special: +
+           it enables the traefik container to connect to the mentioned socket on the docker-host.
+           By connecting to this socket, Traefik is aware of all containers that are started and stopped.
+           You will see later why this is important.
 
 ===== Nextcloud
 .docker-compose.yml (Nextcloud part)
@@ -381,7 +384,7 @@ line 15 - 17:: *volumes*
       - ./nextcloud-config:/var/www/html/config
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.nextcloud.rule=Host(`cloud.becheftigt.de`)"
+      - "traefik.http.routers.nextcloud.rule=Host(`cloud.dancier.net`)"
       - "traefik.http.routers.nextcloud.entrypoints=websecure"
       - "traefik.http.routers.nextcloud.tls.certresolver=mytlschallenge"
       - "traefik.http.middlewares.nextcloud.headers.customresponseheaders.Strict-Transport-Security=max-age=15552000; includeSubDomains"
@@ -389,24 +392,39 @@ line 15 - 17:: *volumes*
       - mysql
       - traefik
 ----
-line 1:: sets the name of the service to 'nextcloud'
-line 3-5:: Environement*
-    The nextcloud container will be configured via environment variables that are passed to the container.
+line 1:: Sets the name of the service to 'nextcloud'.
+line 3-5:: Environment
+    We are passing two environment variables into the Nextcloud-container:
+    * we are setting the database name to be used to 'nextcloud'
+    * we are setting the database username to be used also to 'nextcloud'
 lines 7 - 11:: *volumes*
- * nextcloud-core
- * nextcloud-app
- * nextcloud-data
- * nextcloud-config
+ * nextcloud-core, this will contain the core part of nextcloud
+ * nextcloud-app, this will hold your installed apps (kind of extensions of nextcloud)
+ * nextcloud-data, this very likely to be the volume that has to store most because all the
+   files that you will handle by nextcloud will be stored here. I pointed this to a path, where I mounted
+   an external hard disk, that i dedicated to my nextcloud installation. This is also the only volume with an
+   absolute path. All other volumes from this service will have relative path and
+ * nextcloud-config, this will contain the configuration files the will be read by Nextcloud
 
 lines 12 - 17:: *labels*
-* *traefik.enable*
-* *rule*
-* *entrypoint*
+* *traefik.enable* +
+   as I told you in the description of the Traefik-Service, Traefik will be informed by every start and stop of a
+   docker container. I will also be able to read the labels associated with the containers. By reading this lable,
+   we tell traefik to feel responsible to this service.
+* *rule* +
+   This is also read by traefik and tell Traefik to forward all traffic has the http-host header set to
+  'cloud.dancier.net' to this service
+* *entrypoint* +
+   Traefik will use this named endpoint (see configuration for Traefik) to consider traffic for Nextcloud
 * *certresolver*
+   Says which certifcate-generation strategy should be used (we configured also this in the Traefik-part)
 * *Strict-Header*
+  *Tried to circumvent an error message in the nextcloud backend*
 
 lines 18 - 20:: *depends on*
-
+    * Nextcloud needs to have traefik running before being started, as traefik would not be able to configure ssl when it
+    starts after nextcloud
+    * Nextcloud needs a running database, so we also wait until this is started.
 
 ===== MySQL
 .docker-compose.yml (MySQL part)
@@ -438,7 +456,7 @@ lines 6 - 10:: Environment <<database-config>>
     image: collabora/code
     restart: always
     environment:
-      - domain=cloud\\.becheftigt\\.de
+      - domain=cloud\\.dancier\\.net
       - extra_params=--o:ssl.enable=false --o:ssl.termination=true
     depends_on:
       - traefik
@@ -446,7 +464,7 @@ lines 6 - 10:: Environment <<database-config>>
       - MKNOD
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.collabora.rule=Host(`collabora.becheftigt.de`)"
+      - "traefik.http.routers.collabora.rule=Host(`collabora.dancier.net`)"
       - "traefik.http.routers.collabora.entrypoints=websecure"
       - "traefik.http.routers.collabora.tls.certresolver=mytlschallenge"
 ----
@@ -467,6 +485,7 @@ MYSQL_ROOT_PASSWORD=<your-my-sql-root-passwort>
 MYSQL_PASSWORD=<the password for accessing the database for nextcloud>
 ----
 This file is only a template, you should copy it into `.env`, see LATER
+
 ==== Maintaining the system with maintenance.sh
 
 ==== Configuring the backup with .maintenance.config
