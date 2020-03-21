@@ -82,6 +82,7 @@ NOTE: The way we are installing the system is that everything is installed on th
 * link:https://www.collaboraoffice.com/code/[Collabora Office]
 
 == Architectural Overview
+[[architectural-overview]]
 .architectural overview
 [plantuml, cloud-architecture, svg]
 ....
@@ -318,15 +319,16 @@ In the following we will have a deeper look onto the configuration of each servi
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
 ----
 
-configures traefik as the `reverse_proxy`
+This part configures Traefik, which is our `reverse_proxy`, that forwards all incoming
+requests to the other services (see <<architectural-overview>>).
 
-line 1:: set the service-name to traefik. As we do not specify a container name explicitly,
+line 1:: Sets the service-name to 'traefik'. As we do not specify a container name explicitly,
          docker-compose will generate this name: _nextcloud_traefik_1_. Compose will the take
          the name of the folder that contains the compose file, concatenates it with the name
          of the service and a number for that node(we will have only one noce per service, so
          this will be always 1)
 line 2:: defines which link:https://hub.docker.com/_/traefik[docker image] to get for traefik
-lines 4-12:: configures cli parameters for traefik +
+lines 4-11:: configures cli parameters for traefik +
          In short: the configuration of traefik is being grouped into static configuration
          (everything that changes rarely(are we working with docker, or kubernetes,...) and
          dynamic configuration for the stuff that changes more frequently. +
@@ -335,7 +337,7 @@ lines 4-12:: configures cli parameters for traefik +
 * Environment variable configuration.
 * _Command line parameter bases configuration_ (I choose to use this option)
 
-line 4:: *debug mode* +
+line 4:: *debug log level* +
          This command-line parameter configured traefik to start in debug mode. This will
          increase the logging volume heavily. Use this when you have problems.
          This is commented out in this example.
@@ -346,20 +348,22 @@ line 5:: *provider docker* +
          used with Traefik. If so, it creates a route so that incoming traffic will be
          forworded to this service/container. It will also make sure that a valid
          ssl-certifcate is being used.
-line 9:: *docker expose by default*
+line 6:: *docker expose by default*
          you explizitly have to enable containers so that they will be handled by traefik.
-line 10:: *entry points*
+line 7:: *entry points*
          makes traefik to create an endpoint names websecure that listens on port 443. traefik will
          use this endpoint to handle all incoming traefik in route it to the respective containers
          (see figure one what is menat with this)
-line 11-14:: ssl-configuration* +
+line 8-11:: ssl-configuration* +
          configures how traefik should manage certifcates
-line 15 - 17:: ports to be exposed*
+line 12:: restart always
+line 13 - 14:: ports to be exposed*
          We will only expose (listing on that port on the docker-host) the port 443. This is the
          default for for https/ssl
-line 18 - 20:: *volumes*
-         * the letsencrypt volume
+line 15 - 17:: *volumes*
+         * the letsencrypt volume https://docs.docker.com/storage/volumes/
          * docker socket
+
 ===== Nextcloud
 .docker-compose.yml (Nextcloud part)
 [source, bash, linenumbers]
@@ -385,18 +389,23 @@ line 18 - 20:: *volumes*
       - mysql
       - traefik
 ----
-** *line 24-46 nextcloud* +
-** *line 24 -26 environement* +
+line 1:: sets the name of the service to 'nextcloud'
+line 3-5:: Environement*
     The nextcloud container will be configured via environment variables that are passed to the container.
-*** *line 25* restart always
-*** *lines 28 - 32 volumes*
-*** *lines 33 - 38 labels*
-**** *line 34 traefik.enable*
-**** *line 35 rule*
-**** *line 36 entrypoint*
-**** *line 37 certresolver*
-**** *line 38 Strict-Header*
-*** *lines 39 - 40 depends on*
+lines 7 - 11:: *volumes*
+ * nextcloud-core
+ * nextcloud-app
+ * nextcloud-data
+ * nextcloud-config
+
+lines 12 - 17:: *labels*
+* *traefik.enable*
+* *rule*
+* *entrypoint*
+* *certresolver*
+* *Strict-Header*
+
+lines 18 - 20:: *depends on*
 
 
 
