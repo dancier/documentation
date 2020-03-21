@@ -447,11 +447,13 @@ You, should notice that we configure 4 environment variables here.
 Two of them already with a an concret value
  * MYSQL_DATABASE=nextcloud
  * MYSQL_USER=nextcloud
+
 This, configures MYSQL to create a database named nextcloud with a user with the same name, that has all rights.
 The creation of the database happens only when a database with this name not already exist.
 The passwords for these tasks are taken from the next two environment variables.
  * MYSQL_ROOT_PASSWORD
  * MYSQL_PASSWORD
+
 They do not have any values. In this case docker compose will take them from a file called `.env` from the
 current directory (this could also be overwritten by cli parameters, but in our case we do not care for that option).
 In the configuration part, I will tell you how to set this file up.
