@@ -1,7 +1,7 @@
 = Setting up your own Nextcloud with Collabora Office
 :jbake-type: page
 :jbake-status: published
-:jbake-date: 2020-03-15
+:jbake-date: 2020-03-21
 :jbake-tags: nextcloud, traefik, docker, docker-compose, collabora, code, cloud, letsencrypt,  ssl, office, backup, ubunutu, linux
 :jbake-description: How to setup you Nextcloud with docker, traefik, Collabora, office and letsencrypt
 :jbake-author: Marc Gorzala
@@ -408,7 +408,6 @@ lines 12 - 17:: *labels*
 lines 18 - 20:: *depends on*
 
 
-
 ===== MySQL
 .docker-compose.yml (MySQL part)
 [source, bash, linenumbers]
@@ -424,6 +423,12 @@ lines 18 - 20:: *depends on*
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
 ----
+line 3::  https://dev.mysql.com/doc/refman/8.0/en/innodb-transaction-isolation-levels.html
+lines 6 - 10:: Environment <<database-config>>
+ * MYSQL_ROOT_PASSWORD
+ * MYSQL_PASSWORD
+ * MYSQL_DATABASE=nextcloud
+ * MYSQL_USER=nextcloud
 
 ===== Collabora
 .docker-compose.yml (Collabora part)
@@ -445,7 +450,15 @@ lines 18 - 20:: *depends on*
       - "traefik.http.routers.collabora.entrypoints=websecure"
       - "traefik.http.routers.collabora.tls.certresolver=mytlschallenge"
 ----
+lines 4 - 6:: Environment
+              * domain
+              * extra_params
+lines 8::     depends on traefik
+lines 9-10::  capp_add MKNOD
+lines 11-15:: lables
 
+
+[[database-config]]
 ====  Configuring your database credentials with .env-template
 
 [source, bash, linenumbers]
@@ -453,7 +466,7 @@ lines 18 - 20:: *depends on*
 MYSQL_ROOT_PASSWORD=<your-my-sql-root-passwort>
 MYSQL_PASSWORD=<the password for accessing the database for nextcloud>
 ----
-
+This file is only a template, you should copy it into `.env`, see LATER
 ==== Maintaining the system with maintenance.sh
 
 ==== Configuring the backup with .maintenance.config
@@ -472,10 +485,6 @@ BACKUP_FOLDER=/media/marc/0519a4be-d9ce-4725-81f3-a26d9e577d13/backup
 
 [[section-configuring-system]]
 === Configuring the system
-
-
-
-
 
 -- chang in config.php
 
