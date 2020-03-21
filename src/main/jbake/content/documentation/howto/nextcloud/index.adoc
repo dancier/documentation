@@ -293,7 +293,7 @@ services:
   starts with the definitions of the services that we will use. The level under services, contains
   nodes for each service.
 
-See in the following and deeper explanation for the configuration of each service:
+In the following we will have a deeper look onto the configuration of each service:
 
 ===== Traefik
 .docker-compose.yml (Traefik part)
@@ -303,7 +303,6 @@ See in the following and deeper explanation for the configuration of each servic
     image: "traefik:v2.0.0-rc3"
     command:
       - "--log.level=DEBUG"
-      - "--api.insecure=true"
       - "--providers.docker=true"
       - "--providers.docker.exposedbydefault=false"
       - "--entrypoints.websecure.address=:443"
@@ -327,8 +326,8 @@ line 1:: set the service-name to traefik. As we do not specify a container name 
          the name of the folder that contains the compose file, concatenates it with the name
          of the service and a number for that node(we will have only one noce per service, so
          this will be always 1)
-line 4:: defines which link:https://hub.docker.com/_/traefik[docker image] to get for traefik
-lines 5-14:: configures cli parameters for traefik +
+line 2:: defines which link:https://hub.docker.com/_/traefik[docker image] to get for traefik
+lines 4-12:: configures cli parameters for traefik +
          In short: the configuration of traefik is being grouped into static configuration
          (everything that changes rarely(are we working with docker, or kubernetes,...) and
          dynamic configuration for the stuff that changes more frequently. +
@@ -337,12 +336,17 @@ lines 5-14:: configures cli parameters for traefik +
 * Environment variable configuration.
 * _Command line parameter bases configuration_ (I choose to use this option)
 
-line 6:: *debug mode* +
+line 4:: *debug mode* +
     This command-line parameter configured traefik to start in debug mode. This will
-     increase the logging volume heavily. Use this when you have problems.
-     This is commented out in this example.
-line 7:: *api insecure*
-line 8:: *provider docker*
+    increase the logging volume heavily. Use this when you have problems.
+    This is commented out in this example.
+line 5:: *provider docker* +
+    This will setup traefik to use the docker-plugin, the provider. Essentially this,
+    makes Traefik listen to every container that is started/stopped by Docker.
+    Whenever a container starts, it checks if this container is being configured to
+    used with Traefik. If so, it creates a route so that incoming traffic will be
+    forworded to this service/container. It will also make sure that a valid
+    ssl-certifcate is being used.
 line 9:: *docker expose by default*
 *** *line 10 entry points*
 *** *line 11 tls-challenge* +
