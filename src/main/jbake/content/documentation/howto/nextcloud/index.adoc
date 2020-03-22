@@ -632,6 +632,7 @@ Unfortunately you will end up in an error page. The reason is, that he default c
 the http version. As we do not have an not encrypted version, this will end up in nothing, which is an error page ;-)
 
 In the next section you we will get rid of this.
+
 ==== Change config.php
 
 You can stop the running docker-compose setup by typing `CTRL` + `C`.
