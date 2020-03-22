@@ -527,15 +527,18 @@ MYSQL_PASSWORD=<the password for accessing the database for nextcloud>
 We will change this in the <<section-configuring-system, configuration section>>.
 
 ==== Maintaining the system with maintenance.sh
-
 This script should cover all maintenance tasks for you while operating
 your Nextcloud installation.
 
-Currently only a simple backup functionality is being implemented. You should
+Currently, only a simple backup functionality is being implemented. You should
 do a backup especially before every update.
 
+We will explain the usage of this script after we had configured it.
+
 ==== Configuring the backup with .maintenance.config
-This is used by the maintenance script and contains mostly variables for
+
+This is used by the maintenance script and contains mostly variables for the backup.
+We will configure this later.
 [source, bash, linenumbers]
 ----
 BASE_FOLDER=/home/marc/programm/nextcloud
@@ -552,13 +555,25 @@ BACKUP_FOLDER=/media/marc/0519a4be-d9ce-4725-81f3-a26d9e577d13/backup
 [[section-configuring-system]]
 === Configuring the system
 
--- chang in config.php
+Now you should have at least a brief understanding, about the important files.
+You also have made sure that the DNS names point to the correct IP-address.
+
+Now we will change some of the files, adapting them to your requirement
+and are ready to go.
+
+==== Create .env
+==== First start of the system
+==== Change config.php
+-- change in config.php
 
 'overwritehost' => 'cloud.becheftigt.de',
 'overwriteprotocol' => 'https',
 'overwrite.cli.url' => 'https://cloud.becheftigt.de',
 
+cat 'trusted_proxies' => array('172.18.0.0/16'),
 
+
+==== Enable I-Phone/Max Sync
 for apple support
 
 in nextcloud core.htaccess
@@ -570,21 +585,26 @@ RewriteRule ^\.well-known/nodeinfo https://%{HTTP_HOST}/public.php?service=nodei
 RewriteRule ^\.well-known/carddav https://%{HTTP_HOST}/remote.php/dav/ [R=301,L]
 RewriteRule ^\.well-known/caldav https://%{HTTP_HOST}/remote.php/dav/ [R=301,L]
 
+==== Do your first backup
 
-
+==== Some problems that you may have
 
 https://github.com/jowave/vcard2to3
 
 2.1 3.1
 
 
+==== Summary
+If you like this How two, link me, show it in the comments! Also, use the comments in case
+of questions.
 
+Let's summarize what he have achieved:
 
-172.18.0.0/16
+* We have an own Nextcloud installation running
+* Everything is reachable via valid SSL certificates
+* We can sync with Desktops running Windows/Mac and Linux
+* We can also sync with mobiles running Android/Mac
+* We have an office suite, that enable us to work wherever we are
+* We can also easily work together on the very same document at the very same time!
 
-cat 'trusted_proxies' => array('172.18.0.0/16'),
-
-docker network inspect nextcloud_default ^
-
-
-docker pull
+I hope you like this tutorial and recommend it!
