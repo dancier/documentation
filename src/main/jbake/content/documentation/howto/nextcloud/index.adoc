@@ -293,7 +293,10 @@ line 1:: *Version* +
 line 2:: *Definition of the services* +
   Starts with the the services that we will use. Under this node all services are configured.
 
-In the following we will have a deeper look into the configuration of each service:
+In the following we will have a deeper look into the configuration of each service. Some
+configurations directives like naming will be explained only once and not for every service, as this
+would be to verbose. However, due to this you should read through all the
+parts one by one.
 
 ===== Traefik
 .docker-compose.yml (Traefik part)
@@ -394,12 +397,11 @@ line 15 - 17:: *link:https://docs.docker.com/storage/volumes/[Volumes]* +
       - mysql
       - traefik
 ----
-line 1:: Sets the name of the service to 'nextcloud'.
-line 3-5:: Environment
-    We are passing two environment variables into the Nextcloud-container:
-    * we are setting the database name to be used to 'nextcloud'
-    * we are setting the database username to be used also to 'nextcloud'
-lines 7 - 11:: *volumes*
+line 3-5:: *Environment* +
+  We are passing two environment variables into the Nextcloud-container...
+    * the database name to be used to 'nextcloud'.
+    * the database username to be used also to 'nextcloud'.
+lines 7 - 11:: *Volumes* +
  * nextcloud-core, this will contain the core part of nextcloud
  * nextcloud-app, this will hold your installed apps (kind of extensions of nextcloud)
  * nextcloud-data, this very likely to be the volume that has to store most because all the
@@ -408,7 +410,7 @@ lines 7 - 11:: *volumes*
    absolute path. All other volumes from this service will have relative path and
  * nextcloud-config, this will contain the configuration files the will be read by Nextcloud
 
-lines 12 - 17:: *labels*
+lines 12 - 17:: *Labels* +
 * *traefik.enable* +
    as I told you in the description of the Traefik-Service, Traefik will be informed by every start and stop of a
    docker container. I will also be able to read the labels associated with the containers. By reading this lable,
@@ -423,10 +425,10 @@ lines 12 - 17:: *labels*
 * *Strict-Header*
   *Tried to circumvent an error message in the nextcloud backend*
 
-lines 18 - 20:: *depends on*
+lines 18 - 20:: *Depends on* +
     * Nextcloud needs to have traefik running before being started, as traefik would not be able to configure ssl when it
     starts after nextcloud
-    * Nextcloud needs a running database, so we also wait until this is started.
+    * Nextcloud needs a running database, so we also wait until it is started.
 
 ===== MySQL
 .docker-compose.yml (MySQL part)
@@ -443,7 +445,14 @@ lines 18 - 20:: *depends on*
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
 ----
-line 3::  https://dev.mysql.com/doc/refman/8.0/en/innodb-transaction-isolation-levels.html
+line 3:: *CLI-Parameter* +
+ * link:https://dev.mysql.com/doc/refman/8.0/en/innodb-transaction-isolation-levels.html[Database Transaktion level]
+    set to `READ_COMIITTED`
+ * link:https://mariadb.com/kb/en/binary-log/[Binlog] set to row
+
++
+This is prescribed in link:https://docs.nextcloud.com/server/latest/admin_manual/configuration_database/linux_database_configuration.html[Nextcloud-Admin-Configuration]
+
 lines 6 - 10:: *Environment* +
 You, should notice that we configure 4 environment variables here.
 Two of them already with a an concret value
