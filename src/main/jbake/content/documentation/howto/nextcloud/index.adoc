@@ -589,6 +589,31 @@ Nothing to do here for you.
 Collabora::
 Only change here the rule for traefik that it matches your domain-name for collabora.
 ==== First start of the system
+Now everything should be find, to first start the system!
+
+[source, bash]
+----
+# in the project folder
+cd /root/nextcloud
+docker-compose up
+----
+This first run will take some time. At an essence the following time consuming things happen:
+* all docker image will be downloaded from docker (we have 4 services, so this is not few data)
+* the ssl certifcates will be created
+
+You may have realized that the docker-compose command does not return to your terminal. If you
+want to stop docker, than you have to type `CTRL`+`C`.
+
+Later we will start docker compose in the background. But for now this is more convenient.
+
+When you do not see any progress on the console, that you can safely assume that everything has
+been downloaded and the SSL-certificates are in place.
+
+Not open a browser and open `https://cloud.dancier.net` to intialize Nextcloud.
+You should see something like:
+
+image:nextcloud-first-start.png
+
 
 ==== Change config.php
 
