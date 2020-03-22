@@ -287,14 +287,13 @@ services:
   collabora:
     [...]
 ----
-* *line 1: version* +
-  specifies that we are using version 3 of the file syntax. (This is not the version of docker-compose
-  or docker)
-* *line 2: introduces the services* +
-  starts with the definitions of the services that we will use. The level under services, contains
-  nodes for each service.
+line 1:: *Version* +
+  Specifies that we are using version 3 of the compose file syntax. (This is not the version of
+  docker-compose or docker)
+line 2:: *Definition of the services* +
+  Starts with the the services that we will use. Under this node all services are configured.
 
-In the following we will have a deeper look onto the configuration of each service:
+In the following we will have a deeper look into the configuration of each service:
 
 ===== Traefik
 .docker-compose.yml (Traefik part)
@@ -322,13 +321,15 @@ In the following we will have a deeper look onto the configuration of each servi
 This part configures Traefik, which is our `reverse_proxy`, that forwards all incoming
 requests to the other services (see <<architectural-overview>>).
 
-line 1:: Sets the service-name to 'traefik'. As we do not specify a container name explicitly,
+line 1:: *Name* +
+         Sets the service-name to 'traefik'. As we do not specify a container name explicitly,
          docker-compose will generate this name: _nextcloud_traefik_1_. Compose will the take
          the name of the folder that contains the compose file, concatenates it with the name
          of the service and a number for that node(we will have only one noce per service, so
          this will be always 1)
-line 2:: defines which link:https://hub.docker.com/_/traefik[docker image] to get for traefik
-lines 4-11:: configures cli parameters for traefik +
+line 2:: *Docker image* +
+         defines which link:https://hub.docker.com/_/traefik[docker image] to get for traefik
+lines 4-11:: *CLI parameters for Traefik* +
          In short: the configuration of traefik is being grouped into static configuration
          (everything that changes rarely(are we working with docker, or kubernetes,...) and
          dynamic configuration for the stuff that changes more frequently. +
@@ -337,33 +338,34 @@ lines 4-11:: configures cli parameters for traefik +
 * Environment variable configuration.
 * _Command line parameter bases configuration_ (I choose to use this option)
 
-line 4:: *debug log level* +
+line 4:: *Debug log-level* +
          This command-line parameter configured traefik to start in debug mode. This will
          increase the logging volume heavily. Use this when you have problems.
          This is commented out in this example.
-line 5:: *provider docker* +
+line 5:: *Docker provider* +
          This will setup traefik to use the docker-plugin, the provider. Essentially this,
          makes Traefik listen to every container that is started/stopped by Docker.
          Whenever a container starts, it checks if this container is being configured to
          used with Traefik. If so, it creates a route so that incoming traffic will be
          forworded to this service/container. It will also make sure that a valid
          ssl-certifcate is being used.
-line 6:: *docker expose by default*
-         you explizitly have to enable containers so that they will be handled by traefik.
-line 7:: *entry points*
-         makes traefik to create an endpoint names websecure that listens on port 443. traefik will
-         use this endpoint to handle all incoming traefik in route it to the respective containers
-         (see figure one what is menat with this)
-line 8-11:: ssl-configuration* +
-         configures how traefik should manage certifcates
-line 12:: restart always
-line 13 - 14:: ports to be exposed*
-         We will only expose (listing on that port on the docker-host) the port 443. This is the
-         default for for https/ssl
-line 15 - 17:: *link:https://docs.docker.com/storage/volumes/[Volumes]*
-         * the letsencrypt volume is used to store the ssl certificate related things
-         * docker link:https://en.wikipedia.org/wiki/Unix_domain_socket[socket] is someway special: +
-           it enables the traefik container to connect to the mentioned socket on the docker-host.
+line 6:: *Docker expose by default* +
+         You explicitly have to enable containers to be handled by Traefik.
+line 7:: *Entry points* +
+         Makes Traefik creating an endpoint named 'websecure' that listens on port 443.
+         Traefik will use this endpoint to handle all incoming traffic and route it to the
+         respective containers (see <<architectural-overview, figure>>).
+line 8-11:: *SSL-configuration* +
+         Configures how Traefik should manage certificates.
+line 12:: *Restart always* +
+         Makes Traefik always automatically restart, in case it crashes.
+line 13 - 14:: *Ports* +
+         We will only expose (listing on that port on the docker-host) port 443. This is the
+         default for HTTPS/SSL
+line 15 - 17:: *link:https://docs.docker.com/storage/volumes/[Volumes]* +
+         * The Letsencrypt volume is used to store the SSL-certificate related things'.
+         * Docker link:https://en.wikipedia.org/wiki/Unix_domain_socket[socket] is someway special: +
+           It enables the traefik container to connect to the mentioned socket on the docker-host.
            By connecting to this socket, Traefik is aware of all containers that are started and stopped.
            You will see later why this is important.
 
