@@ -585,16 +585,16 @@ RewriteRule ^\.well-known/nodeinfo https://%{HTTP_HOST}/public.php?service=nodei
 RewriteRule ^\.well-known/carddav https://%{HTTP_HOST}/remote.php/dav/ [R=301,L]
 RewriteRule ^\.well-known/caldav https://%{HTTP_HOST}/remote.php/dav/ [R=301,L]
 
-==== Do your first backup
+== Do your first backup
 
-==== Some problems that you may have
+== Some problems that you may have
 
 https://github.com/jowave/vcard2to3
 
 2.1 3.1
 
 
-==== Summary
+== Summary
 If you like this How two, link me, show it in the comments! Also, use the comments in case
 of questions.
 
