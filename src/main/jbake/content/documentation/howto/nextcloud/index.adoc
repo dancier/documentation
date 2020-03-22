@@ -8,6 +8,8 @@
 :jbake-disqus_enabled: true
 :jbake-disqus_identifier: f184187c-69d1-11ea-b388-87b974545588
 :idprefix:
+:sectnums:
+:sectnumlevels: 5
 
 Author: Marc Gorzala
 
