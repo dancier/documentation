@@ -607,4 +607,4 @@ Let's summarize what he have achieved:
 * We have an office suite, that enable us to work wherever we are
 * We can also easily work together on the very same document at the very same time!
 
-I hope you like this tutorial and recommend it!
+*I hope you like this tutorial and recommend it!*
