@@ -432,6 +432,7 @@ lines 18 - 20:: *Depends on* +
     starts after nextcloud
     * Nextcloud needs a running database, so we also wait until it is started.
 
+[[mysql]]
 ===== MySQL
 .docker-compose.yml (MySQL part)
 [source, bash, linenumbers]
@@ -504,23 +505,37 @@ lines 4 - 6:: *Environment* +
 +
 see link:https://www.collaboraoffice.com/code/docker/[this page] on Collabora Onlline for more help.
 lines 9:: *Depends on* +
-depends on Traefik
-lines 9-10::  capp_add MKNOD
+ ...Traefik for SSL-management.
+
+lines 9-10:: *Adding capablities* +
+ MKNOD enables the collabora container to create devices nodes. This could be dangerous (link:https://systemadminspro.com/docker-container-breakout/[link])
+ Do we really need this. The Nextcloud documentation comes with examples, containing this
+ directive, collabora comes without it. I will try in the future to run without it.
+ If you successfully run collabora without this being set, please use the comments to tell me.
 
 
 [[database-config]]
 ====  Configuring your database credentials with .env-template
-
+As mentioned in the <<mysql, mysql-part of the docker-compose>> we are configuring the
+passwords to be used for the database in an `.env` file. This is the template.
 [source, bash, linenumbers]
+
 ----
 MYSQL_ROOT_PASSWORD=<your-my-sql-root-passwort>
 MYSQL_PASSWORD=<the password for accessing the database for nextcloud>
 ----
-This file is only a template, you should copy it into `.env`, see LATER
+We will change this in the <<section-configuring-system, configuration section>>.
 
 ==== Maintaining the system with maintenance.sh
 
+This script should cover all maintenance tasks for you while operating
+your Nextcloud installation.
+
+Currently only a simple backup functionality is being implemented. You should
+do a backup especially before every update.
+
 ==== Configuring the backup with .maintenance.config
+This is used by the maintenance script and contains mostly variables for
 [source, bash, linenumbers]
 ----
 BASE_FOLDER=/home/marc/programm/nextcloud
