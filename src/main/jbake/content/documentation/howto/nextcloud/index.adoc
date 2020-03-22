@@ -417,13 +417,13 @@ lines 12 - 17:: *Labels* +
    as I told you in the description of the Traefik-Service, Traefik will be informed by every start and stop of a
    docker container. I will also be able to read the labels associated with the containers. By reading this lable,
    we tell traefik to feel responsible to this service.
-* *rule* +
-   This is also read by traefik and tell Traefik to forward all traffic has the http-host header set to
-  'cloud.dancier.net' to this service
-* *entrypoint* +
+* *Rule* +
+   This is also read by Traefik and tells it to forward all traffic that has the HTTP-host header set to
+  'cloud.dancier.net' to this service.
+* *Entry point* +
    Traefik will use this named endpoint (see configuration for Traefik) to consider traffic for Nextcloud
-* *certresolver*
-   Says which certifcate-generation strategy should be used (we configured also this in the Traefik-part)
+* *Certresolver* +
+   Defines which certifcate-generation strategy should be used (we configured also this in the Traefik-part)
 * *Strict-Header*
   *Tried to circumvent an error message in the nextcloud backend*
 
@@ -480,6 +480,7 @@ In the configuration part, I will tell you how to set this file up.
     restart: always
     environment:
       - domain=cloud\\.dancier\\.net
+      - DONT_GEN_SSL_CERT=YES
       - extra_params=--o:ssl.enable=false --o:ssl.termination=true
     depends_on:
       - traefik
@@ -491,12 +492,20 @@ In the configuration part, I will tell you how to set this file up.
       - "traefik.http.routers.collabora.entrypoints=websecure"
       - "traefik.http.routers.collabora.tls.certresolver=mytlschallenge"
 ----
-lines 4 - 6:: Environment
-              * domain
+lines 4 - 6:: *Environment* +
+              * *domain*, the DNS name of the Nextcloud installation
+              * DONT_GEN_SSL_CERT, SSL certifcate management is handeled by Traefik
               * extra_params
-lines 8::     depends on traefik
+              ** as Traefik will terminate SSL (only HTTP reaches this
+                 service, not HTTPS), we disable ssl here
+              ** we indicate, that SSL was used, but terminated (likely
+                 used for link generation, i guess)
+
++
+see link:https://www.collaboraoffice.com/code/docker/[this page] on Collabora Onlline for more help.
+lines 9:: *Depends on* +
+depends on Traefik
 lines 9-10::  capp_add MKNOD
-lines 11-15:: lables
 
 
 [[database-config]]
