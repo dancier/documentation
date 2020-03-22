@@ -613,7 +613,7 @@ been downloaded and the SSL-certificates are in place.
 Not open a browser and open `https://cloud.dancier.net` to intialize Nextcloud.
 You should see something like:
 
-image:nextcloud-first-start.png[align="center"]
+image::nextcloud-first-start.png[align="center"]
 
 1. Provide in username, the username that you plan to login to Nextcloud as an normal user (although you will also have admin access as this is the first user)
 1. Provide in Password, the password for this user
