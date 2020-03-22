@@ -305,7 +305,7 @@ parts one by one.
 [source, bash, linenumbers]
 ----
   traefik:
-    image: "traefik:v2.0.0-rc3"
+    image: "traefik:v2.2"
     command:
       - "--log.level=DEBUG"
       - "--providers.docker=true"
@@ -313,7 +313,7 @@ parts one by one.
       - "--entrypoints.websecure.address=:443"
       - "--certificatesresolvers.mytlschallenge.acme.tlschallenge=true"
       #- "--certificatesresolvers.mytlschallenge.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory"
-      - "--certificatesresolvers.mytlschallenge.acme.email=marc@becheftigt.de"
+      - "--certificatesresolvers.mytlschallenge.acme.email=yourmail@mail.de"
       - "--certificatesresolvers.mytlschallenge.acme.storage=/letsencrypt/acme.json"
     restart: always
     ports:
@@ -387,7 +387,7 @@ line 15 - 17:: *link:https://docs.docker.com/storage/volumes/[Volumes]* +
     volumes:
       - ./nextcloud-core:/var/www/html
       - ./nextcloud-apps:/var/www/html/custom_apps
-      - /mnt/nextcloud-data/:/var/www/html/data
+      - ./nextcloud-data/:/var/www/html/data
       - ./nextcloud-config:/var/www/html/config
     labels:
       - "traefik.enable=true"
@@ -406,10 +406,7 @@ line 3-5:: *Environment* +
 lines 7 - 11:: *Volumes* +
  * nextcloud-core, this will contain the core part of nextcloud
  * nextcloud-app, this will hold your installed apps (kind of extensions of nextcloud)
- * nextcloud-data, this very likely to be the volume that has to store most because all the
-   files that you will handle by nextcloud will be stored here. I pointed this to a path, where I mounted
-   an external hard disk, that i dedicated to my nextcloud installation. This is also the only volume with an
-   absolute path. All other volumes from this service will have relative path and
+ * nextcloud-data, this very likely to be the volume that has to store most.
  * nextcloud-config, this will contain the configuration files the will be read by Nextcloud
 
 lines 12 - 17:: *Labels* +
@@ -562,9 +559,38 @@ Now we will change some of the files, adapting them to your requirement
 and are ready to go.
 
 ==== Create .env
+You see in the root-directory of the project a file called `.env-template`. As the
+name implies, this is only a template. Let's create the file that we will use from it.
+
+[source, bash]
+----
+root@cloud:~/nextcloud# cp .env-template .env
+----
+
+Now edit the file (I would suggest to use vim) and provide the password you want
+the mysql-database should use. One is the root password for the db and the other one is
+the password for the user 'nextcloud' that is being used by Nextcloud to connect to the
+database.
+
+==== Edit docker-compose.yml
+Traefik::
+You have to edit the email-address for the certificate-generation process.
+You can leave the rest as it is. The certifcates will be stored than relativ to the project
+in a folder 'letsencrypt'. The folder will be created by docker-compose, if it does not exists.
+Nothing do to for you.
+
+Nextcloud::
+Just, update the rule entry that it checks for your hostname.
+
+You can leave the rest. All volumes are again relativ to the project root.
+Mysql::
+Nothing to do here for you.
+
+Collabora::
+Only change here the rule for traefik that it matches your domain-name for collabora.
 ==== First start of the system
+
 ==== Change config.php
--- change in config.php
 
 'overwritehost' => 'cloud.becheftigt.de',
 'overwriteprotocol' => 'https',
