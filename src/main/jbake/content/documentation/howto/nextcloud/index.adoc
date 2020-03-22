@@ -612,16 +612,43 @@ been downloaded and the SSL-certificates are in place.
 Not open a browser and open `https://cloud.dancier.net` to intialize Nextcloud.
 You should see something like:
 
-image:nextcloud-first-start.png[]
+image:nextcloud-first-start.png[align="center"]
 
+1. Provide in username, the username that you plan to login to Nextcloud as an normal user (although you will also have admin access as this is the first user)
+1. Provide in Password, the password for this user
+1. click on storage an database to open the corresponding dialog
+1. select MySQL/MariaDB as the database
+1. do not change the data folder
+1. Provide as database user 'nextcloud'
+1. Provide as database password, the password from the `.env` file
+1. Provide as database name 'nextcloud'
+1. instead of localhost, type 'mysql'. This is the hostname, that the Nextcloud service should use as the database.
+ Docker Compose will create a network for all the servives in the compose file where each service get's resolved by it's service name. Elegant, or?
+1. *deselect* install recommended apps, as we will not use OnlyOffice. We will use collabora office
+1. Now click on finish
 
+Unfortunately you will end up in an error page. The reason is, that he default config, will redirect you to
+the http version. As we do not have an not encrypted version, this will end up in nothing, which is an error page ;-)
+
+In the next section you we will get rid of this.
 ==== Change config.php
 
-'overwritehost' => 'cloud.becheftigt.de',
-'overwriteprotocol' => 'https',
-'overwrite.cli.url' => 'https://cloud.becheftigt.de',
+You can stop the running docker-compose setup by typing `CTRL` + `C`.
+if you check which directories does now exist, than you will see that docker compose has created one for each volume
+that we have configured.
 
-cat 'trusted_proxies' => array('172.18.0.0/16'),
+edit the file `./nextcloud-config/config.php`
+
+make sure the following keys exist one time and have the following values (and use your brain to use your hostnames ;-)
+
+[source, bash]
+----
+'overwritehost' => 'cloud.dancier.net',
+'overwriteprotocol' => 'https',
+'overwrite.cli.url' => 'https://cloud.dancier.net',
+----
+
+Now if you open again `https://cloud.dancier.net` (really use the https) than you should be able to login!
 
 
 ==== Enable I-Phone/Max Sync
