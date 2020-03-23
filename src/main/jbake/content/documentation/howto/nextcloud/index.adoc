@@ -217,7 +217,6 @@ drwx------ 6 root root 4096 Mar 20 14:28 ..
 -rwxr-xr-x 1 root root  119 Mar 20 14:28 .env-template
 drwxr-xr-x 8 root root 4096 Mar 20 14:28 .git
 -rw-r--r-- 1 root root   86 Mar 20 14:28 .gitignore
--rw-r--r-- 1 root root  305 Mar 20 14:28 .maintenance.config
 -rwxr-xr-x 1 root root 3250 Mar 20 14:28 maintenance.sh
 -rw-r--r-- 1 root root 5708 Mar 20 14:28 README.adoc
 drwxr-xr-x 3 root root 4096 Mar 20 14:28 update
@@ -239,6 +238,56 @@ _waste time_ understanding what you are doing and directly want to configure and
 feel to skip to <<section-configuring-system>>. But I strongly recommmend that you come back to
 read _and_ understand what you have configured.
 
+==== Configuring your database credentials with .env-template
+This file contains variables that will be used in other scripts. So you need to declare them
+only in one central file. To become effective you first have to rename this file to
+`.env` and change the values as needed. This will be handled
+in the section <<section-configuring-system>>.
+
+To get an idea, I show you here the content of such a file. It is not needed that you
+understand the purpose of all the variables. They will be explained in later sections.
+For now it is enough for you to briefly have a look on them and now that:
+1. a line starting with a `#` introduces a comment, so will not be used by other scripts
+1. a variable definition is of the following format <variable-name>=<value>
+
+[source, bash, linenumbers]
+----
+#### Traefik
+TRAEFIK_IMAGES=traefik:v2.2
+TRAEFIK_LOG_LEVEL=DEBUG
+
+#### Letsencrypt
+# Needed for getting ssl-certificates
+ACME_MAIL=yourmail@address.de
+# Stores the ssl-certificates
+VOLUMES_LETSENCRYPT=./letsencrypt
+
+#### Nextcloud
+NEXTCLOUD_IMAGE=nextcloud
+NEXTCLOUD_ADMIN_USER=test
+NEXTCLOUD_ADMIN_PASSWORD=secrect
+NEXTCLOUD_VOLUMES_CORE=./nextcloud-core
+NEXTCLOUD_VOLUMES_APPS=./nextcloud-apps
+NEXTCLOUD_VOLUMES_DATA=./nextcloud-data/
+NEXTCLOUD_VOLUMES_CONFIG=./nextcloud-config
+NEXTCLOUD_HOSTNAME=cloud.dancier.net
+NEXTCLOUD_TRUSTED_DOMAINS=cloud.dancier.net
+
+#### MySQL
+MYSQL_IMAGE=mariadb:latest
+
+MYSQL_VOLUMES=./nextcloud-mysql
+
+MYSQL_ROOT_PASSWORD=<your-my-sql-root-passwort>
+MYSQL_PASSWORD=<the password for accessing the database for nextcloud>
+
+#### Collabora
+COLLABORA_IMAGE=collabora/code
+COLLABORA_DOMAIN=cloud\\.dancier\\.net
+COLLABORA_HOST=collabora.dancier.net
+----
+
+
 ==== Composing your services with docker-compose.yml
 To understand what you are doing here, it is important you have some knowledge about docker-compose.
 
@@ -246,7 +295,7 @@ First of all, that name of the folder that contains the docker-compose file is *
 Docker-compose will use the name of this folder to create things like networks and others for you. If you have cloned the project like I told
 you, this name is `nextcloud`.
 
-So name of created networks and containers will start with this name. So better not change
+So, names of created networks and containers will start with this name. So better do not change
 the name of this folder.
 
 In general, you can think of docker-compose as a way to configure different services that
@@ -255,17 +304,17 @@ Nextcloud installation with an office suite running.
 
 The different services that we need to configure in this docker compose file are:
 
-Traefik:: that acts as the reverse proxy, forwarding incoming requests to the different internal systems
-Nextcloud:: that is our main component
+Traefik::        that acts as the reverse proxy, forwarding incoming requests to the different internal systems
+Nextcloud::      that is our main component
 Mysql database:: that stores all the data for and is used by the Nextcloud service
-Collabora:: the service that is used to provide the office suite
+Collabora::      the service used to provide the office suite
 
-So already 4 services!
+So already four services!
 
-Those services will communicate with each other as shown in figure 1. The service-to-service
-communication happens via a private network that docker-compose will create. With this private
-network, this communication between these services is shielded from the rest of the docker-host
-(and with this also from the internet).
+Those services will communicate with each other as shown in  <<architectural-overview, figure 1>>.
+The service-to-service communication happens via a private network that docker-compose will create.
+With this private network, this communication between these services is shielded from the rest of
+the docker-host (and with this also from the internet).
 
 So let's see how these four services are configured:
 
@@ -305,21 +354,21 @@ parts one by one.
 [source, bash, linenumbers]
 ----
   traefik:
-    image: "traefik:v2.2"
+    image: ${TRAEFIK_IMAGES}
     command:
-      - "--log.level=DEBUG"
+      - "--log.level=${TRAEFIK_LOG_LEVEL}"
       - "--providers.docker=true"
       - "--providers.docker.exposedbydefault=false"
       - "--entrypoints.websecure.address=:443"
       - "--certificatesresolvers.mytlschallenge.acme.tlschallenge=true"
       #- "--certificatesresolvers.mytlschallenge.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory"
-      - "--certificatesresolvers.mytlschallenge.acme.email=yourmail@mail.de"
+      - "--certificatesresolvers.mytlschallenge.acme.email=${ACME_MAIL}"
       - "--certificatesresolvers.mytlschallenge.acme.storage=/letsencrypt/acme.json"
     restart: always
     ports:
       - "443:443"
     volumes:
-      - "./letsencrypt:/letsencrypt"
+      - "${VOLUMES_LETSENCRYPT}:/letsencrypt"
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
 ----
 
@@ -379,19 +428,24 @@ line 15 - 17:: *link:https://docs.docker.com/storage/volumes/[Volumes]* +
 [source, bash, linenumbers]
 ----
   nextcloud:
-    image: nextcloud
+    image: ${NEXTCLOUD_IMAGE}
     environment:
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
+      - MYSQL_HOST=mysql
+      - MYSQL_PASSWORD
+      - NEXTCLOUD_ADMIN_USER
+      - NEXTCLOUD_ADMIN_PASSWORD
+      - NEXTCLOUD_TRUSTED_DOMAINS=${NEXTCLOUD_TRUSTED_DOMAINS}
     restart: always
     volumes:
-      - ./nextcloud-core:/var/www/html
-      - ./nextcloud-apps:/var/www/html/custom_apps
-      - ./nextcloud-data/:/var/www/html/data
-      - ./nextcloud-config:/var/www/html/config
+      - ${NEXTCLOUD_VOLUMES_CORE}:/var/www/html
+      - ${NEXTCLOUD_VOLUMES_APPS}:/var/www/html/custom_apps
+      - ${NEXTCLOUD_VOLUMES_DATA}:/var/www/html/data
+      - ${NEXTCLOUD_VOLUMES_CONFIG}:/var/www/html/config
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.nextcloud.rule=Host(`cloud.dancier.net`)"
+      - "traefik.http.routers.nextcloud.rule=Host(`${NEXTCLOUD_HOSTNAME}`)"
       - "traefik.http.routers.nextcloud.entrypoints=websecure"
       - "traefik.http.routers.nextcloud.tls.certresolver=mytlschallenge"
       - "traefik.http.middlewares.nextcloud.headers.customresponseheaders.Strict-Transport-Security=max-age=15552000; includeSubDomains"
@@ -435,10 +489,10 @@ lines 18 - 20:: *Depends on* +
 [source, bash, linenumbers]
 ----
   mysql:
-    image: mariadb:latest
+    image: ${MYSQL_IMAGE}
     command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
     volumes:
-      - ./nextcloud-mysql:/var/lib/mysql
+      - ${MYSQL_VOLUMES}:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD
       - MYSQL_PASSWORD
@@ -476,10 +530,10 @@ In the configuration part, I will tell you how to set up this file.
 [source, bash, linenumbers]
 ----
   collabora:
-    image: collabora/code
+    image: ${COLLABORA_IMAGE}
     restart: always
     environment:
-      - domain=cloud\\.dancier\\.net
+      - domain=${COLLABORA_DOMAIN}
       - DONT_GEN_SSL_CERT=YES
       - extra_params=--o:ssl.enable=false --o:ssl.termination=true
     depends_on:
@@ -488,7 +542,7 @@ In the configuration part, I will tell you how to set up this file.
       - MKNOD
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.collabora.rule=Host(`collabora.dancier.net`)"
+      - "traefik.http.routers.collabora.rule=Host(`${COLLABORA_HOST}`)"
       - "traefik.http.routers.collabora.entrypoints=websecure"
       - "traefik.http.routers.collabora.tls.certresolver=mytlschallenge"
 ----
@@ -512,18 +566,6 @@ lines 9-10:: *Adding capablities* +
  directive, collabora comes without it. I will try in the future to run without it.
  If you successfully run collabora without this being set, please use the comments to tell me.
 
-
-[[database-config]]
-====  Configuring your database credentials with .env-template
-As mentioned in the <<mysql, mysql-part of the docker-compose>> we are configuring the
-passwords to be used for the database in an `.env` file. This is the template.
-[source, bash, linenumbers]
-
-----
-MYSQL_ROOT_PASSWORD=<your-my-sql-root-passwort>
-MYSQL_PASSWORD=<the password for accessing the database for nextcloud>
-----
-We will change this in the <<section-configuring-system, configuration section>>.
 
 ==== Maintaining the system with maintenance.sh
 This script should cover all maintenance tasks for you while operating
