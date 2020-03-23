@@ -652,8 +652,20 @@ make sure the following keys exist one time and have the following values (and u
 
 Now if you open again `https://cloud.dancier.net` (really use the https) than you should be able to login!
 
-
 ==== Enable I-Phone/Max Sync
+Now I will show you that the default installation has still some minor quirks. I will show you how to
+identifiy them first, and second how to fix one of them.
+
+So, while being logged into the web frontend, open the settings dialog in the top right corner of the window:
+
+image::nextcloud-open-settings.png[align="center"]
+
+Then open in the administration overview one the left side of the window:
+
+image::nextcloud-administration-overview.png[align="center"]
+
+This will make Nextcloud checking the installation for known configuration problems.
+
 for apple support
 
 in nextcloud core.htaccess
