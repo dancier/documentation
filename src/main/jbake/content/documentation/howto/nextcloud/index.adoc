@@ -454,20 +454,22 @@ line 3:: *CLI-Parameter* +
 This is prescribed in link:https://docs.nextcloud.com/server/latest/admin_manual/configuration_database/linux_database_configuration.html[Nextcloud-Admin-Configuration]
 
 lines 6 - 10:: *Environment* +
-You, should notice that we configure 4 environment variables here.
-Two of them already with a an concret value
+You, should notice that we configure four environment variables here.
+Two of them already with a concrete value
  * MYSQL_DATABASE=nextcloud
  * MYSQL_USER=nextcloud
 +
-This, configures MYSQL to create a database named nextcloud with a user with the same name, that has all rights.
-The creation of the database happens only when a database with this name not already exist.
-The passwords for these tasks are taken from the next two environment variables.
+This, configures MYSQL to create a database named 'nextcloud' with a user of the same name, that has
+all rights on the database 'nextcloud'.
+The creation of the database happens only it does not already exist.
+The corresponding passwords are taken from the next two environment variables.
  * MYSQL_ROOT_PASSWORD
  * MYSQL_PASSWORD
 +
-They do not have any values. In this case docker compose will take them from a file called `.env` from the
-current directory (this could also be overwritten by cli parameters, but in our case we do not care for that option).
-In the configuration part, I will tell you how to set this file up.
+They do not have any values. In such a case docker, compose will take them from a file named `.env` in the
+current directory (this could also be overwritten by CLI parameters when invoking docker-compose, but in
+our case we do not care).
+In the configuration part, I will tell you how to set up this file.
 
 ===== Collabora
 .docker-compose.yml (Collabora part)
@@ -492,8 +494,8 @@ In the configuration part, I will tell you how to set this file up.
 ----
 lines 4 - 6:: *Environment* +
               * *domain*, the DNS name of the Nextcloud installation
-              * DONT_GEN_SSL_CERT, SSL certifcate management is handeled by Traefik
-              * extra_params
+              * *DONT_GEN_SSL_CERT*, SSL certifcate management is handeled by Traefik
+              * *extra_params*
               ** as Traefik will terminate SSL (only HTTP reaches this
                  service, not HTTPS), we disable ssl here
               ** we indicate, that SSL was used, but terminated (likely
