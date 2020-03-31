@@ -688,7 +688,23 @@ Login in with the values `NEXTCLOUD_ADMIN_USER` and `NEXTCLOUD_ADMIN_PASSWORD` f
 
 ==== Install/Configure the collabora office plugin
 
-When you 
+You have now a running collabora-office server running. What is missing, is
+to install the appropiate plugin/app for Nextcloud.
+
+1. First login into Nextcloud with your Browser
+1. In to top right corner open the configuration menu
+
+image::nextcloud-install-collabora-a.png[align="center"]
+
+image::nextcloud-install-collabora-b.png[align="center"]
+
+image::nextcloud-configure-collabora-a.png[align="center"]
+
+image::nextcloud-configure-collabora-b.png[align="center"]
+
+image::nextcloud-configure-collabora-c.png[align="center"]
+
+image::nextcloud-configure-collabora-d.png[align="center"]
 
 == Do your first backup
 
