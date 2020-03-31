@@ -1,7 +1,7 @@
 = Setting up your own Nextcloud with Collabora Office
 :jbake-type: page
 :jbake-status: published
-:jbake-date: 2020-03-21
+:jbake-date: 2020-03-31
 :jbake-tags: nextcloud, traefik, docker, docker-compose, collabora, code, cloud, letsencrypt,  ssl, office, backup, ubunutu, linux
 :jbake-description: How to setup you Nextcloud with docker, traefik, Collabora, office and letsencrypt
 :jbake-author: Marc Gorzala
@@ -637,50 +637,41 @@ So give it a try and start the system!
 cd /root/nextcloud
 docker-compose up
 ----
-This first run will take some time. At an essence the following time consuming things happen:
+This first run will take some time. At an essence the following time-consuming things happen:
 * all docker image will be downloaded from docker (we have 4 services, so this is not few data)
 * the ssl certifcates will be created
 
 You may have realized that the docker-compose command does not return to your terminal. If you
-want to stop docker, than you have to type `CTRL`+`C`.
+want to stop docker, than you have to type `CTRL`+`C`. (But do not stop it now! If you already
+have stopped it, just restart with `docker-compose up` and continue reading.)
 
-Later we will start docker compose in the background. But for now this is more convenient.
+Later we will start docker compose in the background.
 
 When you do not see any progress on the console, that you can safely assume that everything has
-been downloaded and the SSL-certificates are in place.
+been downloaded, and the SSL-certificates are in place.
 
 Not open a browser and open `https://cloud.dancier.net` to intialize Nextcloud.
-You should see something like:
+If you get an HTTP 502 (Bad Gateway), than you have not waited long enough. Just wait one or two minutes more.
 
-image::nextcloud-first-start.png[align="center"]
+Then you should get another error message ;-)
 
-1. Provide in username, the username that you plan to login to Nextcloud as an normal user (although you will also have admin access as this is the first user)
-1. Provide in Password, the password for this user
-1. click on storage an database to open the corresponding dialog
-1. select MySQL/MariaDB as the database
-1. do not change the data folder
-1. Provide as database user 'nextcloud'
-1. Provide as database password, the password from the `.env` file
-1. Provide as database name 'nextcloud'
-1. instead of localhost, type 'mysql'. This is the hostname, that the Nextcloud service should use as the database.
- Docker Compose will create a network for all the servives in the compose file where each service get's resolved by it's service name. Elegant, or?
-1. *deselect* install recommended apps, as we will not use OnlyOffice. We will use collabora office
-1. Now click on finish
+The reason is, that the default config will make Nextcloud generating redirect links to the
+HTTP Version (the non SSL/HTTPS) of the links. On this links, no service is being configured,
+so you will see an error page of the browser.
 
-Unfortunately you will end up in an error page. The reason is, that he default config, will redirect you to
-the http version. As we do not have an not encrypted version, this will end up in nothing, which is an error page ;-)
-
-In the next section you we will get rid of this.
+You have to change the config of Nextcloud to fix this. This will be explained in the
+next section.
 
 ==== Change config.php
 
 You can stop the running docker-compose setup by typing `CTRL` + `C`.
-if you check which directories does now exist, than you will see that docker compose has created one for each volume
-that we have configured.
+Check which directories are now existing. You will see that docker compose has created one for each volume
+that we have configured. And these folder are also not empty, they contain the mounted files
+from the docker containers.
 
-edit the file `./nextcloud-config/config.php`
+Edit the file `./nextcloud-config/config.php`.
 
-make sure the following keys exist one time and have the following values (and use your brain to use your hostnames ;-)
+Make sure the following keys exist one time and have the following values (and use your brain to use your hostnames ;-)
 
 [source, bash]
 ----
@@ -689,32 +680,15 @@ make sure the following keys exist one time and have the following values (and u
 'overwrite.cli.url' => 'https://cloud.dancier.net',
 ----
 
-Now if you open again `https://cloud.dancier.net` (really use the https) than you should be able to login!
+Now if you open again `https://cloud.dancier.net` (really use the https) than you
+should be able to login!
 
-==== Enable I-Phone/Max Sync
-Now I will show you that the default installation has still some minor quirks. I will show you how to
-identifiy them first, and second how to fix one of them.
+Login in with the values `NEXTCLOUD_ADMIN_USER` and `NEXTCLOUD_ADMIN_PASSWORD` from your `.env` file.
 
-So, while being logged into the web frontend, open the settings dialog in the top right corner of the window:
 
-image::nextcloud-open-settings.png[align="center"]
+==== Install/Configure the collabora office plugin
 
-Then open in the administration overview one the left side of the window:
-
-image::nextcloud-administration-overview.png[align="center"]
-
-This will make Nextcloud checking the installation for known configuration problems.
-
-for apple support
-
-in nextcloud core.htaccess
-
-RewriteRule ^\.well-known/host-meta https://%{HTTP_HOST}/public.php?service=host-meta [QSA,L]
-RewriteRule ^\.well-known/host-meta\.json https://%{HTTP_HOST}/public.php?service=host-meta-json [QSA,L]
-RewriteRule ^\.well-known/webfinger https://%{HTTP_HOST}/public.php?service=webfinger [QSA,L]
-RewriteRule ^\.well-known/nodeinfo https://%{HTTP_HOST}/public.php?service=nodeinfo [QSA,L]
-RewriteRule ^\.well-known/carddav https://%{HTTP_HOST}/remote.php/dav/ [R=301,L]
-RewriteRule ^\.well-known/caldav https://%{HTTP_HOST}/remote.php/dav/ [R=301,L]
+When you 
 
 == Do your first backup
 

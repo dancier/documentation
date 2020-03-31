@@ -1,0 +1,24 @@
+==== Enable I-Phone/Max Sync
+Now I will show you that the default installation has still some minor quirks. I will show you how to
+identifiy them first, and second how to fix one of them.
+
+So, while being logged into the web frontend, open the settings dialog in the top right corner of the window:
+
+image::nextcloud-open-settings.png[align="center"]
+
+Then open in the administration overview one the left side of the window:
+
+image::nextcloud-administration-overview.png[align="center"]
+
+This will make Nextcloud checking the installation for known configuration problems.
+
+for apple support
+
+in nextcloud core.htaccess
+
+RewriteRule ^\.well-known/host-meta https://%{HTTP_HOST}/public.php?service=host-meta [QSA,L]
+RewriteRule ^\.well-known/host-meta\.json https://%{HTTP_HOST}/public.php?service=host-meta-json [QSA,L]
+RewriteRule ^\.well-known/webfinger https://%{HTTP_HOST}/public.php?service=webfinger [QSA,L]
+RewriteRule ^\.well-known/nodeinfo https://%{HTTP_HOST}/public.php?service=nodeinfo [QSA,L]
+RewriteRule ^\.well-known/carddav https://%{HTTP_HOST}/remote.php/dav/ [R=301,L]
+RewriteRule ^\.well-known/caldav https://%{HTTP_HOST}/remote.php/dav/ [R=301,L]
