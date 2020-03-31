@@ -188,10 +188,12 @@ You need the following tools on the server you are going to install Nextcloud.
  * git
  * vim (not necessarily needed, but good to have ;-) )
 
-You can install the tools on your own or you can download my script and
-execute it with on a fresh Ubuntu-Host that should serve the Nextcloud installation.
-If this script will not run on your system, it could give you hints how to install the tools.
-The script is also already cloning the repository containing the docker setup for Nextcloud.
+You can install the tools on your own, or you can download my script and
+execute it on a freshly installed Ubuntu-Host that should serve the
+Nextcloud installation.
+This script installs all the needed tools and clones the project-repository
+containing the whole setup for Nextcloud.
+
 The next section will assume the script has been run successfully or at least you have
 performed the equivalent steps manually.
 
@@ -201,10 +203,12 @@ Get the script here:
 
 Copy this script to your server (or download it from there) and execute it.
 
+NOTE: If this script will not run on your system, it could give you hints how to install
+      the tools. Just do manually what the script would do for you an a compatible system ;-)
+
 === Inspecting the project
 
-Assuming you have already cloned the repository to `/root/nextcloud/`, let's inspect
-the project structure:
+Check the clone project from:  `/root/nextcloud/`:
 
 [source, bash]
 ----
@@ -228,25 +232,28 @@ Brief description of the purpose of the files:
  * *docker-compose.yml* configures all the containers that we use and how they work together
  * *.env-template* template for the config file that will hold your database credentials
  * *.git* and *.gitignore* git internals, you can ignore them
- * *.maintenance.config* configures how you will backup/update your system
  * *maintenance.sh* the script for doing a backup and update (not yet complete)
  * *README.adoc* very short explanation how to use this project
  * *update* folder that belongs to updating the system. Maybe not really needed.
 
-Let's have a more in deep look into the files in the following sections. If you don't want to
-_waste time_ understanding what you are doing and directly want to configure and start the system,
-feel to skip to <<section-configuring-system>>. But I strongly recommmend that you come back to
-read _and_ understand what you have configured.
+You will configure almost everything with `.env-template`, so we will start with have a short look
+into this file.
 
-==== Configuring your database credentials with .env-template
+I think you really need to understand what you are going to install. Latest in case, when something
+goes wrong, it is better to not start trying to understand the system, just then.
+
+If you are really impatient you can try to skip directly over to section <<section-configuring-system>>.
+In this case I wish you a good luck. But consider at least coming back to the more detailed
+explanations later.
+
+==== The main configuration-file `.env-template`
 This file contains variables that will be used in other scripts. So you need to declare them
-only in one central file. To become effective you first have to rename this file to
-`.env` and change the values as needed. This will be handled
-in the section <<section-configuring-system>>.
+only in one central file.
 
-To get an idea, I show you here the content of such a file. It is not needed that you
-understand the purpose of all the variables. They will be explained in later sections.
-For now it is enough for you to briefly have a look on them and now that:
+To get an idea, see one example content of such a file. It is not needed that you
+understand all the variables just now. They will be explained in later sections.
+It is enough for you to briefly have a look on them and know that:
+
 1. a line starting with a `#` introduces a comment, so will not be used by other scripts
 1. a variable definition is of the following format <variable-name>=<value>
 
@@ -287,22 +294,21 @@ COLLABORA_DOMAIN=cloud\\.dancier\\.net
 COLLABORA_HOST=collabora.dancier.net
 ----
 
-
 ==== Composing your services with docker-compose.yml
-To understand what you are doing here, it is important you have some knowledge about docker-compose.
+You need some knowledge of, how docker-compose works, to not break things unintentionally.
 
-First of all, that name of the folder that contains the docker-compose file is *important*.
-Docker-compose will use the name of this folder to create things like networks and others for you. If you have cloned the project like I told
-you, this name is `nextcloud`.
+First of all be aware that name of the folder that contains the docker-compose file is *important*.
+Docker-compose will use the name of this folder to create things like networks and others for you.
+If you have cloned the project like I told you, this name is `nextcloud`.
 
 So, names of created networks and containers will start with this name. So better do not change
-the name of this folder.
+the name of this folder!
 
 In general, you can think of docker-compose as a way to configure different services that
 should act together to fulfill a certain use case. In this case it is, having a full featured
 Nextcloud installation with an office suite running.
 
-The different services that we need to configure in this docker compose file are:
+The different services in our case are:
 
 Traefik::        that acts as the reverse proxy, forwarding incoming requests to the different internal systems
 Nextcloud::      that is our main component
@@ -312,7 +318,7 @@ Collabora::      the service used to provide the office suite
 So already four services!
 
 Those services will communicate with each other as shown in  <<architectural-overview, figure 1>>.
-The service-to-service communication happens via a private network that docker-compose will create.
+The service-to-service communication happens via a private network that docker-compose will create for you.
 With this private network, this communication between these services is shielded from the rest of
 the docker-host (and with this also from the internet).
 
@@ -382,7 +388,9 @@ line 1:: *Name* +
          of the service and a number for that node(we will have only one noce per service, so
          this will be always 1)
 line 2:: *Docker image* +
-         defines which link:https://hub.docker.com/_/traefik[docker image] to get for traefik
+         defines which link:https://hub.docker.com/_/traefik[docker image] to get for traefik. +
+         This is made configurable via a <<section-configuring-system, variable>>
+
 lines 4-11:: *CLI parameters for Traefik* +
          In short: the configuration of traefik is being grouped into static configuration
          (everything that changes rarely(are we working with docker, or kubernetes,...) and
@@ -410,14 +418,16 @@ line 7:: *Entry points* +
          Traefik will use this endpoint to handle all incoming traffic and route it to the
          respective containers (see <<architectural-overview, figure>>).
 line 8-11:: *SSL-configuration* +
-         Configures how Traefik should manage certificates.
+         Configures how Traefik should manage certificates. +
+         One <<section-configuring-system, variable>> is also made configurable.
 line 12:: *Restart always* +
          Makes Traefik always automatically restart, in case it crashes.
 line 13 - 14:: *Ports* +
          We will only expose (listing on that port on the docker-host) port 443. This is the
          default for HTTPS/SSL
 line 15 - 17:: *link:https://docs.docker.com/storage/volumes/[Volumes]* +
-         * The Letsencrypt volume is used to store the SSL-certificate related things'.
+         * The Letsencrypt volume is used to store the SSL-certificate related things'. +
+           This is made configurable via a <<section-configuring-system, variable>>.
          * Docker link:https://en.wikipedia.org/wiki/Unix_domain_socket[socket] is someway special: +
            It enables the traefik container to connect to the mentioned socket on the docker-host.
            By connecting to this socket, Traefik is aware of all containers that are started and stopped.
@@ -436,7 +446,7 @@ line 15 - 17:: *link:https://docs.docker.com/storage/volumes/[Volumes]* +
       - MYSQL_PASSWORD
       - NEXTCLOUD_ADMIN_USER
       - NEXTCLOUD_ADMIN_PASSWORD
-      - NEXTCLOUD_TRUSTED_DOMAINS=${NEXTCLOUD_TRUSTED_DOMAINS}
+      - NEXTCLOUD_TRUSTED_DOMAINS
     restart: always
     volumes:
       - ${NEXTCLOUD_VOLUMES_CORE}:/var/www/html
@@ -453,11 +463,26 @@ line 15 - 17:: *link:https://docs.docker.com/storage/volumes/[Volumes]* +
       - mysql
       - traefik
 ----
-line 3-5:: *Environment* +
+line 3-16:: *Environment* +
   We are passing two environment variables into the Nextcloud-container...
     * the database name to be used to 'nextcloud'.
     * the database username to be used also to 'nextcloud'.
-lines 7 - 11:: *Volumes* +
+    * the hostname of the db, that we will connect to. Docker-compose, will create
+      an internal network for all your services. In this network each service can find
+      each other via it's service name. Docker provide an DNS-server that resolves those
+      names correct.
+    * MYSQL_PASSWORD +
+      that is password nextcloud will use to connect to the database. We are not providing
+      here a value. This will make docker-compose lookup a value from an environment. In
+      our case those values will come from the <<section-configuring-system, configuration file>>.
+    * NEXTCLOUD_ADMIN_USER +
+      Nextcloud will be initialiased with an created user with this name. This user will
+      have admin rights.
+    * NEXTCLOUD_ADMIN_PASSWORD +
+      The password for the aforementioned user.
+    * NEXTCLOUD_TRUSTED_DOMAINS +
+      the domain-name this installation feels responsible for (`cloud.dancier.net`)
+lines 12 - 16:: *Volumes* +
  * nextcloud-core, this will contain the core part of nextcloud
  * nextcloud-app, this will hold your installed apps (kind of extensions of nextcloud)
  * nextcloud-data, this very likely to be the volume that has to store most.
@@ -470,7 +495,7 @@ lines 12 - 17:: *Labels* +
    we tell traefik to feel responsible to this service.
 * *Rule* +
    This is also read by Traefik and tells it to forward all traffic that has the HTTP-host header set to
-  'cloud.dancier.net' to this service.
+   the configurable value to this service.
 * *Entry point* +
    Traefik will use this named endpoint (see configuration for Traefik) to consider traffic for Nextcloud
 * *Certresolver* +
@@ -576,65 +601,35 @@ do a backup especially before every update.
 
 We will explain the usage of this script after we had configured it.
 
-==== Configuring the backup with .maintenance.config
-
-This is used by the maintenance script and contains mostly variables for the backup.
-We will configure this later.
-[source, bash, linenumbers]
-----
-BASE_FOLDER=/home/marc/programm/nextcloud
-NEXTCLOUD_DATA_FOLDER=/mnt/nextcloud-data
-LETSENCRYPT=letsencrypt
-NEXTCLOUD_APPS=nextcloud-apps
-NEXTCLOUD_CONFIG=nextcloud-config
-NEXTCLOUD_CORE=nextcloud-core
-NEXTCLOUD_MYSQL=nextcloud-mysql
-
-BACKUP_FOLDER=/media/marc/0519a4be-d9ce-4725-81f3-a26d9e577d13/backup
-----
-
 [[section-configuring-system]]
 === Configuring the system
 
-Now you should have at least a brief understanding, about the important files.
-You also have made sure that the DNS names point to the correct IP-address.
+Now you should have at least an understanding, about the important files.
+You also have made sure, that the DNS names point to the correct IP-address.
 
-Now we will change some of the files, adapting them to your requirement
-and are ready to go.
+Not we are making our fingers wet, change a file and start the system!
 
-==== Create .env
+==== Creating and editing `.env`
 You see in the root-directory of the project a file called `.env-template`. As the
-name implies, this is only a template. Let's create the file that we will use from it.
+name implies, this is only a template. Let's create a nontemplate from this.
 
 [source, bash]
 ----
 root@cloud:~/nextcloud# cp .env-template .env
 ----
 
-Now edit the file (I would suggest to use vim) and provide the password you want
-the mysql-database should use. One is the root password for the db and the other one is
-the password for the user 'nextcloud' that is being used by Nextcloud to connect to the
-database.
+Now edit the file (I would suggest to use vim). You will have to adapt at least, the
+domain names to match your needs. I tried to use self explaining varibale names with
+additionally help of comments where I considered the name as not explaining enough.
 
-==== Edit docker-compose.yml
-Traefik::
-You have to edit the email-address for the certificate-generation process.
-You can leave the rest as it is. The certifcates will be stored than relativ to the project
-in a folder 'letsencrypt'. The folder will be created by docker-compose, if it does not exists.
-Nothing do to for you.
-
-Nextcloud::
-Just, update the rule entry that it checks for your hostname.
-
-You can leave the rest. All volumes are again relativ to the project root.
-Mysql::
-Nothing to do here for you.
-
-Collabora::
-Only change here the rule for traefik that it matches your domain-name for collabora.
+(In case of questions, just use the comments under this howto. I will give my best to help you).
 
 ==== First start of the system
-Now everything should be find, to first start the system!
+Now everything should be fine.
+
+You have an `.env` file with updated values where it this was needed.
+
+So give it a try and start the system!
 
 [source, bash]
 ----
