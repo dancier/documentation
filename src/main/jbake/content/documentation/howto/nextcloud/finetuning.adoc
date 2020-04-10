@@ -22,3 +22,10 @@ RewriteRule ^\.well-known/webfinger https://%{HTTP_HOST}/public.php?service=webf
 RewriteRule ^\.well-known/nodeinfo https://%{HTTP_HOST}/public.php?service=nodeinfo [QSA,L]
 RewriteRule ^\.well-known/carddav https://%{HTTP_HOST}/remote.php/dav/ [R=301,L]
 RewriteRule ^\.well-known/caldav https://%{HTTP_HOST}/remote.php/dav/ [R=301,L]
+
+
+== Some problems that you may have
+
+https://github.com/jowave/vcard2to3
+
+2.1 3.1
