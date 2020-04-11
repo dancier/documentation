@@ -685,38 +685,56 @@ should be able to login!
 
 Login in with the values `NEXTCLOUD_ADMIN_USER` and `NEXTCLOUD_ADMIN_PASSWORD` from your `.env` file.
 
-
 ==== Install/Configure the collabora office plugin
 
-You have now a running collabora-office server running. What is missing, is
+Now you have a running collabora-office server. What is left out, is
 to install the appropiate plugin/app for Nextcloud.
 
 1. First login into Nextcloud with your Browser
-1. In to top right corner open the configuration menu
-
+1. In to top right corner, open the `Apps` menu: +
++
 image::nextcloud-install-collabora-a.png[align="center"]
-
+1. Type "colla" in the serach field and click on "Download and enable"
+on the appearing App-Entry:
++
 image::nextcloud-install-collabora-b.png[align="center"]
-
+1. Now you have to configure the installed App. Open the
+`Settings` from the top right corner: +
++
 image::nextcloud-configure-collabora-a.png[align="center"]
 
+1. Select in `Administration` the sub-item `Collabora Online`: +
++
 image::nextcloud-configure-collabora-b.png[align="center"]
 
+1. To configure the App, type in the URL to the collabora host, and
+click on apply.
++
 image::nextcloud-configure-collabora-c.png[align="center"]
-
+1. Now , from the files Area from Nextcloud, open one of the example
+office documents, or just create a new one.
++
 image::nextcloud-configure-collabora-d.png[align="center"]
+Now you are done. Enjoy it!
 
 == Summary
-If you like this How two, link me, show it in the comments! Also, use the comments in case
-of questions.
-
 Let's summarize what he have achieved:
 
 * We have an own Nextcloud installation running
 * Everything is reachable via valid SSL certificates
-* We can sync with Desktops running Windows/Mac and Linux
 * We can also sync with mobiles running Android/Mac
 * We have an office suite, that enable us to work wherever we are
 * We can also easily work together on the very same document at the very same time!
 
-*I hope you like this tutorial and recommend it!*
+*I hope you like this tutorial and recommend it! In case of question, or just
+for praise use the comments below.*
+
+== Where to go next
+
+In the next Howto I will explain:
+
+Howto ...
+
+* ... perform updates
+* ... do backups
+* ... fix Problem in your Installation with synching your I-Phone
