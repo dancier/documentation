@@ -21,30 +21,30 @@ This post explains how you _could_ setup your own link:https://nextcloud.com/[Ne
 with link:https://www.collaboraoffice.com/code/[Collabora Office] having SSL automatically managed via
 link:https://letsencrypt.org[Letsencrypt] and link:https://containo.us/traefik/[Traefik].
 
-
 *What is Nextcloud?*
 
-Nextcloud offers you to host a service like link:https://www.dropbox.com/[DropBox].
+Nextcloud offers a service like link:https://www.dropbox.com/[DropBox]:
 
-You can have you files synced between different devices like your Desktop/Laptop and
-mobile. Additionally you have also a calendar, a todo-list, your contacts and many other things synced
-across your devices.
+You can have you files synced between different devices like your desktop/laptop and
+mobile. Additionally, you have also a calendar, a todo-list, your contacts and many
+other things synced across your devices.
 
 *What is Collabora?*
 
-link:https://www.collaboraoffice.com/code/[Collabora], offers you the functionality of link:https://www.libreoffice.org/[Libre Office]
-in your browser. In this tutorial we will integrate Collabora into your Nextcloud
-installation, so that you can edit office documents directly in your Nextcloud!
+link:https://www.collaboraoffice.com/code/[Collabora], offers you the functionality of
+link:https://www.libreoffice.org/[Libre Office] in your browser. In this tutorial we
+will integrate Collabora into your Nextcloud installation, so that you can edit
+office documents directly in your Nextcloud!
 
 *The installed system will...*
 
 * ... use link:https://de.wikipedia.org/wiki/Hypertext_Transfer_Protocol_Secure[HTTPS]
-  to secure the communication with your Nextcloud.
-* ... include the Office Suite  link:https://www.collaboraoffice.com/code/[Collabora Office]
+  to secure the communication with Nextcloud.
+* ... include the Office Suite  link:https://www.collaboraoffice.com/code/[Collabora Office].
 * ... separate Code/App from your data, making it easy for you to
-** make backups (we will have a basic script for doing backups).
+** make backups.
 ** perform updates.
-* ... works behind a (DSL) router as well as on any other server in the cloud
+* ... work behind a (DSL) router as well as on any other server in the cloud
   or elsewhere.
 
 Ready to go? Great!
@@ -63,17 +63,15 @@ toc::[]
   (this post will assume you are using a Debian/Ubuntu based distribution).
 * You have control over DNS entries for a domain that you own. In this tutorial I will assume that
   you will use link:https://en.wikipedia.org/wiki/Subdomain[Subdomains] under `dancier.net`:
-** `cloud.dancier.net` - pointing to your Nextcloud installation
+** `cloud.dancier.net` - pointing to your future Nextcloud installation
 ** `collabora.dancier.net` - pointing to the installation of the office suite.
   (If you do not want to install the option for editing office files, you do not need this of course)
 +
-NOTE: The way we are installing the system is that everything is installed on the same machine
-      and we need only one IP-address. So both domain names point to this one address.
-
+NOTE: We are installing everything on one machine. So both domain names point to only one IP-address.
 
 * Basic knowledge of link:https://en.wikipedia.org/wiki/Linux[Linux] and link:https://www.docker.com/[Docker].
 
-== We will use the following technologies
+== Used technologies
 
 * link:https://www.docker.com/[Docker] for easy installation/updating of the needed
        software.
@@ -81,9 +79,9 @@ NOTE: The way we are installing the system is that everything is installed on th
        of the docker containers.
 * link:https://docs.traefik.io/[Traefik] for automatically maintaining SSL Certificates
        and forwarding requests to either Nextcloud or Collabora Online. In this way it acts
-       as an link:https://docs.docker.com/install/linux/docker-ce/ubuntu/[Reverse Proxy].
+       as a link:https://docs.docker.com/install/linux/docker-ce/ubuntu/[Reverse Proxy].
 * link:https://mysql.com/[MySQL] to be used as the database for Nextcloud.
-* link:https://www.collaboraoffice.com/code/[Collabora Office]
+* link:https://www.collaboraoffice.com/code/[Collabora Office] for the office functionality.
 
 == Architectural Overview
 [[architectural-overview]]
@@ -113,14 +111,14 @@ nextcloud --> db
 
 Let me short describe you this architecture briefly.
 
-. The `user` that is connecting to nextcloud.
+. The `user` that is connects to Nextcloud.
 . He is using a `browser` (or any other device/app) to make a connection
-. The browser connects to the `wlan_router` at your home. This is your
+. The `browser` connects to the `wlan_router` at your home. This is your
   only component with a public IP-address. The `wlan_router` is configured
   to link:https://en.wikipedia.org/wiki/Port_forwarding[forward every traffic]
   that it receives on its public IP-address on
-  Port 443 (the HTTPS port) to the IP-address of you local machine that
-  will host your Nextcloud installation on Port 443(to the `reverse_proxy`).
+  Port 443 (the HTTPS port) to the IP-address of your local machine that
+  will host your Nextcloud installation on Port 443 (to the `reverse_proxy`).
 +
 NOTE: If you are installing Nextcloud on a server that is directly
       connected to the internet, then this component does not exist,
@@ -130,12 +128,12 @@ NOTE: If you are installing Nextcloud on a server that is directly
 . The `reverse_proxy` is receiving the incoming traffic. It
   will inspect the request to find out to which host it should forward the request to.
 +
-TIP: If you want to know how the `reverse_proxy` could do this, as the Request is
+TIP: If you want to know how the `reverse_proxy` is able to do this, as the Request is
 encrypted, you can read link:https://cwiki.apache.org/confluence/display/HTTPD/NameBasedSSLVHostsWithSNI[this].
 (It is using link:https://en.wikipedia.org/wiki/Server_Name_Indication[SNI])
 . The `nextcloud` node contains just what the name implies. The main
-  program. It will store all your files locally to this.
-. The `db` node is the database that is used by `nextcloud` to store everything but files
+  program.
+. The `db` node is the database that is used by `nextcloud` to store everything but your files
   (contacts, calendar, ...)
 . `collabora` contains the office suite.
 
@@ -151,15 +149,15 @@ All incoming traffic has to reach the `reverse_proxy`. So the DNS should normall
 point to the machine you are going to install the system.
 
 TIP: In case you are installing the system on a host behind a `wlan-router`
-     (as depicted in above architecture diagram)
+     (as depicted in aboves architecture diagram)
      than you have to find out the public IP-address of the router. Use
      this IP-address to configure your DNS entries and forward all traffic
      that reaches your `wlan-router` on PORT 443 to the machine in your
      local net where you are going to install Nextcloud.
      +
-     Google for <router brand/type> port forwarding how to do this.
+     Just google for <router brand/type> and "port forwarding" how to do this.
 
-Assuming that the public IP-address is `5.61.144.190` you should get
+Assuming the public IP-address is `5.61.144.190` you should get
 the following responses when invoking a `nslookup` on the domains:
 
 [source, bash]
@@ -181,7 +179,7 @@ Name:	 collabora.dancier.net
 Address: 5.61.144.190
 ----
 
-=== Installing basic tools that you need
+=== Installing basic tools
 
 You need the following tools on the server you are going to install Nextcloud.
 
@@ -190,7 +188,7 @@ You need the following tools on the server you are going to install Nextcloud.
  * git
  * vim (not necessarily needed, but good to have ;-) )
 
-You can install the tools on your own, or you can download my script and
+You can install these tools on your own, or you can download my script and
 execute it on a freshly installed Ubuntu-Host that should serve the
 Nextcloud installation.
 This script installs all the needed tools and clones the project-repository
@@ -206,11 +204,11 @@ Get the script here:
 Copy this script to your server (or download it from there) and execute it.
 
 NOTE: If this script will not run on your system, it could give you hints how to install
-      the tools. Just do manually what the script would do for you an a compatible system ;-)
+      the tools. Just do manually what the script would do for you on a compatible system ;-)
 
 === Inspecting the project
 
-Check the clone project from:  `/root/nextcloud/`:
+Check the cloned project in:  `/root/nextcloud/`:
 
 [source, bash]
 ----
@@ -225,7 +223,6 @@ drwxr-xr-x 8 root root 4096 Mar 20 14:28 .git
 -rw-r--r-- 1 root root   86 Mar 20 14:28 .gitignore
 -rwxr-xr-x 1 root root 3250 Mar 20 14:28 maintenance.sh
 -rw-r--r-- 1 root root 5708 Mar 20 14:28 README.adoc
-drwxr-xr-x 3 root root 4096 Mar 20 14:28 update
 ----
 
 Brief description of the purpose of the files:
