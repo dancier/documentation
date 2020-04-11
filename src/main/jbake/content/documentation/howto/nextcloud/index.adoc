@@ -13,6 +13,8 @@
 
 Author: Marc Gorzala
 
+link:https://github.com/dancier/documentation/edit/master/src/main/jbake/content/documentation/howto/nextcloud/index.adoc[Edit This Document]
+
 image::nextcloud-logo-white.png[align="center"]
 
 This post explains how you _could_ setup your own link:https://nextcloud.com/[Nextcloud]
