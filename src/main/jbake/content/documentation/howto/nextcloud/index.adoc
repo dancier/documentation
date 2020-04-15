@@ -145,20 +145,20 @@ and `collabora.dancier.net` could reach our system.
 
 === Check your DNS/IP configuration
 
-All incoming traffic has to reach the `reverse_proxy`. So the DNS should normally
+All incoming traffic has to reach the `reverse_proxy`. So the DNS entry should normally
 point to the machine you are going to install the system.
 
 TIP: In case you are installing the system on a host behind a `wlan-router`
      (as depicted in aboves architecture diagram)
-     than you have to find out the public IP-address of the router. Use
+     you have to find out the public IP-address of the router. Use
      this IP-address to configure your DNS entries and forward all traffic
      that reaches your `wlan-router` on PORT 443 to the machine in your
-     local net where you are going to install Nextcloud.
+     local network where you are going to install Nextcloud.
      +
      Just google for <router brand/type> and "port forwarding" how to do this.
 
 Assuming the public IP-address is `5.61.144.190` you should get
-the following responses when invoking a `nslookup` on the domains:
+the following responses when invoking a `nslookup` on the domain names:
 
 [source, bash]
 ----
@@ -201,7 +201,7 @@ Get the script here:
 
 `https://raw.githubusercontent.com/gorzala/nextcloud/master/bootstrap-os.sh`
 
-Copy this script to your server (or download it from there) and execute it.
+Copy this script to your server (or download it from there) and execute it with root-permissions.
 
 NOTE: If this script will not run on your system, it could give you hints how to install
       the tools. Just do manually what the script would do for you on a compatible system ;-)
@@ -225,15 +225,15 @@ drwxr-xr-x 8 root root 4096 Mar 20 14:28 .git
 -rw-r--r-- 1 root root 5708 Mar 20 14:28 README.adoc
 ----
 
-Brief description of the purpose of the files:
+Brief description of the files:
 
  * *bootstrap-os.sh* the script that you maybe already used to install basic tools for this project
- * *docker-compose.yml* configures all the containers that we use and how they work together
- * *.env-template* template for the config file that will hold your database credentials
- * *.git* and *.gitignore* git internals, you can ignore them
+ * *docker-compose.yml* configures all the link:https://www.docker.com/resources/what-container[containers]
+    that we use and how they work together
+ * *.env-template* template for the config file that configures mostly everything
+ * *.git* and *.gitignore* git internal, you can ignore them
  * *maintenance.sh* the script for doing a backup and update (not yet complete)
  * *README.adoc* very short explanation how to use this project
- * *update* folder that belongs to updating the system. Maybe not really needed.
 
 You will configure almost everything with `.env-template`, so we will start with have a short look
 into this file.
@@ -242,7 +242,7 @@ I think you really need to understand what you are going to install. Latest in c
 goes wrong, it is better to not start trying to understand the system, just then.
 
 If you are really impatient you can try to skip directly over to section <<section-configuring-system>>.
-In this case I wish you a good luck. But consider at least coming back to the more detailed
+In this case I wish you a good luck. Consider at least coming back to the more detailed
 explanations later.
 
 ==== The main configuration-file `.env-template`
@@ -346,7 +346,7 @@ services:
 line 1:: *Version* +
   Specifies that we are using version 3 of the compose file syntax. (This is not the version of
   docker-compose or docker)
-line 2:: *Definition of the services* +
+line 2:: *Definition of the link:https://docs.docker.com/compose/compose-file/#service-configuration-reference[services]* +
   Starts with the the services that we will use. Under this node all services are configured.
 
 In the following we will have a deeper look into the configuration of each service. Some
