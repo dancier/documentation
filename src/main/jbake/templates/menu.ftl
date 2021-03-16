@@ -42,6 +42,9 @@
                     <ul class="dropdown-menu">
                         <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>documentation/index.html">Base</a>
                         </li>
+                        <li>
+                            <a href="https://editor.swagger.io/?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdancier%2Fdancer%2Fmaster%2Fopenapi.yml">OpenApi-Spec</a>
+                        </li>
                         <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>documentation/bookmarks.html">Bookmarks</a>
                         </li>
                         <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>documentation/howto/index.html">Howtos</a>
