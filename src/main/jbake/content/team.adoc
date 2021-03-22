@@ -6,13 +6,17 @@
 :jbake-description: Core members of the team
 :idprefix:
 
+ * Daniel Vogtland +
+   Backend
+ * Dominik + 
+   Frontend
  * link:https://twitter.com/jans0510[Jan] +
-   Frontend developer, React Enthusiast, Docker community guide.
+   Frontend developer, JavaScript Enthusiast, Docker community guide.
  * Julius +
    Design
  * link:https://juplo.de/[Kai Moritz] +
-   Architect, Frontend, Backend
+   Frontend, Backend
  * link:https://twitter.com/MarcGorzala[Marc] +
-   Backend developer, Spring Boot Enthusiast, Team motivator.
+   Software Architect, Dance Enthusiast, Project Founder
  * Xiaofei +
    Frontend, Design, Just keeps things done

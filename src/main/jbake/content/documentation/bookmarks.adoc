@@ -76,6 +76,9 @@ toc::[]
 * link:https://medium.com/@asegu/why-a-spring-boot-developer-could-die-without-spring-boot-starter-properties-11c5d6bf459a[Why a spring boot developer could die without spring boot starter properties]
 * link:https://jaxenter.de/spring/spring-boot-autoconfiguration-video-91456[Spring Boot Autoconfiguratioon]
 
+== Misc
+* link:https://dba-presents.com/index.php/liquibase/216-liquibase-3-6-x-data-types-mapping-table[Liquibase Column Mapping]
+
 == JavaScript
 * link:https://javascript.info/[JavaScript Tutorial]
 * link:https://www.w3schools.com/js/[W3 School]
