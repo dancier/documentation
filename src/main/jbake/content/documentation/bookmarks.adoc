@@ -29,6 +29,7 @@ toc::[]
 * link:https://plantuml.com/[Plant UML]
 * link:https://asciidoctor.org/[Asciidoctor]
 * link:https://www.informatik-aktuell.de/entwicklung/methoden/docs-as-code-alles-unter-einem-dach.html[Second link, same topic]
+* link:https://swagger.io/docs/specification/basic-structure/[Open API 3]
 
 == Bash
 * link:https://stackoverflow.com/questions/1378274/in-a-bash-script-how-can-i-exit-the-entire-script-if-a-certain-condition-occurs[Exit on error]
@@ -61,6 +62,7 @@ toc::[]
 * link:https://medium.com/@shrikarvk/creating-a-docker-container-for-spring-boot-app-d5ff1050c14f[Medium: Create Docker Images for Spring Boot Applications]
 * link:https://medium.com/faun/dockerize-your-java-application-ec7ac056d066[Dockerize your Java Application]
 * link:https://spring.io/guides/gs/spring-boot-docker/[Spring Guides: create Docker image from Boot Application]
+* link:https://docs.docker.com/develop/develop-images/multistage-build/[About multistage builds]
 
 == Go Lang
 * link:https://medium.com/@kevalpatel2106/why-should-you-learn-go-f607681fad65[Why should I learn go]
