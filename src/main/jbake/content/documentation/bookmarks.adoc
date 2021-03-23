@@ -52,6 +52,7 @@ toc::[]
 * link:https://gist.github.com/Kartones/dd3ff5ec5ea238d4c546[PostgreSQL Cheat Sheet]
 
 === Loadbalancer/Reverse proxy
+* link:https://codingwithmanny.medium.com/configure-self-signed-ssl-for-nginx-docker-from-a-scratch-7c2bcd5478c6[Nginx-Docker with self signed cert]
 * link:https://github.com/jwilder/nginx-proxy[Docker image from J Wilder] +
    Use NGINX in Docker to act as an SSL teminating proxy for eg internal Web-Hosts
 * link:https://www.freecodecamp.org/news/docker-nginx-letsencrypt-easy-secure-reverse-proxy-40165ba3aee2/[Howto NGINX Docker letsencript (codecamp)]
