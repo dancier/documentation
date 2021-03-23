@@ -15,6 +15,7 @@
 toc::[]
 
 == Architecture
+* link:https://vaadin.com/learn/tutorials/ddd/ddd_and_hexagonal[Domain-Driven Design and the Hexagonal Architecture]
 * link:https://engineering.etermax.com/clean-microservice-architecture-in-practice-63051aeb016b[Clean microservice architecture in practice]
 * link:https://thenewstack.io/this-week-in-programming-forget-microservices-monoliths-are-the-way-forward[Forget Microservices, Monoliths Are the Way Forward]
 * link:https://thenewstack.io/the-new-stack-context-on-monoliths-and-microservices/[The New Stack Context: On Monoliths and Microservices]
@@ -72,6 +73,7 @@ toc::[]
 * link:https://medium.com/mobidroid/java-design-patterns-creational-patterns-overview-b03617c1e939[Java Design Patterns: Creational Patterns Overview]
 * link:https://medium.com/@jubin.kuriakose/modular-programming-in-java-42788ec02268[Modular Programming in Java]
 * link:https://opensource.com/article/20/2/java-streams[Don't like loops? Try Java Streams]
+* link:https://dzone.com/articles/using-optional-correctly-is-not-optional[Using optional correctly is not optional]
 
 === Spring related
 * link:https://medium.com/swlh/multi-tenancy-implementation-using-spring-boot-hibernate-6a8e3ecb251a[Multi Tenancy Implementation]
@@ -81,6 +83,7 @@ toc::[]
 
 == Misc
 * link:https://dba-presents.com/index.php/liquibase/216-liquibase-3-6-x-data-types-mapping-table[Liquibase Column Mapping]
+* link:https://medium.com/@prestonwallace/3-ways-improve-react-seo-without-isomorphic-app-a6354595e400[SEO improvment for React Apps]
 
 == JavaScript
 * link:https://javascript.info/[JavaScript Tutorial]
