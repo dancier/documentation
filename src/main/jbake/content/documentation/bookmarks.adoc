@@ -79,6 +79,7 @@ toc::[]
 * link:https://opensource.com/article/20/2/java-streams[Don't like loops? Try Java Streams]
 * link:https://dzone.com/articles/using-optional-correctly-is-not-optional[Using optional correctly is not optional]
 * link:https://www.oreilly.com/content/handling-checked-exceptions-in-java-streams/[Handling checked exceptions in Streams]
+* link:https://google.github.io/styleguide/javaguide.html[Google Java styleguide]
 
 === Spring related
 * link:https://medium.com/swlh/multi-tenancy-implementation-using-spring-boot-hibernate-6a8e3ecb251a[Multi Tenancy Implementation]
