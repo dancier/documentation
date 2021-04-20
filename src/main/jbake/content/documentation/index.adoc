@@ -63,7 +63,7 @@ At least for the link:/project/index.html[first iteration] our running
 setup in the cloud will cover three different services:
 
  1. A load balancer like link:https://containo.us/traefik/[Traefik] +
-    This will be the only component the will receive direct traffic
+    This will be the only component that will receive direct traffic
     from users from the internet. It will sit on the limes of our
     link:https://en.wikipedia.org/wiki/Virtual_private_cloud[VPC]
     and act as an link:https://en.wikipedia.org/wiki/TLS_termination_proxy[SSL terminating proxy].
