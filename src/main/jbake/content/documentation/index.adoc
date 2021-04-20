@@ -73,7 +73,7 @@ setup in the cloud will cover three different services:
     optimistic) the loadbalancer will distribute the incoming request in a
 link:https://www.nginx.com/resources/glossary/round-robin-load-balancing/[round robin]
     fashion.
- 1. Our one one only main component the *dancer* +
+ 1. Our one and only main component, the *dancer* +
     Sits between the load balancer and the database. Is reachable for
     deployment from the deployer for releasing new versions.
  1. Our Database Server like link:https://www.postgresql.org/[PostgreSQL] +
