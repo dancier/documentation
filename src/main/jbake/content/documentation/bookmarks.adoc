@@ -48,6 +48,7 @@ toc::[]
 * link:https://t3n-de.cdn.ampproject.org/v/s/t3n.de/news/software-entwicklung-moderne-1246618/amp/?usqp=mq331AQCKAE%3D&amp_js_v=0.1#referrer=https%3A%2F%2Fwww.google.com&amp_tf=Von%20%251%24s&ampshare=https%3A%2F%2Ft3n.de%2Fnews%2Fsoftware-entwicklung-moderne-1246618%2F[Moderne Teams sollten GitLab verwenden]
 * link:https://medium.com/@animeshgaitonde/how-https-works-part-1-building-blocks-64f9915b1f39[How HTTPS works Part 1 — Building Blocks]
 * link:https://blog-alexellis-io.cdn.ampproject.org/v/s/blog.alexellis.io/building-a-linux-desktop-for-cloud-native-development/amp/?usqp=mq331AQCKAE%3D&amp_js_v=0.1#referrer=https%3A%2F%2Fwww.google.com&amp_tf=Von%20%251%24s&ampshare=https%3A%2F%2Fblog.alexellis.io%2Fbuilding-a-linux-desktop-for-cloud-native-development%2F[Building a Linux Desktop for Cloud Native Development]
+* link:https://www.kubermatic.com/blog/kubernetes-on-hetzner-with-kubermatic-kubeone-in-2021/[K8s on Hetzner Cloud]
 
 === Database
 * link:https://gist.github.com/Kartones/dd3ff5ec5ea238d4c546[PostgreSQL Cheat Sheet]
