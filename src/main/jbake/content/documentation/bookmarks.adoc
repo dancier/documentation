@@ -15,7 +15,7 @@
 toc::[]
 
 == Architecture
-* link:https://vaadin.com/learn/tutorials/ddd/ddd_and_hexagonal[Domain-Driven Design and the Hexagonal Architecture]
+* link:https://vaadin.com/learn/tutorials/ddd[Domain-Driven Design Crashkurs auf vaadin]
 * link:https://engineering.etermax.com/clean-microservice-architecture-in-practice-63051aeb016b[Clean microservice architecture in practice]
 * link:https://thenewstack.io/this-week-in-programming-forget-microservices-monoliths-are-the-way-forward[Forget Microservices, Monoliths Are the Way Forward]
 * link:https://thenewstack.io/the-new-stack-context-on-monoliths-and-microservices/[The New Stack Context: On Monoliths and Microservices]
@@ -42,11 +42,13 @@ toc::[]
 == Infrastructure
 * Curated list of awesome GitHub Actions: list of cool actions
    grouped by use case: link:https://github.com/sdras/awesome-actions[here]
+* link:https://auth0.com/docs/tokens/json-web-tokens/validate-json-web-tokens#middleware[Validating JWTs]
 * link:https://github.blog/2020-02-12-supercharge-your-command-line-experience-github-cli-is-now-in-beta/[Github CLI]
 * link:https://medium.com/faun/docker-running-seamlessly-in-windows-subsystem-linux-6ef8412377aa[Docker running seamlessly in Windows Subsystem Linux]
 * link:https://t3n-de.cdn.ampproject.org/v/s/t3n.de/news/software-entwicklung-moderne-1246618/amp/?usqp=mq331AQCKAE%3D&amp_js_v=0.1#referrer=https%3A%2F%2Fwww.google.com&amp_tf=Von%20%251%24s&ampshare=https%3A%2F%2Ft3n.de%2Fnews%2Fsoftware-entwicklung-moderne-1246618%2F[Moderne Teams sollten GitLab verwenden]
 * link:https://medium.com/@animeshgaitonde/how-https-works-part-1-building-blocks-64f9915b1f39[How HTTPS works Part 1 — Building Blocks]
 * link:https://blog-alexellis-io.cdn.ampproject.org/v/s/blog.alexellis.io/building-a-linux-desktop-for-cloud-native-development/amp/?usqp=mq331AQCKAE%3D&amp_js_v=0.1#referrer=https%3A%2F%2Fwww.google.com&amp_tf=Von%20%251%24s&ampshare=https%3A%2F%2Fblog.alexellis.io%2Fbuilding-a-linux-desktop-for-cloud-native-development%2F[Building a Linux Desktop for Cloud Native Development]
+* link:https://www.kubermatic.com/blog/kubernetes-on-hetzner-with-kubermatic-kubeone-in-2021/[K8s on Hetzner Cloud]
 
 === Database
 * link:https://gist.github.com/Kartones/dd3ff5ec5ea238d4c546[PostgreSQL Cheat Sheet]
@@ -78,8 +80,9 @@ toc::[]
 * link:https://opensource.com/article/20/2/java-streams[Don't like loops? Try Java Streams]
 * link:https://dzone.com/articles/using-optional-correctly-is-not-optional[Using optional correctly is not optional]
 * link:https://www.oreilly.com/content/handling-checked-exceptions-in-java-streams/[Handling checked exceptions in Streams]
+* link:https://google.github.io/styleguide/javaguide.html[Google Java styleguide]
 * link:https://www.javaguides.net/[Java Tutorials (Complete Apps/Boot/...)]
-* link:https://www.marcobehler.com/guides/spring-transaction-management-transactional-in-depth[Spring Transaction Management in depth  ]
+* link:https://www.marcobehler.com/guides/spring-transaction-management-transactional-in-depth[Spring Transaction Management in depth]
 
 === Spring related
 * link:https://medium.com/swlh/multi-tenancy-implementation-using-spring-boot-hibernate-6a8e3ecb251a[Multi Tenancy Implementation]

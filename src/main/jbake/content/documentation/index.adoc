@@ -63,7 +63,7 @@ At least for the link:/project/index.html[first iteration] our running
 setup in the cloud will cover three different services:
 
  1. A load balancer like link:https://containo.us/traefik/[Traefik] +
-    This will be the only component the will receive direct traffic
+    This will be the only component that will receive direct traffic
     from users from the internet. It will sit on the limes of our
     link:https://en.wikipedia.org/wiki/Virtual_private_cloud[VPC]
     and act as an link:https://en.wikipedia.org/wiki/TLS_termination_proxy[SSL terminating proxy].
@@ -73,7 +73,7 @@ setup in the cloud will cover three different services:
     optimistic) the loadbalancer will distribute the incoming request in a
 link:https://www.nginx.com/resources/glossary/round-robin-load-balancing/[round robin]
     fashion.
- 1. Our one one only main component the *dancer* +
+ 1. Our one and only main component, the *dancer* +
     Sits between the load balancer and the database. Is reachable for
     deployment from the deployer for releasing new versions.
  1. Our Database Server like link:https://www.postgresql.org/[PostgreSQL] +
