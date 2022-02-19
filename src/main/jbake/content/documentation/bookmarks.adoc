@@ -98,6 +98,9 @@ toc::[]
 * link:https://javascript.info/[JavaScript Tutorial]
 * link:https://www.w3schools.com/js/[W3 School]
 
+== Angular
+* link:https://github.com/angular/flex-layout[Flex Layout for Angular Projects]
+
 == Python
 * link:https://janakiev.com/blog/python-shell-commands/[Invoke Shell commands in Python]
 * link:http://libzx.so/main/learning/2016/03/13/best-practice-for-virtualenv-and-git-repos.html[Virtualenv and GIT]
