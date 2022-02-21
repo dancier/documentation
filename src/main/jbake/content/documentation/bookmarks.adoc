@@ -103,6 +103,8 @@ toc::[]
 
 == Angular
 * link:https://github.com/angular/flex-layout[Flex Layout for Angular Projects]
+* link:https://material.angular.io[Angular Material Components]
+* link:https://betterprogramming.pub/decouple-tests-with-data-attributes-c920606c5f27[Angular Tests with Data Attributes]
 
 == Python
 * link:https://janakiev.com/blog/python-shell-commands/[Invoke Shell commands in Python]
