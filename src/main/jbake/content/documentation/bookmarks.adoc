@@ -49,6 +49,7 @@ toc::[]
 * link:https://medium.com/@animeshgaitonde/how-https-works-part-1-building-blocks-64f9915b1f39[How HTTPS works Part 1 — Building Blocks]
 * link:https://blog-alexellis-io.cdn.ampproject.org/v/s/blog.alexellis.io/building-a-linux-desktop-for-cloud-native-development/amp/?usqp=mq331AQCKAE%3D&amp_js_v=0.1#referrer=https%3A%2F%2Fwww.google.com&amp_tf=Von%20%251%24s&ampshare=https%3A%2F%2Fblog.alexellis.io%2Fbuilding-a-linux-desktop-for-cloud-native-development%2F[Building a Linux Desktop for Cloud Native Development]
 * link:https://www.kubermatic.com/blog/kubernetes-on-hetzner-with-kubermatic-kubeone-in-2021/[K8s on Hetzner Cloud]
+* link:https://rmoff.net/2018/08/02/kafka-listeners-explained/[Kafka Listeners Explained]
 
 === Database
 * link:https://gist.github.com/Kartones/dd3ff5ec5ea238d4c546[PostgreSQL Cheat Sheet]
@@ -97,6 +98,9 @@ toc::[]
 == Misc
 * link:https://dba-presents.com/index.php/liquibase/216-liquibase-3-6-x-data-types-mapping-table[Liquibase Column Mapping]
 * link:https://medium.com/@prestonwallace/3-ways-improve-react-seo-without-isomorphic-app-a6354595e400[SEO improvment for React Apps]
+
+== Distance
+* link:https://www.geeksforgeeks.org/program-distance-two-points-earth/[Distance computation between two points]
 
 == JavaScript
 * link:https://javascript.info/[JavaScript Tutorial]
