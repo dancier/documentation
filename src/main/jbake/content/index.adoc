@@ -8,7 +8,7 @@
 :jbake-disqus_identifier: d4ab70e2-69e0-11ea-92f8-8bb25899750b
 :idprefix:
 
-[link=http://staging.dancier.net:8080/index.html]
+[link=https://dancier.net]
 image::/dancer.png[align=center]
 
 The purpose of this project is manifold:
