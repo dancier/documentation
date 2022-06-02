@@ -48,17 +48,10 @@
     ResendEmailVerification --> PerformEmailVerification
 @enduml
 ....
-
+foo
 [plantuml,login-activity,svg]
 ....
 @startuml
-<style>
-activityDiagram {
-  note {
-    BackgroundColor #00FF00
-  }
-}
-</style>
 
 start
 switch (choose a login mode)
@@ -100,13 +93,6 @@ endswitch
 [plantuml,registration-activity,svg]
 ....
 @startuml
-<style>
-activityDiagram {
-  note {
-    BackgroundColor #00FF00
-  }
-}
-</style>
 
 start
 :fill registration form;
