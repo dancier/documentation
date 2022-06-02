@@ -1,5 +1,7 @@
 [[section-solution-strategy]]
 == Solution Strategy
 
+=== Login/Registration
+
 
 
