@@ -3,9 +3,10 @@
 
 === Login/Registration
 
-[plantuml, login-registration-states, svg]
+[plantuml,login-registration-states,svg]
 ....
 @startuml
+
     [*] -> LandingPage
     LandingPage --> LoginBase: login
     LandingPage --> RegisterBase: register
@@ -47,6 +48,101 @@
     ResendEmailVerification --> PerformEmailVerification
 @enduml
 ....
+
+[plantuml,login-activity,svg]
+....
+@startuml
+<style>
+activityDiagram {
+  note {
+    BackgroundColor #00FF00
+  }
+}
+</style>
+
+start
+switch (choose a login mode)
+case (via login data)
+    : enter username/password;
+    if() then (login data valid)
+        :log in successful;
+        stop
+    else (login data invalid)
+        :login failed;
+        stop
+    endif
+case (via login link)
+  #00FF00: request login link;
+    floating note right: green: human/bots check required
+            : click on login link;
+                if() then (link valid)
+                    :log in successful;
+                    stop
+                else (link invalid)
+                    :log in failed;
+                    stop
+                endif
+case (reset password)
+  #00FF00:Request Password Reset;
+  :click on password reset link;
+    if() then (link valid)
+        :pw reset successful;
+        stop
+    else (link invalid)
+        :pw reset failed;
+        stop
+    endif
+endswitch
+
+@enduml
+....
+
+[plantuml,registration-activity,svg]
+....
+@startuml
+<style>
+activityDiagram {
+  note {
+    BackgroundColor #00FF00
+  }
+}
+</style>
+
+start
+:fill registration form;
+#00FF00:send registration request;
+floating note right: green: human/bots check required
+if(user exists) then (yes)
+    :account already exists mail receive;
+    if(click on links in the mail) then (login link)
+        :goto login flow;
+        stop
+    else (password reset link)
+        :goto password reset flow;
+        stop
+    endif
+else (no)
+    :registration verification link received;
+    :click on verification link;
+    if() then (link valid)
+        :registration successful;
+        stop
+    else (link invalid)
+        :mail verification failed;
+        #00FF00:request a new verification mail;
+        stop
+    endif
+
+endif
+
+@enduml
+....
+
+if() then (yes)
+:;
+else ()
+:;
+endif
 
 
 
