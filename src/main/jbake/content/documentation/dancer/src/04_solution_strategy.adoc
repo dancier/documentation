@@ -48,13 +48,21 @@
     ResendEmailVerification --> PerformEmailVerification
 @enduml
 ....
-foo
+
+=== Activity diagramm for login
 [plantuml,login-activity,svg]
 ....
 @startuml
+<style>
+activityDiagram {
+  note {
+    BackgroundColor #00FF00
+  }
+}
+</style>
 
 start
-switch (choose a login mode)
+switch ( choose a login mode )
 case (via login data)
     : enter username/password;
     if() then (login data valid)
@@ -65,7 +73,7 @@ case (via login data)
         stop
     endif
 case (via login link)
-  #00FF00: request login link;
+  #00FF00:request login link;
     floating note right: green: human/bots check required
             : click on login link;
                 if() then (link valid)
@@ -86,13 +94,21 @@ case (reset password)
         stop
     endif
 endswitch
-
 @enduml
 ....
 
+=== Activity Diagram for Registration
 [plantuml,registration-activity,svg]
 ....
 @startuml
+
+<style>
+activityDiagram {
+  note {
+    BackgroundColor #00FF00
+  }
+}
+</style>
 
 start
 :fill registration form;
@@ -123,3 +139,27 @@ endif
 
 @enduml
 ....
+
+=== Sequenzdiagramm for the Humancheck
+[plantuml,humancheck-flow,svg]
+....
+@startuml
+actor user
+
+user -> frontend : priviled action
+frontend -> backend: whoami
+backend -> frontend: returns list of roles
+frontend -> frontend: captcha
+note right
+show when role 'HUMAN' is missing
+end note
+
+frontend -> backend: loginAsHuman
+note right
+use token from captcha as authorization grant
+end note
+backend -> frontend: establish human session
+
+@enduml
+....
+When the human session is established, all subsequent calls to the backend will have the role 'ROLE_HUMAN' sssigned.

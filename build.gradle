@@ -2,7 +2,7 @@
 // other fancy stuff
 buildscript {
     dependencies {
-        classpath 'org.asciidoctor:asciidoctorj-diagram:1.5.4.1'
+        classpath 'org.asciidoctor:asciidoctorj-diagram:2.2.0'
     }
 }
 
