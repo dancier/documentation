@@ -33,6 +33,18 @@
     PerformLoginOnPasswordReset --> ChangePassword: success
     PerformLoginOnPasswordReset --> LoginBase: failure
     ChangePassword --> [*]
+
+    CheckHumanityRegister --> PerformRegistration
+    PerformRegistration --> SendEmailVerificationLink: account_does_not_exist
+    PerformRegistration --> SendAccountAlreadyExistMail: account_already_exist
+    SendAccountAlreadyExistMail --> LoginPerformed: on_login_click
+    SendAccountAlreadyExistMail --> SendPassResetLink
+
+
+    SendEmailVerificationLink --> PerformEmailVerification
+    PerformEmailVerification --> LoginPerformed: success
+    PerformEmailVerification --> ResendEmailVerification
+    ResendEmailVerification --> PerformEmailVerification
 @enduml
 ....
 
