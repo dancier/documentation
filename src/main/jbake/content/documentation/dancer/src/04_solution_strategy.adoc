@@ -137,12 +137,3 @@ endif
 
 @enduml
 ....
-
-if() then (yes)
-:;
-else ()
-:;
-endif
-
-
-
