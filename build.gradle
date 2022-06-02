@@ -8,7 +8,7 @@ buildscript {
 
 // get the plugin for gradle to build the site
 plugins {
-    id 'org.jbake.site' version '5.0.0'
+    id 'org.jbake.site' version '5.5.0'
 }
 
 // set default repositories to get dependencies
