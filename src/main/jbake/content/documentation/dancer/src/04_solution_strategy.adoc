@@ -3,5 +3,38 @@
 
 === Login/Registration
 
+[plantuml, login-registration-states, svg]
+....
+@startuml
+    [*] -> LandingPage
+    LandingPage --> LoginBase: login
+    LandingPage --> RegisterBase: register
+    RegisterBase --> CheckHumanityRegister
+
+    LoginBase --> CheckCredentials: user/pass-login
+    LoginBase --> LoginLink: login_link_requested
+    LoginBase --> PasswordReset: pass_reset_requested
+
+    CheckCredentials --> LoginSuccess: valid_credentials
+    LoginSuccess --> [*]
+    CheckCredentials --> LoginBase: invalid_credentials
+
+    LoginLink --> CheckHumanityLoginLink: login_link_requested
+    PasswordReset --> CheckHumanityPasswordReset: password_reset_requested
+
+    CheckHumanityLoginLink --> SendLoginLink
+    SendLoginLink --> LoginPerformed: on_click
+    LoginPerformed --> [*] : success
+    LoginPerformed --> LoginBase: login_failure
+
+    CheckHumanityPasswordReset --> SendPassResetLink
+    SendPassResetLink -> PerformLoginOnPasswordReset: on_click
+
+    PerformLoginOnPasswordReset --> ChangePassword: success
+    PerformLoginOnPasswordReset --> LoginBase: failure
+    ChangePassword --> [*]
+@enduml
+....
+
 
 
