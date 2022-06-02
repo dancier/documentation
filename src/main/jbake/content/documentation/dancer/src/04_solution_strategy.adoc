@@ -146,9 +146,18 @@ endif
 @startuml
 actor user
 
-user -> frontend : priviled action
-frontend -> backend: whoami
+user -> frontend : privileged action
+note left
+something the eg.
+send a mail
+end note
+frontend -> backend: whoami endpoint
 backend -> frontend: returns list of roles
+note right
+eg. Anonymous (we know nothing)
+Human (we know it is a human at least)
+User (we no it is a registrated user
+end note
 frontend -> frontend: captcha
 note right
 show when role 'HUMAN' is missing
@@ -159,6 +168,9 @@ note right
 use token from captcha as authorization grant
 end note
 backend -> frontend: establish human session
+note right
+set an appropiate token via a cookie
+end note
 
 @enduml
 ....
