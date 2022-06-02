@@ -83,15 +83,4 @@ link:https://www.nginx.com/resources/glossary/round-robin-load-balancing/[round 
 We will wrap all above mentioned components into Docker Containers, to
 unify the process of deploying each of them.
 
-== Login
-First we will only offer Facebook Login for our users. It is planned to extend that to Google Login and Apple-Id.
 
-[plantuml, Login, svg]
-....
-@startuml
-User -> "Facebook Login": GET
-"Facebook Login" -> "Backend Callback": redirect to
-"Backend Callback" -> "Facebook Token Endpoint": exchange
-"Backend Callback" -> ""
-@enduml
-....
