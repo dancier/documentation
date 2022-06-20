@@ -4,6 +4,11 @@
     "title": "Everything we got from source code",
     "additionalProperties": false,
     "properties": {
+        "$schema": {
+            "type": "string",
+            "title": "Schema",
+            "description": "Pointer to the schema against which this document should be validated."
+        },
         "programms": {
             "type": "array",
             "items": {
