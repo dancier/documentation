@@ -13,8 +13,8 @@
             "type": "array",
             "items": {
                 "type": "object",
+                "additionalProperties": false,
                 "properties": {
-                    "additionalProperties": false,
                     "id": {
                         "type": "string"
                     },
