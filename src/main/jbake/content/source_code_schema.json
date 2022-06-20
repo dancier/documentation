@@ -22,7 +22,10 @@
                         "type":  "string"
                     },
                     "subProgramms": {
-                        "type": "object"
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
                     }
                 }
             }
