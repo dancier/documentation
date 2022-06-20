@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://dancier.net/source_code",
+    "$id": "https://project.dancier.net/source_code_schema.json",
     "title": "Everything we got from source code",
     "additionalProperties": true,
     "properties": {
