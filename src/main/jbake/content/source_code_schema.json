@@ -20,6 +20,9 @@
                     },
                     "source_path": {
                         "type":  "string"
+                    },
+                    "subProgramms": {
+                        "type": "object"
                     }
                 }
             }
