@@ -10,11 +10,11 @@
             "description": "Pointer to the schema against which this document should be validated."
         },
         "programms": {
-            "additionalProperties": false,
             "type": "array",
             "items": {
                 "type": "object",
                 "properties": {
+                    "additionalProperties": false,
                     "id": {
                         "type": "string"
                     },
