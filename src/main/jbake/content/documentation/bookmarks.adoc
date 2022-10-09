@@ -23,6 +23,8 @@ toc::[]
 * link:https://jaxenter.de/spring/spring-boot-modulithische-applikationen-drotbohm-91607[Modulitische Applikationen mit Spring Boot]
 * link:https://jaxenter.de/sql-nosql-microservices-java-apis-top-10-januar-91339[Jaxcenter: Top topics of January sql nosql microservices java apis]
 * link:https://towardsdatascience.com/evolution-from-monolithic-architecture-to-microservice-architecture-c58246822ea4[Migrating a Monolithic Architecture to Microservice Architecture]
+* link:https://dagster.io/blog/skip-kafka-use-postgres-message-queue[Skip Kafka use PostgreSQL Message Queue]
+* link:https://boringtechnology.club/[Choose Booring Technology]
 
 === Document as code
 * link:https://docs-as-co.de/[Doc as code]
@@ -50,6 +52,14 @@ toc::[]
 * link:https://blog-alexellis-io.cdn.ampproject.org/v/s/blog.alexellis.io/building-a-linux-desktop-for-cloud-native-development/amp/?usqp=mq331AQCKAE%3D&amp_js_v=0.1#referrer=https%3A%2F%2Fwww.google.com&amp_tf=Von%20%251%24s&ampshare=https%3A%2F%2Fblog.alexellis.io%2Fbuilding-a-linux-desktop-for-cloud-native-development%2F[Building a Linux Desktop for Cloud Native Development]
 * link:https://www.kubermatic.com/blog/kubernetes-on-hetzner-with-kubermatic-kubeone-in-2021/[K8s on Hetzner Cloud]
 * link:https://rmoff.net/2018/08/02/kafka-listeners-explained/[Kafka Listeners Explained]
+* link:https://github.com/hetznercloud/awesome-hcloud[Awesome Hetzner Cloud]
+* link:https://medium.com/@orestovyevhen/set-up-infrastructure-in-hetzner-cloud-using-terraform-ce85491e92d[Setup up Infrastructur in Hetzner Cloud using Terraform]
+* link:https://docs.fluentd.org/container-deployment/docker-compose[Docker Compose Fluentd Elastic Search]
+* link:https://coralogix.com/blog/a-practical-guide-to-fluentd/[A Practical Guide to Fluentd]
+
+=== KI
+* link:https://cs.nyu.edu/~jcf/classes/g22.3033-002/handouts/chen96data.pdf[Datamining]
+* link:https://medium.com/swlh/dating-data-an-overview-of-the-algorithm-afb9f0c08e2c[Dating Algorithmen]
 
 === Database
 * link:https://gist.github.com/Kartones/dd3ff5ec5ea238d4c546[PostgreSQL Cheat Sheet]

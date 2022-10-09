@@ -3,6 +3,40 @@
 
 == Building Block View
 
+[plantuml, cloud-architecture, svg]
+....
+@startuml
+left to right direction
+actor user
+component browser
+cloud VPC {
+   boundary loadbalancer
+   component dancer
+   database dancer_db
+
+   component chat_dancer
+   database  chat_dancer_db
+
+   component recommendation
+   database recommendation_db
+
+   database s3
+}
+user -- browser
+browser -- loadbalancer
+loadbalancer -- dancer
+dancer --> dancer_db
+dancer ..> s3
+dancer -> recommendation
+dancer -> chat_dancer
+
+recommendation -> s3
+recommendation -> recommendation_db
+
+chat_dancer -> chat_dancer_db
+
+@enduml
+....
 
 
 === Whitebox Overall System
