@@ -1,5 +1,18 @@
 [[section-architecture-constraints]]
 == Architecture Constraints
 
+We decided to use the following Technologie Stack.
 
+* Backend
+** Java
+** Spring-Boot
+** Python
 
+* Databases
+** PostgreSQL
+** S3 (Minio)
+
+* Infrastructure
+** Docker(-Compose)
+** Traefik
+** Keycloak
