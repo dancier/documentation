@@ -1,16 +1,22 @@
 [[section-architecture-constraints]]
+
 == Architecture Constraints
 
-We decided to use the following Technologie Stack.
+We are so constrained. Even in multiple dimensions:
 
-* Backend
-** Java
-** Spring-Boot
-** Python
+[options="header", cols="1,1,1"]
+|===
+||Constraint|Background/Motivation|
+2+|Software and programming constraints
+|TC1 |Default Programming Language for Backend development ist Java | This seems to be still a kind a standard language for business backend applications and in the current team, the best understood language
+|TC2 |Default for Data related services is Python | This is the defacto standard for such services
+|TC3|Default frameworkd for backend development is Spring-Boot| defacto standard in the Java-World
+|TC4|Default Database is PostgreSQL|
+|TC5|Default Object Store is S3 with Minio|
+|===
 
-* Databases
-** PostgreSQL
-** S3 (Minio)
+
+
 
 * Infrastructure
 ** Docker(-Compose)
