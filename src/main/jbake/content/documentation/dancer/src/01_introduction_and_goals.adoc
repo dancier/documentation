@@ -62,19 +62,21 @@ When we managed that the core features have been implemented, then we can implem
 [options="header", cols="1,2,2"]
 |===
 |Nr|Quality|Explanation
-|1|Easy to use|jk
-|2|Good recommendations|k
+|1|Easy to use| Dancer should find easy to use features that are almost self-explanatory.
+|2|Good recommendations|The recommendations should really fit. In case schools, workshops, shoes and other things where recommended, that should never feel like advertisement but as a good tip.
+|3|Attractive|Not only the UI should feel someway modern, also the complete project should feel like what we are: a nice group of people with the strong goal to do something useful for the world ;-)
+
 |===
 
 === Stakeholders
 
 
 
-[options="header",cols="1,2,2"]
+[options="header",cols="1,1"]
 |===
-|Role/Name|Contact|Expectations
-| Dancer | _<Contact-1>_ | _<Expectation-1>_
-| Schools | _<Contact-1>_ | _<Expectation-1>_
-| Shops | _<Contact-1>_ | _<Expectation-1>_
-| Developer | _<Contact-1>_ | _<Expectation-1>_
+|Role/Name|Contact
+| Dancer | Should be able to get in touch with other dancers, to dance with them and share information
+| Schools | Should have a fine channel to get in touch with dancer that need courses, workshops and so on
+| Shops | Shops for dancing shoes for example connect with dancers
+| Developer | Learn in a hollistic way how to develop a complete product. In big companies many developers are so heavily specialized, that the lack a holistic view on software development. And sometimes the do not have a fantastic sympathetic team.
 |===
