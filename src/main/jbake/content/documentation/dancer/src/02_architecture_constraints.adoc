@@ -6,19 +6,16 @@ We are so constrained. Even in multiple dimensions:
 
 [options="header", cols="1,1,1"]
 |===
-||Constraint|Background/Motivation|
-2+|Software and programming constraints
+||Constraint|Background/Motivation
+3+|Software and programming constraints
 |TC1 |Default Programming Language for Backend development ist Java | This seems to be still a kind a standard language for business backend applications and in the current team, the best understood language
 |TC2 |Default for Data related services is Python | This is the defacto standard for such services
 |TC3|Default frameworkd for backend development is Spring-Boot| defacto standard in the Java-World
-|TC4|Default Database is PostgreSQL|
+|TC4|Default Database is PostgreSQL| kj
 |TC5|Default Object Store is S3 with Minio|
+3+|Infrastructure Constraints
+|TC6|Everything in a Container|
+|TC7|Everything through central IAM|
+|TC8|Loggin to Elastic|
+|TC9|Traefik|
 |===
-
-
-
-
-* Infrastructure
-** Docker(-Compose)
-** Traefik
-** Keycloak
