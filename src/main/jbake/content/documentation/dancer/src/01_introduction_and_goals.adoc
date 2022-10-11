@@ -19,11 +19,52 @@ In this project we want to develop a community that brings together people that 
 
 === Requirements Overview
 
+Dancier is aimed to be the goto System for all people looking up dancing related stuff.
 
+This is really kind of a strech goal. So we partitioned the features in two groups.
+
+One that we will really focus on, where we want to make the point. We call them core features.
+
+And the other one additional features.
+
+==== Core features
+
+* Enable the User to tell us want kind of dances he can/likes
+* Compute some recommendations for each dancer, want dance partner would match most for him.
+
+Those features are MVP relevant. So they must be included in the MVP:
+
+The following one will be still core, but tackeld after the MVP:
+
+* Enable Dancers and Event-Creators to provide information about upcoming dancing events, like dance evenings. This events will be presented in the same view, like the recommendations for dancers. +
+  Those Events could be eg:
+** Dance Evening
+** Workshops
+** Festivals
+** Contests
+** Dancing Holidays
+
+* Enable Dance-Schools to provided information about themselves. Information for this schools will be included in the recommendation view.
+
+==== Additional features
+
+When we managed that the core features have been implemented, then we can implement the following:
+
+* Allow any other dance related content to popup in the recommendation view where appropriate.
+* Improve the Events part: +
+** Let the user give information if he joins an event or not.
+** In case he joins: +
+*** Add him in a temporary chat group only for this event to bring him into contact with others.
+** Enable the users to add groups to chat with others.
 
 === Quality Goals
 
-
+[options="header", cols="1,2,2"]
+|===
+|Nr|Quality|Explanation
+|1|Easy to use|jk
+|2|Good recommendations|k
+|===
 
 === Stakeholders
 
@@ -32,6 +73,8 @@ In this project we want to develop a community that brings together people that 
 [options="header",cols="1,2,2"]
 |===
 |Role/Name|Contact|Expectations
-| _<Role-1>_ | _<Contact-1>_ | _<Expectation-1>_
-| _<Role-2>_ | _<Contact-2>_ | _<Expectation-2>_
+| Dancer | _<Contact-1>_ | _<Expectation-1>_
+| Schools | _<Contact-1>_ | _<Expectation-1>_
+| Shops | _<Contact-1>_ | _<Expectation-1>_
+| Developer | _<Contact-1>_ | _<Expectation-1>_
 |===
