@@ -1,38 +1,14 @@
 [[section-system-scope-and-context]]
 == System Scope and Context
 
-[plantuml, business-context,svg]
-....
-@startuml
-
-actor Dancer
-actor School
-actor Event_Organizer
-
-component Dancier
-
-Dancer -> Dancier : find other
-School -> Dancier : present themselve
-Event_Organizer -> Dancier : find participant
-
-@enduml
-....
-
 
 === Business Context
 
+Dancier stands on its own, in that way that no technical interfaces to other non dancier systems exist.
 
-
-**<Diagram or Table>**
-
-**<optionally: Explanation of external domain interfaces>**
+All relevant stakeholder will use an web interface to perform their needed work.
 
 === Technical Context
 
+We are not communicating with other non-dancier systems.
 
-
-**<Diagram or Table>**
-
-**<optionally: Explanation of technical interfaces>**
-
-**<Mapping Input/Output to Channels>**
