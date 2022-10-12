@@ -1,6 +1,5 @@
 [[section-building-block-view]]
 
-
 == Building Block View
 
 [plantuml, cloud-architecture, svg]

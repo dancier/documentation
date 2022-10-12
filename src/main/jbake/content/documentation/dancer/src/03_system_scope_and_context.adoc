@@ -1,8 +1,22 @@
 [[section-system-scope-and-context]]
 == System Scope and Context
 
+[plantuml, business-context,svg]
+....
+@startuml
 
+actor Dancer
+actor School
+actor Event_Organizer
 
+component Dancier
+
+Dancer -> Dancier : find other
+School -> Dancier : present themselve
+Event_Organizer -> Dancier : find participant
+
+@enduml
+....
 
 
 === Business Context

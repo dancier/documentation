@@ -4,6 +4,7 @@
 
 We are so constrained. Even in multiple dimensions:
 
+=== Technical Constraints
 [options="header", cols="1,1,1"]
 |===
 ||Constraint|Background/Motivation
@@ -18,4 +19,27 @@ We are so constrained. Even in multiple dimensions:
 |TC7|Everything through central IAM|
 |TC8|Loggin to Elastic|
 |TC9|Traefik|
+|===
+
+=== Organizational Constraints
+
+[options="header", cols="1,1,1"]
+|===
+||Constraint|Background/Motivation
+|OC1|Founder is Marc|Dancer, that wants a plattform to connect other dancers together. Wants to learn how to drive a product holistically. May earn something, somewhen with it.
+
+|OC2|Team|Wants to learn how to drive a product holistically. Have a great time working together. Have a reference project. No intention to earn anything with it.
+|OC3|Workmode: always pair| Where ever possible, use 4eyes-principle/pair with some other, to achieve mostly to things: share knowledge and grow by this, do not be the one that is not allowed to die
+
+|OC3|Workmode: startup| Only do things that immediatly pay of in the next 6 months. Thins that slow us only down and pay off later: do not do this.
+|OC4|Licence|All the source code will be released under an open source license. Everyone can fork the project and start a dancier on his own (with another name of course)
+|===
+
+=== Conventions
+[options="header", cols="1,1,1"]
+|===
+||Convention|Reasoning
+|C1|Be polite|being aggressive, rude.. will never to anythign good when working together
+|C2|Hear first|Confronted with some point of views that seem strange to you have the respect of your collegue that your first thought ist: he will have his reasons. So give him first a chance to explain and then thing about it.
+|C3|Code Style|Use the Java Code Style of google. Use PEP8 for python. Aim to follow the principles of clean code.
 |===
