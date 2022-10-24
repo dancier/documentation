@@ -1,7 +1,7 @@
 = Connecting people through dance
 :jbake-type: page
 :jbake-status: published
-:jbake-date: 2020-02-23
+:jbake-date: 2022-10-23
 :jbake-tags: dance, architecture, open source, java, react, python, spring boot, partner
 :jbake-description: Project that should help people finding partners to dance with, by develpment a Plattform to find partners.
 :jbake-disqus_enabled: true
