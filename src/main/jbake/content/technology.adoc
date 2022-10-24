@@ -121,7 +121,7 @@ This kind of documentation
 
  1. *Any decision should be as little opinionated as possible* +
     We should never choose a technology just because we consider
-    it eg. cool or only because we have experienced it as a good fit for _another_ use case.
+    it as cool or because we have had good experience with it in _another_ use case.
     Decisions should be made depending on the use case. +
  2. *Keep it simple stupid (KISS)* +
     Based on our interpretation of
@@ -137,15 +137,13 @@ This kind of documentation
 As well as it applies to "bigger" things eg.
      * Deciding architectural things like using CQRS
      * Using microservices vs. putting things into a monolith
- 1. *Best of breed* +
-    Try to use standard options. Eg. when there are several similar web frameworks,
-    go for the more prominent one. Because for the more prominent one we will
-      * get more support from other developers if we run into problems
-      * expect more support from the project itself, and also the project itself will exist longer
+ 3. *Best of breed* +
+     Default for standard options. Eg. when there are several similar web frameworks, go for the more prominent one. Because we expect that:
+      * we are getting more support from other developers if we run into problems
+      * expect more support from the upstream project itself, and also the project itself will exist for a longer time
       * have better tooling support (if applicable)
       * have it easier to find more developers
- 1. *Match techniques with skills of core team members* +
-    The chosen technique should be either already known by the team (or part of the team) or the team must
-    be willing to learn it.
+ 4. *Match techniques with skills of core team members* +
+    The chosen technique should be either already known by the team (or part of the team) or the team must be willing to learn it.
 
-It is obvious that some criteria could be in conflict with others. Then we use just common sense.
+Some criteria could conflict with others. Life is not always easy.
