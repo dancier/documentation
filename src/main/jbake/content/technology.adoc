@@ -1,4 +1,4 @@
-= What we use
+= Our technology stack
 :jbake-type: page
 :jbake-status: published
 :jbake-date: 2020-02-23
@@ -110,7 +110,7 @@ image:./images/logo-angular.svg[alt="Angular Logo",  width=100, height=100] |
 As well as it applies to "bigger" things eg.
      * Deciding architectural things like using CQRS
      * Using microservices vs. putting things into a monolith
- 1. *Choosing standard* +
+ 1. *Best of breed* +
     Try to use standard options. Eg. when there are several similar web frameworks,
     go for the more prominent one. Because for the more prominent one we will
       * get more support from other developers if we run into problems
