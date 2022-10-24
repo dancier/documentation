@@ -16,14 +16,18 @@ Let us show you roughly what are main techology stack is. We will not explain wh
 
 [stripes=odd, grid=cols, frame=none, cols="2"]
 |===
-|Java for general programming | 
- Python for data-related tasks and scripting |
+|Java +
+ for general programming | 
+ Python + 
+ for data-related tasks and scripting |
 
 image:./images/logo-java.svg[alt="Java Logo",  width=100, height=100]|
 image:./images/logo-python.svg[alt="Python Logo",  width=100,height=100]
 
-|Boot for Java Projects | 
- Flask for Python Projects|
+|Spring Boot +
+ for Java microservices | 
+ Flask +
+ for Python microservices|
 
 image:./images/logo-spring-framework.svg[Spring Framework Logo, width=100, height=100] |
 image:./images/logo-flask.svg[alt="Flask Logo",  width=100, height=100]
@@ -39,41 +43,55 @@ image:./images/logo-flask.svg[alt="Flask Logo",  width=100, height=100]
 |Javascript| Typescript
 |image:./images/logo-javascript.svg[alt="Javascript Logo",  width=100, height=100]
 |image:./images/logo-typescript.svg[alt="Typescript Logo",  width=100, height=100]
-|Angular |  |
+|Angular + 
+For our Single Page Application|  |
 image:./images/logo-angular.svg[alt="Angular Logo",  width=100, height=100] |
 |===
 
 
 
-== Infrastructre
+== Infrastructure
 ---
 
 [stripes=odd, grid=cols, frame=none, cols="2"]
 |===
-|PostgreSQL Database| Docker
+|PostgreSQL +
+ as our default database| Docker +
+ for containerization
 |image:./images/logo-postgresql.svg[alt="PostgreSQL Logo",  width=100, height=100]
 |image:./images/logo-docker.svg[alt="Docker Logo", width=200, height=100]
 
 
-|Cloud Init | Docker-Compose 
+|Cloud Init  +
+for bootstrapping cloud instances| Docker-Compose + 
+for development and deployment 
 |image:./images/logo-cloud-init.svg[alt="Cloud Init Logo", width=200, height=100] 
 |image:./images/logo-docker-compose.svg[alt="Docker Compose Logo", width=200, height=100] 
  
 
-|S3 - Minio| IAM - Keycloak
+|S3 - Minio +
+our S3 Bucket Implementation| Keycloak + 
+our Iam System
 |image:./images/logo-minio.png[alt="Minio Logo", width=100, height=100]
 |image:./images/logo-keycloak.png[alt="Keycloak Logo",  width=100, height=100]
 
-|Nginx| Hetzner Cloud
+|Nginx + 
+for delivering our Angular App| Hetzner Cloud +
+Our cloud provider
 |image:./images/logo-nginx.png[alt="Nginx Logo", width=100, height=100]
 |image:./images/logo-hetzner.svg[alt="Hetzner Logo", width=100, height=100]
 
-|Elastic Stack| Traefik
+|Elastic Stack + 
+for monitoring and logging| Traefik + 
+Traffic routing and SSL-Handling
 |image:./images/logo-elasticsearch.svg[alt="Elastic Logo", width=200, height=100]
 |image:./images/logo-traefik.png[alt="Elastic Logo", width=200, height=100]
 
 
-|GitHub|GitHub Actions
+|GitHub +
+Version control/Tickets
+|GitHub Actions + 
+CI/CD
 |image:./images/logo-github.png[alt="Github Logo", width=100, height=100]
 |image:./images/logo-github-actions.svg[alt="Github Logo", width=100, height=100]
 |===
@@ -84,11 +102,16 @@ image:./images/logo-angular.svg[alt="Angular Logo",  width=100, height=100] |
 
 [stripes=odd, grid=cols, frame=none, cols="2"]
 |===
-|Nextcloud| Collabora Offcie
+|Nextcloud + 
+Project coordination
+| Collabora Office + 
+Project coordination
 |image:./images/logo-nextcloud.svg[alt="Nextcloud Logo", width=100, height=100]
 |image:./images/logo-collabora-online.svg[alt="Collabora Logo", width=100, height=100]
 
-|Figma|Asciidoctor
+|Figma +
+Prototyping UIs|Asciidoctor +
+This kind of documentation
 |image:./images/logo-figma.svg[alt="Figma Logo", width=100, height=100]
 |image:./images/logo-asciidoctor.svg[alt="Asciidoctor Logo", width=100, height=100]
 |===
