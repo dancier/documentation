@@ -11,62 +11,48 @@
 [link=https://dancier.net]
 image::/dancer.png[align=center]
 
-The purpose of this project is manifold:
+This project has many purposes:
 
-Connecting people by dancing::
-Do everything we can do to make people dance.
+Connect people by dancing::
+Do everything we can do to make more people dance. If we are not able to let more people dance, we failed ;-) 
 
 Having a holistic learning experience::
-Working in the project enables every team member to contribute in as
-many areas as he is willing to contribute:
+Working on the project gives every team member the opportunity to contribute at least the following areas:
  * *Software engineering*
  ** _Software architecture_ +
-    Although we start with a classic monolithic architecture
-    (link:https://martinfowler.com/bliki/MonolithFirst.html[see M. Fowler])
-    we have the future in mind. E.g. we aim for a modular monolith that
-    could be split into microservices when the project will profit
-    from it. +
-    In the same way we will use containers to package and deploy in
-    the cloud. While at the beginning a kubernetes setup seems unnecessary because it is unlikely to
-    pay off, it is easily achievable if we make things right from the start and can make things easier later. +
-    The same applies to a data lake that will start being useful once
-    we have some traffic on the site. So with this in mind, we
-    are not going to waste resources by working on this yet, but for the start work on other tasks
-    with immediate payoff.
- ** _Backend development_ +
-    Although in the very near future we are not expecting high loads which would require special consideration, we should keep that in mind
-    and start being e.g. asynchronous quite soon.
- ** _Frontend development_
+    Dancier has challenges in many aspects. +
+ *** Marco Architecture +
+    We want to be fast in the market, so we want to always strive for a solution that is fast to implement. To no optimization that pays out only in years. But of course, we also feel sure that we will be successful, so we also need a solution that scales easily when it is needed. This is meant either from a runtime performance perspective, but also from a maintenance perspective. So we are aiming for the correct balance, not between development velocity and scalability. +
+    Our System should be also as resilient as needed. So we try to be stable in case of partly broken systemns. +
+    As we will also employ Data Science Tasks right from the start, we need to provide all relevant Data to the Data Scientists without impacting the operative systems.
+
+*** Micro Architecture + 
+    Feeling sure to grow fast, we need to structure our code base, the be easy extensible. As we in general will use a microservice architecture, we have in mind, that we expect that it should be easily to abbonden individual services and write them new. This makes again the challange to on one side aim for a clean code base, sufficient test on the other hand ist should be easily to just write stuff new. + 
+    So the focus here would be, to have the business logic with as less dependencies to all technical aspects for example. 
+ *** Frontend development
+    We will not have the capacity to have Handy Apps right from the start (although a Webview-Based Android App seems to be easy), but the Browser based version should work on mobile devices pretty well, so that we can make "real" apps later easily.
  * *Design*
  ** _Webdesign_ +
-    Be able to react fast on needs from the product owner. Provide an UI that is
-    fun to use.
- ** _Advertisements_ +
-    Use advertisements that do not feel like advertisements. Offer dancing
-    schools stuff which is attractive to users. Be the nice guy. Be what
+    Make Dancier look modern and easy to use.
+ ** Flyer/Ads + 
+    Let dancier being perceived as it easy, a nice modern group of poeple.
+ * *Advertisements on our site* +
+    Use advertisements that do not feel like advertisements. Offer dancing schools opportunities that are attractive to users. Be the nice guy. Be what
     link:htts://google.com[Google] claims to be.
  * *Project management*
  ** _Document the project_ +
-    Have a documentation that is easy to understand, one that invites
-    people to contribute to the project.
+    Have documentation that is easy to understand, one that invites people to contribute to the project.
  ** _Steer the project_ +
-    Motivate the team to focus on things that brings the project further
+    Motivate the team to focus on things that bring the project further
     and establish a culture where everyone feels welcome and where working is fun.
 
 Provide reusable examples for the community::
- * All code is open source  +
-   Give the community a real life working example for common tasks instead
-   of just lecture examples.
+ * All code is open source +
+   Give the community a real-life working example for common tasks instead of just lecture examples.
  * All design is open source +
-   We are more than our code/design, we are one team. Copying our design
-   copies the least important part of us while helping others.
- * The whole project plan is open +
-   Be transparent, especially towards the team and others considering to
-   contribute.
+   We are more than our code/design, we are one team. Copying our design copies the least important part of us, so we are not in fear of it.
 
-By this we are providing publicly accessible examples that hopefully can
-help others to e.g. setup a software project on their own and that can be used
-as guidance.
+By this, we are providing publicly accessible examples that hopefully can help others to e.g. setup a software project on their own.
 
 == Want to contribute?
 Great!
@@ -74,9 +60,9 @@ Great!
 Please read link:technology/index.html[technology base] to check if we are
 already using something where you can contribute.
 
-Contributing is not only possible through technical help. You can also:
+Contributing is not only possible through technically. You can also:
 
 * Help us with design in general
-* Help us with translations
+* Help us with (possible) translations
 * Promote us, e.g. tell friends who are looking for dance partners about our site, connect us to dancing schools, distribute flyers, share us on instagramm, facebook, etc.
 * Donate money ;-)
