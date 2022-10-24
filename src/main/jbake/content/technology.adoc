@@ -18,7 +18,7 @@ Let us show you roughly what are main techology stack is. We will not explain wh
 
 
 
-[%header, grid=cols, frame=none, cols="2"]
+[%header, stripes=even, grid=cols, frame=none, cols="2"]
 |===
 |Java for general tasks | 
  Python for Data related tasks and for scripting |
