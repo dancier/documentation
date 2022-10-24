@@ -36,12 +36,10 @@ image:./images/logo-flask.svg[alt="Flask Logo",  width=100, height=100]
 
 [stripes=odd, grid=cols, frame=none, cols="2"]
 |===
-|Javascript| 
- Typescript|
-image:./images/logo-javascript.svg[alt="Javascript Logo",  width=100, height=100]
- |
-image:./images/logo-typescript.svg[alt="Typescript Logo",  width=100, height=100] |
-Angular |  |
+|Javascript| Typescript
+|image:./images/logo-javascript.svg[alt="Javascript Logo",  width=100, height=100]
+|image:./images/logo-typescript.svg[alt="Typescript Logo",  width=100, height=100]
+|Angular |  |
 image:./images/logo-angular.svg[alt="Angular Logo",  width=100, height=100] |
 |===
 
@@ -49,14 +47,12 @@ image:./images/logo-angular.svg[alt="Angular Logo",  width=100, height=100] |
 
 === Infrastructre
 
-
 [stripes=odd, grid=cols, frame=none, cols="2"]
 |===
-|PostgreSQL-Database|  Docker
+| PostgreSQL Database | Docker
 
-|image:./images/logo-postgresql.svg[alt="PostgreSQL Logo",  width=100, height=100]|
-image:./images/logo-docker.svg[alt="Docker Logo", width=200, height=100]
-
+|image:./images/logo-postgresql.svg[alt="PostgreSQL Logo",  width=100, height=100]
+|image:./images/logo-docker.svg[alt="Docker Logo", width=200, height=100]
 
 
 |Cloud Init | Docker-Compose 
