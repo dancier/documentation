@@ -1,0 +1,270 @@
+[[section-solution-strategy]]
+== Solution Strategy
+
+Dancier is composed out of the following components:
+
+[plantuml, high-level-architecture, svg]
+....
+@startuml
+left to right direction
+actor user
+component show_dancer
+cloud VPC {
+   boundary loadbalancer
+   component dancer
+   database dancer_db
+
+   component chat_dancer
+   database  chat_dancer_db
+
+   component recommendation
+   database recommendation_db
+
+   database s3
+}
+user -- show_dancer
+show_dancer -- loadbalancer
+loadbalancer -- dancer
+dancer --> dancer_db
+dancer ..> s3
+dancer -> recommendation
+dancer -> chat_dancer
+
+recommendation -> s3
+recommendation -> recommendation_db
+
+chat_dancer -> chat_dancer_db
+
+@enduml
+....
+
+We are using the following architectural patterns:
+
+=== Bounded Contexts
+Each service has kind of its own responsibility. Everything that is considered as strongly cohesive, is bundled together in one system.
+So when you want to change a certain feature, you rarely will have to change more than one service at the very same time.
+
+This enables one team working eg. on the dancer service, can do it's work without interfering with the work of the team that works with the recommendation service.
+
+The bounded contexts in this project are:
+
+==== Show Dancer
+A Single Page Application, that is the UI for the stakeholder of the Projekt.
+
+==== Dancer
+Contains the core of the project. Maitains the Dancer Profiles, The Schools and so on.
+
+Acts as a Backend for Frontend for the Single Page Application the Users of Dancier will use, when interacting with Dancier.
+
+The Dancer will emit all Events that are needed by other System, by sending it in a S3 Bucket. This happens asynchronously. In this way, the dancer will not suffer when the downstream systems are temporarily unavailable.
+
+==== Chat-Dancer
+
+Contains all the functionality that is need to enable den Dancer to chat with one another.
+
+==== Recommendation
+Contains a recommendation engine for everything dancier recommends to it's users.
+
+Every data that the engine needs, it being read from a S3 Bucket. I will not impose any stress on the leading systems as it would be, when it eg. directly uses there databases.
+
+==== Other
+We also have kind of technical contexts:
+
+* IAM
+* Monitoring/Logging
+
+=== Individual Scalability
+Be having different Systems for each different block of functionality, we can also indiviudally scale those systems. Eg. the Chat-Dancer is much more likely that it will be needed that this one have to scale up.
+
+=== One Database per Context
+
+We are never sharing a database (in this way we are not considering the S3 Bucket as a database ;-) )
+
+This happens for several reasons:
+
+* Individual Scaleable
+* Hide your own internal Database Schema
+* Freedom to choose the Database archticture that fit's most. Eg. for the chat dancer a database could be very interessing, once we will have more traffic.
+
+=== Asynchronous Decouple
+
+Write asynchronous to S3, effectivly will lead to a system where the recommendation-service could not impose any load on the dancer.
+
+
+=== Chatting
+
+
+=== Login/Registration
+
+[plantuml,login-registration-states,svg]
+....
+@startuml
+
+    [*] -> LandingPage
+    LandingPage --> LoginBase: login
+    LandingPage --> RegisterBase: register
+    RegisterBase --> CheckHumanityRegister
+
+    LoginBase --> CheckCredentials: user/pass-login
+    LoginBase --> LoginLink: login_link_requested
+    LoginBase --> PasswordReset: pass_reset_requested
+
+    CheckCredentials --> LoginSuccess: valid_credentials
+    LoginSuccess --> [*]
+    CheckCredentials --> LoginBase: invalid_credentials
+
+    LoginLink --> CheckHumanityLoginLink: login_link_requested
+    PasswordReset --> CheckHumanityPasswordReset: password_reset_requested
+
+    CheckHumanityLoginLink --> SendLoginLink
+    SendLoginLink --> LoginPerformed: on_click
+    LoginPerformed --> [*] : success
+    LoginPerformed --> LoginBase: login_failure
+
+    CheckHumanityPasswordReset --> SendPassResetLink
+    SendPassResetLink -> PerformLoginOnPasswordReset: on_click
+
+    PerformLoginOnPasswordReset --> ChangePassword: success
+    PerformLoginOnPasswordReset --> LoginBase: failure
+    ChangePassword --> [*]
+
+    CheckHumanityRegister --> PerformRegistration
+    PerformRegistration --> SendEmailVerificationLink: account_does_not_exist
+    PerformRegistration --> SendAccountAlreadyExistMail: account_already_exist
+    SendAccountAlreadyExistMail --> LoginPerformed: on_login_click
+    SendAccountAlreadyExistMail --> SendPassResetLink
+
+
+    SendEmailVerificationLink --> PerformEmailVerification
+    PerformEmailVerification --> LoginPerformed: success
+    PerformEmailVerification --> ResendEmailVerification
+    ResendEmailVerification --> PerformEmailVerification
+@enduml
+....
+
+=== Activity diagramm for login
+[plantuml,login-activity,svg]
+....
+@startuml
+<style>
+activityDiagram {
+  note {
+    BackgroundColor #00FF00
+  }
+}
+</style>
+
+start
+switch ( choose a login mode )
+case (via login data)
+    : enter username/password;
+    if() then (login data valid)
+        :log in successful;
+        stop
+    else (login data invalid)
+        :login failed;
+        stop
+    endif
+case (via login link)
+  #00FF00:request login link;
+    floating note right: green: human/bots check required
+            : click on login link;
+                if() then (link valid)
+                    :log in successful;
+                    stop
+                else (link invalid)
+                    :log in failed;
+                    stop
+                endif
+case (reset password)
+  #00FF00:Request Password Reset;
+  :click on password reset link;
+    if() then (link valid)
+        :pw reset successful;
+        stop
+    else (link invalid)
+        :pw reset failed;
+        stop
+    endif
+endswitch
+@enduml
+....
+
+=== Activity Diagram for Registration
+[plantuml,registration-activity,svg]
+....
+@startuml
+
+<style>
+activityDiagram {
+  note {
+    BackgroundColor #00FF00
+  }
+}
+</style>
+
+start
+:fill registration form;
+#00FF00:send registration request;
+floating note right: green: human/bots check required
+if(user exists) then (yes)
+    :account already exists mail receive;
+    if(click on links in the mail) then (login link)
+        :goto login flow;
+        stop
+    else (password reset link)
+        :goto password reset flow;
+        stop
+    endif
+else (no)
+    :registration verification link received;
+    :click on verification link;
+    if() then (link valid)
+        :registration successful;
+        stop
+    else (link invalid)
+        :mail verification failed;
+        #00FF00:request a new verification mail;
+        stop
+    endif
+
+endif
+
+@enduml
+....
+
+=== Sequenzdiagramm for the Humancheck
+[plantuml,humancheck-flow,svg]
+....
+@startuml
+actor user
+
+user -> frontend : privileged action
+note left
+something the eg.
+send a mail
+end note
+frontend -> backend: whoami endpoint
+backend -> frontend: returns list of roles
+note right
+eg. Anonymous (we know nothing)
+Human (we know it is a human at least)
+User (we no it is a registrated user
+end note
+frontend -> frontend: captcha
+note right
+show when role 'HUMAN' is missing
+end note
+
+frontend -> backend: loginAsHuman
+note right
+use token from captcha as authorization grant
+end note
+backend -> frontend: establish human session
+note right
+set an appropiate token via a cookie
+end note
+
+@enduml
+....
+When the human session is established, all subsequent calls to the backend will have the role 'ROLE_HUMAN' sssigned.
