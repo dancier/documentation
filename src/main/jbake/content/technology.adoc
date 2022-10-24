@@ -47,4 +47,4 @@ As well as it applies to "bigger" things eg.
 It is obvious that some criteria could be in conflict with others. Then we use just common sense.
 
 
-
+image::./images/Nginx_logo.svg.png[alt]
