@@ -17,15 +17,14 @@ Let us show you roughly what are main techology stack is. We will not explain wh
 ==== Languages
 
 
-[cols="2"]
+
+[grid=none, cols="2"]
 |===
-|Java for general tasks | Python for Data related tasks and for scripting |
+|Java for general tasks | 
+ Python for Data related tasks and for scripting |
 
-image:./images/logo-java.svg[]|
-
+image:./images/logo-java.svg[alt="Java Logo",  width=100, height=100]|
 image:./images/logo-python.svg[alt="Python Logo",  width=100,height=100]
-
-
 |===
 
 Java
