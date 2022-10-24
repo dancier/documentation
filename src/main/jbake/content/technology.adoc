@@ -18,7 +18,7 @@ Let us show you roughly what are main techology stack is. We will not explain wh
 
 
 
-[%header, stripes=even, grid=cols, frame=none, cols="2"]
+[%header, stripes=none, grid=cols, frame=none, cols="2"]
 |===
 |Java for general tasks | 
  Python for Data related tasks and for scripting |
@@ -30,7 +30,7 @@ image:./images/logo-python.svg[alt="Python Logo",  width=100,height=100]
 
 ==== Frameworks
 
-[grid=cols, frame=none, cols="2"]
+[%header, stripes=none, grid=cols, frame=none, cols="2"]
 |===
 |Boot for Java Projects | 
  Flask for Python Projects|
