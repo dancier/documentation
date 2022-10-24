@@ -1,4 +1,4 @@
-= What we use and why we use it
+= What we use
 :jbake-type: page
 :jbake-status: published
 :jbake-date: 2020-02-23
@@ -8,16 +8,10 @@
 :jbake-disqus_identifier: 6402d4ec-69e1-11ea-8a83-5f9a72c4b212
 :idprefix:
 
-In this section, we describe the basic rules we try to follow when making decisions like:
+Let us show you roughly what are main tech stack is. We will not explain why we have chosen those on this page. This is subject to our https://project.dancier.net/documentation/arc42/index.html#section-architecture-constraints[Arc42 based Architecture Documentation].
 
- * what kind of version control system (VCS) we use
- * what database we will use
- * what basic frameworks will be used
- * what should be the programming language(s)
- * ....
+In this section, we describe the basic rules we try to follow when making technology decisions.
 
-To have some guidance in the process of making decisions we have
-written down the following rules as a _rough_ guide.
 
 == Key drivers for technical decisions
 
@@ -30,8 +24,8 @@ written down the following rules as a _rough_ guide.
     https://en.wikipedia.org/wiki/Agile_software_development[Agile Development]
     we think that we should choose the https://en.wikipedia.org/wiki/KISS_principle[simplest] approach to tackle a task.
     Particularly, we always try to avoid optimizing things before it turns out
-    that optimization is really needed (https://ubiquity.acm.org/article.cfm?id=1513451[see Donald Knuth]).
-    This applies in the same way to _small_ things eg.
+    that optimization is needed (https://ubiquity.acm.org/article.cfm?id=1513451[see Donald Knuth]).
+    This applies, in the same way, to _small_ things eg.
      * optimizing algorithms like SQL-queries
      * choosing frameworks for persistence, offering rest endpoints, frontend frameworks
      * infrastructural topics like VCS build system +
@@ -55,3 +49,118 @@ It is obvious that some criteria could be in conflict with others. Then we use j
 == Read more about concrete decisions that have been taken
  * link:main.html[Main]
  * link:infrastructure.html[Infrastructure]
+
+
+
+== General
+link:https://www.python.org/[Python] as general purpose scripting language::
+Writing all scripts that helps the developer. Eg, database
+importer/exporter, tools for building, deploying.
+
+== Backend
+=== Language
+link:https://www.java.com/de/download/[Java 12]::
+
+Java is well known, not only considering the current core team. It has certainly one of
+best tooling support. We assume it to be the most popular language for programming modern
+backend systems. +
+We decided to wanted to have link:https://openjdk.java.net/projects/jigsaw/[Jigsaw] in place,
+to start with a pretty modular system even, when staring with monolith. As we want to use
+the most recent version of Java, that has mature tooling support and works with other
+libraries/frameworks we want to use, we decided to use version 12 of Java.
+
+=== Frameworks
+==== Basic
+https://spring.io/projects/spring-boot[Spring Boot]::
+Decided for it's popularity and it's fast pathed way of setting up typical backend systems.
+It relies on the strong foundation of link:https://spring.io/[Spring] for link:https://en.wikipedia.org/wiki/Dependency_injection[Dependency Injection] and link:https://en.wikipedia.org/wiki/Aspect-oriented_programming[AOP], making it easy
+to implement enterprise grade systems.
+
+link:https://spring.io/projects/spring-security[Spring Security]::
+To secure all endpoints
+
+link:https://spring.io/projects/spring-data-rest[Spring Data Rest]::
+To make the creation of link:https://en.wikipedia.org/wiki/Hypertext_Application_Language[HAL] compliant link:https://en.wikipedia.org/wiki/Representational_state_transfer[REST] endpoints a breeze.
+
+==== Persistence
+link:https://en.wikipedia.org/wiki/Java_Persistence_API[JPA]::
+To map database entities into Java classes. The defacto standard in the Java world.
+
+link:https://www.postgresql.org/[PostgreSQL]::
+We assume this is the most advanced relational database, that also supports things like Json datatypes
+and has proven for years, it's matureness.
+
+== Frontend
+=== Language
+link:https://en.wikipedia.org/wiki/JavaScript[JavaScript]/link:https://en.wikipedia.org/wiki/HTML[HTML]/link:https://en.wikipedia.org/wiki/Cascading_Style_Sheets[CSS] as the main language for the frontend.::
+We are not sure if we should use Typscript. But HTLM/CSS is out of question.
+
+=== Frameworks
+link:https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#mvc[Spring WebMVC]::
+Use for the server side rendering of page with the help of:
+
+link:https://www.thymeleaf.org/[Thymeleaf]::
+As the templating engine
+
+link:https://reactjs.org/[React]::
+Used to deal with user interaction rich parts of the site. For the current MVP, this
+will be the part were the user enters his profile.
+
+== How we to manage Source Code
+We are using link:https::/gitbub.com[Github] for:
+
+* all code repositories
+* tickets/issues
+* code reviews
+* building our components
+
+(link:https://github.com/dancier[got to organization])
+
+Working in a project like this together, with multiple developers contributing, requires that each developer
+can work on different branches until he finishes his task. Than he merges his changes into to main branch (the master)
+to make them available to others.
+
+CCVS (centralized version control systems) support this process just not as good as
+link:https://en.wikipedia.org/wiki/Distributed_Concurrent_Versions_System[DVCS].
+Whoever worked with multiple branches in eg. SVN knows how complicated it is there to
+merge branches.
+
+The drawback of DCVS, that they are admittedly harder to understand, does not count too much for us,
+as the whole link:/team.html[core team] already knows GIT.
+We also consider DCVS/GIT as the defacto standard in Software Development. So this should not stop others from
+contributing.
+
+We have chosen GIT as the concrete representative of a DCVS, as we consider it as
+the most used system with the best tooling support.
+
+link:https://github.com[GitHub], is just the most used public available service that offer Git.
+It is free for usage in open source projects like this one. It offers additional issues/tickets,
+some ci/cd functionality via link:https://github.com/features/actions[actions]
+and is due to it's popularity well known among developers.
+
+== Package
+
+We are using link:https://maven.apache.org/[Apache Maven] to build our Software and wrap it into
+link:https://www.docker.com/[Docker] link:https://cloud.google.com/containers/[Container].
+While Maven is kind of standard, it could be that we switch to
+link:https://gradle.org/[Gradle] when we need this flexibility.
+
+In the world of link:https://cloud.google.com/containers/[Containers], link:https://www.docker.com/[Docker] is for sure the standard
+with nothing currently really competing as of know. We the recent changes in Management in the Company behind Docker,
+this could change in future, but as of now, we are safe.
+
+== Build/Deploy
+
+The build will be triggered in GitHub via link:https://github.com/features/actions[GitHub-Actions]. Once
+the project has been build as a Docker Image, it will be uploaded to link:https://github.com/features/packages[GitHub Packages].
+
+Then the following will be triggered
+
+ 1. Fetch the docker image from GitHub-Packages
+ 1. Create new Server-Instance in link:https://www.hetzner.de/cloud[Hetzner-Cloud] via link:https://github.com/hetznercloud/cli[CLI-Tool] or link:https://docs.hetzner.cloud/[Cloud API]
+ 1. Bootstrap the Server-instance by installing docker in it
+ 1. Load and start the docker image in the instance
+ 1. Retarget the load balancer (link:https://www.nginx.com/[NGINX?]) to the new instance if applicable.
+ 1. Destroy the old instance if everything works
+
+
