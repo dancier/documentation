@@ -52,7 +52,7 @@ Provide reusable examples for the community::
  * All design is open source +
    We are more than our code/design, we are one team. Copying our design copies the least important part of us, so we are not in fear of it.
 
-By this, we are providing publicly accessible examples that hopefully can help others to e.g. setup a software project on their own.
+By this, we are providing publicly accessible examples that hopefully can help others to e.g. set up a software project on their own.
 
 == Want to contribute?
 Great!
@@ -60,9 +60,9 @@ Great!
 Please read link:technology/index.html[technology base] to check if we are
 already using something where you can contribute.
 
-Contributing is not only possible through technically. You can also:
+Contributing is not only possible technically. You can also:
 
 * Help us with design in general
 * Help us with (possible) translations
-* Promote us, e.g. tell friends who are looking for dance partners about our site, connect us to dancing schools, distribute flyers, share us on instagramm, facebook, etc.
+* Promote us, e.g. tell friends who are looking for dance partners about our site, connect us to dancing schools, distribute flyers, and share us on Instagram, Facebook, etc.
 * Donate money ;-)
