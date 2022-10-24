@@ -35,8 +35,6 @@
                         </li>
                     </ul>
                 </li>
-                <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>project/index.html">Project
-                        Plan</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
                     <ul class="dropdown-menu">
