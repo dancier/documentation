@@ -52,19 +52,17 @@ image:./images/logo-angular.svg[alt="Angular Logo",  width=100, height=100] |
 
 [stripes=odd, grid=cols, frame=none, cols="2"]
 |===
-|PostgreSQL-Database|  Docker|
+|PostgreSQL-Database|  Docker
 
-image:./images/logo-postgresql.svg[alt="PostgreSQL Logo",  width=100, height=100]
-
- |
+|image:./images/logo-postgresql.svg[alt="PostgreSQL Logo",  width=100, height=100]|
 image:./images/logo-docker.svg[alt="Docker Logo", width=200, height=100]
-|
 
 
-Cloud Init | Docker-Compose |
-image:./images/logo-cloud-init.svg[alt="Cloud Init Logo", width=200, height=100] |
-image:./images/logo-docker-compose.svg[alt="Docker Compose Logo", width=200, height=100] |
- |
+
+|Cloud Init | Docker-Compose 
+|image:./images/logo-cloud-init.svg[alt="Cloud Init Logo", width=200, height=100] 
+|image:./images/logo-docker-compose.svg[alt="Docker Compose Logo", width=200, height=100] 
+ 
 
 |S3 - Minio| IAM - Keycloak
 |image:./images/logo-minio.png[alt="Minio Logo", width=100, height=100]
