@@ -8,9 +8,117 @@
 :jbake-disqus_identifier: 6402d4ec-69e1-11ea-8a83-5f9a72c4b212
 :idprefix:
 
-Let us show you roughly what are main tech stack is. We will not explain why we have chosen those on this page. This is subject to our https://project.dancier.net/documentation/arc42/index.html#section-architecture-constraints[Arc42 based Architecture Documentation].
+Let us show you roughly what are main techology stack is. We will not explain why we have chosen those on this page. This is subject to our https://project.dancier.net/documentation/arc42/index.html#section-architecture-constraints[Arc42 based Architecture Documentation].
 
-In this section, we describe the basic rules we try to follow when making technology decisions.
+== What are default technologies at Dancier
+
+=== Backend/Data Science
+
+==== Languages
+
+Java
+
+image::./images/logo-java.svg[Java Logo]
+
+
+Python
+
+image::./images/logo-python.svg[Python Logo]
+
+==== Frameworks
+
+Spring Boot
+
+image::./images/logo-spring-framework.svg[Spring Framework Logo]
+
+
+Flask
+
+image::./images/logo-flask.svg[Flask Logo]
+
+=== Frontend
+
+==== Languages
+
+Javascript
+
+image::./images/logo-javascript.svg[Javascript Logo]
+
+
+Typescript
+
+image::./images/logo-typescript.svg[Typescript Logo]
+
+==== Frameworks
+
+Angular
+
+image::./images/logo-angular.svg[Angular Logo]
+
+=== Infrastructre
+
+PostgreSQL
+
+
+image::./images/logo-postgresql.svg[PostgreSQL Logo]
+
+Docker / Docker Compose
+
+image::./images/logo-docker.svg[Docker Logo]
+
+image::./images/logo-docker-compose.svg[Docker Compose Logo]
+
+Cloud Init
+
+image::./images/logo-cloud-init.svg[Cloud Init Logo]
+
+S3 Minio
+
+image::./images/logo-minio.png[Minio Logo]
+
+Keycloak
+
+image::./images/logo-keycloak.png[Keycloak Logo]
+
+Nginx
+
+image::./images/logo-nginx.svg[Nginx Logo]
+
+Hetzner Cloud
+
+image::./images/logo-hetzner.svg[Hetzner Logo]
+
+Elastic Stack 
+
+image::./images/logo-elasticsearch.svg[Elastic Logo]
+
+=== Organistational
+
+Github
+
+image::./images/logo-github.png[Github Logo]
+
+Github Actions
+
+image::./images/logo-github-actions.svg[Github Logo]
+
+
+Nextcoud
+
+image::./images/logo-nextcloud.svg[Nextcloud Logo]
+
+Collabora Office
+
+image::./images/logo-collabora-online.svg[Collabora Logo]
+
+Figma
+
+image::./images/logo-figma.svg[Figma Logo]
+
+
+Ascii Doctor
+
+image::./images/logo-asciidoctor.svg[Asciidoctor Logo]
 
 
 == Key drivers for technical decisions
@@ -19,7 +127,7 @@ In this section, we describe the basic rules we try to follow when making techno
     We should never choose a technology just because we consider
     it eg. cool or only because we have experienced it as a good fit for _another_ use case.
     Decisions should be made depending on the use case. +
- 1. *Keep it simple stupid (KISS)* +
+ 2. *Keep it simple stupid (KISS)* +
     Based on our interpretation of
     https://en.wikipedia.org/wiki/Agile_software_development[Agile Development]
     we think that we should choose the https://en.wikipedia.org/wiki/KISS_principle[simplest] approach to tackle a task.
