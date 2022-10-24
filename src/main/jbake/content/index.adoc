@@ -21,7 +21,7 @@ Working on the project gives every team member the opportunity to contribute at 
  * *Software engineering*
  ** _Software architecture_ +
     Dancier has challenges in many aspects. +
- *** Marco Architecture +
+ *** Macro Architecture +
     We want to be fast in the market, so we want to always strive for a solution that is fast to implement. To no optimization that pays out only in years. But of course, we also feel sure that we will be successful, so we also need a solution that scales easily when it is needed. This is meant either from a runtime performance perspective, but also from a maintenance perspective. So we are aiming for the correct balance, not between development velocity and scalability. +
     Our System should be also as resilient as needed. So we try to be stable in case of partly broken systemns. +
     As we will also employ Data Science Tasks right from the start, we need to provide all relevant Data to the Data Scientists without impacting the operative systems.
