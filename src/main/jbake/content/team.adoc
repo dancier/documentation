@@ -6,6 +6,9 @@
 :jbake-description: Core members of the team
 :idprefix:
 
+These are the members that currently contribute regularly to the project.
+
+
  * Dominik Halfkann + 
    Frontend Development
  * Felix Fröhlich + 
