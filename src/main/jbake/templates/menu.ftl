@@ -45,7 +45,7 @@
                             <a href="https://editor.swagger.io/?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdancier%2Fdancer%2Fmaster%2Fopenapi.yml">Dancer-API</a>
                         </li>
                         <li>
-                            <a href="https://editor.swagger.io/?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdancier%2Fchat-dancer%2Fmain%2Fapi%2Fswagger.yml">Chat-Dancer-API</a>
+                            <a href="https://editor.swagger.io/?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdancier%2Fchat-dancer%2Fmain%2Fapi%2Fswagger.yaml">Chat-Dancer-API</a>
                         </li>
                         <li><a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>documentation/bookmarks.html">Bookmarks</a>
                         </li>
