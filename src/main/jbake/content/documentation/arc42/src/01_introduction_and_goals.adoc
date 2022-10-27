@@ -6,37 +6,37 @@ From many perspectives we consider partner dance as something really great.
 * You get together with other people.
 * You improve your fine motor skills
 * It is in general a pretty healthy thing
-* The coordination with the music has also positiv impact on your mental health.
-* Great way to find the partner for you life
-* With more people dancing, have mor peace on earth ;-)
+* The coordination with the music has also positive impact on your mental health.
+* Great way to find the partner for your life
+* People that dance do not start wars ;-)
 
-But there is something that is kind of barrier for many people to practice dancing!
+But there is something that can be a high barrier for many people to practice dancing!
 
 How can they find a partner?
 
-In this project we want to develop a community that brings together people that wants to practice dancing.
+In this project we want to develop a community that brings together people that want to practice dancing.
 
 
 === Requirements Overview
 
-Dancier is aimed to be the goto System for all people looking up dancing related stuff.
+Dancier aims to be the platform for all people looking up dancing related stuff.
 
-This is really kind of a strech goal. So we partitioned the features in two groups.
+This is of course a stretch goal. So we divided our features in two groups.
 
-One that we will really focus on, where we want to make the point. We call them core features.
+The first is our focus group where we bundle all features which builds the base to connect people by dancing. We call them core features.
 
-And the other one additional features.
+Everything else will be listed as additional features.
 
 ==== Core features
 
-* Enable the User to tell us want kind of dances he can/likes
-* Compute some recommendations for each dancer, want dance partner would match most for him.
+* Enable our users to tell us want kind of dances they can/like
+* Compute some recommendations for each dancer as support to find the perfect dance partner match.
 
 Those features are MVP relevant. So they must be included in the MVP:
 
-The following one will be still core, but tackeld after the MVP:
+The following one will be still core, but tackled after the MVP:
 
-* Enable Dancers and Event-Creators to provide information about upcoming dancing events, like dance evenings. This events will be presented in the same view, like the recommendations for dancers. +
+* Enable dancers and event-creators to provide information about upcoming dancing events, like dance evenings. This events will be presented in the same view, like the recommendations for dancers. +
   Those Events could be eg:
 ** Dance Evening
 ** Workshops
@@ -44,17 +44,17 @@ The following one will be still core, but tackeld after the MVP:
 ** Contests
 ** Dancing Holidays
 
-* Enable Dance-Schools to provided information about themselves. Information for this schools will be included in the recommendation view.
+* Enable Dance-Schools to provide information about themselves. Information for this schools will be included in the recommendation view.
 
 ==== Additional features
 
-When we managed that the core features have been implemented, then we can implement the following:
+Once the core features are implemented we can think about an increased user experience by having additional features:
 
 * Allow any other dance related content to popup in the recommendation view where appropriate.
 * Improve the Events part: +
-** Let the user give information if he joins an event or not.
-** In case he joins: +
-*** Add him in a temporary chat group only for this event to bring him into contact with others.
+** Allowing users to share information if they plan to participate on some events.
+** In case they join the event: +
+*** Add the user in a temporary chat group only for this event to allow contacting other users that joined the event.
 ** Enable the users to add groups to chat with others.
 
 === Quality Goals
