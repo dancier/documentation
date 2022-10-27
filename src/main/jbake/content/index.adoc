@@ -14,7 +14,7 @@ image::/dancer.png[align=center]
 This project has many purposes:
 
 Connect people by dancing::
-Do everything we can do to make more people dance. If we are not able to let more people dance, we failed ;-) 
+Do everything possible to get more people dancing. If we are not able to raise the numbers, we failed ;-)
 
 Having a holistic learning experience::
 Working on the project gives every team member the opportunity to contribute at least the following areas:
@@ -22,28 +22,28 @@ Working on the project gives every team member the opportunity to contribute at 
  ** _Software architecture_ +
     Dancier has challenges in many aspects. +
  *** Macro Architecture +
-    We want to be fast in the market, so we want to always strive for a solution that is fast to implement. To no optimization that pays out only in years. But of course, we also feel sure that we will be successful, so we also need a solution that scales easily when it is needed. This is meant either from a runtime performance perspective, but also from a maintenance perspective. So we are aiming for the correct balance, not between development velocity and scalability. +
-    Our System should be also as resilient as needed. So we try to be stable in case of partly broken systemns. +
-    As we will also employ Data Science Tasks right from the start, we need to provide all relevant Data to the Data Scientists without impacting the operative systems.
+    We want to be fast in the market, so we want to always strive for a solution that is fast to implement. Do no optimization that pays out only in years. But of course, we also feel sure that we will be successful, so we also need a solution that scales easily when it is needed. This is meant either from a runtime but also from a maintenance perspective. So we are aiming for a good balance, not between development velocity and scalability. +
+    Our System should be as resilient as needed. So we try to be stable in case of partly broken systems. +
+    As we will also employ Data Science Tasks right from the start, we need to provide all relevant Data to the Data Scientists without impacting the production systems.
 
 *** Micro Architecture + 
-    Feeling sure to grow fast, we need to structure our code base, the be easy extensible. As we in general will use a microservice architecture, we have in mind, that we expect that it should be easily to abbonden individual services and write them new. This makes again the challange to on one side aim for a clean code base, sufficient test on the other hand ist should be easily to just write stuff new. + 
+    Feeling sure to grow fast, we need to structure our code base for extendability. As we in general will use a microservice architecture, we have in mind that every component can be abandoned and rewritten. To guarantee this we aim for a high test coverage, follow the clean code paradigm and use meaningful design patterns where it makes sense. +
     So the focus here would be, to have the business logic with as less dependencies to all technical aspects for example. 
  *** Frontend development
-    We will not have the capacity to have Handy Apps right from the start (although a Webview-Based Android App seems to be easy), but the Browser based version should work on mobile devices pretty well, so that we can make "real" apps later easily.
+    We will not have the capacity to have native apps right from the start (although a Webview-Based Android App seems to be easy), but the Browser based version should work on mobile devices pretty well, so that we can make "real" apps later easily.
  * *Design*
  ** _Webdesign_ +
     Make Dancier look modern and easy to use.
  ** Flyer/Ads + 
-    Let dancier being perceived as it easy, a nice modern group of poeple.
+    Let the community behind Dancier being perceived as a nice modern group of people with the same interests.
  * *Advertisements on our site* +
-    Use advertisements that do not feel like advertisements. Offer dancing schools opportunities that are attractive to users. Be the nice guy. Be what
+    Use advertisements that do not feel like advertisements. Offer dancing schools opportunities that are attractive to users. Be the nice ones. Be what
     link:htts://google.com[Google] claims to be.
  * *Project management*
  ** _Document the project_ +
     Have documentation that is easy to understand, one that invites people to contribute to the project.
  ** _Steer the project_ +
-    Motivate the team to focus on things that bring the project further
+    Motivate the team to focus on things that move the project forward
     and establish a culture where everyone feels welcome and where working is fun.
 
 Provide reusable examples for the community::
