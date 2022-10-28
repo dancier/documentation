@@ -58,15 +58,15 @@ link:https://www.java.com/de/download/[Java 12]::
 Java is well known, not only considering the current core team. It has certainly one of
 best tooling support. We assume it to be the most popular language for programming modern
 backend systems. +
-We decided to wanted to have link:https://openjdk.java.net/projects/jigsaw/[Jigsaw] in place,
+We decided to have link:https://openjdk.java.net/projects/jigsaw/[Jigsaw] in place,
 to start with a pretty modular system even, when staring with monolith. As we want to use
-the most recent version of Java, that has mature tooling support and works with other
-libraries/frameworks we want to use, we decided to use version 12 of Java.
+the most recent version of Java that has mature tooling support and works with other
+libraries/frameworks we want to use, we decided to use version 17 of Java at the beginning but updating it if needed.
 
 === Frameworks
 ==== Basic
 https://spring.io/projects/spring-boot[Spring Boot]::
-Decided for it's popularity and it's fast pathed way of setting up typical backend systems.
+Decided for its popularity and its fast pathed way of setting up typical backend systems.
 It relies on the strong foundation of link:https://spring.io/[Spring] for link:https://en.wikipedia.org/wiki/Dependency_injection[Dependency Injection] and link:https://en.wikipedia.org/wiki/Aspect-oriented_programming[AOP], making it easy
 to implement enterprise grade systems.
 
@@ -82,12 +82,12 @@ To map database entities into Java classes. The defacto standard in the Java wor
 
 link:https://www.postgresql.org/[PostgreSQL]::
 We assume this is the most advanced relational database, that also supports things like Json datatypes
-and has proven for years, it's matureness.
+and has proven its maturity for years.
 
 == Frontend
 === Language
-link:https://en.wikipedia.org/wiki/JavaScript[JavaScript]/link:https://en.wikipedia.org/wiki/HTML[HTML]/link:https://en.wikipedia.org/wiki/Cascading_Style_Sheets[CSS] as the main language for the frontend.::
-We are not sure if we should use Typscript. But HTLM/CSS is out of question.
+link:https://en.wikipedia.org/wiki/JavaScript[JavaScript]/link:https://en.wikipedia.org/wiki/HTML[HTML]/link:https://en.wikipedia.org/wiki/Cascading_Style_Sheets[CSS]/link:https://en.wikipedia.org/wiki/TypeScript[TypeScript] as the main language for the frontend.::
+Of course with HTLM5/CSS3 as well as TypeScript.
 
 === Frameworks
 link:https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#mvc[Spring WebMVC]::
@@ -96,9 +96,9 @@ Use for the server side rendering of page with the help of:
 link:https://www.thymeleaf.org/[Thymeleaf]::
 As the templating engine
 
-link:https://reactjs.org/[React]::
-Used to deal with user interaction rich parts of the site. For the current MVP, this
-will be the part were the user enters his profile.
+link:https://angular.io/[Angular]::
+Used to deal with user interaction rich parts of the site.
+
 
 == How we to manage Source Code
 We are using link:https::/gitbub.com[Github] for:
@@ -111,8 +111,7 @@ We are using link:https::/gitbub.com[Github] for:
 (link:https://github.com/dancier[got to organization])
 
 Working in a project like this together, with multiple developers contributing, requires that each developer
-can work on different branches until he finishes his task. Than he merges his changes into to main branch (the master)
-to make them available to others.
+can work on a different branch until the task is finished. After a feature is finished, a pull request will be created and reviewed before the branch is merged into the main branch and the feature is available for every developer.
 
 CCVS (centralized version control systems) support this process just not as good as
 link:https://en.wikipedia.org/wiki/Distributed_Concurrent_Versions_System[DVCS].
@@ -127,20 +126,20 @@ contributing.
 We have chosen GIT as the concrete representative of a DCVS, as we consider it as
 the most used system with the best tooling support.
 
-link:https://github.com[GitHub], is just the most used public available service that offer Git.
+link:https://github.com[GitHub], is just the most used public available service that offers Git.
 It is free for usage in open source projects like this one. It offers additional issues/tickets,
 some ci/cd functionality via link:https://github.com/features/actions[actions]
 and is due to it's popularity well known among developers.
 
 == Package
 
-We are using link:https://maven.apache.org/[Apache Maven] to build our Software and wrap it into
+We are using link:https://maven.apache.org/[Apache Maven] to build our backend software and wrap it into
 link:https://www.docker.com/[Docker] link:https://cloud.google.com/containers/[Container].
 While Maven is kind of standard, it could be that we switch to
 link:https://gradle.org/[Gradle] when we need this flexibility.
 
 In the world of link:https://cloud.google.com/containers/[Containers], link:https://www.docker.com/[Docker] is for sure the standard
-with nothing currently really competing as of know. We the recent changes in Management in the Company behind Docker,
+with nothing currently really competing as of know. Seeing the recent changes in Management in the Company behind Docker,
 this could change in future, but as of now, we are safe.
 
 == Build/Deploy
