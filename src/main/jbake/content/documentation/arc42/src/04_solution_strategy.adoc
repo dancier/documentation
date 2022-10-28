@@ -21,6 +21,8 @@ cloud VPC {
    database recommendation_db
 
    database s3
+
+   queue queue
 }
 user -- show_dancer
 show_dancer -- loadbalancer
@@ -34,6 +36,11 @@ recommendation -> s3
 recommendation -> recommendation_db
 
 chat_dancer -> chat_dancer_db
+
+dancer <-> queue
+queue <-> recommendation
+
+queue -> s3
 
 @enduml
 ....
