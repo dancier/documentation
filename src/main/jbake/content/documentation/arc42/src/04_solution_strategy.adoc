@@ -27,17 +27,17 @@ cloud VPC {
 user -- show_dancer
 show_dancer -- loadbalancer
 loadbalancer -- dancer
-dancer --> dancer_db
-dancer ..> s3
+dancer -- dancer_db
+dancer ...> s3
 dancer -> recommendation
 dancer -> chat_dancer
 
 recommendation -> s3
-recommendation -> recommendation_db
+recommendation -- recommendation_db
 
-chat_dancer -> chat_dancer_db
+chat_dancer - chat_dancer_db
 
-dancer <-> queue
+dancer <--> queue
 queue <-> recommendation
 
 queue -> s3
