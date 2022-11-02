@@ -1,13 +1,12 @@
 = Core team
 :jbake-type: page
 :jbake-status: published
-:jbake-date: 2020-02-23
+:jbake-date: 2020-11-2
 :jbake-tags: team, project, members
 :jbake-description: Core members of the team
 :idprefix:
 
-These are the members that currently contribute regularly to the project.
-
+These are the members contributing regularly to the project.
 
  * Dominik Halfkann + 
    Frontend Development
