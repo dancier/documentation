@@ -11,9 +11,7 @@ These are the members that currently contribute regularly to the project.
 
  * Dominik Halfkann + 
    Frontend Development
- * Felix Fröhlich + 
-   Data Science
- * link:https://twitter.com/jans0510[Jan Stroppel] + 
+ * link:https://twitter.com/jans0510[Jan Stroppel] +
    Backend, Frontend
  * link:https://twitter.com/MarcGorzala[Marc] +
    Project Founder, Backend, Infrastructure, Project Management
