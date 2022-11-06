@@ -26,6 +26,7 @@ toc::[]
 * link:https://towardsdatascience.com/evolution-from-monolithic-architecture-to-microservice-architecture-c58246822ea4[Migrating a Monolithic Architecture to Microservice Architecture]
 * link:https://dagster.io/blog/skip-kafka-use-postgres-message-queue[Skip Kafka use PostgreSQL Message Queue]
 * link:https://boringtechnology.club/[Choose Booring Technology]
+* link:https://www.postgresql.org/docs/current/datatype-datetime.html[Should I use Timezones in DB?]
 
 === Document as code
 * link:https://docs-as-co.de/[Doc as code]
