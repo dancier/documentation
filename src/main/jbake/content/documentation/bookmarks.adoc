@@ -126,6 +126,7 @@ toc::[]
 == Python
 * link:https://janakiev.com/blog/python-shell-commands/[Invoke Shell commands in Python]
 * link:http://libzx.so/main/learning/2016/03/13/best-practice-for-virtualenv-and-git-repos.html[Virtualenv and GIT]
+* link:https://juanitorduz.github.io/germany_plots/[Plotting with Mathplotlib and Python on maps]
 
 == Team
 * link:https://hbr.org/2019/03/the-feedback-fallacy[The feedback fallacy]
