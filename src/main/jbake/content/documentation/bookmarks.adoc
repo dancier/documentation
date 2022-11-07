@@ -66,6 +66,7 @@ toc::[]
 === Database
 * link:https://gist.github.com/Kartones/dd3ff5ec5ea238d4c546[PostgreSQL Cheat Sheet]
 * https://shiroyasha.io/selecting-for-share-and-update-in-postgresql.html[Select for Update]
+* https://scalegrid.io/blog/using-jsonb-in-postgresql-how-to-effectively-store-index-json-data-in-postgresql/[PostgreSQL und Json]
 
 === Loadbalancer/Reverse proxy
 * link:https://codingwithmanny.medium.com/configure-self-signed-ssl-for-nginx-docker-from-a-scratch-7c2bcd5478c6[Nginx-Docker with self signed cert]
