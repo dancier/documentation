@@ -58,6 +58,7 @@ toc::[]
 * link:https://medium.com/@orestovyevhen/set-up-infrastructure-in-hetzner-cloud-using-terraform-ce85491e92d[Setup up Infrastructur in Hetzner Cloud using Terraform]
 * link:https://docs.fluentd.org/container-deployment/docker-compose[Docker Compose Fluentd Elastic Search]
 * link:https://coralogix.com/blog/a-practical-guide-to-fluentd/[A Practical Guide to Fluentd]
+* https://opendreamkit.org/2018/10/17/jupyterhub-docker/[Jupyter Hub with docker and keycloak]
 
 === KI
 * link:https://cs.nyu.edu/~jcf/classes/g22.3033-002/handouts/chen96data.pdf[Datamining]
