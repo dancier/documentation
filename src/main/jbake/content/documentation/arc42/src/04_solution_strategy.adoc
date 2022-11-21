@@ -11,6 +11,10 @@ actor user
 component show_dancer
 cloud VPC {
    boundary loadbalancer
+
+   component messaging_service
+   database messaging_service_db
+
    component dancer
    database dancer_db
 
@@ -29,7 +33,6 @@ show_dancer -- loadbalancer
 loadbalancer -- dancer
 dancer -- dancer_db
 dancer ...> s3
-dancer -> recommendation
 dancer -> chat_dancer
 
 recommendation -> s3
@@ -37,10 +40,13 @@ recommendation -- recommendation_db
 
 chat_dancer - chat_dancer_db
 
-dancer <--> bus
-bus <-> recommendation
+dancer <.> bus
+bus <.> recommendation
 
 bus -> s3
+
+messaging_service <..> bus
+messaging_service --> messaging_service_db
 
 @enduml
 ....
