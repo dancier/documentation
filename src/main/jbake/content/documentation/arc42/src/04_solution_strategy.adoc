@@ -35,7 +35,7 @@ dancer -- dancer_db
 dancer ...> s3
 dancer -> chat_dancer
 
-recommendation -> s3
+recommendation -> s3 : read events
 recommendation -- recommendation_db
 
 chat_dancer - chat_dancer_db
@@ -43,9 +43,7 @@ chat_dancer - chat_dancer_db
 dancer <.> bus
 bus <.> recommendation
 
-bus -> s3
-
-messaging_service <..> bus
+messaging_service <.> bus
 messaging_service --> messaging_service_db
 
 @enduml
