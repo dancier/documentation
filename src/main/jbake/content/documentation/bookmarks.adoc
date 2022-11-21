@@ -60,6 +60,7 @@ toc::[]
 * link:https://coralogix.com/blog/a-practical-guide-to-fluentd/[A Practical Guide to Fluentd]
 * https://opendreamkit.org/2018/10/17/jupyterhub-docker/[Jupyter Hub with docker and keycloak]
 * https://www.tutorialworks.com/spring-boot-prometheus-micrometer/[Spring Boot Prometheus]
+* https://tomgregory.com/spring-boot-default-metrics/[Description of Spring Boot Default Metrics]
 
 === KI
 * link:https://cs.nyu.edu/~jcf/classes/g22.3033-002/handouts/chen96data.pdf[Datamining]
