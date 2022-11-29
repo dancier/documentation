@@ -16,6 +16,7 @@ toc::[]
 
 == Architecture
 * link:https://vaadin.com/learn/tutorials/ddd[Domain-Driven Design Crashkurs auf vaadin]
+* https://fullstackdeveloper.guru/2022/05/19/how-to-implement-transactional-outbox-design-pattern-in-spring-boot-microservices/[Transactional Outbox Pattern Spring Boot]
 * link:https://medium.com/nexocode/smooth-implementation-of-cqrs-es-with-spring-boot-and-axon-framework-26cc22e53a7f[CQRS mit Spring Boot und Axon]
 * link:https://engineering.etermax.com/clean-microservice-architecture-in-practice-63051aeb016b[Clean microservice architecture in practice]
 * link:https://thenewstack.io/this-week-in-programming-forget-microservices-monoliths-are-the-way-forward[Forget Microservices, Monoliths Are the Way Forward]
