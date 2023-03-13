@@ -37,12 +37,18 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>documentation/arc42/index.html">Arc42-Architecture</a>
-                        <li>
-                        <li class="divider"></li>
-                        <li>
                             <a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>documentation/code-of-conduct.html">Code of Conduct</a>
                         <li>
+                        <li>
+                            <a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>documentation/arc42/index.html">Arc42-Architecture</a>
+                        <li>
+                        <li>
+                            <a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>documentation/bookmarks.html">Bookmarks</a>
+                        </li>
+                        <li>
+                            <a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>documentation/howto/index.html">Howtos</a>
+                        </li>
+                        <li class="divider"></li>
                         <li>
                             <a href="https://editor.swagger.io/?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdancier%2Fdancer%2Fmaster%2Fswagger.yaml">Dancer-API</a>
                         </li>
@@ -51,12 +57,6 @@
                         </li>
                         <li>
                             <a href="https://editor.swagger.io/?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdancier%2Frecommendation%2Fmain%2Fswagger.yaml">Recommendation-API</a>
-                        </li>
-                        <li>
-                            <a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>documentation/bookmarks.html">Bookmarks</a>
-                        </li>
-                        <li>
-                            <a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>documentation/howto/index.html">Howtos</a>
                         </li>
                     </ul>
                 </li>
