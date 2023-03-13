@@ -41,6 +41,9 @@
                         <li>
                         </hr>
                         <li>
+                            <a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>documentation/code-of-conduct.html">Code of Conduct</a>
+                        <li>
+                        <li>
                             <a href="https://editor.swagger.io/?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdancier%2Fdancer%2Fmaster%2Fswagger.yaml">Dancer-API</a>
                         </li>
                         <li>
