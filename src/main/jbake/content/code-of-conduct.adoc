@@ -1,3 +1,12 @@
 = Code of Conduct
+:jbake-type: page
+:jbake-status: published
+:jbake-date: 2023-03-11
+:jbake-tags: team, project, members
+:jbake-description: Code of Conduct
+:idprefix:
+:jbake-disqus_enabled: true
+:jbake-disqus_identifier: 5b5b924c-c1aa-11ed-8f9c-33cab348d2a2
+
 
 Be nice
