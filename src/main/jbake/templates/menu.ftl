@@ -37,7 +37,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>documentation/code-of-conduct.html">Code of Conduct</a>
+                            <a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>code-of-conduct.html">Code of Conduct</a>
                         <li>
                         <li>
                             <a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>documentation/arc42/index.html">Arc42-Architecture</a>
