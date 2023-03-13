@@ -43,7 +43,7 @@ Working on the project allows every team member to contribute in at least the fo
  ** _Webdesign_ +
     Make Dancier look modern and easy to use.
  ** Flyer/Ads + 
-    Let the community behind Dancier being perceived as a nice modern group of people with the same interests.
+    Let the community behind Dancier be perceived as a nice modern group of people with the same interests.
  * *Advertisements on our site* +
     Use advertisements that do not feel like advertisements. Offer dancing schools opportunities that are attractive to users. Be the nice ones. Be what
     link:htts://google.com[Google] claims to be.
