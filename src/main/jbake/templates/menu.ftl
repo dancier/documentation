@@ -23,7 +23,10 @@
                     <a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>team.html">Core team</a>
                 </li>
                 <li>
-                    <a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>technology.html">Technology Stack</a>
+                    <a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>technology-stack.html">Technology Stack</a>
+                </li>
+                <li>
+                    <a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>technology-decision-principles.html">Technology Decision Principles</a>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>

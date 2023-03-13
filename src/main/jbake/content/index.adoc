@@ -1,4 +1,4 @@
-= Connecting people through dance
+= Connecting dancing people
 :jbake-type: page
 :jbake-status: published
 :jbake-date: 2022-10-23
@@ -17,20 +17,28 @@ Connect people by dancing::
 Do everything possible to get more people dancing. If we are not able to raise the numbers, we failed ;-)
 
 Having a holistic learning experience::
-Working on the project gives every team member the opportunity to contribute at least the following areas:
+Working on the project gives every team member the opportunity to contribute in at least the following areas:
  * *Software engineering*
  ** _Software architecture_ +
-    Dancier has challenges in many aspects. +
+    Dancier will challenge you in many aspects: +
  *** Macro Architecture +
-    We want to be fast in the market, so we want to always strive for a solution that is fast to implement. Do no optimization that pays out only in years. But of course, we also feel sure that we will be successful, so we also need a solution that scales easily when it is needed. This is meant either from a runtime but also from a maintenance perspective. So we are aiming for a good balance, not between development velocity and scalability. +
-    Our System should be as resilient as needed. So we try to be stable in case of partly broken systems. +
-    As we will also employ Data Science Tasks right from the start, we need to provide all relevant Data to the Data Scientists without impacting the production systems.
+    We want to be fast in the market. To do so we always strive for a solution that is fast to implement. We do not optimize things that pay out only in years. Still, we believe that Dancier will be adopted by dancers more and more. So we are aiming for a good balance, between development velocity, maintainability and scalability. +
+    Our System should be as resilient as needed. So in the case of partly broken systems, as much as possible of the user experience should remain intact.
+    +
+    We also try to employ Data Science Tasks right from the start. We want to learn from the dancers to give them the best user experience possible. So we provide all relevant data for such tasks, without impacting operational services. + 
+    In general, we will implement 
+    
+**** a distributed system
+**** that is being composed of mainly microservices 
+**** that are connected via Events.
+**** and being deployed in the cloud that
 
 *** Micro Architecture + 
-    Feeling sure to grow fast, we need to structure our code base for extendability. As we in general will use a microservice architecture, we have in mind that every component can be abandoned and rewritten. To guarantee this we aim for a high test coverage, follow the clean code paradigm and use meaningful design patterns where it makes sense. +
-    So the focus here would be, to have the business logic with as less dependencies to all technical aspects for example. 
- *** Frontend development
-    We will not have the capacity to have native apps right from the start (although a Webview-Based Android App seems to be easy), but the Browser based version should work on mobile devices pretty well, so that we can make "real" apps later easily.
+    Believing that dancier will grow fast, we will permanently have to add new features. This could lead to something like a big ball of mud. So we try to implement each new feature as a loosely coupled module. +
+    We will invest "something" into the interfaces between the modules. But in the module itself, we strive to be as fast as possible. In case a module turns out to be too buggy, we could just rewrite it.
+    See more in the architecture description.
+ *** Frontend development + 
+    We are not having the capacity to have native apps right from the start (although a Webview-Based Android App seems to be achievable). But our Browser based version should work on mobile devices pretty fine so that we can make "real" apps later.
  * *Design*
  ** _Webdesign_ +
     Make Dancier look modern and easy to use.
@@ -54,11 +62,8 @@ Provide reusable examples for the community::
 
 By this, we are providing publicly accessible examples that hopefully can help others to e.g. set up a software project on their own.
 
-== Want to contribute?
+== Wanna contribute?
 Great!
-
-Please read link:technology/index.html[technology base] to check if we are
-already using something where you can contribute.
 
 Contributing is not only possible technically. You can also:
 
