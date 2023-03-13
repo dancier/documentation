@@ -1,11 +1,11 @@
-= Our technology stack
+= Make reasonable technology decisions
 :jbake-type: page
 :jbake-status: published
 :jbake-date: 2020-11-02
 :jbake-tags: desgin pattern, architecture, java, kiss, agile, decision making
-:jbake-description: Describe how we are making (not only technial) decisions
+:jbake-description: Describe how we are making technical decisions
 :jbake-disqus_enabled: true
-:jbake-disqus_identifier: 6402d4ec-69e1-11ea-8a83-5f9a72c4b212
+:jbake-disqus_identifier: d23e2d10-c1a6-11ed-8bd8-3b33f0bea9fd
 :idprefix:
 
 
