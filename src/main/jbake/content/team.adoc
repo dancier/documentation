@@ -6,6 +6,8 @@
 :jbake-description: Core members of the team
 :idprefix:
 
+What drives us forward? What are our base values? Read this in our link:http://sdf[Code of Conduct].
+
 These are the members contributing regularly to the project.
 
  * Dominik Halfkann + 
