@@ -6,9 +6,7 @@
 :jbake-description: Core members of the team
 :idprefix:
 
-What drives us forward? What are our base values? Read this in our link:http://sdf[Code of Conduct].
-
-These are the members contributing regularly to the project.
+It follows a list, of who belongs to our core team. When you are interested in our core values, read this link:https://project.dancier.net/code-of-conduct.html[Code of Conduct].
 
  * Dominik Halfkann + 
    Frontend Development
