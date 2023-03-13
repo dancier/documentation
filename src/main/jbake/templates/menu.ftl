@@ -39,7 +39,7 @@
                         <li>
                             <a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>documentation/arc42/index.html">Arc42-Architecture</a>
                         <li>
-                        </hr>
+                        <li class="divider"></li>
                         <li>
                             <a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>documentation/code-of-conduct.html">Code of Conduct</a>
                         <li>
