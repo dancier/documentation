@@ -1,4 +1,4 @@
-= Make reasonable technology decisions
+= Making reasonable technology decisions
 :jbake-type: page
 :jbake-status: published
 :jbake-date: 2023-03-02
@@ -7,6 +7,27 @@
 :jbake-disqus_enabled: true
 :jbake-disqus_identifier: d23e2d10-c1a6-11ed-8bd8-3b33f0bea9fd
 :idprefix:
+
+
+== The Problem
+
+Reasoning about what could be the best programming language (and other questions like what is the "best" database...) turns out to be in practice not that easy.
+
+Even with participants being nice, educated and solution-focused it becomes much to often a emotional if not heated debate. We strongly assume that the root cause is often, that each participant is arguing base a differnt base of principles.
+
+So let's assume, one considers that it would be best for the company/project to always use the most recent technology out there. That one regularly argues that you could reach benefis in competiton while using the moste recent (and for this recent presumable the best) tech out there.
+
+So one of his principle would be, to always strive to most recent stuff.
+
+Another one, would contratry assume that always using most recent tech will incure the risk of making in mid-term a wrong bet. Something that looks promising now, could be dead in 2 or 3 years. So in some years it would be more "legacy" the the proven stuff from today would be.
+
+If you would let those two guys let disuss about what should be the (main-)database in a projet/company, they will be liky not come to an end. Even worse, one could accuse the other of being outdated, too old fashined, while the other could be accuse of being a yuppy without looking the the nearer future. Latest at this point the disuccsing would turn out personally and create a toxic athomsphere.
+
+
+
+== Our Solution
+
+https://www.meeteor.com/post/principle-based-decision-making
 
 
 == Key drivers for technical decisions
