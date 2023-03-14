@@ -8,9 +8,9 @@
 :jbake-disqus_identifier: 6402d4ec-69e1-11ea-8a83-5f9a72c4b212
 :idprefix:
 
-This is about the tech stack of technology we agreed on.
+This is about the set of technologies we agreed on.
 
-It's a result of applying our https://project.dancier.net/technology-descision-principles.html[Technology Decision Principles] to our domain.
+It's a result of applying our https://project.dancier.net/technology-descision-principles.html[Technology Decision Principles].
 
 == Backend/Data Science
 ---
