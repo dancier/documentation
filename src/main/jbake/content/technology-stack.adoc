@@ -1,15 +1,16 @@
 = Our technology stack
 :jbake-type: page
 :jbake-status: published
-:jbake-date: 2020-11-02
+:jbake-date: 2023-03-02
 :jbake-tags: desgin pattern, architecture, java, kiss, agile, decision making
 :jbake-description: Describe how we are making (not only technial) decisions
 :jbake-disqus_enabled: true
 :jbake-disqus_identifier: 6402d4ec-69e1-11ea-8a83-5f9a72c4b212
 :idprefix:
 
-Let us show you briefly what technologies we use. We will not explain why we have chosen those here. This is subject to our https://project.dancier.net/documentation/arc42/index.html#section-architecture-constraints[Arc42 based Architecture Documentation].
+This is about the tech stack of technology we agreed on.
 
+It's a result of applying our https://project.dancier.net/technology-descision-principles.html[Technology Decision Principles] to our domain.
 
 == Backend/Data Science
 ---
