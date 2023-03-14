@@ -143,33 +143,3 @@ image:./images/logo-asciidoctor.svg[alt="Asciidoctor Logo", width=100, height=10
 |===
 
 
-== Key drivers for technical decisions
-
- 1. *Any decision should be as little opinionated as possible* +
-    We should never choose a technology just because we consider
-    it as cool or because we have had good experience with it in _another_ use case.
-    Decisions should be made depending on the use case. +
- 2. *Keep it simple stupid (KISS)* +
-    Based on our interpretation of
-    https://en.wikipedia.org/wiki/Agile_software_development[Agile Development]
-    we think that we should choose the https://en.wikipedia.org/wiki/KISS_principle[simplest] approach to tackle a task.
-    Particularly, we always try to avoid optimizing things before it turns out
-    that optimization is needed (https://ubiquity.acm.org/article.cfm?id=1513451[see Donald Knuth]).
-    This applies, in the same way, to _small_ things eg.
-     * optimizing algorithms like SQL-queries
-     * choosing frameworks for persistence, offering rest endpoints, frontend frameworks
-     * infrastructural topics like VCS build system +
-+
-As well as it applies to "bigger" things eg.
-     * Deciding architectural things like using CQRS
-     * Using microservices vs. putting things into a monolith
- 3. *Best of breed* +
-     Default for standard options. Eg. when there are several similar web frameworks, go for the more prominent one. Because we expect that:
-      * we are getting more support from other developers if we run into problems
-      * expect more support from the upstream project itself, and also the project itself will exist for a longer time
-      * have better tooling support (if applicable)
-      * have it easier to find more developers
- 4. *Match techniques with skills of core team members* +
-    The chosen technique should be either already known by the team (or part of the team) or the team must be willing to learn it.
-
-Some criteria could conflict with others. Life is not always easy.
