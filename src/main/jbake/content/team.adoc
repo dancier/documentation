@@ -1,12 +1,16 @@
 = Core team
 :jbake-type: page
 :jbake-status: published
-:jbake-date: 2020-11-2
+:jbake-date: 2023-03-14
 :jbake-tags: team, project, members
 :jbake-description: Core members of the team
 :idprefix:
 
-It follows a list, of who belongs to our core team. When you are interested in our core values, read this link:https://project.dancier.net/code-of-conduct.html[Code of Conduct].
+We are dancier!
+
+In case you are interested in our core values, read the link:https://project.dancier.net/code-of-conduct.html[Code of Conduct].
+
+---
 
  * Dominik Halfkann + 
    Frontend Development
@@ -17,4 +21,4 @@ It follows a list, of who belongs to our core team. When you are interested in o
  * Stelios Rusta + 
    Backend
  * Xiaofei +
-   Frontend, Design, Scrum Mistress
+   Frontend, Design, Teamup
