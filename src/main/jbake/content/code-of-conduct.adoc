@@ -9,4 +9,16 @@
 :jbake-disqus_identifier: 5b5b924c-c1aa-11ed-8f9c-33cab348d2a2
 
 
-Be nice
+== Code of Conduct?
+
+We believe at dancier, that the more inclusive we are, the better it is for dancier.
+
+Still, we believe that working together effectively will be work out better, when we share some 
+
+Mainly address what was relevant to not overspecify things.
+
+
+Refere to googles code of conduct
+
+
+The golden rule, states to treat everyone as you also would loke to be treated.
