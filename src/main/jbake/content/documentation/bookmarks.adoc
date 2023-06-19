@@ -1,9 +1,9 @@
 = Bookmarks
 :jbake-type: page
 :jbake-status: published
-:jbake-date: 2020-02-24
+:jbake-date: 2023-06-19
 :jbake-tags: architecture, microservice, cloud, bookmarks
-:jbake-description: Links that need not be directly realted to the project
+:jbake-description: Links that need not be directly related to the project
 :jbake-author: Marc Gorzala
 :jbake-disqus_enabled: true
 :jbake-disqus_identifier: 94350158-69e1-11ea-a2d0-337d6563be89
@@ -63,6 +63,7 @@ toc::[]
 * https://www.tutorialworks.com/spring-boot-prometheus-micrometer/[Spring Boot Prometheus]
 * https://blog.viktoradam.net/2020/05/11/prometheus-flask-exporter/[Flask and Prometheus]
 * https://tomgregory.com/spring-boot-default-metrics/[Description of Spring Boot Default Metrics]
+* link:https://www.hava.io/blog/cattle-vs-pets-devops-explained[Cattle vs Pets - DevOps Explained]
 
 === KI
 * link:https://cs.nyu.edu/~jcf/classes/g22.3033-002/handouts/chen96data.pdf[Datamining]
