@@ -65,7 +65,9 @@ toc::[]
 * https://tomgregory.com/spring-boot-default-metrics/[Description of Spring Boot Default Metrics]
 * link:https://www.hava.io/blog/cattle-vs-pets-devops-explained[Cattle vs Pets - DevOps Explained]
 
-link:https://colinwilson.uk/2020/10/31/provision-a-docker-swarm-host-with-traefik-v2-on-hetzner-cloud-using-terraform-modules-part-1/[Docker Swarmhost - Hetzner]
+* link:https://colinwilson.uk/2020/10/31/provision-a-docker-swarm-host-with-traefik-v2-on-hetzner-cloud-using-terraform-modules-part-1/[Docker Swarmhost - Hetzner - Wilson]
+* link:https://blog.okami101.io/2022/02/setup-a-docker-swarm-cluster-for-less-than-30-/-month/#lets-party-[Docker - Swarmhost - Hetzner Adrien]
+* link:https://www.itwonderlab.com/postgres-kubernetes-nfs-volume/[PostgreSQL over NFS]
 
 === KI
 * link:https://cs.nyu.edu/~jcf/classes/g22.3033-002/handouts/chen96data.pdf[Datamining]
