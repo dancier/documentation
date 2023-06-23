@@ -1,14 +1,19 @@
 [[section-system-scope-and-context]]
-== System Scope and Context
+== Functional Context
 
+image:functional-context.drawio.svg[]
 
-=== Business Context
+[options="header", cols="1,5"]
+|===
+|Neighbor| Description
 
-Dancier stands on its own, in that way that no technical interfaces to other non dancier systems exist.
+| Dancer
+| Dancing people on theire search for other dancers use dancier
 
-All relevant stakeholder will use an web interface to perform their needed work.
+| School
+| Schools that offer dance courses, dance workshops and whatever dance related, wants to reach out for dancers
 
-=== Technical Context
+| Event Organisers
+| Organisors of all dance related events wants to find participants for their events.
 
-We are not communicating with other non-dancier systems.
-
+|===

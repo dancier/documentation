@@ -1,7 +1,7 @@
 :jbake-type: page
 :jbake-status: published
-:jbake-date: 2020-02-23
-:jbake-tags: dance, dancer
+:jbake-date: 2023-06-23
+:jbake-tags: dance, dancer, partner, software, architecture
 :idprefix:
 
 
@@ -34,7 +34,7 @@ include::src/01_introduction_and_goals.adoc[]
 
 <<<<
 // 2. Architecture Constraints
-include::src/02_architecture_constraints.adoc[]
+include::src/02_constraints.adoc[]
 
 <<<<
 // 3. System Scope and Context

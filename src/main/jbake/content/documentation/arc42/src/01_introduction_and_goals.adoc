@@ -1,82 +1,96 @@
 [[section-introduction-and-goals]]
 == Introduction and Goals
 
-From many perspectives we consider partner dance as something really great.
+Partner dance is something really great in some many perspectives:
 
-* You get together with other people.
-* You improve your fine motor skills
-* It is in general a pretty healthy thing
-* The coordination with the music has also positive impact on your mental health.
-* Great way to find the partner for your life
-* People that dance do not start wars ;-)
+* it brings people together (social perspective)
+* people improve there fine motor skills (physical health perspective)
+* get distracted from work stress (mental health perspective)
+* dancing people in general does not start wars (society perspective)
+* find a partner for life (mankind survival perspective)
 
-But there is something that can be a high barrier for many people to practice dancing!
+BUT!
 
-How can they find a partner?
+There is one barrier for a partner dance!
 
-In this project we want to develop a community that brings together people that want to practice dancing.
+You have to find a partner to dance with.
+
+As this is not that easy, Dancier is there for help!
 
 
-=== Requirements Overview
+=== Functional Requirements
 
-Dancier aims to be the platform for all people looking up dancing related stuff.
+[cols="1,7,10"]
+|===
+| ID | Requirement | Description
 
-This is of course a stretch goal. So we divided our features in two groups.
+| M1
+| Match dancers
+| Bring those two dancers together that will likely become a great dancing couple
 
-The first is our focus group where we bundle all features which builds the base to connect people by dancing. We call them core features.
+| M2
+| Dancers should be able to chat
+| Every matched dancer (M1) must be able to chat with his matches.
 
-Everything else will be listed as additional features.
+| O1
+| Match dance courses
+| dancers should be able to find courses that match their level of maturity
 
-==== Core features
+| O2
+| Find dance events
+| bring related events to all dancers
 
-* Enable our users to tell us want kind of dances they can/like
-* Compute some recommendations for each dancer as support to find the perfect dance partner match.
+| O3
+| Match dance holidays
+| Find dance related holidays
 
-Those features are MVP relevant. So they must be included in the MVP:
-
-The following one will be still core, but tackled after the MVP:
-
-* Enable dancers and event-creators to provide information about upcoming dancing events, like dance evenings. This events will be presented in the same view, like the recommendations for dancers. +
-  Those Events could be eg:
-** Dance Evening
-** Workshops
-** Festivals
-** Contests
-** Dancing Holidays
-
-* Enable Dance-Schools to provide information about themselves. Information for this schools will be included in the recommendation view.
-
-==== Additional features
-
-Once the core features are implemented we can think about an increased user experience by having additional features:
-
-* Allow any other dance related content to popup in the recommendation view where appropriate.
-* Improve the Events part: +
-** Allowing users to share information if they plan to participate on some events.
-** In case they join the event: +
-*** Add the user in a temporary chat group only for this event to allow contacting other users that joined the event.
-** Enable the users to add groups to chat with others.
+| O4
+| Be a dance community
+| Be _the_ place to let every dancer publish and find all dance related information.
+|===
 
 === Quality Goals
 
-[options="header", cols="1,2,2"]
+[options="header", cols="1,1,7,10"]
 |===
-|Nr|Quality|Explanation
-|1|Easy to use| Dancer should find easy to use features that are almost self-explanatory.
-|2|Good recommendations|The recommendations should really fit. In case schools, workshops, shoes and other things where recommended, that should never feel like advertisement but as a good tip.
-|3|Attractive|Not only the UI should feel someway modern, also the complete project should feel like what we are: a nice group of people with the strong goal to do something useful for the world ;-)
+|Nr|Prio|Quality goal|Description
 
+|1
+|1
+|Easy to use
+|Dancer should find easy to use features that are almost self-explanatory.
+
+|2
+|1
+|Good recommendations
+|The recommendations should really fit. In case schools, workshops, shoes and other things where recommended, that should never feel like advertisement but as a good tip.
+
+|3
+|2
+|Attractive
+|Not only the UI should feel someway modern, also the complete project should feel like what we are: a nice group of people with the strong goal to do something useful for the world ;-)
 |===
+(got inspiration from https://quality.arc42.org)
 
 === Stakeholders
 
-
-
-[options="header",cols="1,1"]
+[options="header",cols="1,1,1"]
 |===
-|Role/Name|Contact
-| Dancer | Should be able to get in touch with other dancers, to dance with them and share information
-| Schools | Should have a fine channel to get in touch with dancer that need courses, workshops and so on
-| Shops | Shops for dancing shoes for example connect with dancers
-| Developer | Learn in a hollistic way how to develop a complete product. In big companies many developers are so heavily specialized, that the lack a holistic view on software development. And sometimes the do not have a fantastic sympathetic team.
+|Role/Name|Expectations from project|Expectations from this documentation
+
+| Dancer
+| Want to have an easy tool, to connect to other dancer and dance related information
+| None
+
+| Schools
+| Expects a channel to get in connect with pupils
+| None
+
+| Event Organisers
+| Expects a channel to get in contact with potential participants.
+| None
+
+| Developer
+| Having a holistic learning experience developing a complete product. Make friends, have a great time.
+| Getting a quick overview over a building blocks, who they interact and what cross-cutting concepts exist.
 |===
