@@ -1,3 +1,5 @@
+:imagesdir: ../images
+
 [[section-system-scope-and-context]]
 == Functional Context
 

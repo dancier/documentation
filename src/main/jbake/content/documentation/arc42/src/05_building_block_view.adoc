@@ -1,3 +1,5 @@
+:imagesdir: ../images
+
 [[section-building-block-view]]
 
 == Building Block View
@@ -5,7 +7,7 @@
 
 === Whitebox Overall System
 
-image:whitebox-overall-system.drawio.png[]
+image:whitebox-overall-system.drawio.svg[]
 
 
 _**<Overview Diagram>**_
