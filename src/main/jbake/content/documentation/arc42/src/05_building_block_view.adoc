@@ -5,6 +5,7 @@
 
 === Whitebox Overall System
 
+image:whitebox-overall-system.drawio.png[]
 
 
 _**<Overview Diagram>**_
