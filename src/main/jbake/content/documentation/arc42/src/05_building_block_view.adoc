@@ -9,6 +9,38 @@
 
 image:whitebox-overall-system.drawio.svg[]
 
+[options="header",cols="1,2"]
+|===
+|Building Block |Description
+
+| show-dancer
+|Single Page Application, written in Angular, that contains all UIs from all Users (Dancers, Schools,...)
+
+| dancer
+|Backend for Frontend (BFF) that connects the show-dancer, with all other components.
+
+| recommendation
+| computes all the recommendations (Dancer-Dancer, Dancer-Events, Dancer-Schools)
+
+| chat-dancer
+| implements the functionality that let the dancer chat with each other
+
+| kikeriki
+|
+
+| school
+|
+
+| events
+|
+
+| mail-server
+|
+
+
+
+|===
+
 
 _**<Overview Diagram>**_
 
