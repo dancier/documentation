@@ -9,37 +9,46 @@
 
 image:whitebox-overall-system.drawio.svg[]
 
-[options="header",cols="1,2"]
+[options="header",cols="2,4,1"]
 |===
-|Building Block |Description
+|Building Block |Description|Repo
 
 | show-dancer
 |Single Page Application, written in Angular, that contains all UIs from all Users (Dancers, Schools,...)
+| https://github.com/dancier/show-dancer[Repo]
 
 | dancer
 |Backend for Frontend (BFF) that connects the show-dancer, with all other components.
+| https://github.com/dancier/dancer[Repo]
 
 | recommendation
 | computes all the recommendations (Dancer-Dancer, Dancer-Events, Dancer-Schools)
+| https://github.com/dancier/recommendation[Repo]
 
 | chat-dancer
 | implements the functionality that let the dancer chat with each other
+| https://github.com/dancier/chat-dancer[Repo]
 
 | kikeriki
-|
+| System sending out mails via external smtp-server, depending on certain business state.
+| https://github.com/dancier/kikeriki[Repo]
 
 | school
-|
+| Maintains schools. If they have events like course, thoose will be handled by _events_.
+| None
 
 | events
-|
+| Handling dance evenings, workshops, courses,..
+| None
 
 | mail-server
-|
+| External server that we use to send mails
+| None
 
 |===
 
 === Whitebox Level 2
+
 
 image:bounded-context-canvas-dancer.svg[]
 
