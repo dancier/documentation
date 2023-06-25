@@ -5,7 +5,7 @@
 == Building Block View
 
 
-=== Whitebox Overall System
+=== Whitebox Overall System (Level 1)
 
 image:whitebox-overall-system.drawio.svg[]
 
@@ -37,10 +37,11 @@ image:whitebox-overall-system.drawio.svg[]
 | mail-server
 |
 
-
-
 |===
 
+=== Whitebox Level 2
+
+image:bounded-context-canvas-dancer.svg[]
 
 _**<Overview Diagram>**_
 
