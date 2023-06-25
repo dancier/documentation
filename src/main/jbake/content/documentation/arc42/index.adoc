@@ -2,7 +2,7 @@
 :jbake-status: published
 :jbake-date: 2023-06-23
 :jbake-tags: dance, dancer, partner, software, architecture
-:imagesdir: ./arc42/images
+:imagesdir: ./images
 :idprefix:
 
 
