@@ -86,6 +86,8 @@ toc::[]
 * link:https://www.freecodecamp.org/news/docker-nginx-letsencrypt-easy-secure-reverse-proxy-40165ba3aee2/[Howto NGINX Docker letsencript (codecamp)]
 * link:https://www.embarc.de/services-verbinden-nginx-reverse-proxy-docker-micro-moves-bauteil-4/[Howto NGINX Docker(embarc)]
 * link:https://docs.traefik.io/v1.7/user-guide/docker-and-lets-encrypt/[Traefik/SSL/Docker]
+* link:https://devops.ermilov.org/posts/02-deploying-kubernetes-rke-ceph/[Deploying Kubernetes Cluster on Hetzner with Ceph as Volume Storage
+]
 
 === Docker
 * link:https://medium.com/@shrikarvk/creating-a-docker-container-for-spring-boot-app-d5ff1050c14f[Medium: Create Docker Images for Spring Boot Applications]
