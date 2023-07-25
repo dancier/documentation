@@ -121,6 +121,7 @@ toc::[]
 * link:https://medium.com/@asegu/why-a-spring-boot-developer-could-die-without-spring-boot-starter-properties-11c5d6bf459a[Why a spring boot developer could die without spring boot starter properties]
 * link:https://jaxenter.de/spring/spring-boot-autoconfiguration-video-91456[Spring Boot Autoconfiguration]
 * link:https://www.callicoder.com/spring-boot-spring-security-jwt-mysql-react-app-part-1/[Complete Spring Boot Example (without tests ;-) )]
+* link:https://medium.com/the-resonant-web/spring-boot-2-0-starter-kit-part-1-23ddff0c7da2[Boot Best practices]
 
 == Misc
 * link:https://dba-presents.com/index.php/liquibase/216-liquibase-3-6-x-data-types-mapping-table[Liquibase Column Mapping]
