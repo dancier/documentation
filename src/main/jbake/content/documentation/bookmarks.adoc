@@ -99,6 +99,7 @@ toc::[]
 * link:https://medium.com/@kevalpatel2106/why-should-you-learn-go-f607681fad65[Why should I learn go]
 
 == Java
+* link:https://dzone.com/articles/designing-a-bulletproof-code[Designing a bulletproof Code]
 * link:https://en.wikibooks.org/wiki/Java_Persistence[JPA]
 * link:https://medium.com/refactor-zone/why-immutability-matters-b43d370fea75[Why Immutability Matters]
 * link:https://blogs.oracle.com/javamagazine/records-come-to-java[Records come to Java]
