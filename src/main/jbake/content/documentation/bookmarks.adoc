@@ -68,6 +68,7 @@ toc::[]
 * link:https://colinwilson.uk/2020/10/31/provision-a-docker-swarm-host-with-traefik-v2-on-hetzner-cloud-using-terraform-modules-part-1/[Docker Swarmhost - Hetzner - Wilson]
 * link:https://blog.okami101.io/2022/02/setup-a-docker-swarm-cluster-for-less-than-30-/-month/#lets-party-[Docker - Swarmhost - Hetzner Adrien]
 * link:https://www.itwonderlab.com/postgres-kubernetes-nfs-volume/[PostgreSQL over NFS]
+* link:https://cloud.google.com/docs/terraform/best-practices-for-terraform[Best practices for Terraform at Google]
 
 === KI
 * link:https://cs.nyu.edu/~jcf/classes/g22.3033-002/handouts/chen96data.pdf[Datamining]
