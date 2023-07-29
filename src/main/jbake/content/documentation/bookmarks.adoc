@@ -102,7 +102,6 @@ toc::[]
 
 == Java
 * link:https://dzone.com/articles/designing-a-bulletproof-code[Designing a bulletproof Code]
-* link:https://en.wikibooks.org/wiki/Java_Persistence[JPA]
 * link:https://medium.com/refactor-zone/why-immutability-matters-b43d370fea75[Why Immutability Matters]
 * link:https://blogs.oracle.com/javamagazine/records-come-to-java[Records come to Java]
 * link:https://medium.com/swlh/exception-handling-in-java-streams-5947e48f671c[Expections in Java Streams]
@@ -113,10 +112,15 @@ toc::[]
 * link:https://www.oreilly.com/content/handling-checked-exceptions-in-java-streams/[Handling checked exceptions in Streams]
 * link:https://google.github.io/styleguide/javaguide.html[Google Java styleguide]
 * link:https://www.javaguides.net/[Java Tutorials (Complete Apps/Boot/...)]
-* link:https://www.marcobehler.com/guides/spring-transaction-management-transactional-in-depth[Spring Transaction Management in depth]
 * link:https://www.thymeleaf.org/[Thymeleaf Templating]
 * link:https://github.com/thymeleaf/thymeleafexamples-springmail[Thymeleaf Mail Example]
+
+=== Java Persistence
+* link:https://en.wikibooks.org/wiki/Java_Persistence[JPA]
+* https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#preface[Spring Data - JPA]
+* link:https://www.marcobehler.com/guides/spring-transaction-management-transactional-in-depth[Spring Transaction Management in depth]
 * link:https://auto1.tech/serving-json-from-postgres/[Serving Json from PostgreSQL]
+
 
 === Spring related
 * link:https://rieckpil.de/record-spring-events-when-testing-spring-boot-applications/[Record Spring Events when testing Spring Boot Applications]
