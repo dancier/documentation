@@ -1,0 +1,354 @@
+= Delivery gurantees in distributed systems
+
+a proposal for an pragmatic approach
+
+:jbake-type: page
+:jbake-status: draft // change this to published later on
+:jbake-date: 2023-10-3
+:jbake-tags: distributed-systems, cap, exactly-once, at-most-once, at-least-once, delivery-gurantees, kafka, rest, idempotency
+:jbake-description: what delivery gurantees, does exist and when to use which
+:jbake-author: Marc Gorzala
+:jbake-disqus_enabled: true
+:jbake-disqus_identifier: ec59e8ca-61b4-11ee-a008-4722bb885389
+:idprefix:
+:sectnums:
+:sectnumlevels: 5
+
+Author: Marc Gorzala
+
+// TODO: correct that link
+link:https://github.com/dancier/documentation/edit/master/src/main/jbake/content/documentation/howto/nextcloud/index.adoc[Edit This Document]
+
+:toc:
+:toc-placement: macro
+:toclevels: 4
+toc::[]
+
+== This Post is for you when
+
+* you want to understand why it is in general not without risk to just repeat an Rest-Call when the first attempt resulted in an error
+
+* you want to understand why reading (eg. from Kafka) messages from an message bus, could mean reading (and processing) a message more than once (and why this is not the fault of Kafka)
+
+* even you know those things are hard, what you can do to still develop correctly working systems
+
+* in your company they tell you, that you should send messages at least once (so maybe also two times) to Kafka and you think why not just send it exactly once?
+
+* you want to learn a little bit about the basics of distributed systems in general and delivery guarantees specifically
+
+== Problem Statement
+
+Let's have a look at the following distributed System of an ecommerce company: 
+// TODO set link to distributed system page in Wikipedia or so
+
+image::distributed-systems.drawio.svg[align="center"]
+
+In this scenario, I have 7 (Micro-)Services that are either communicating either synchronously via HTTP-Rest-Calls or asynchronously via messages that are exchanged via Kafka sitting in between those services.
+
+There is quite a significant variance in the importance of the required reliability of the communication between those services.
+
+If some communication fails, the system can just continue with maybe minor (but acceptable) limitations for the customer.
+One example would be the Stock service that maintains the quantities of each product. It pushes every update in the quantity to the event-bus, so that the Shop-Service that maintains the cart, could know if products became unavailable, while being in the cart.
+
+If such a message gets lost, we would just detect a little bit later that the customer is having a shopping cart that we could not deliver completely (because we are checking with stock again, once the customer clicks on "Buy")
+
+But there are eg. also communcations that should be much more reliable. Eg. the call to the payment-service. When the customer clicks on buy, let's assume, we want to validate that the customer has provied proper payment information and maybe we also want to block the order-amount on the customer credit-card. This should once and ideally exactly once. So we would have blocked the order amount on the customers credit card (one time, not zero time but also not two times.)
+
+You could argue, why later one is a kind of special requierment. Why should we not just require every time, that an intentend behaviour happens once and excactly once?
+
+Well, it turns out that achiving this exactly once behaviour is in general 
+pretty hard (some argue not impossible).
+
+In this Blog-Post, I will explain why this is hard and what you can pratically do.
+
+// TODO set a link to what Rest-Calls are
+
+NOTE:   In my example, I will use HTTP-Rest-Calls for all synchronous communication and Kafka for all asynchronous communication. I could also have used something different thant HTTP-Rest or Kafka, I could eg. have chosen gRPC oder Rabbit-MQ. I have choosen Rest and Kafka, as they are widely used and I consider it as easier for you to understand things with concreter examples and also with technologies that you are likey to know and even use.  
+
+--- 
+
+== Background Knowledge
+
+Let's start with some kind of famous joke:
+
+[quote,Mathias Verraes 2015]
+____
+There are only two hard problems in distributed systems: 
+
+ 2) Exactly-once delivery
+ 1) Guaranteed order of messages
+ 2) Exactly-once delivery
+____
+
+When I started developing a distributed system, I was faced with the question, of what to do, when a Rest-Call does not return with some response.
+
+My colleuge said to me, that it is impossible to know what the state of the Resource Server than could be. You would have to query the server. But if the failed Call was a Post we would not even have an Id to query for as that would have been in the response. So quering would not be so easy.
+So we would have to retry the call. But then the Call could effectivly happend two times.
+If was verwirrt. Until than I thought something like this should never happen. The call should either be successfull at whole (und damit habe ich ein erfolgreiches benachrichtigen des Aufrufers mit einbezogen) oder gar nicht erfolgreich (eg. if the response could not have been written).
+
+My colleuge could not refere to some source that describes me why this is so disappointing, he just know that this just is so bad.
+
+Another point that falls interesstingly into the same category was, that we as engeneers where told, that when ever we send out an event we should in general make sure that it realy goes out (at least one time) and in case that we consume an event, that should happen idempotent because we could read the very same event two times.
+Why this is the case, was also not clear to me and my colleagues.
+
+As I/we felt these time so delivery getreiben, that I did not take time to research why this sit the case. Years later, in another company in another role I came to an interessing problem in computer science: 
+The two general problem
+
+This opened up the door for me understanding all those questions from above quite easily and answer also many other questions.
+
+
+=== The two general problem
+
+This is a common well-known problem in computer science. It is a kind of base problem when it comes to computers communicating with each other.
+
+Let's start.
+
+Back in time, there were two armies.
+
+Let's call one of them _foo_ and he other one _bar_.
+
+_Foo's_ army want to attack _Bar_. But _bar_ sits in a fortified castle in a valley. It is clear that it is only possible to be successful attacking _bar_ by performing a coordinate attack at the very same sime from opposing edeges of the city of _bar_.
+So the Army of _foo_ is split up in two parts. One is - let's say - in the north of _bar_ and another one in the south.
+Both parts of _foo's_ army have one general each. Those who want to communicate with each other, need to allign on one exact time to attack _bar_.
+
+Here is where the problem begins.
+One of the two generals (it is general A) send a messenger to the other one (this is general B) to let him know that the planned time for the coordinates attack is Sunday at noon.
+
+This messenger takes a horse and get on it's way to geneneral B. On his way he has to pass the mountains next to the army of _bar_.
+The mountains itself are dangerous. The paths are small and the horse with the messenger can die.
+But also spies from _bars_ army are in those moutains, waiting to messenger to kill them.
+
+So General A, can not be sure that his messenger will survive and deliver the message to General B.
+So General A asks General B (included in the message), to send a confirmation message back.
+
+Then General A could start with the attack on Sunday noon. But what with General B, he could not know it the confirmation was successfully received! So he could not know if General A will attack at Sunday noon. So he should better also not start attacking!
+
+So General A could send a confirmation for the confirmation...
+
+It becomes clear that this sending of confirmations could never end.
+
+You should stop here, to try to find a solution. One the let the two generals find consensus on the question when to attack _bar_.
+
+Even if you know that the problem is not solvable ;-)
+
+It brings you insights.
+
+=== Why is this not possible
+
+Th
+-- Refer to original paper but bring an easy proof here
+
+=== What does this all have to do with delivery gurantees in distributed systems?
+
+Maybe I sould tell you first, what I mean with dilivery gurantees.
+
+// Todo include picture here
+
+Whenver two systems in distributed systems talk with each other, they are exchangeing messages.
+
+When we have a situation where system talk with each other via a message broker, this is quite intuitve.
+
+One system sends a message to the broker, the other get's it from the broker.
+
+But also ordinary Rest-Call are nothing else then exchanging messages.
+
+System A send eg. a POST-Call to another system. In this call are generally some information included, that the other system will read. This is the message, that A sends to System B.
+B on the other hand will receive this message, leave the connection open, will in general do something, like validate the message, persist the message, do some side effects and then will send a Response back via the open connection.
+
+This response is again the next message. This Response will in the Post case include normally an Id of on created identifier in the case that the Post-Call was successful and in case of problems some information what went wrong.
+
+Not all developer are aware that this ubiquitious Rest-Think is in that way also just exchanging messages.
+Neither a message broker ist needed for Systems to let them exchange messages, nor is theire any need to have it implemented in an asynchronous was.
+
+It is just: whenever two systems interact in any way, they exchange messages and talking about delivery gurantees hold when system exhang messages:
+
+we can have in general three guarantees. We will explain in terms of the two generals problem, and how that maps to our distributed services
+
+==== At most once
+
+This would mean, that _General A_ send only one messenger to _General B_. _General B_ could send an acknoledge, but regardless if _General A_ reveives an acknowledge or not, it will not resend the message.
+So _General A_ could be in a situation where it does not know if _General B_ got the message. Still General A, must make a decision when to attack!
+So General A, is a situation where he has to live with the uncertainity that his message was lost.
+
+_General B_ is in a similar situation. In case he got a message he does not know wehter _General A_ got the acknoledgement. Bad for him. So he will have to believe that the acknolege went through and attack in this trust!
+
+Talking about Rest-Calls, at most once would be the situation when you just perform one let's say Post-Call and ignore the Response. At least you will not issue another Post-Call in case of an error response.
+
+So the system that issues the Post-Call can not be certain about the question that the call went through and was processed at the rest-service
+
+==== At least once
+
+This is the situation when _General A_ is sending so long messengers (either paralell or sequentielly) as it receives for one message an acknoledge.
+
+This could in theory never terminate, but in practice this will in general terminate eventually.
+
+Keep in mind that even when _General A_ then knows that _General B_ got the message, unfortunately _General B_ does not know that his acknowledgment went through. This is one of the things that have no solutions in the two general problem. In practice, we will see how to tackle this problem in real world.
+
+Talking about Rest-Calls at least once would be the situation, when we implement a loop that tries to make a rest-call until that is succuessfull.
+
+If a Rest-Call is successfull can in general only be found out, be the Response of the call. Unfortunatly, there could  be Rest-Call, that were succuessfull, but the Response got lost. In that case our loop would make a call again even if one was succussfull.
+
+This could be a problem. The Two-General-Problem is not a good example here, as it would not  be a Problem for _General B_ when it got two distinct Messengers with the same message.
+
+But let us assume for the Rest-Service, that it is a Payent Service. It has a Post-Endpoint that can be used to create Outgoing Payment to Persons. If we just retry this Post-Endpoint as described, it could be that the call (the message) will be delivered two times and also processed two times. Leading in the person getting twice or even more the money!
+
+==== Exactly once
+
+An exactly once delivery, would mean that _General A_ will just send a messager once to _General B_.
+We have just seen, that this is impossible.
+
+Talking about Rest-Calls this is also just not possible. We can not gurantee to make really exactly one Rest-Call reaching the the Rest-Service!
+This also applies for all other communications between systems in not reliable networks!
+
+But we can achive something, that is almost as good as exactly once delivery. It is often called exactly onces semantics. The idea is: by sending a message to another system we expect in general something to happen. This could be, that _General B_ store in his calender the time to attack. Or make a payment to a customer, could be something. This something if often called the side effect. This was happens when we send the message. The name _side effect_ is someway misleading here, as it normally is the main effect ;-)
+But this has sich eingebürgert ;-)
+
+So, if we would gurantee that this side effect happens only once, when reading the message, we would be safe:
+
+Storing the attack-time in the calender ist safe in the way. When we save two time the same time to attack, then the result would be the same, as when we only save the time once!
+
+Sending out money to a customer is quite different here. Doing this more often than intended means just losing money ;-)
+
+So we would need to make sure, that also some message were delivered possible more then once, we should either process them only once, or construct this procesing in that way that it will not lead to more than one time the side effect. (this is not really correct here. should it introduce idempotent behaviour earlier and than refer to this?)
+
+I will tell you now, how to achieve this in a little abstract way just here and later how to achive this concrete with Rest and Kafka in later Parts of the Blog.
+
+
+
+--- This is something that could be dropeed? It's is someway interessting, but how can I include it?
+
+But the Two generals could implement the following protocol two achieve something that is being called Exactly once semantics (in contrast to exactly once delivery). This means that, although the message will be received more than once the side effect that the message should cause (Tell General B, when to attackt) will be same when receiving the message multiple times or just once.
+
+For that to happen, the Two Generals could allign on the following protocol (there are plenty of other protocolls).
+
+1. Both general accept that one acknowledge will never be reacknoledged.
+So something like this will not happen:
+
+1. _General A_ send out 100 messengers at once. All with the same message. Then _General A_ waits for acks.
+1. _General B_ waits for incoming messages. When the first one arrives he will ask the messenger how long hier trip was. Than i wait times as long. This will mean that he will wait for all messangers that are not more slower than 10 times slower than the fastest one.
+1. When _General B_ finished waiting, he can compute how long one average messenger needs for reaching him (remember that as average_time_to_travel). He also know how many of them got's lost. (remembering that as succuess_ratio).
+1. _General B_ can now send back a number of messengers based on the sucuess ratio to _General A_. Based on the average_tie_to_travel he will now start waiting for possible retries of _General A_. As they aggreed that an ackk will not be acked again, he will just wait for normal messages. If those will now come in for let's say average_time_to_travel * 3), then he will be sure, that a consensus was reached.
+
+
+What you see, ist that in some way
+// show the case of ack of ack
+
+
+
+
+
+
+.delivery gurantees
+[cols="1,4,2,2"]
+|===
+|Guarantee |Description |Pro's |Con's
+
+|At most once
+|General A is sending just one messenger.
+ It doesn't really matter if General B sends an acknolege, as General A will never resend the message with another messenger.
+| Not
+| General A could not know, that B got the message when it did not r
+|At least once
+|A message if being delivered in case of problems the delivery will be r
+|Column 3, row 2
+|Column 4, row 2
+
+|Column 1, row 3
+|Column 2, row 3
+|Column 3, row 3
+|Column 4, row 3
+|===
+
+
+Point out, that every Rest-Call has the same problem. And not even every Rest-Call, just every communication between two systems. So also send Messages to a System like Kafka.
+
+As we in general have quite many problems where it is very importand that a message really arrives, we should find a way out of this problem... 
+
+=== What to do in the real world
+
+First, back to the problem with the two armies. Let's think about way's to solve the problem at least aproximately. So even if the two generals could not be 100% sure, let's them be _enough_ sure, to start that war with that uncertainity.
+
+You can stop here and first look for solutions on your own. Maybe you will come up with similar ideas...
+
+==== Sending out multiple messengers at once
+
+
+"Gang of Four" <<kleppmann01>>
+
+==== Getting confidence buy not receiving a message
+
+
+
+==== Examples with a Rest-Call
+
+So let's assume we are having a Rest-Endpoint that is a POST-Call to create a Payment: 
+
+http://paymentservice.dancier.net/payments
+
+This Post Call will create an outgoing payment to a customer of dancier.
+
+Let's assume 
+
+.one happy rest call
+[plantuml, happy-rest-call, svg]
+....
+@startuml
+autonumber "<b>0 -"
+actor "Some Service" as ss
+actor "Payment Service" as ps
+
+ss -> ps: send 10€
+ps -> ss: Ack
+@enduml
+....
+
+.unhappy rest call
+[plantuml, unhappy-rest-call, svg]
+....
+@startuml
+autonumber "<b>0 -"
+actor "Some Service" as ss
+actor "Payment Service" as ps
+
+ss -> ps: send 10€
+ps -X ss: Ack
+@enduml
+....
+
+In this example "Some Service" can not know it the request was successful. As no HTTP-Response arrives at Something it could be that Payment Service was unable to perform the the outgoing payment and faild sending a http 500. It could also be that the request was succussfull, the payment servcie send the money to the recepient, but failed to send the http-200 to "some service".
+
+Now some service has several options:
+
+* Some Service ca try to find out if the request was succuessfull by some other Rest-Endppoints. Unfortunatly it could not just make a get to the possible created rest-resource, as the id for that get-query whould be included in  the response that just failed. So it could query for all payments for the given user and amount. This is an option that would require extra effort, and in some enviroements that would be much effort or even impossible or at least error prone. At least we could not generically handle that issue. We will not look at this option further
+* we could just retry the call, but than we would risk that the call will succeed more than once, with the risk of sending the money twice or even more times. Good for the receipent, bad for us. So we need to make sure, that the money will only go out once, and exactly once. How can we achive this?
+ In theory this is called that we want to achive idempotency for that call. So even
+
+https://en.wikipedia.org/wiki/Idempotence
+
+ * We could make the nature of the call idempotent. Let's assume that we maintain a balance of what we owe to the customer or the customer owes us. So as an example, if the customer buys something, he will owe us money. We would express this we a postive balance. If he owes us 10€ the balance would be +10€. If he than pays 10€ we will decrease the balance by 10€. So than the balance would be +10€-10€=0€. So we would just aim for a situation that the balacne is always 0€. (if we owe the customer let's say 5€, than the balance would be -5€, and we would make a payment to the customer).
+  So if we would change the rest-endpoint, we would have a PUT-Endpoint that set's the expected balance.
+
+show example at that we would not send the money out two time with this solution
+
+drawback is, we will have shared state in that distributed system.
+"Some Systemen and Payment System will have to maintain the shared data of the balacne"
+
+This would also mean that we would to work arround that technical issue we will heavily impact our api!
+
+How else could we make sure, that the payment only goes out once and exactly once?
+
+We could introdurce an idempotent key.
+
+No, I will show how this idempotenc key things works.
+
+what to do on the calling side and what  to do on the receiving side.
+
+
+
+[bibliography]
+= Bibliography
+
+* [[[kleppmann01]]] link:https://www.cl.cam.ac.uk/teaching/2122/ConcDisSys/dist-sys-notes.pdf[Dissertation Kleppmann]
+
+* [[[foo]]] https://www.freecodecamp.org/news/some-constraints-trade-offs-in-the-design-of-network-communications-a-summary-19589efd55d9/
+
