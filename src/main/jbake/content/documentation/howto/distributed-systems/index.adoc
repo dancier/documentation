@@ -355,15 +355,31 @@ participant "Some Service" as ss
 participant "Payment Service" as ps
 actor Customer
 
+autonumber
 ss -> ss: create random idempotence key
 
-loop 100 times
+loop until successfull call
 ss -> ps : invoke Post-Call
-ps -> Customer : kj
+note left
+with included
+idempotence key
+end note
+
+ps -> ps: check idempotence key
+
+alt idempotence key already exists
+ps -> ss: return HTTP 200
+else idempotence key does not exist
+ps -> ps : store idempotence key
+ps -> Customer: send money
+ps -> ss: return HTTP 200
+end
+
 end
 @enduml
 ....
 
+The impor
 
 [bibliography]
 = Bibliography
