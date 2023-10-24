@@ -21,14 +21,10 @@ Author: Marc Gorzala
 // TODO: correct that link
 link:https://github.com/dancier/documentation/edit/master/src/main/jbake/content/documentation/howto/nextcloud/index.adoc[Edit This Document]
 
-:toc:
-:toc-placement: macro
-:toclevels: 4
-toc::[]
+[discrete]
+== Continue reading if...
 
-== This Post is for you when
-
-* you want to understand why it is in general not without risk to just repeat an Rest-Call when the first attempt resulted in an error
+* ... you want to understand why it is in general not without risk to just repeat an Rest-Call when the first attempt resulted in an error
 
 * you want to understand why reading (eg. from Kafka) messages from an message bus, could mean reading (and processing) a message more than once (and why this is not the fault of Kafka)
 
@@ -37,6 +33,12 @@ toc::[]
 * in your company they tell you, that you should send messages at least once (so maybe also two times) to Kafka and you think why not just send it exactly once?
 
 * you want to learn a little bit about the basics of distributed systems in general and delivery guarantees specifically
+
+:toc:
+:toc-placement: macro
+:toclevels: 4
+toc::[]
+
 
 == Problem Statement
 
@@ -345,6 +347,22 @@ No, I will show how this idempotenc key things works.
 
 what to do on the calling side and what  to do on the receiving side.
 
+[plantuml, idempotent-call-with-key, svg]
+....
+@startuml
+
+participant "Some Service" as ss
+participant "Payment Service" as ps
+actor Customer
+
+ss -> ss: create random idempotence key
+
+loop 100 times
+ss -> ps : invoke Post-Call
+ps -> Customer : kj
+end
+@enduml
+....
 
 
 [bibliography]
