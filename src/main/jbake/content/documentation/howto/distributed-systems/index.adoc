@@ -14,6 +14,7 @@
 
 a proposal for an pragmatic approach
 
+WARNING: This is work in progress at a very early state. As of now, I would _not_ recommend reading this ;-)
 
 Author: Marc Gorzala
 
