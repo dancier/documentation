@@ -15,7 +15,7 @@ There is one barrier for a partner dance!
 
 You have to find a partner to dance with.
 
-As this is not that easy, Dancier is there for help!
+As this is not easy, Dancier is there to help!
 
 
 === Functional Requirements
@@ -25,11 +25,16 @@ As this is not that easy, Dancier is there for help!
 | ID | Requirement | Description
 
 | M1
-| Match dancers
-| Bring those two dancers together that will likely become a great dancing couple
+| Dancer provides a profile
+| To enable dancier to find matching dancers, the dancer can provide information about himself. Like age, size, dancing skills.
+
 
 | M2
-| Dancers should be able to chat
+| Match dancers
+| Match two dancers that will likely become a great dancing couple
+
+| M2
+| Dancers should be able to chat with each other
 | Every matched dancer (M1) must be able to chat with his matches.
 
 | O1
@@ -55,17 +60,17 @@ As this is not that easy, Dancier is there for help!
 |===
 |Nr|Prio|Quality goal|Description
 
-|1
+|QG1
 |1
 |Easy to use
 |Dancer should find easy to use features that are almost self-explanatory.
 
-|2
+|QG2
 |1
 |Good recommendations
 |The recommendations should really fit. In case schools, workshops, shoes and other things where recommended, that should never feel like advertisement but as a good tip.
 
-|3
+|QG3
 |2
 |Attractive
 |Not only the UI should feel someway modern, also the complete project should feel like what we are: a nice group of people with the strong goal to do something useful for the world ;-)

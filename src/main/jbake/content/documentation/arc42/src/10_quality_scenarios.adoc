@@ -3,6 +3,32 @@
 
 === Quality Tree
 
+
 === Quality Scenarios
 
+[cols="1,1,7"]
+|===
+|Szenario | QG | Description
+
+| QS1
+| QG2
+| A dancer, reading the list of his recommendations, interacts further with the dancers, in a positiv correlation with there score.
+
+| QS2
+| QG2
+| Dancer that write to other dancers, are getting replies with a probability that is positive correlated with theire score.
+
+| QS3
+| QG3
+| Der von Nutzern wieder erhobenen NPS zeigt eine Zufriedenheit von über 80%.
+
+| QS4
+| QG3
+| In Sozialen Netzwerken zeigt sich eine stark überwiegend positive Wahrnehmung von Dancier.
+
+| QS4
+| QG1
+|
+
+|===
 
