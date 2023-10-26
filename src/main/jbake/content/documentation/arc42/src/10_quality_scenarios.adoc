@@ -3,12 +3,28 @@
 
 === Quality Tree
 
+[plantuml, cloud-architecture, svg]
+....
+@startwbs
+* Quality
+** Easy to use
+
+** Good recommendations
+*** QS1
+*** QS2
+
+
+** Attractive Team
+*** QS3
+*** QS4
+@endwbs
+....
 
 === Quality Scenarios
 
 [cols="1,1,7"]
 |===
-|Szenario | QG | Description
+|Szenario | Quality Goals | Description
 
 | QS1
 | QG2
@@ -20,11 +36,11 @@
 
 | QS3
 | QG3
-| Der von Nutzern wieder erhobenen NPS zeigt eine Zufriedenheit von über 80%.
+| The NPS that we are constantly getting averages over 80.
 
 | QS4
 | QG3
-| In Sozialen Netzwerken zeigt sich eine stark überwiegend positive Wahrnehmung von Dancier.
+| In sozialen Netzwerken zeigt sich eine stark überwiegend positive Wahrnehmung von Dancier.
 
 | QS4
 | QG1
