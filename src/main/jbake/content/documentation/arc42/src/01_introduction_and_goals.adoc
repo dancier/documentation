@@ -25,7 +25,7 @@ As this is not easy, Dancier is there to help!
 | ID | Requirement | Description
 
 | M1
-| Dancer provides a profile
+| Dancer provide information about themself
 | To enable dancier to find matching dancers, the dancer can provide information about himself. Like age, size, dancing skills.
 
 
@@ -33,7 +33,7 @@ As this is not easy, Dancier is there to help!
 | Match dancers
 | Match two dancers that will likely become a great dancing couple
 
-| M2
+| M3
 | Dancers should be able to chat with each other
 | Every matched dancer (M1) must be able to chat with his matches.
 
@@ -42,7 +42,7 @@ As this is not easy, Dancier is there to help!
 | dancers should be able to find courses that match their level of maturity
 
 | O2
-| Find dance events
+| Find/match dance events
 | bring related events to all dancers
 
 | O3
