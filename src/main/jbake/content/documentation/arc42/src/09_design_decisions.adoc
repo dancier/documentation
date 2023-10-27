@@ -44,11 +44,19 @@ Everyone in the team could immediatly start developing with PostgreSQL. The limi
 Almost the same as with MongoDB.
 
 === Decision
+As of now, in the Team not even one member of Dancier ist aware of one Use Case could not easily be satisfied with PostgreSQL under the expected load. This will also include quite optimistic expectations for the success of Danicer.
+This would also be the case for Cassandra and MongoDB, but the knowledge of using and operating them correctly is so limited, that it would be a Risk using them as of now.
+We should develop all our components in that way, that it should be easy to change the database, once that is needed.
 
-PostgreSQL
-
-=== Recommendation in its own deployable
+For those reason, we are _defaulting_ to using PostgreSQL.
 
 === Python for all Datascience related tasks
+On of the Quality goals is, that dancier
+
+
+=== Computing Recommendations in an own deployable
+
+
+
 
 
