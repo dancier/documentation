@@ -14,25 +14,24 @@
 
 a proposal for an pragmatic approach
 
-WARNING: This is work in progress at a very early state. As of now, I would _not_ recommend reading this ;-)
+WARNING: This is a work in progress at a very early stage. As of now, I would _not_ recommend reading this ;-)
 
 Author: Marc Gorzala
 
-// TODO: correct that link
 link:https://github.com/dancier/documentation/edit/master/src/main/jbake/content/documentation/howto/distributed-systems/index.adoc[Edit This Document]
 
 [discrete]
 == Continue reading if...
 
-* ... you want to understand why it is in general not without risk to just repeating a Rest-Call in case of errors
+* ... you want to understand why it is in general not without risk to just repeat a POST-Call in case of errors
 
-* ... why it is impossible to make a Rest-Call reaching the Rest-Service exactly once
+* ... why it is impossible to ensure that a REST Call reaches a REST Service exactly once
 
-* you want to understand why reading (eg. from Kafka) messages from a message bus, could mean reading a message more than once
+* you want to understand why reading messages from a message bus (eg. from Kafka), could mean reading a message more than once
 
-* how to deal with those challenges. So how make sure, that things that must happen also really happen.
+* how to deal with those challenges. So how make sure, that things that must happen in remote systems also really happen?
 
-* you want to learn a little bit about the basics of distributed systems in general and delivery guarantees specifically
+* you want to learn a little bit about the basics of distributed systems in general and delivery guarantees specifically.
 
 :toc:
 :toc-placement: macro
@@ -40,18 +39,55 @@ link:https://github.com/dancier/documentation/edit/master/src/main/jbake/content
 toc::[]
 
 
-== The Problem Statement
+== Problem Statement
 
-Let's have a look at the following distributed System of an ecommerce company: 
-// TODO set link to distributed system page in Wikipedia or so
+Let's have a look at the following https://www.freecodecamp.org/news/a-thorough-introduction-to-distributed-systems-3b91562c9b3c/[distributed System] of an e-commerce company: 
 
 image::distributed-systems.drawio.svg[align="center"]
 
+In this scenario, we are looking at 5 Services that exchange messages we each other to facilitate the following 4 Use Cases.
+
+* The Customer browses products and puts what he wants to buy in a shopping cart.
+
+* All interactions of the customer with the shop were sent asynchronously to the Recommendation Service. Its purpose is to compute a list of products that the customer is likely to find useful. Those recommendations were sent asynchronously to the Shop.
+
+* Once the customer decides what he likes to buy, he enters the checkout. In our example that is a synchronous call to the Checkout Service. This in turn will synchronously invoke the Payment Service to get the money from the customer.
+
+* Once we get the money, we have to make sure to send this information to our accounting system for legal reasons.
+
+In those four Use Cases we have pretty different demand with regard to the reliability to the exchange of messages.
+
+### Required reliabilities
+
+#### Low
+
+As described the recommendation service is getting Information from the shop to computed recommendet products.
+
+Is seems obvious that it would not harm if eg. every 100th message would get lost.
+
+The recommendation Service would still be able to compute recommendations that are maybe a little bit less of value, but it would not be a big problem.
+
+#### High
+
+On the other, it is also clear that the payment related process has a higher demand.
+A requested payment shoudl really almost always result in exactly one payment. Not zero payments and also not two or more payments.
+
+Similar the information we send should reach the accounting system once. I would be acceptable to send it twice, but the information shoudl almost never get lost.
+
+### Why not always strive for the highest reliability?
+
+You could argue that to just always implement the communication with a high reliability. These are computers, this should not be a problem. They are good at doing things right?
+
+Unfortunately, it turns out, that it is not that easy. It comes at costs in the same way in terms of development costs, as the operational costs.
+
+To see why achieving a high reliability is costly let's move on to the next section, showing you the problem of the two generals.
+
+---
 In this scenario, you would have some microservices communicating with each other.
 
 You have a shop system, that let the customer browser the all products and let him put them into a shopping cart.
 
-All interaction of the customer will be pushed asynchronously to the Message-Bus. Those messages will be read by at least to systems.
+All interaction of the customer will be pushed asynchronously to the Message-Bus. Those messages will be read by at least two systems.
 
 The recommendation system, that wants to know which products the customer has watched and how long he has watched them. This enables the recommendation system to determine, what could be of interest for the customer.
 
