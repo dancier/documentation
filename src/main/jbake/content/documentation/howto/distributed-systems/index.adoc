@@ -69,10 +69,10 @@ The recommendation Service would still be able to compute recommendations that a
 
 #### High
 
-On the other, it is also clear that the payment related process has a higher demand.
-A requested payment shoudl really almost always result in exactly one payment. Not zero payments and also not two or more payments.
+On the other, it is also clear that the payment-related process has a higher demand.
+A requested payment should almost always result in exactly one payment. Not zero payments and also not two or more payments.
 
-Similar the information we send should reach the accounting system once. I would be acceptable to send it twice, but the information shoudl almost never get lost.
+Similarly, the information we send should reach the accounting system once. It would be acceptable to send it twice, but the information should rarely get lost.
 
 ### Why not always strive for the highest reliability?
 
