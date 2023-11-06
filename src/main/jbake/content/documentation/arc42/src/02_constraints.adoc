@@ -2,7 +2,7 @@
 
 == Architecture/Technical Constraints
 
-We have almost no external constraint in this area. We infer rules and constraints based on the main project goals, and its quality goals.
+We have almost no external constraints in this area. We infer rules and constraints based on the main project goals and its quality goals.
 
 
 === Organizational Constraints
