@@ -69,17 +69,17 @@ For this reason, in the following table, we also give information on what is nee
 |QG1
 |1
 |Easy to use
-|Dancer should find easy to use features that are almost self-explanatory.
+|Dancers should find easy-to-use features that are almost self-explanatory.
 
 |QG2
 |1
 |Good recommendations
-|The recommendations should really fit. In case schools, workshops, shoes and other things where recommended, that should never feel like advertisement but as a good tip.
+|The recommendations should fit. In the case of schools, workshops, shoes and other things that are being recommended by us: that should feel less like advertisement, and more like a good tip.
 
 |QG3
 |2
-|Attractive
-|Not only the UI should feel someway modern, also the complete project should feel like what we are: a nice group of people with the strong goal to do something useful for the world ;-)
+|Attractive Project/Team
+|Not only the UI should feel modern, but the complete project should be perceived as what it is: a nice group of people with the strong goal of doing something useful for the world ;-)
 |===
 (got inspiration from https://quality.arc42.org)
 
