@@ -29,7 +29,7 @@
                             <a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>technology-stack.html">Technology Stack</a>
                         </li>
                         <li>
-                            <a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>technology-decision-principles.html">Technology Decision Principles</a>
+                            <a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>architecture-decision-principles.html">Architecture Decision Principles</a>
                         </li>
                     </ul>
                 </li>
