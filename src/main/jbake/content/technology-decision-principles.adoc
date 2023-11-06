@@ -1,4 +1,4 @@
-= Making reasonable architectural decisions
+= Making reasonable technial decisions
 :jbake-type: page
 :jbake-status: published
 :jbake-date: 2023-03-02

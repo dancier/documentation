@@ -1,0 +1,62 @@
+= Making reasonable technology decisions
+:jbake-type: page
+:jbake-status: published
+:jbake-date: 2023-03-02
+:jbake-tags: desgin pattern, architecture, java, kiss, agile, decision making
+:jbake-description: Describe how we are making technical decisions
+:jbake-disqus_enabled: true
+:jbake-disqus_identifier: d23e2d10-c1a6-11ed-8bd8-3b33f0bea9fd
+:idprefix:
+
+
+== The Problem
+
+Reasoning about what could be the best programming language (and other questions like what is the "best" database...) turns out to be in practice not that easy.
+
+Even with participants being nice, educated and solution-focused it becomes much to often a emotional if not heated debate. We strongly assume that the root cause is often, that each participant is arguing base a differnt base of principles.
+
+So let's assume, one considers that it would be best for the company/project to always use the most recent technology out there. That one regularly argues that you could reach benefis in competiton while using the moste recent (and for this recent presumable the best) tech out there.
+
+So one of his principle would be, to always strive to most recent stuff.
+
+Another one, would contratry assume that always using most recent tech will incure the risk of making in mid-term a wrong bet. Something that looks promising now, could be dead in 2 or 3 years. So in some years it would be more "legacy" the the proven stuff from today would be.
+
+If you would let those two guys let disuss about what should be the (main-)database in a projet/company, they will be liky not come to an end. Even worse, one could accuse the other of being outdated, too old fashined, while the other could be accuse of being a yuppy without looking the the nearer future. Latest at this point the disuccsing would turn out personally and create a toxic athomsphere.
+
+
+
+== Our Solution
+
+https://www.meeteor.com/post/principle-based-decision-making
+
+
+== Key drivers for technical decisions
+
+ 1. *Any decision should be as little opinionated as possible* +
+    We should never choose a technology just because we consider
+    it as cool or because we have had good experience with it in _another_ use case.
+    Decisions should be made depending on the use case. +
+ 2. *Keep it simple stupid (KISS)* +
+    Based on our interpretation of
+    https://en.wikipedia.org/wiki/Agile_software_development[Agile Development]
+    we think that we should choose the https://en.wikipedia.org/wiki/KISS_principle[simplest] approach to tackle a task.
+    Particularly, we always try to avoid optimizing things before it turns out
+    that optimization is needed (https://ubiquity.acm.org/article.cfm?id=1513451[see Donald Knuth]).
+    This applies, in the same way, to _small_ things eg.
+     * optimizing algorithms like SQL-queries
+     * choosing frameworks for persistence, offering rest endpoints, frontend frameworks
+     * infrastructural topics like VCS build system +
++
+As well as it applies to "bigger" things eg.
+     * Deciding architectural things like using CQRS
+     * Using microservices vs. putting things into a monolith
+ 3. *Best of breed* +
+     Default for standard options. Eg. when there are several similar web frameworks, go for the more prominent one. Because we expect that:
+      * we are getting more support from other developers if we run into problems
+      * expect more support from the upstream project itself, and also the project itself will exist for a longer time
+      * have better tooling support (if applicable)
+      * have it easier to find more developers
+ 4. *Match techniques with skills of core team members* +
+    The chosen technique should be either already known by the team (or part of the team) or the team must be willing to learn it.
+
+Some criteria could conflict with others. Life is not always easy.
