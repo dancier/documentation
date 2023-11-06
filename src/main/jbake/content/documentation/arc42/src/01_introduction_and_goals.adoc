@@ -79,7 +79,7 @@ For this reason, in the following table, we also give information on what is nee
 |QG3
 |2
 |Attractive Project/Team
-|Not only the UI should feel modern, but the complete project should be perceived (by it's users) as what it is: a nice group of people with the strong goal of doing something useful for the world ;-)
+|Not only the UI should feel modern, but the complete project should be perceived (by its users) as what it is: a nice group of people with the strong goal of doing something useful for the world ;-)
 
 |QG4
 |2
