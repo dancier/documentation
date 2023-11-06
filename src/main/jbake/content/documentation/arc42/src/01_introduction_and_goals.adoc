@@ -79,29 +79,34 @@ For this reason, in the following table, we also give information on what is nee
 |QG3
 |2
 |Attractive Project/Team
-|Not only the UI should feel modern, but the complete project should be perceived as what it is: a nice group of people with the strong goal of doing something useful for the world ;-)
+|Not only the UI should feel modern, but the complete project should be perceived (by it's users) as what it is: a nice group of people with the strong goal of doing something useful for the world ;-)
+
+|QG4
+|2
+|Be a nice learning project
+|Although our main focus is to bring people together by making it easy for them to dance, we also want to give all team members the possibility to grow their professional skills. Let it be in engineering, design or any other area. For that reason, we will sometimes take approaches that could be considered over-engineering.
 |===
 (got inspiration from https://quality.arc42.org)
 
 === Stakeholders
 
-[options="header",cols="1,1,1"]
+[options="header",cols="1,2,2"]
 |===
-|Role/Name|Expectations from project|Expectations from this documentation
+|Role/Name|Expectations from this project|Expectations from this documentation
 
 | Dancer
-| Want to have an easy tool, to connect to other dancer and dance related information
+| Looking for an easy way, to connect to other dancers, schools,...
 | None
 
-| Schools
-| Expects a channel to get in connect with pupils
+| School
+| Want's Dancier as a channel to promote its dance classes, dance evenings...
 | None
 
-| Event Organisers
-| Expects a channel to get in contact with potential participants.
+| Event Organiser
+| Want's Dancier as a channel to promote its events...
 | None
 
 | Developer
 | Having a holistic learning experience developing a complete product. Make friends, have a great time.
-| Getting a quick overview over a building blocks, who they interact and what cross-cutting concepts exist.
+| Goto place to have a bird eyes view. Showing what should be achieved from a functional perspective. Explain the building blocks and how they interact. Gives explanations why things have been decided.
 |===
