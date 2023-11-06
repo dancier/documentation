@@ -8,8 +8,6 @@
 :jbake-disqus_identifier: d23e2d10-c1a6-11ed-8bd8-3b33f0bea9fd
 :idprefix:
 
-
-
 == The content of that page has been moved
 
 We wrote here a list of general technical decision principles. Than we found out that we also need something hat it out there an deal mit more generic thing, where the term technology would be to narrow.
@@ -18,4 +16,4 @@ At first we thought, we could have two documents. But that would be to complex ;
 
 So we put the information from this page into the new one.
 
-Find it link:https://project.dancier.net/architecture-decision-principles.html[here]
+Find the new page link:https://project.dancier.net/architecture-decision-principles.html[here]
