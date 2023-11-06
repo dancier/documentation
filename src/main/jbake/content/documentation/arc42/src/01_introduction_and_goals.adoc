@@ -1,21 +1,19 @@
 [[section-introduction-and-goals]]
 == Introduction and Goals
 
-Partner dance is something really great in some many perspectives:
+Partner dance is something great from many perspectives:
 
-* it brings people together (social perspective)
-* people improve there fine motor skills (physical health perspective)
-* get distracted from work stress (mental health perspective)
-* dancing people in general does not start wars (society perspective)
-* find a partner for life (mankind survival perspective)
+* it brings people together _(social perspective)_
+* dancing is a good full-body workout _(physical health perspective)_
+* dancing relieves stress _(mental health perspective)_
+* dancing people in general seem to be less interested in starting wars _(society's perspective)_
+* not first but: you can find a partner for life _(mankind's survival perspective)_
 
-BUT!
+*BUT!*
 
-There is one barrier for a partner dance!
+There is quite often one barrier for one starting with a couple dance. You have to find a partner to dance with.
 
-You have to find a partner to dance with.
-
-As this is not easy, Dancier is there to help!
+Dancier is there to help all those people!
 
 
 === Functional Requirements
