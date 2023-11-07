@@ -1,32 +1,29 @@
 [[section-introduction-and-goals]]
 == Introduction and Goals
 
-Partner dance is something great from many perspectives:
+Partner dance is great from many perspectives:
 
-* it brings people together _(social perspective)_
-* dancing is a good full-body workout _(physical health perspective)_
-* dancing relieves stress _(mental health perspective)_
-* dancing people in general seem to be less interested in starting wars _(society's perspective)_
-* not first but: you can find a partner for life _(mankind's survival perspective)_
+* It brings people together _(social perspective)_
+* Dancing is a good full-body workout _(physical health perspective)_
+* Dancing relieves stress _(mental health perspective)_
+* In general, people who dance seem to be less interested in starting wars _(society's perspective)_
+* Last but not least, you can find a partner for life _(mankind's survival perspective)_
 
 *BUT!*
 
-There is quite often one barrier for one starting with a couple dance. You have to find a partner to dance with.
+There is often one barrier for someone starting with a partner dance. You have to find a partner to dance with.
 
 Dancier is there to help all those people!
 
 
 === Functional Requirements
 
-Dancier is going to be the go-to platform for all people who dance or want to dance. It is not limited to a certain kind of dance like Tango or Salsa.
+Dancier aims to be the go-to platform for dance enthusiasts of all types, regardless of their preferred dance style, be it Tango, Salsa, or any other.
 
-Although in the beginning, Dancier will focus its features on couple dances. So all dance styles where two people dance with each other.
+In its initial stage, our primary focus with our list of requirements will center around partner dances, encompassing a wide array of styles where two individuals dance together.
+As Dancier evolves into a platform where people can find dance partners, we will consider adding more features, such as enabling dance schools to provide information about their courses and dance events.
 
-So as of now, we will first define the requirements that are needed to bring two people together.
-
-When Dancier is a platform where people can find dancing partners, we will add functionality like enabling Dance Schools to provide information on their courses and dance evenings...
-
-For this reason, in the following table, we also give information on what is needed for the https://en.wikipedia.org/wiki/Minimum_viable_product[MVP] as mandatory and the as optional.
+Based on that, we provide details on what is required for our [Minimum Viable Product (MVP)](https://en.wikipedia.org/wiki/Minimum_viable_product) and what can be considered optional in the following table.
 
 
 [cols="1,7,10"]
@@ -34,79 +31,79 @@ For this reason, in the following table, we also give information on what is nee
 | ID | Requirement | Description
 
 | M1
-| Each Dancer can provide information about himself
-| Dancier wants to facilitate good matches between its users. For this reason, it needs to know eg. where the dancer lives, what dance styles they can perform...
-
+| Each dancer can provide information about themselves
+| Dancier aims to facilitate good matches between its users. Therefore, it requires information such as the dancer's location and the dance styles they can perform.
 
 | M2
 | Match dancers
-| Based on the likelihood that two dancers will constitute a good dancing couple, Dancier should recommend them to one another.
+| Dancier should recommend potential dance partners based on their compatibility as a dancing couple.
 
 | M3
 | Dancers should be able to chat with each other
-| Every matched dancer (M2) must be able to chat with his matches.
+| Matched dancers (M2) should have the capability to communicate with their matches.
 
 | O1
 | Match dance classes with dancers
-| Dancers should be able to easily find courses that match their level of maturity.
+| Dancers should easily find courses that suit their skill level.
 
 | O2
 | Find/match dancing events
-| Dancing events should be located by the dancers as they fit their needs
+| Dancers should be able to discover dancing events that align with their preferences.
 
 | O3
 | Match dance holidays
-| People who organize dance holidays should have an easy way, to present those holidays to dancers with that interest.
+| Organizers of dance holidays should have an efficient way to present their offerings to interested dancers.
 
 |===
+
 
 === Quality Goals
 
 [options="header", cols="1,1,7,10"]
 |===
-|Nr|Prio|Quality goal|Description
+| Nr | Priority | Quality Goal | Description
 
-|QG1
-|1
-|Easy to use
-|Dancers should find easy-to-use features that are almost self-explanatory.
+| QG1
+| 1
+| Easy to use
+| Dancers should find features that are easy to use and almost self-explanatory.
 
-|QG2
-|1
-|Good recommendations
-|The recommendations should fit. In the case of schools, workshops, shoes and other things that are being recommended by us: that should feel less like advertisement, and more like a good tip.
+| QG2
+| 1
+| Good recommendations
+| Recommendations should be relevant and not feel like advertisements; they should resemble helpful tips for schools, workshops, shoes, and other recommended items.
 
-|QG3
-|2
-|Attractive Project/Team
-|Not only the UI should feel modern, but the complete project should be perceived (by its users) as what it is: a nice group of people with the strong goal of doing something useful for the world ;-)
+| QG3
+| 2
+| Attractive Project/Team
+| The entire project should be perceived by users as a collaborative effort by a friendly team with a strong commitment to making a positive impact in the world ;-)
 
-|QG4
-|2
-|Be a nice learning project
-|Although our main focus is to bring people together by making it easy for them to dance, we also want to give all team members the possibility to grow their professional skills. Let it be in engineering, design or any other area. For that reason, we will sometimes take approaches that could be considered over-engineering.
+| QG4
+| 2
+| Be a valuable learning project
+| While our primary focus is bringing people together through dancing, we also aim to provide team members with opportunities for professional growth. This includes areas such as engineering, design, and more. Therefore, we may occasionally take approaches that could be seen as over-engineering.
 |===
 (got inspiration from https://quality.arc42.org)
 
 === Stakeholders
 
-[options="header",cols="1,2,2"]
+[options="header", cols="1,2,2"]
 |===
-|Role/Name|Expectations from this project|Expectations from this documentation
+| Role/Name | Expectations from this project | Expectations from this documentation
 
 | Dancer
-| Looking for an easy way, to connect to other dancers, schools,...
+| Seeks an easy way to connect with other dancers, schools, etc.
 | None
 
 | School
-| Want's Dancier as a channel to promote its dance classes, dance evenings...
+| Wishes to use Dancier as a channel to promote its dance classes and events.
 | None
 
 | Event Organiser
-| Want's Dancier as a channel to promote its events...
+| Aims to use Dancier as a platform to promote their events.
 | None
 
 | Developer
-| Having a holistic learning experience developing a complete product. Make friends, have a great time.
-| Goto place to have a bird eyes view. Showing what should be achieved from a functional perspective. Explain the building blocks and how they interact. Gives explanations why things have been decided.
+| Desires a holistic learning experience while working on a complete product. Also, looks forward to making friends and having a great time.
+| Expects this documentation to serve as a central reference, providing an overview of project goals and functionality, explaining the building blocks and their interactions, and offering insights into decision-making processes.
 |===
