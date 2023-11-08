@@ -98,55 +98,81 @@ details.
 
 === Usability
 
-39. Easy of Use
-User interfaces will be as simple and intuitive as
+[cols="1,2,6"]
+|===
+|Id|Name|Description
+
+|U1
+|39. Easy of Use
+|User interfaces will be as simple and intuitive as
 possible.
 
-43. Consistent Navigation
-Content and navigation will be consistent.
+|U2
+|43. Consistent Navigation
+|Content and navigation will be consistent.
 
-44. Predictable Interface
-User actions should have predicable results.
-
+|U3
+|44. Predictable Interface
+|User actions should have predicable results.
+|===
 
 
 
 === Process
 
-49. Continuous Improvement
-Processes will be designed from the ground up to
+[cols="1,2,6"]
+|===
+|Id|Name|Description
+
+|P1
+|49. Continuous Improvement
+|Processes will be designed from the ground up to
 support continuous improvement.
 
+|===
 
 === Business
 
-56. Response to Customers
-Customer requests will be addressed in a timely
+[cols="1,2,6"]
+|===
+|Id|Name|Description
+
+|B1
+|56. Response to Customers
+|Customer requests will be addressed in a timely
 manner.
 
-62. Quality First
-Honest errors are not punished and stopping to fix
+|B2
+|62. Quality First
+|Honest errors are not punished and stopping to fix
 problems is encouraged.
+
+|===
 
 === Applications
 
-67. Platform Independent, Open Standards
-Applications that support open standards are
+[cols="1,2,6"]
+|===
+|Id|Name|Description
+
+|A1
+|67. Platform Independent, Open Standards
+|Applications that support open standards are
 preferred.
 
-
-78. Minimum Feature Set
-Features add complexity and should be kept to a
+|A2
+|78. Minimum Feature Set
+|Features add complexity and should be kept to a
 minimum (avoid bells and whistles and systematic
 handling of improbable exceptions).
 
-
-80. Bleeding Edge
-Experimental or early release technologies will not
+|A3
+|80. Bleeding Edge
+|Experimental or early release technologies will not
 be used unless they are critical to competitive
 advantage.
 
-
+|===
 
 
 == Key drivers for technical decisions
