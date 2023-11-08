@@ -9,6 +9,8 @@
 :idprefix:
 
 
+Why do we think having aligned architectural principles is a good idea...
+
 == The Problem
 
 Reasoning about what could be the best programming language (and other questions like what is the "best" database...) turns out to be in practice not that easy.
@@ -23,18 +25,120 @@ Another one, would contratry assume that always using most recent tech will incu
 
 If you would let those two guys let disuss about what should be the (main-)database in a projet/company, they will be liky not come to an end. Even worse, one could accuse the other of being outdated, too old fashined, while the other could be accuse of being a yuppy without looking the the nearer future. Latest at this point the disuccsing would turn out personally and create a toxic athomsphere.
 
-
-
-== Our Solution
-
 https://www.meeteor.com/post/principle-based-decision-making
+
+---
+== Our Principles
+
+General
+
+
+2. Compliance with Law
+Compliance with all relevant laws and regulations.
+
+1. Non-proliferation of Technology
+Technical diversity will be controlled in order to
+reduce complexity.
+
+6. Simple Solutions
+IT will be as simple as possible. Where complexity
+is required it will be encapsulated and hidden
+behind a interface that is as simple as possible.
+
+9. Shared Resources
+Solutions will seek to maximum sharing of
+resources such as network, computing, storage
+and data.
+
+
+7. Quality
+A minimum standard of quality will be maintained
+despite time to market concerns.
+
+
+
+DATA
+
+16. Data Confidentiality
+Confidential data must be protected.
+
+
+20. Master Data
+All data will have a golden copy.
+
+General Software Architektur
+
+29. Separation of Concerns
+It will be possible to change a component with
+minimal impact to other components.
+
+30. Loosely Coupled Services
+Services will be loosely coupled (producers loosely
+coupled from consumers).
+
+34. Service Abstraction
+Services will hide their underlying implementation
+details.
+
+
+Usability
+
+39. Easy of Use
+User interfaces will be as simple and intuitive as
+possible.
+
+43. Consistent Navigation
+Content and navigation will be consistent.
+
+44. Predictable Interface
+User actions should have predicable results.
+
+
+
+
+Process
+
+49. Continuous Improvement
+Processes will be designed from the ground up to
+support continuous improvement.
+
+
+Business
+
+56. Response to Customers
+Customer requests will be addressed in a timely
+manner.
+
+62. Quality First
+Honest errors are not punished and stopping to fix
+problems is encouraged.
+
+Applications
+
+67. Platform Independent, Open Standards
+Applications that support open standards are
+preferred.
+
+
+78. Minimum Feature Set
+Features add complexity and should be kept to a
+minimum (avoid bells and whistles and systematic
+handling of improbable exceptions).
+
+
+80. Bleeding Edge
+Experimental or early release technologies will not
+be used unless they are critical to competitive
+advantage.
+
+
 
 
 == Key drivers for technical decisions
 
  1. *Any decision should be as little opinionated as possible* +
     We should never choose a technology just because we consider
-    it as cool or because we have had good experience with it in _another_ use case.
+    it as cool or because we have had a good experience with it in _another_ use case.
     Decisions should be made depending on the use case. +
  2. *Keep it simple stupid (KISS)* +
     Based on our interpretation of

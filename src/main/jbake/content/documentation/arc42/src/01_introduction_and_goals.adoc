@@ -23,7 +23,7 @@ Dancier aims to be the go-to platform for dance enthusiasts of all types, regard
 In its initial stage, our primary focus with our list of requirements will center around partner dances, encompassing a wide array of styles where two individuals dance together.
 As Dancier evolves into a platform where people can find dance partners, we will consider adding more features, such as enabling dance schools to provide information about their courses and dance events.
 
-Based on that, we provide details on what is required for our [Minimum Viable Product (MVP)](https://en.wikipedia.org/wiki/Minimum_viable_product) and what can be considered optional in the following table.
+Based on that, we provide details on what is required for our https://en.wikipedia.org/wiki/Minimum_viable_product[Minimum Viable Product (MVP)] and what can be considered optional in the following table.
 
 
 [cols="1,7,10"]
