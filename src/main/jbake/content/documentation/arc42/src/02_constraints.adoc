@@ -24,10 +24,11 @@ We have almost no external constraints in this area. We infer rules and constrai
 |OC4|Licence|All the source code will be released under an open source license. Everyone can fork the project and start a dancier on his own (with another name of course)
 |===
 
-=== Conventions
+=== Other Constraints
 [options="header", cols="1,1,1"]
 |===
 ||Convention|Reasoning
 |C1|Be polite|being aggressive, rude... will never do anything good
 |C2|Hear first, judge less|Confronted with some point of views that seem strange to you: give your college the chance to explain.
+|C3|Obey our architectural principals| When making decisions make them as alligent with our architectural principals as possible. Find them https://project.dancier.net/architecture-decision-principles.html[here]
 |===
