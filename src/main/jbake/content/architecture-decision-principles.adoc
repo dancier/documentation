@@ -13,75 +13,90 @@ Why do we think having aligned architectural principles is a good idea...
 
 == The Problem
 
-Reasoning about what could be the best programming language (and other questions like what is the "best" database...) turns out to be in practice not that easy.
+Let's think about what could happen when to take two developer, lock them up in a room until they have consensus what is the best programming language they should pick up for the next project.
 
-Even with participants being nice, educated and solution-focused it becomes much to often a emotional if not heated debate. We strongly assume that the root cause is often, that each participant is arguing base a differnt base of principles.
+From my past experience that could end up not so nice. Without getting deeper to how they would look like after 10 hours, I would bet they will not find consensus in quite many cases. We guess that the reason is, that they will likely argue more preference based which will turn out to get personal pretty fast.
 
-So let's assume, one considers that it would be best for the company/project to always use the most recent technology out there. That one regularly argues that you could reach benefis in competiton while using the moste recent (and for this recent presumable the best) tech out there.
+https://www.meeteor.com/post/principle-based-decision-making[Read this for what we mean by this].
 
-So one of his principle would be, to always strive to most recent stuff.
-
-Another one, would contratry assume that always using most recent tech will incure the risk of making in mid-term a wrong bet. Something that looks promising now, could be dead in 2 or 3 years. So in some years it would be more "legacy" the the proven stuff from today would be.
-
-If you would let those two guys let disuss about what should be the (main-)database in a projet/company, they will be liky not come to an end. Even worse, one could accuse the other of being outdated, too old fashined, while the other could be accuse of being a yuppy without looking the the nearer future. Latest at this point the disuccsing would turn out personally and create a toxic athomsphere.
-
-https://www.meeteor.com/post/principle-based-decision-making
-
+So we want to provide our members principle that guide them to a smooth decisions making process, with best result for dancier.
 ---
-== Our Principles
-
-General
+== The Principles by Categories
 
 
-2. Compliance with Law
-Compliance with all relevant laws and regulations.
+=== General
+[cols="1,2,6"]
+|===
+|Id|Name|Description
 
-1. Non-proliferation of Technology
-Technical diversity will be controlled in order to
+|G1
+|Compliance with Law
+|Compliance with all relevant laws and regulations.
+
+|G2
+|Non-proliferation of Technology
+|Technical diversity will be controlled in order to
 reduce complexity.
 
-6. Simple Solutions
-IT will be as simple as possible. Where complexity
+|G3
+|Simple Solutions
+|IT will be as simple as possible. Where complexity
 is required it will be encapsulated and hidden
 behind a interface that is as simple as possible.
 
-9. Shared Resources
-Solutions will seek to maximum sharing of
+|G4
+|Shared Resources
+|Solutions will seek to maximum sharing of
 resources such as network, computing, storage
 and data.
 
-
-7. Quality
-A minimum standard of quality will be maintained
+|G5
+|Quality
+|A minimum standard of quality will be maintained
 despite time to market concerns.
 
+|===
 
+=== DATA
 
-DATA
+[cols="1,2,6"]
+|===
+|Id|Name|Description
 
-16. Data Confidentiality
-Confidential data must be protected.
+|D1
+|Data Confidentiality
+|Confidential data must be protected.
 
+|D2
+|Master Data
+|All data will have a golden copy.
 
-20. Master Data
-All data will have a golden copy.
+|===
 
-General Software Architektur
+=== General Software Architektur
 
-29. Separation of Concerns
-It will be possible to change a component with
+[cols="1,2,6"]
+|===
+|Id|Name|Description
+
+|SA1
+|29. Separation of Concerns
+|It will be possible to change a component with
 minimal impact to other components.
 
-30. Loosely Coupled Services
-Services will be loosely coupled (producers loosely
+|SA2
+|30. Loosely Coupled Services
+|Services will be loosely coupled (producers loosely
 coupled from consumers).
 
-34. Service Abstraction
-Services will hide their underlying implementation
+|SA3
+|34. Service Abstraction
+|Services will hide their underlying implementation
 details.
 
+|===
 
-Usability
+=== Usability
 
 39. Easy of Use
 User interfaces will be as simple and intuitive as
@@ -96,14 +111,14 @@ User actions should have predicable results.
 
 
 
-Process
+=== Process
 
 49. Continuous Improvement
 Processes will be designed from the ground up to
 support continuous improvement.
 
 
-Business
+=== Business
 
 56. Response to Customers
 Customer requests will be addressed in a timely
@@ -113,7 +128,7 @@ manner.
 Honest errors are not punished and stopping to fix
 problems is encouraged.
 
-Applications
+=== Applications
 
 67. Platform Independent, Open Standards
 Applications that support open standards are
