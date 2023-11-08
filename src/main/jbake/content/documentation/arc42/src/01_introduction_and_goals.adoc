@@ -105,5 +105,5 @@ Based on that, we provide details on what is required for our [Minimum Viable Pr
 
 | Developer
 | Desires a holistic learning experience while working on a complete product. Also, looks forward to making friends and having a great time.
-| Expects this documentation to serve as a central reference, providing an overview of project goals and functionality, explaining the building blocks and their interactions, and offering insights into decision-making processes.
+| Expect this documentation to serve as a central reference, providing an overview of project goals and functionality, explaining the building blocks and their interactions, and offering insights into decision-making processes.
 |===
