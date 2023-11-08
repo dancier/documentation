@@ -80,17 +80,17 @@ despite time to market concerns.
 |Id|Name|Description
 
 |SA1
-|29. Separation of Concerns
+|Separation of Concerns
 |It will be possible to change a component with
 minimal impact to other components.
 
 |SA2
-|30. Loosely Coupled Services
+|Loosely Coupled Services
 |Services will be loosely coupled (producers loosely
 coupled from consumers).
 
 |SA3
-|34. Service Abstraction
+|Service Abstraction
 |Services will hide their underlying implementation
 details.
 
@@ -103,16 +103,16 @@ details.
 |Id|Name|Description
 
 |U1
-|39. Easy of Use
+|Easy of Use
 |User interfaces will be as simple and intuitive as
 possible.
 
 |U2
-|43. Consistent Navigation
+|Consistent Navigation
 |Content and navigation will be consistent.
 
 |U3
-|44. Predictable Interface
+|Predictable Interface
 |User actions should have predicable results.
 |===
 
@@ -125,7 +125,7 @@ possible.
 |Id|Name|Description
 
 |P1
-|49. Continuous Improvement
+|Continuous Improvement
 |Processes will be designed from the ground up to
 support continuous improvement.
 
@@ -138,12 +138,12 @@ support continuous improvement.
 |Id|Name|Description
 
 |B1
-|56. Response to Customers
+|Response to Customers
 |Customer requests will be addressed in a timely
 manner.
 
 |B2
-|62. Quality First
+|Quality First
 |Honest errors are not punished and stopping to fix
 problems is encouraged.
 
@@ -156,18 +156,18 @@ problems is encouraged.
 |Id|Name|Description
 
 |A1
-|67. Platform Independent, Open Standards
+|Platform Independent, Open Standards
 |Applications that support open standards are
 preferred.
 
 |A2
-|78. Minimum Feature Set
+|Minimum Feature Set
 |Features add complexity and should be kept to a
 minimum (avoid bells and whistles and systematic
 handling of improbable exceptions).
 
 |A3
-|80. Bleeding Edge
+|Bleeding Edge
 |Experimental or early release technologies will not
 be used unless they are critical to competitive
 advantage.
