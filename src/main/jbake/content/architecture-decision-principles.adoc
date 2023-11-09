@@ -8,21 +8,19 @@
 :jbake-disqus_identifier: d23e2d10-c1a6-11ed-8bd8-3b33f0bea9fd
 :idprefix:
 
-
 Why do we think having aligned architectural principles is a good idea...
 
 == The Problem
 
-Let's think about what could happen when to take two developer, lock them up in a room until they have consensus what is the best programming language they should pick up for the next project.
+Let's think about what could happen when you take two developers, lock them up in a room until they have a consensus on what is the best programming language they should pick up for the next project.
 
-From my past experience that could end up not so nice. Without getting deeper to how they would look like after 10 hours, I would bet they will not find consensus in quite many cases. We guess that the reason is, that they will likely argue more preference based which will turn out to get personal pretty fast.
+From my experience that could end up not so nice. Without getting deeper into how they would look like after 10 hours, I would bet they will not find consensus in quite many cases. We guess that the reason is, that they will likely argue more preference-based which will turn out to get personal pretty fast.
 
-https://www.meeteor.com/post/principle-based-decision-making[Read this for what we mean by this].
+https://www.meeteor.com/post/principle-based-decision-making[Read this to know why we think].
 
-So we want to provide our members principle that guide them to a smooth decisions making process, with best result for dancier.
----
+So we want to provide our members with principles that guide them to a smooth decision-making process, with the best result for Dancier.
+
 == The Principles by Categories
-
 
 === General
 [cols="1,2,6"]
