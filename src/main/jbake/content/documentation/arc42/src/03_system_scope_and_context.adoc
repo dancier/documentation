@@ -10,13 +10,13 @@ image:functional-context.drawio.svg[]
 |Neighbor| Description
 
 | Dancer
-| Dancing people on theire search for other dancers use dancier. We plan that the system should be able to cope with at least 10000 dancing people.
+| Dancing people looking out for other dancers and dance-related information. We plan that the system should be able to cope with at least 10.000 dancing people.
 
 | School
-| Schools that offer dance courses, dance workshops and whatever dance related, wants to reach out for dancers.
+| Schools that offer dance courses, dance workshops and other dance-related stuff. They use Dancier as a channel to connect to dancers.
 
 | Event Organisers
-| Organisors of all dance related events wants to find participants for their events.
+| Organisors of all dance-related events use Dancier to connect to potential participants.
 
 |===
 
@@ -27,6 +27,6 @@ image:technical-context.drawio.svg[]
 [options="header", cols="1,5"]
 |===
 | Neighbor | Description
-| SMTP-Servier | Used to send mails to it's stakeholders
-| Web-Client | Each Stakeholder will access dancier by a distinct Web-Application via a Web-Client
+| SMTP-Servier | Used to send emails to it's stakeholders
+| Web-Client | Each Stakeholder will access Dancier by a distinct Web-Application via a Web-Client
 |===

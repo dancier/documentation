@@ -4,7 +4,7 @@
 === PostgreSQL as our default Database
 
 ==== The problem
-Having a default database releases the engineer from discussing each new component that needs a database. He still could use another database in case there is reason to do so, but there is a slightly increased need to argue for another database than PostgreSQL. On the other hand, there is reduced need to argue for PostgreSQL.
+Having a default database releases the engineer from discussing each new component that needs a database. He still could use another database in case there is reason to do so, but there is a slightly increased need to argue for another database than PostgreSQL. On the other hand, there is a reduced need to argue for PostgreSQL.
 
 Dancier needs to store information to work properly. Dancers have profiles. Dancer has recommendations, and dancers can chat with each others. All those information will obviously not stored in memory, those information need to be perstisted.
 

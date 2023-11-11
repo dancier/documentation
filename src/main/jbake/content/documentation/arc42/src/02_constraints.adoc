@@ -2,16 +2,15 @@
 
 == Architecture/Technical Constraints
 
-We have almost no external constraints in this area. We infer rules and constraints based on the main project goals and its quality goals.
-
+The only constraint we have is, to obey our architectural principles. Find them https://project.dancier.net/architecture-decision-principles.html[here].
 
 === Organizational Constraints
 [options="header", cols="1,1,1"]
 |===
-|Id|Constraint|Background/Motivation
+|Id|Constraint|Description
 |OC1
 |Founder is Marc
-|Dancer, that wants a plattform to connect other dancers. Wants to learn how to drive a product holistically. Have a reference project. May earn something, somewhen with it.
+| Is a dancer, who wants a platform to connect Dancers. Wants to learn how to drive a product holistically. Have a reference project. May earn something, somewhen with it.
 
 |OC2
 |Team's Motivation
@@ -19,16 +18,15 @@ We have almost no external constraints in this area. We infer rules and constrai
 
 |OC3
 |Work-mode: startup
-| Only do things that immediately pay of in the next 6 months. For everything that slows us down and pay off later: do not do this.
+|Only do things that immediately pay off in the next 6 months. For everything that slows us down and pays off later: do not do this.
 
-|OC4|Licence|All the source code will be released under an open source license. Everyone can fork the project and start a dancier on his own (with another name of course)
+|OC4|Licence|All the source code will be released under an open-source license. Everyone can fork the project and start a dancier on his own (with another name of course)
 |===
 
-=== Other Constraints
+=== Conventional Constraints
 [options="header", cols="1,1,1"]
 |===
-||Convention|Reasoning
+|Id|Convention|Description
 |C1|Be polite|being aggressive, rude... will never do anything good
-|C2|Hear first, judge less|Confronted with some point of views that seem strange to you: give your college the chance to explain.
-|C3|Obey our architectural principals| When making decisions make them as alligent with our architectural principals as possible. Find them https://project.dancier.net/architecture-decision-principles.html[here]
+|C2|Hear first, judge less|Confronted with some point of view that seems strange to you: give your college the chance to explain.
 |===
