@@ -1,15 +1,9 @@
 :jbake-type: page
 :jbake-status: published
-:jbake-date: 2023-06-23
-:jbake-tags: dance, dancer, partner, software, architecture
+:jbake-date: 2023-11-11
+:jbake-tags: dance, dancer, partner, software, architecture, arc42, quality, building-blocks, adr
 :imagesdir: ./images
 :idprefix:
-
-
-// header file for arc42-template,
-// including all help texts
-//
-// ====================================
 
 = Dancier
 
@@ -74,5 +68,3 @@ include::src/11_technical_risks.adoc[]
 <<<<
 // 12. Glossary
 include::src/12_glossary.adoc[]
-
-
