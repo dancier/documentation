@@ -12,7 +12,7 @@ Why do we think having aligned architectural principles is a good idea...
 
 == The Problem
 
-Let's think about what could happen when you take two developers, lock them up in a room until they have a consensus on what is the best programming language they should pick up for the next project.
+Let's think about what could happen when you take two developers, and lock them up in a room until they have a consensus on what is the best programming language they should pick up for the next project.
 
 From my experience that could end up not so nice. Without getting deeper into how they would look like after 10 hours, I would bet they will not find consensus in quite many cases. We guess that the reason is, that they will likely argue more preference-based which will turn out to get personal pretty fast.
 
@@ -46,7 +46,7 @@ Particularly, we always try to avoid optimizing things before it turns out
 that optimization is needed (https://ubiquity.acm.org/article.cfm?id=1513451[see Donald Knuth]).
 This applies, in the same way, to _small_ things eg.
 
-* optimizing algorithms like SQL-queries
+* optimizing algorithms like SQL queries
 * choosing frameworks for persistence, offering rest endpoints, frontend frameworks
 * infrastructural topics like VCS build system 
 
@@ -103,18 +103,15 @@ and data.
 |SA1
 |Separation of Concerns
 |It will be possible to change a component with
-minimal impact to other components.
+minimal impact on other components.
 
 |SA2
 |Loosely Coupled Services
-|Services will be loosely coupled (producers loosely
-coupled from consumers).
+|Services will be loosely coupled (producers loosely coupled with consumers).
 
 |SA3
 |Service Abstraction
-|Services will hide their underlying implementation
-details.
-
+|Services will hide their underlying implementation details.
 |===
 
 === Usability
@@ -125,8 +122,7 @@ details.
 
 |U1
 |Easy of Use
-|User interfaces will be as simple and intuitive as
-possible.
+|User interfaces will be as simple and intuitive as possible.
 
 |U2
 |Consistent Navigation
@@ -134,7 +130,7 @@ possible.
 
 |U3
 |Predictable Interface
-|User actions should have predicable results.
+|User actions should have predictable results.
 |===
 
 
@@ -147,9 +143,7 @@ possible.
 
 |P1
 |Continuous Improvement
-|Processes will be designed from the ground up to
-support continuous improvement.
-
+|Processes will be designed from the ground up to support continuous improvement.
 |===
 
 === Business
@@ -160,13 +154,11 @@ support continuous improvement.
 
 |B1
 |Response to Customers
-|Customer requests will be addressed in a timely
-manner.
+|Customer requests will be addressed promptly.
 
 |B2
 |Quality First
-|Honest errors are not punished and stopping to fix
-problems is encouraged.
+|Honest errors are not punished and stopping to fix problems is encouraged.
 
 |===
 
@@ -183,15 +175,11 @@ preferred.
 
 |A2
 |Minimum Feature Set
-|Features add complexity and should be kept to a
-minimum (avoid bells and whistles and systematic
-handling of improbable exceptions).
+|Features add complexity and should be kept to a minimum (avoid bells and whistles and systematic handling of improbable exceptions).
 
 |A3
 |Bleeding Edge
-|Experimental or early-release technologies will not
-be used unless they are critical to competitive
-advantage.
+|Experimental or early-release technologies will not be used unless they are critical to competitive advantage.
 
 |===
 
