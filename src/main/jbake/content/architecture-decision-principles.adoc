@@ -16,9 +16,9 @@ Let's think about what could happen when you take two developers, and lock them 
 
 From my experience that could end up not so nice. Without getting deeper into how they would look like after 10 hours, I would bet they will not find consensus in quite many cases. We guess that the reason is, that they will likely argue more preference-based which will turn out to get personal pretty fast.
 
-https://www.meeteor.com/post/principle-based-decision-making[Read this to know why we think].
+https://www.meeteor.com/post/principle-based-decision-making[Read this to know why we think so].
 
-So we want to provide our members with principles that guide them to a smooth decision-making process, with the best result for Dancier.
+So we want to provide our members with principles that guide them through a smooth decision-making process, with the best result for Dancier.
 
 == The Principles by Categories
 
@@ -33,8 +33,7 @@ So we want to provide our members with principles that guide them to a smooth de
 
 |G2
 |Non-proliferation of Technology
-|Technical diversity will be controlled in order to
-reduce complexity.
+|Technical diversity will be controlled to reduce complexity.
 
 |G3
 |Keep it simple stupid (KISS)
@@ -63,7 +62,7 @@ and data.
 
 |G5
 |Quality
-|A minimum standard of quality will be maintained despite time to market concerns.
+|A minimum standard of quality will be maintained despite time-to-market concerns.
 
 |G6
 |Favor what is proven
