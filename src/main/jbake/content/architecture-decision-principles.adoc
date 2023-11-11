@@ -1,9 +1,9 @@
 = Making reasonable technology decisions
 :jbake-type: page
 :jbake-status: published
-:jbake-date: 2023-03-02
-:jbake-tags: desgin pattern, architecture, java, kiss, agile, decision making
-:jbake-description: Describe how we are making technical decisions
+:jbake-date: 2023-11-11
+:jbake-tags: desgin pattern, architecture, java, kiss, agile, decision making, technology
+:jbake-description: Describe how we are making architectural decisions
 :jbake-disqus_enabled: true
 :jbake-disqus_identifier: d23e2d10-c1a6-11ed-8bd8-3b33f0bea9fd
 :idprefix:
