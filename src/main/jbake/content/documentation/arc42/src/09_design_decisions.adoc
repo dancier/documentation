@@ -1,19 +1,16 @@
 [[section-design-decisions]]
 == Design Decisions
 
-=== PostgreSQL as main Database
+=== PostgreSQL as our default Database
 
-==== The problem to be solved by selecting a default
-
-Having a default database releases the engineer from having a discussion on each new component that needs a database. He still could use another database in case there are really reason to do so, but there is a slightly increased need to argue for another database than PostgreSQL. On the other hand, there is reduced need to argue for PostgreSQL.
-
-==== The problem to be solved by selecting PostgreSQL
+==== The problem
+Having a default database releases the engineer from discussing each new component that needs a database. He still could use another database in case there is reason to do so, but there is a slightly increased need to argue for another database than PostgreSQL. On the other hand, there is reduced need to argue for PostgreSQL.
 
 Dancier needs to store information to work properly. Dancers have profiles. Dancer has recommendations, and dancers can chat with each others. All those information will obviously not stored in memory, those information need to be perstisted.
 
 === Influencing factors
 
-Everyone in the core-team, has at least some experience with relational databases. For No-SQL Database there is much less experience. We are having especially no experience at all with the operation of No-SQL database.
+Everyone in the core team has at least some experience with relational databases. For No-SQL Databases there is much less experience. We are having especially no experience at all with the operation of the No-SQL database.
 
 === Which quality goals are affected?
 
@@ -23,13 +20,13 @@ No one
 
 Choosing the wrong database could impact the availability and performance of our system. This could directly lead to a lower NPS.
 
-It could also have impact for the development efforts. Especially in case the engeneeris does not have any experience with a choosen database.
+It could also have an impact on the development efforts. Especially in case the engineers do not have any experience with a chosen database.
 
 === Assumptions
 
 We expect no load on the system that would require a horizontal scaling of our database.
 
-We even would expect, that even when a part of dancier would require a horizontal scaling, that it will come with an acceptable effort to just move with that part to an appropriate database, as we design everything modular enough.
+We would expect, that even when a part of Dancier would require horizontal scaling, that it will come with an acceptable effort to just move with that part to an appropriate database, as we design everything modular enough.
 
 === Option we take a look on
 
@@ -46,15 +43,20 @@ Almost the same as with MongoDB.
 === Decision
 As of now, in the Team not even one member of Dancier ist aware of one Use Case could not easily be satisfied with PostgreSQL under the expected load. This will also include quite optimistic expectations for the success of Danicer.
 This would also be the case for Cassandra and MongoDB, but the knowledge of using and operating them correctly is so limited, that it would be a Risk using them as of now.
-We should develop all our components in that way, that it should be easy to change the database, once that is needed.
+We should develop all our components in that way, so that it should be easy to change the database, once that is needed.
 
-For those reason, we are _defaulting_ to using PostgreSQL.
+For that reason, we are _defaulting_ to using PostgreSQL.
 
-=== Python for all Datascience related tasks
+=== Python for all Data science related tasks
 On of the Quality goals is, that dancier
 
 
-=== Computing Recommendations in an own deployable
+=== Computing Recommendations in its own deployable
+
+
+=== Self Contained System for Kikerki
+
+
 
 
 
