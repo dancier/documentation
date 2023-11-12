@@ -8,17 +8,29 @@
 
 We are dancier!
 
-In case you are interested in our core values, read the link:https://project.dancier.net/code-of-conduct.html[Code of Conduct].
-
 ---
 
- * Dominik Halfkann + 
-   Frontend Development
- * link:https://twitter.com/jans0510[Jan Stroppel] +
-   Backend, Frontend
- * link:https://twitter.com/MarcGorzala[Marc] +
-   Project Founder, Backend, Infrastructure, Project Management
- * Stelios Rusta + 
-   Backend
- * Xiaofei +
-   Frontend, Design, Teamup
+[stripes=odd, frame=none, cols="2"]
+|===
+a|link:https://twitter.com/MarcGorzala[Marc Gorzala]
+
+image:./images/marc-profile.jpg[alt="Java Logo",  width=100, height=100]
+
+* Backend Engineer
+* Whole Architecture
+* Product Vision
+* Founder
+
+|Dominik Halfkan
+
+ image:./images/dominik-profile.jpg[alt="Java Logo",  width=100, height=100]
+| Xiaofei Gorzala
+
+image:./images/xiaofei-profile.jpg[alt="Java Logo",  width=100, height=100]
+
+
+|link:https://twitter.com/jans0510[Jan Stroppel]
+
+image:./images/jan-profile.jpg[alt="Java Logo",  width=100, height=100]
+
+|===
