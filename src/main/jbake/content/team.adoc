@@ -1,7 +1,7 @@
 = Core team
 :jbake-type: page
 :jbake-status: published
-:jbake-date: 2023-03-14
+:jbake-date: 2023-11-12
 :jbake-tags: team, project, members
 :jbake-description: Core members of the team
 :idprefix:
@@ -26,7 +26,7 @@ a|
 * Product Vision
 * Founder
 
-a| about Dominik
+a| nice guy
 
 | Xiaofei Gorzala
 
@@ -36,6 +36,6 @@ image:./images/xiaofei-profile.jpg[alt="Java Logo",  width=100, height=100]
 
 image:./images/jan-profile.jpg[alt="Java Logo",  width=100, height=100]
 
-| about Xiaofei
-| about Jan
+| nice gal
+| nice guy
 |===
