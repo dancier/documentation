@@ -9,4 +9,4 @@
 
 (click https://project.dancier.net/documentation/arc42/index.html[here] for full Arc42-documentation)
 
-image:./ArchitectureCommunicationCanvas-Dancier.drawio.svg[Interactive, alt="Arc42-Communication-Canvas"]
+image:./ArchitectureCommunicationCanvas-Dancier.drawio.svg[Embedded,300,opts=inline, alt="Arc42-Communication-Canvas"]
