@@ -37,10 +37,10 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>code-of-conduct.html">Code of Conduct</a>
+                            <a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>documentation/arc42/arc42-canvas.html">Arc42-Communication-Canvas</a>
                         <li>
                         <li>
-                            <a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>documentation/arc42/index.html">Arc42-Architecture</a>
+                            <a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>documentation/arc42/index.html">Architecture</a>
                         <li>
                         <li>
                             <a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>documentation/bookmarks.html">Bookmarks</a>
@@ -59,9 +59,6 @@
                             <a href="https://editor.swagger.io/?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdancier%2Frecommendation%2Fmain%2Fswagger.yaml">Recommendation-API</a>
                         </li>
                     </ul>
-                </li>
-                <li>
-                    <a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>${config.feed_file}">Subscribe</a>
                 </li>
             </ul>
         </div><!--/.nav-collapse -->
