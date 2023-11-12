@@ -1,0 +1,12 @@
+:jbake-type: page
+:jbake-status: published
+:jbake-date: 2023-11-12
+:jbake-tags: dance, dancer, partner, software, architecture, arc42, quality, building-blocks, adr, canvas
+:imagesdir: ./images
+:idprefix:
+
+= Arc42 Canvas
+
+(click https://project.dancier.net/documentation/arc42/index.html[here] for full Arc42-documentation)
+
+image:./ArchitectureCommunicationCanvas-Dancier.drawio.svg[alt="Arc42-Communication-Canvas"]
