@@ -10,10 +10,12 @@
 :toc:
 :toclevels: 5
 :toc-placement: macro
-toc::[]
 
 include::src/config.adoc[]
 
+Click https://project.dancier.net/documentation/arc42/arc42-canvas.html[here] for a quick overview via the Arc42-Communication-Canvas!
+
+toc::[]
 
 // horizontal line
 //***
