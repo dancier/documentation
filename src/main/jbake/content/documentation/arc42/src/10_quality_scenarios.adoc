@@ -8,12 +8,20 @@
 @startwbs
 * Quality
 ** Easy to use (QG1)
+*** QS4
+*** QS7
 
 ** Good recommendations (QG2)
 *** QS1
 *** QS2
+*** QS3
 
 ** Reliable (QG5)
+*** QS5
+*** QS6
+*** QS8
+*** QS9
+*** QS10
 
 
 ** Attractive Team (QG3)
@@ -59,7 +67,7 @@ The leaves in this tree, refers to the Quality-Scenarios from the following sect
 | In case our user base is doubling once per year, it is easy to adapt the whole system to remain stable and performant. 
 
 | QS6
-| Q3, Q5
+| QG3, QG5
 | High
 | In case some components of Dancier are crashing, the rest keep running and serve user requests. (Graceful degradation)
 
