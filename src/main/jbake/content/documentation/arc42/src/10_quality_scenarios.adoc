@@ -29,8 +29,6 @@ The leaves in this tree, refers to the Quality-Scenarios from the following sect
 
 === Quality Scenarios
 
-Quelle, Auslöser, Umgebung, Artefakt, Antwort, Antwortmaß
-
 [cols="1,1,1, 7"]
 |===
 |Szenario |  Goals | Prio | Description
@@ -85,7 +83,7 @@ Quelle, Auslöser, Umgebung, Artefakt, Antwort, Antwortmaß
 | QS10
 | QG3, QG5
 | Middle
-| A dancer is almost never receiving mails/chat messages that are perceived as Spam.
+| A dancer rarely receives emails/chat messages that he perceives as Spam.
 
 
 | QS11
