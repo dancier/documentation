@@ -28,14 +28,62 @@ So we want to provide our members with principles that guide them through a smoo
 |Id|Name|Description
 
 |G1
+|Embrace Uncertainty
+|Uncertainty is not a problem to be solved,
+but an opportunity to uncover options in the face of the unknown.
+Rather than seeking false precision through exhaustive upfront analysis,
+this principle encourages a Start Less, Finish More mindset while still demanding a clear vision to follow.
+It emphasizes documenting assumptions, creating minimal viable strategies
+and iteratively adapting plans based on evolving insights.
+
+|G2
+|Delay Design Decisions
+|Delay design decisions until they are absolutely necessary.
+Decisions should be made at the last responsible moment, fostering a culture of experimentation.
+This will gather new insights that can be used to iteratively design the architecture.
+There is no point in designing and implementing capabilities upfront that may never be used
+- it is a waste of time and resources.
+
+|G3
+|Design for Change
+|The architecture should be designed to support change, not to prevent it.
+This means that the architecture should be loosely coupled, modular, and extensible.
+It should be easy to add new capabilities and to change existing ones.
+The architecture should be designed to support the ability to experiment and learn.
+
+|G4
+|Principle of Least Surprise
+|Build software and design the architecture such that it doesn't surprise users or fellow developers.
+When making decisions, prioritize predictability and ease of use over cleverness and novelty.
+This general principle can be applied to many aspects,
+such as making architectural decisions as well as building a clear UI for the end user.
+
+|G5
+|Low Coupling, High Cohesion
+|Strive for low coupling, where modules minimize dependencies on each other,
+ensuring changes in one module have minimal impact on others.
+Simultaneously, pursue high cohesion within modules,
+ensuring closely related code elements work together seamlessly,
+fostering maintainability, readability and efficient development.
+
+|G6
+|Cohesive Code Structuring
+|Build a cohesive structure for code not only based on technical distinctions
+but primarily on the business domain or features they serve.
+Files that are used for providing the same features should be relatively close by,
+sharing the same parent directory / module where possible.
+This approach enhances code cohesion, allowing developers working on a particular feature
+to locate and modify related files efficiently.
+
+|G7
 |Compliance with Law
 |Compliance with all relevant laws and regulations.
 
-|G2
+|G8
 |Non-proliferation of Technology
 |Technical diversity will be controlled to reduce complexity.
 
-|G3
+|G9
 |Keep it simple stupid (KISS)
 a|Based on our interpretation of
 https://en.wikipedia.org/wiki/Agile_software_development[Agile Development]
@@ -47,32 +95,32 @@ This applies, in the same way, to _small_ things eg.
 
 * optimizing algorithms like SQL queries
 * choosing frameworks for persistence, offering rest endpoints, frontend frameworks
-* infrastructural topics like VCS build system 
+* infrastructural topics like VCS build system
 
 As well as it applies to "bigger" things eg.
 
      * Deciding architectural things like using CQRS
      * Using microservices vs. putting things into a monolith
 
-|G4
+|G10
 |Shared Resources
 |Solutions will seek to maximum sharing of
 resources such as network, computing, storage
 and data.
 
-|G5
+|G11
 |Quality
 |A minimum standard of quality will be maintained despite time-to-market concerns.
 
-|G6
+|G12
 |Favor what is proven
 |     Default for standard options. Eg. when there are several similar web frameworks, go for the more prominent one. Because we expect that:
       * we are getting more support from other developers if we run into problems
       * expect more support from the upstream project itself, and also the project itself will exist for a longer time
       * have better tooling support (if applicable)
       * have it easier to find more developers
- 
-|G7
+
+|G13
 | Match techniques with skills of core team members
 | The chosen technique should be either already known by the team (or part of the team) or the team must be willing to learn it.
 |===
