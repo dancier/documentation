@@ -7,20 +7,20 @@
 ....
 @startwbs
 * Quality
-** Easy to use
+** Easy to use (QG1)
 
-** Good recommendations
+** Good recommendations (QG2)
 *** QS1
 *** QS2
 
-** Reliable
+** Reliable (QG5)
 
 
-** Attractive Team
+** Attractive Team (QG3)
 *** QS3
 *** QS4
 
-** Learning Project
+** Learning Project (QG4)
 
 @endwbs
 ....
@@ -50,8 +50,10 @@ The leaves in this tree, refers to the Quality-Scenarios from the following sect
 | In sozialen Netzwerken zeigt sich eine stark überwiegend positive Wahrnehmung von Dancier.
 
 | QS4
-| QG1
-|
+| QG2
+| die recommendations werden nach profile änderungen innerhalb eines tages berechnet
+
+| QS
 
 |===
 
