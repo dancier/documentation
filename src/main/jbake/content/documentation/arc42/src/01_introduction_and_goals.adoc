@@ -36,26 +36,30 @@ Based on that, we provide details on what is required for our https://en.wikiped
 
 | M2
 | Match dancers
-| Dancier should recommend potential dance partners based on their compatibility as a dancing couple.
+| Dancier should recommend potential dance partners based on their likeliness of being a great dancing couple.
 
 | M3
-| Dancers should be able to chat with each other
-| Matched dancers (M2) should have the capability to communicate with their matches.
+| Dancers should be able to communicate with each other
+| Matched dancers (M2) should have the capability to communicate with their matches, to arrange a dance.
 
 | O1
+| Schools/Event-Organisers can provide information 
+| Dancier should match dance courses, and dance events in general to its main users. 
+
+| O2
 | Match dance classes with dancers
 | Dancers should easily find courses that suit their skill level.
 
-| O2
+| O3
 | Find/match dancing events
 | Dancers should be able to discover dancing events that align with their preferences.
 
-| O3
+| O4
 | Match dance holidays
 | Organizers of dance holidays should have an efficient way to present their offerings to interested dancers.
 
 |===
-
+(M=mandatory, O=Optional) for the MVP.
 
 === Quality Goals
 
