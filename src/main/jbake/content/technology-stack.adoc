@@ -45,8 +45,7 @@ image:./images/logo-flask.svg[alt="Flask Logo",  width=100, height=100]]
 [stripes=odd, grid=cols, frame=none, cols="2"]
 |===
 |Javascript| Typescript
-|
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference?retiredLocale=de[
+|https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference?retiredLocale=de[
 image:./images/logo-javascript.svg[alt="Javascript Logo",  width=100, height=100]]
 |
 https://www.typescriptlang.org/[
