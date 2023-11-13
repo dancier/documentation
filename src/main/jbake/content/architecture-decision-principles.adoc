@@ -120,14 +120,6 @@ a|     Default for standard options. Eg. when there are several similar web fram
 |G13
 | Match techniques with skills of core team members
 | The chosen technique should be either already known by the team (or part of the team) or the team must be willing to learn it.
-|===
-
-
-=== General Software Architektur
-
-[cols="1,2,6"]
-|===
-|Id|Name|Description
 
 |SA1
 |Separation of Concerns
