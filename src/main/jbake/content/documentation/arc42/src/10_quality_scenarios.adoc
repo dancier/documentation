@@ -36,19 +36,19 @@ Quelle, Auslöser, Umgebung, Artefakt, Antwort, Antwortmaß
 |Szenario |  Goals | Prio | Description
 
 | QS1
-| QG2
+| QG2, QG4
 | High
 | A dancer reads the list of his recommendations and writes messages to recommended dancers with a probability that correlates positively to the <<score>>.
 
 | QS2
-| QG2
+| QG2, QG4
 | High
-| Dancer that write to other dancers, are getting replies with a probability that is positive correlated with theire score.
+| A Dancer receiving the first message of another dancer, is replying with a probability that correlates positively to the <<score>>.
 
 | QS3
 | QG3
-|
-| The NPS that we are constantly getting averages over 80.
+| Middle
+| Being asked how likely it is that they would recommend Dancier to another dancer, our customer answered with an average of 70.
 
 | QS4
 | QG3
