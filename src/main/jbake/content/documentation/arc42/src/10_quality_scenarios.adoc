@@ -29,6 +29,8 @@ The leaves in this tree, refers to the Quality-Scenarios from the following sect
 
 === Quality Scenarios
 
+Quelle, Auslöser, Umgebung, Artefakt, Antwort, Antwortmaß
+
 [cols="1,1,1, 7"]
 |===
 |Szenario |  Goals | Prio | Description
@@ -36,7 +38,7 @@ The leaves in this tree, refers to the Quality-Scenarios from the following sect
 | QS1
 | QG2
 | 
-| A dancer, reading the list of his recommendations, interacts further with the dancers, in a positiv correlation with there score.
+| A dancer is reading the list of his recommendations, if going to message the recommended dancers with a probabilty that correlates to the <<score>> of the recommendation interacts further with the dancers, in a positiv correlation with there score.
 
 | QS2
 | QG2
@@ -67,6 +69,22 @@ The leaves in this tree, refers to the Quality-Scenarios from the following sect
 | QG
 | 
 | Im Falle es Unerwartetetn Fehlers kann das System innerhalb  von einer Stunde wiederherstellt werden
+
+
+| QS
+| QG
+| 
+| Ein Tänzer kann innnerhalb einer Stunde einen Account anlegen und sein Profile ausfüllen. 
+
+| QS
+| QG
+| 
+| Spam Dance Schulen werden innerhalb von einem Tag erkannt und blockiert
+
+| QS
+| QG
+| 
+| Spam Mails werden geblockt
 
 |===
 
