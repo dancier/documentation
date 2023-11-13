@@ -25,15 +25,20 @@
 
 
 ** Attractive Team (QG3)
-*** QS3
-*** QS4
+*** QS5
+*** QS6
+*** QS8
+*** QS9
+*** QS10
+*** QS11
+*** QS12
 
 ** Learning Project (QG4)
 
 @endwbs
 ....
 
-The leaves in this tree, refers to the Quality-Scenarios from the following section...
+The leaves in this tree refers to the Quality-Scenarios from the following section...
 
 === Quality Scenarios
 
@@ -42,12 +47,12 @@ The leaves in this tree, refers to the Quality-Scenarios from the following sect
 |Szenario |  Goals | Prio | Description
 
 | QS1
-| QG2, QG4
+| QG2
 | High
 | A dancer reads the list of his recommendations and writes messages to recommended dancers with a probability that correlates positively to the <<score>>.
 
 | QS2
-| QG2, QG4
+| QG2
 | High
 | A Dancer receiving the first message of another dancer, is replying with a probability that correlates positively to the <<score>>.
 
