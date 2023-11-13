@@ -29,31 +29,44 @@ The leaves in this tree, refers to the Quality-Scenarios from the following sect
 
 === Quality Scenarios
 
-[cols="1,1,7"]
+[cols="1,1,1, 7"]
 |===
-|Szenario | Quality Goals | Description
+|Szenario |  Goals | Prio | Description
 
 | QS1
 | QG2
+| 
 | A dancer, reading the list of his recommendations, interacts further with the dancers, in a positiv correlation with there score.
 
 | QS2
 | QG2
+|
 | Dancer that write to other dancers, are getting replies with a probability that is positive correlated with theire score.
 
 | QS3
 | QG3
+|
 | The NPS that we are constantly getting averages over 80.
 
 | QS4
 | QG3
+|
 | In sozialen Netzwerken zeigt sich eine stark überwiegend positive Wahrnehmung von Dancier.
 
 | QS4
 | QG2
+|
 | die recommendations werden nach profile änderungen innerhalb eines tages berechnet
 
 | QS
+| QG
+|
+| als eine Tanzschule kann ich ohne weitere Unterstüzung innerhalb von einer Stunde einen Account anlegen und eine Tanzkurs einpflegen
+
+| QS
+| QG
+| 
+| Im Falle es Unerwartetetn Fehlers kann das System innerhalb  von einer Stunde wiederherstellt werden
 
 |===
 
