@@ -3,6 +3,15 @@
 [options="header"]
 |===
 | Term         | Definition
+| [[profile]]Profile a| All the information that the dancer provides about himeself. Those are things like:
+
+* age
+* gender
+* location
+* what he can dance
+* what he is looking for
+
+| School     | A school that offers dance-course, organise 
+dance evening...
 | [[score]]Score     | Number between 0 and 100 indicating how likely it is that two dancers will like to dance with each other
-| School     | A school that offers dance-course, organise dance evening...
 |===

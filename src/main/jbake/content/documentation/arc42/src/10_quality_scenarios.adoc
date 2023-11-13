@@ -45,20 +45,22 @@ Quelle, Auslöser, Umgebung, Artefakt, Antwort, Antwortmaß
 | High
 | A Dancer receiving the first message of another dancer, is replying with a probability that correlates positively to the <<score>>.
 
+| QS4
+| QG2, QG4
+| High
+| When a dancer changes his personal information in his <<profile>>, he receives new recommendations latest after 24 hours.
+
+
 | QS3
 | QG3
 | Middle
-| Being asked how likely it is that they would recommend Dancier to another dancer, our customer answered with an average of 70.
+| Being asked how likely it is that they would recommend Dancier to another dancer, our customers answer with an average of 70.
 
 | QS4
 | QG3
-|
-| In sozialen Netzwerken zeigt sich eine stark überwiegend positive Wahrnehmung von Dancier.
+| Middle
+| When performaning a sentiment analysis against common social networks, we see that Dancier is perceived well.
 
-| QS4
-| QG2
-|
-| die recommendations werden nach profile änderungen innerhalb eines tages berechnet
 
 | QS
 | QG
