@@ -13,10 +13,15 @@
 *** QS1
 *** QS2
 
+** Reliable
+
 
 ** Attractive Team
 *** QS3
 *** QS4
+
+** Learning Project
+
 @endwbs
 ....
 

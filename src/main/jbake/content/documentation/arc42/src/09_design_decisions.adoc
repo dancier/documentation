@@ -3,44 +3,53 @@
 
 === PostgreSQL as our default Database
 
-[discret]
+[discrete]
 ==== The problem
 Having a default database releases the engineer from discussing each new component that needs a database. He still could use another database in case there is reason to do so, but there is a slightly increased need to argue for another database than PostgreSQL. On the other hand, there is a reduced need to argue for PostgreSQL.
 
 Dancier needs to store information to work properly. Dancers have profiles. Dancer has recommendations, and dancers can chat with each others. All those information will obviously not stored in memory, those information need to be perstisted.
 
+[discrete]
 ==== Influencing factors
 
 Everyone in the core team has at least some experience with relational databases. For No-SQL Databases there is much less experience. We are having especially no experience at all with the operation of the No-SQL database.
 
+[discrete]
 ==== Which quality goals are affected?
 
 No one
 
+[discrete]
 ==== Which risks are affected?
 
 Choosing the wrong database could impact the availability and performance of our system. This could directly lead to a lower NPS.
 
 It could also have an impact on the development efforts. Especially in case the engineers do not have any experience with a chosen database.
 
+[discrete]
 ==== Assumptions
 
 We expect no load on the system that would require a horizontal scaling of our dathat tabase.
 
 We would expect, that even when a part of Dancier would require horizontal scaling, that it will come with an acceptable effort to just move with that part to an appropriate database, as we design everything modular enough.
 
+[discrete]
 ==== Option we take a look on
 
+[discrete]
 ==== MongoDB
 MongoDB's main advantages of offering transparent sharding, does not pay of (based on our assumption), as we do not need horizontal sharding.
 We stil have pretty limited know how in the core team, as opposed to PostgreSQL.
 
+[discrete]
 ==== PostgreSQL
 Everyone in the team could immediatly start developing with PostgreSQL. The limitations of PostgreSQL compared to the other looked Options are not important based on the expected load of the system.
 
+[discrete]
 ==== Cassandra
 Almost the same as with MongoDB.
 
+[discrete]
 ==== Decision
 As of now, in the Team not even one member of Dancier ist aware of one Use Case could not easily be satisfied with PostgreSQL under the expected load. This will also include quite optimistic expectations for the success of Danicer.
 This would also be the case for Cassandra and MongoDB, but the knowledge of using and operating them correctly is so limited, that it would be a Risk using them as of now.
@@ -49,6 +58,8 @@ We should develop all our components in that way, so that it should be easy to c
 For that reason, we are _defaulting_ to using PostgreSQL.
 
 === Python for all Data science related tasks
+
+[discrete]
 ==== The problem
 One of our top quality goals is the the recommendations we offer to our dancers should be good.
 So we want to use best tooling and frameworks that helps us in implementing a good recommender.
@@ -56,6 +67,8 @@ Our main langugage ist Java. So at first we could implement the recommender in J
 
 
 === Computing Recommendations in its own deployable
+
+[discrete]
 ==== The problem
 As we decided to have have Python for all data science realted stuff. 
 
