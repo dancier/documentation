@@ -3,6 +3,6 @@
 [options="header"]
 |===
 | Term         | Definition
-| [[Score]]Score     | Number between 0 and 100 indicating how likely it is that two dancers will like to dance with each other
+| [[score]]Score     | Number between 0 and 100 indicating how likely it is that two dancers will like to dance with each other
 | School     | A school that offers dance-course, organise dance evening...
 |===

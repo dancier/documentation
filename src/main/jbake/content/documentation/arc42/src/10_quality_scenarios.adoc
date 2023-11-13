@@ -38,7 +38,7 @@ Quelle, Auslöser, Umgebung, Artefakt, Antwort, Antwortmaß
 | QS1
 | QG2
 | High
-| A dancer reads the list of his recommendations, and writes messages to recommended dancers with a probability that correlates positively to the <<score>>.
+| A dancer reads the list of his recommendations and writes messages to recommended dancers with a probability that correlates positively to the <<score>>.
 
 | QS2
 | QG2
