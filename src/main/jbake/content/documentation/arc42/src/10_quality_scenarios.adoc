@@ -53,13 +53,37 @@ Quelle, Auslöser, Umgebung, Artefakt, Antwort, Antwortmaß
 | QS4
 | QG1
 | High
-| A dancer without an account at Dancier is being able to get one and fill out the <<profile>> in one hour.
+| A dancer without an account at Dancier can get one and fill out the <<profile>> in one hour.
 
 | QS5
 | QG1
 | Middle
 | A school that wants to present itself on Dancier can get an account and provide basic information about it in not more than one hour.
 
+| QS6
+| QG5,QG3
+| Middle
+| When using Dancier, every (technical) request of our users is answered so timely, that the system is perceived as fast.
+
+| QS7
+| QG5,QG3
+| High
+| In case our user base is doubling once per year, it is easy to adapt the whole system to remain stable and performant. 
+
+| QS8
+| QG5,QG3
+| Middle
+| In case of an exceptional situation where we lose (parts) of our data we can recover to a state that is not older than one day.
+
+| QS9
+| Q3,Q5
+| High
+| In case some components of Dancier are crashing, the rest keep running and serve user requests. (Graceful degradation)
+
+| QS10
+| QG3, QG5
+| Middle
+| A dancer is almost never receiving mails/chat messages that are perceived as Spam.
 
 | QS3
 | QG3
@@ -72,23 +96,6 @@ Quelle, Auslöser, Umgebung, Artefakt, Antwort, Antwortmaß
 | When performaning a sentiment analysis against common social networks, we see that Dancier is perceived well.
 
 
-
-| QS
-| QG
-| 
-| Im Falle es Unerwartetetn Fehlers kann das System innerhalb  von einer Stunde wiederherstellt werden
-
-
-
-| QS
-| QG
-| 
-| Spam Dance Schulen werden innerhalb von einem Tag erkannt und blockiert
-
-| QS
-| QG
-| 
-| Spam Mails werden geblockt
 
 |===
 
