@@ -50,8 +50,12 @@ Quelle, Auslöser, Umgebung, Artefakt, Antwort, Antwortmaß
 | High
 | When a dancer changes his personal information in his <<profile>>, he receives new recommendations latest after 24 hours.
 
-
 | QS4
+| QG1
+| High
+| A dancer without an account at Dancier is being able to get one and fill out the <<profile>> in one hour.
+
+| QS5
 | QG1
 | Middle
 | A school that wants to present itself on Dancier can get an account and provide basic information about it in not more than one hour.
@@ -75,10 +79,6 @@ Quelle, Auslöser, Umgebung, Artefakt, Antwort, Antwortmaß
 | Im Falle es Unerwartetetn Fehlers kann das System innerhalb  von einer Stunde wiederherstellt werden
 
 
-| QS
-| QG
-| 
-| Ein Tänzer kann innnerhalb einer Stunde einen Account anlegen und sein Profile ausfüllen. 
 
 | QS
 | QG
