@@ -79,7 +79,7 @@ The leaves in this tree refers to the Quality-Scenarios from the following secti
 | QS7
 | QG1
 | Middle
-| A school that wants to present itself on Dancier can get an account and provide basic information about it in not more than one hour.
+| A school that wants to present itself on Dancier can get an account and provide basic information about itself in no more than one hour.
 
 | QS8
 | QG3, QG5
@@ -102,7 +102,7 @@ The leaves in this tree refers to the Quality-Scenarios from the following secti
 | QS11
 | QG3
 | Low
-| When performaning a sentiment analysis against common social networks, we see that Dancier is perceived well.
+| When performing a sentiment analysis against common social networks, we see that Dancier is perceived well.
 
 | QS12
 | QG3

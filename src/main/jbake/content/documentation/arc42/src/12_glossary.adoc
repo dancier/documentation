@@ -3,7 +3,7 @@
 [options="header"]
 |===
 | Term         | Definition
-| [[profile]]Profile a| All the information that the dancer provides about himeself. Those are things like:
+| [[profile]]Profile a| All the information that the dancer provides about himself. Those are things like:
 
 * age
 * gender

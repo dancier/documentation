@@ -38,7 +38,7 @@ and iteratively adapting plans based on evolving insights.
 
 |G2
 |Delay Design Decisions
-|Delay design decisions until they are absolutely necessary.
+|Delay design decisions until they are necessary.
 Decisions should be made at the last responsible moment, fostering a culture of experimentation.
 This will gather new insights that can be used to iteratively design the architecture.
 There is no point in designing and implementing capabilities upfront that may never be used
@@ -108,13 +108,10 @@ As well as it applies to "bigger" things eg.
 resources such as network, computing, storage
 and data.
 
-|G11
-|Quality
-|A minimum standard of quality will be maintained despite time-to-market concerns.
-
 |G12
 |Favor what is proven
-|     Default for standard options. Eg. when there are several similar web frameworks, go for the more prominent one. Because we expect that:
+a|     Default for standard options. Eg. when there are several similar web frameworks, go for the more prominent one. Because we expect that:
+ 
       * we are getting more support from other developers if we run into problems
       * expect more support from the upstream project itself, and also the project itself will exist for a longer time
       * have better tooling support (if applicable)
@@ -125,21 +122,6 @@ and data.
 | The chosen technique should be either already known by the team (or part of the team) or the team must be willing to learn it.
 |===
 
-=== Data
-
-[cols="1,2,6"]
-|===
-|Id|Name|Description
-
-|D1
-|Data Confidentiality
-|Confidential data must be protected.
-
-|D2
-|Master Data
-|All data will have a golden copy.
-
-|===
 
 === General Software Architektur
 
@@ -159,74 +141,5 @@ minimal impact on other components.
 |SA3
 |Service Abstraction
 |Services will hide their underlying implementation details.
-|===
-
-=== Usability
-
-[cols="1,2,6"]
-|===
-|Id|Name|Description
-
-|U1
-|Easy of Use
-|User interfaces will be as simple and intuitive as possible.
-
-|U2
-|Consistent Navigation
-|Content and navigation will be consistent.
-
-|U3
-|Predictable Interface
-|User actions should have predictable results.
-|===
-
-
-
-=== Process
-
-[cols="1,2,6"]
-|===
-|Id|Name|Description
-
-|P1
-|Continuous Improvement
-|Processes will be designed from the ground up to support continuous improvement.
-|===
-
-=== Business
-
-[cols="1,2,6"]
-|===
-|Id|Name|Description
-
-|B1
-|Response to Customers
-|Customer requests will be addressed promptly.
-
-|B2
-|Quality First
-|Honest errors are not punished and stopping to fix problems is encouraged.
-
-|===
-
-=== Applications
-
-[cols="1,2,6"]
-|===
-|Id|Name|Description
-
-|A1
-|Platform Independent, Open Standards
-|Applications that support open standards are
-preferred.
-
-|A2
-|Minimum Feature Set
-|Features add complexity and should be kept to a minimum (avoid bells and whistles and systematic handling of improbable exceptions).
-
-|A3
-|Bleeding Edge
-|Experimental or early-release technologies will not be used unless they are critical to competitive advantage.
-
 |===
 
