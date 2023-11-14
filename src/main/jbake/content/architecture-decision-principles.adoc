@@ -66,7 +66,7 @@ a|     Default for standard options. Eg. when there are several similar web fram
 
 |AP5
 |Go deep not wide
-|Technical diversity will be controlled to reduce complexity.
+|Before thinking about introducing the 4th other database, think again: do the benefits justify the introduced increased complexity of being able to understand and operate now 4 different database systems?
 
 |AP6
 |Principle of Least Surprise
