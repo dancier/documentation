@@ -45,22 +45,3 @@ image:whitebox-overall-system.drawio.svg[]
 | None
 
 |===
-
-=== Whitebox Level 2
-
-==== Whitebox Show-Dancer
-
-image:whitebox-show-dancer.drawio.svg[]
-
-Introduce here central pices of the SPA to be referred to in later
-
-* runtimeview
-* concepts (chapter)
-
-==== Whitebox Dancer
-
-image:whitebox-dancer.drawio.svg[]
-
-==== Whitebox Kikeriki
-
-image:whitebox-kikeriki.drawio.svg[]
