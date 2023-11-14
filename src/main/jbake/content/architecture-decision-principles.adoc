@@ -28,21 +28,6 @@ So we want to provide our members with principles that guide them through a smoo
 |Id|Name|Description
 
 |AP1
-|Delay Design Decisions
-|Delay design decisions until they are necessary.
-Decisions should be made at the last responsible moment, fostering a culture of experimentation.
-This will gather new insights that can be used to iteratively design the architecture.
-No point in designing and implementing capabilities upfront may never be used
-- it is a waste of time and resources.
-
-|AP2
-|Principle of Least Surprise
-|Build software and design the architecture such that it doesn't surprise users or fellow developers.
-When making decisions, prioritize predictability and ease of use over cleverness and novelty.
-This general principle can be applied to many aspects,
-such as making architectural decisions as well as building a clear UI for the end user.
-
-|AP3
 |Low Coupling, High Cohesion
 |Strive for low coupling, where modules minimize dependencies on each other,
 ensuring changes in one module have minimal impact on others.
@@ -50,11 +35,7 @@ Simultaneously, pursue high cohesion within modules,
 ensuring closely related code elements work together seamlessly,
 fostering maintainability, readability and efficient development.
 
-|AP4
-|Go deep not wide
-|Technical diversity will be controlled to reduce complexity.
-
-|AP5
+|AP2
 |Keep it simple stupid (KISS)
 a|Based on our interpretation of
 https://en.wikipedia.org/wiki/Agile_software_development[Agile Development]
@@ -73,7 +54,7 @@ As well as it applies to "bigger" things eg.
      * Deciding architectural things like using CQRS
      * Using microservices vs. putting things into a monolith
 
-|AP6
+|AP3
 |Favor what is proven
 a|     Default for standard options. Eg. when there are several similar web frameworks, go for the more prominent one. Because we expect that:
  
@@ -81,6 +62,27 @@ a|     Default for standard options. Eg. when there are several similar web fram
       * expect more support from the upstream project itself, and also the project itself will exist for a longer time
       * have better tooling support (if applicable)
       * have it easier to find more developers
+
+
+|AP4
+|Go deep not wide
+|Technical diversity will be controlled to reduce complexity.
+
+|AP5
+|Principle of Least Surprise
+|Build software and design the architecture such that it doesn't surprise users or fellow developers.
+When making decisions, prioritize predictability and ease of use over cleverness and novelty.
+This general principle can be applied to many aspects,
+such as making architectural decisions as well as building a clear UI for the end user.
+
+|AP6
+|Delay Design Decisions
+|Delay design decisions until they are necessary.
+Decisions should be made at the last responsible moment, fostering a culture of experimentation.
+This will gather new insights that can be used to iteratively design the architecture.
+No point in designing and implementing capabilities upfront may never be used
+- it is a waste of time and resources.
+
 
 |AP7
 | Match techniques with skills of core team members
