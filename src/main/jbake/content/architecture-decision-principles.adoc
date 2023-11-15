@@ -20,9 +20,8 @@ https://www.meeteor.com/post/principle-based-decision-making[Read this to know w
 
 So we want to provide our members with principles that guide them through a smooth decision-making process, with the best result for Dancier.
 
-== The Principles by Categories
+== The Principles
 
-=== General
 [cols="1,2,6"]
 |===
 |Id|Name|Description
@@ -63,7 +62,6 @@ a|     Default for standard options. Eg. when there are several similar web fram
       * have better tooling support (if applicable)
       * have it easier to find more developers
 
-
 |AP5
 |Go deep not wide
 |Before thinking about introducing the 4th other database, think again: do the benefits justify the introduced increased complexity of being able to understand and operate now 4 different database systems?
@@ -82,7 +80,6 @@ Decisions should be made at the last responsible moment, fostering a culture of 
 This will gather new insights that can be used to iteratively design the architecture.
 No point in designing and implementing capabilities upfront may never be used
 - it is a waste of time and resources.
-
 
 |AP8
 | Match techniques with skills of core team members
