@@ -6,12 +6,12 @@
 | [[profile]]Profile a| All the information that the dancer provides about himself. Those are things like:
 
 * age
-* gender
-* location
+* Gender
+* Location
 * what he can dance
 * what he is looking for
 
-| School     | A school that offers dance-course, organise 
-dance evening...
-| [[score]]Score     | Number between 0 and 100 indicating how likely it is that two dancers will like to dance with each other
+| School     | A school that offers dance courses, organises 
+dance evenings...
+| [[score]]Score     | Number between 0 and 100 indicating how likely it is that two dancers will like to dance with each other. A higher value indicates a better fit.
 |===
