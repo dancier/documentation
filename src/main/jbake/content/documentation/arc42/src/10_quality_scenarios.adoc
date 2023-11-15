@@ -42,73 +42,72 @@ The leaves in this tree refers to the Quality-Scenarios from the following secti
 
 === Quality Scenarios
 
-[cols="1,1,1, 7"]
+[cols="1,1, 7"]
 |===
-|Szenario |  Goals | Prio | Description
+|Szenario Prio |  Goals | Description
 
 | QS1
-| QG2
-| High
+High
+| Recommandations (QG2)
 | A dancer reads the list of his recommendations and writes messages to recommended dancers with a probability that correlates positively to the <<score>>.
 
 | QS2
-| QG2
-| High
+High
+| Recommandations (QG2)
 | A Dancer receiving the first message of another dancer, is replying with a probability that correlates positively to the <<score>>.
 
 | QS3
-| QG2, QG4
-| High
+High
+| Recommandations (QG2), Reliable (QG5)
 | When a dancer changes his personal information in his <<profile>>, he receives new recommendations latest after 24 hours.
 
 | QS4
-| QG1
-| High
+High
+| Easy (QG1)
 | A dancer without an account at Dancier can get one and fill out the <<profile>> in one hour.
 
 | QS5
-| QG3, QG5
-| High
+High
+| Team (QG3), Reliable (QG5)
 | In case our user base is doubling once per year, it is easy to adapt the whole system to remain stable and performant. 
 
 | QS6
-| QG3, QG5
-| High
+High
+| Team (QG3), Reliable (QG5)
 | In case some components of Dancier are crashing, the rest keep running and serve user requests. (Graceful degradation)
 
 | QS7
-| QG1
-| Middle
+Middle
+| Easy (QG1)
 | A school that wants to present itself on Dancier can get an account and provide basic information about itself in no more than one hour.
 
 | QS8
-| QG3, QG5
-| Middle
+Middle
+| Team (QG3), Reliable (QG5)
 | When using Dancier, every (technical) request of our users is answered so timely, that the system is perceived as fast.
 
 
 | QS9
-| QG3, QG5
-| Middle
+Middle
+| Team (QG3), Reliable (QG5)
 | In case of an exceptional situation where we lose (parts) of our data we can recover to a state that is not older than one day.
 
 
 | QS10
-| QG3, QG5
-| Middle
+Middle
+| Team (QG3), Reliable (QG5)
 | A dancer rarely receives emails/chat messages that he perceives as Spam.
 
 
 | QS11
-| QG3
-| Low
+Low
+| Team (QG3)
 | When performing a sentiment analysis against common social networks, we see that Dancier is perceived well.
 
 | QS12
-| QG3
-| Low
+Low
+| Team (QG3)
 | Being asked how likely it is that they would recommend Dancier to another dancer, our customers answer with an average of 70.
-
 
 |===
 
