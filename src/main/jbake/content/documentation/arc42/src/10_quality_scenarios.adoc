@@ -44,7 +44,7 @@ The leaves in this tree refers to the Quality-Scenarios from the following secti
 
 [cols="1,1, 7"]
 |===
-|Szenario Prio |  Goals | Description
+|Szenario Prio |  Goal(s) | Description
 
 | QS1
 High
@@ -107,7 +107,7 @@ Low
 | QS12
 Low
 | Team (QG3)
-| Being asked how likely it is that they would recommend Dancier to another dancer, our customers answer with an average of 70.
+| Being asked how likely it is that they would recommend Dancier to another dancer, our customers answer with an saverage of 70.
 
 |===
 
