@@ -5,57 +5,96 @@
 
 [discrete]
 ==== The problem
-Having a default database releases the engineer from discussing each new component that needs a database. He still could use another database in case there is reason to do so, but there is a slightly increased need to argue for another database than PostgreSQL. On the other hand, there is a reduced need to argue for PostgreSQL.
+Without having a default database, will have the discuss which database system to use for each new service.
 
-Dancier needs to store information to work properly. Dancers have profiles. Dancer has recommendations, and dancers can chat with each others. All those information will obviously not stored in memory, those information need to be perstisted.
+So you could argue, that having only one allowed database, would be best.
+
+But this would surely be too restrictive, as we assume that we (at least after our MVP has launched) will have so many different use cases, that will not be addressed all with exactly one database system.
+
+So the question is, what database system is likely to address most of our demands best?
+
+For the rest, each engineer can use another option. In this case he has to write an ADR like this one, pointing out why the default database is not suitable.
 
 [discrete]
-==== Influencing factors
+==== Influencing Factors
+@Sebastian
+maybe I mix this up with Assumptions. Can you have a look on the assumptions, if parts of them are influencing factors?
 
-Everyone in the core team has at least some experience with relational databases. For No-SQL Databases there is much less experience. We are having especially no experience at all with the operation of the No-SQL database.
 
-[discrete]
 ==== Which quality goals are affected?
 
-No one
+This decision affects our Reliability Quality Goal.
+
+Issues with our persistence implementation could lead to wrong results, poor performance or even data loss.
+
 
 [discrete]
 ==== Which risks are affected?
 
-Choosing the wrong database could impact the availability and performance of our system. This could directly lead to a lower NPS.
+Besides the quality goals that could be missed, choosing the wrong database could also negatively impact the developer experience. Eg. when we choose something that no one knows, we would have big efforts to learn. Some engineers will like this as they also participate in Dancier to learn something. Other engineers have another focus on what they want to learn and feel distracted to get into a new database system.
+In both cases, we will finish our goals later, because of the learning effort.
 
-It could also have an impact on the development efforts. Especially in case the engineers do not have any experience with a chosen database.
 
 [discrete]
 ==== Assumptions
 
-We expect no load on the system that would require a horizontal scaling of our dathat tabase.
+In most cases, we will have to deal with structured data. We also know that the current team has its best knowledge using SQL databases.
 
-We would expect, that even when a part of Dancier would require horizontal scaling, that it will come with an acceptable effort to just move with that part to an appropriate database, as we design everything modular enough.
+We also expect that we are quite likely in a situation, where we need database transactions for implementing patterns like the outbox pattern.
+
+We also do not expect that most of our database will not need to scale horizontally. If this assumption turns out to be false, then we expect that moving to another database system will be not too expensive, as we follow the clean architecture style or at least the DAO pattern.
 
 [discrete]
 ==== Option we take a look on
 
 [discrete]
 ==== MongoDB
-MongoDB's main advantages of offering transparent sharding, does not pay of (based on our assumption), as we do not need horizontal sharding.
-We stil have pretty limited know how in the core team, as opposed to PostgreSQL.
+MongoDB's main advantage of offering transparent sharding does not pay off for us, as we (see assumptions) do not need horizontal scaling.
+
+Storing arbitrary JSON-Documents is also not an advantage (compared to PostgreSQL), as 
+
+ 1. We in general deal with structured data (see assumptions)
+ 1. PostgreSQL also can store JSON, in case we would need it
+
+
+We also still have pretty limited know-how in the core team, as opposed to PostgreSQL.
+
 
 [discrete]
 ==== PostgreSQL
-Everyone in the team could immediatly start developing with PostgreSQL. The limitations of PostgreSQL compared to the other looked Options are not important based on the expected load of the system.
+SQL databases are still the most widely used database systems (links). 
+PostgreSQL seems to be the most used Open Source database system used professionally (link).
+
+Everyone in the Team can use PostgreSQL as everyone is aware of the ideas of relational databases.
+
+Relational Databases are pretty mature and supported by Frameworks like Boot that we use. Tooling is also very mature.
+
+We have also experience in operating PostgreSQL.
+
 
 [discrete]
 ==== Cassandra
-Almost the same as with MongoDB.
+Almost the same as with MongoDB, while Tooling Support is expected to be the least mature under our three options.
 
 [discrete]
 ==== Decision
-As of now, in the Team not even one member of Dancier ist aware of one Use Case could not easily be satisfied with PostgreSQL under the expected load. This will also include quite optimistic expectations for the success of Danicer.
-This would also be the case for Cassandra and MongoDB, but the knowledge of using and operating them correctly is so limited, that it would be a Risk using them as of now.
-We should develop all our components in that way, so that it should be easy to change the database, once that is needed.
 
-For that reason, we are _defaulting_ to using PostgreSQL.
+We decided that PostgreSQL is our default database.
+
+This could be deducted from our link:https://project.dancier.net/architecture-decision-principles.html[architectural decision principles]:
+
+===== Skills of team members(AP3)/Principle of least surprise(AP6)
+ * bad experience with MongoDB and Cassandra on former work projects
+ * best knowledge here will lead to less surprise as problems could be anticipated more, that with the other less known products
+ 
+===== Go Deep not wide (AP5)
+
+Defaulting to the world's most prominent database architecture (SQL) makes us more experts in that very important technology and less half experts in more than one.
+
+We expect a better overall result, by understanding better less technologies, than less understanding of more technologies.
+
+===== Favor what's proven
+For sure, SQL is the most proven database system out there (link?) and PostgreSQL is one of the top open-source candidates.
 
 === Python for all Data science related tasks
 
