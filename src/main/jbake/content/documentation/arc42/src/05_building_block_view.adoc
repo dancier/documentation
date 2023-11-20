@@ -25,23 +25,23 @@ image:whitebox-overall-system.drawio.svg[]
 | https://github.com/dancier/recommendation[Repo]
 
 | chat-dancer
-| implements the functionality that let the dancer chat with each other
+| implements the functionality that lets the dancers chat with each other
 | https://github.com/dancier/chat-dancer[Repo]
 
 | kikeriki
-| System sending out mails via external smtp-server, depending on certain business state.
+| System sending out mails via external SMTP server, depending on the certain business state.
 | https://github.com/dancier/kikeriki[Repo]
 
 | school
-| Maintains schools. If they have events like course, thoose will be handled by _events_.
+| Maintains schools. If they have events like course, those will be handled by _events_.
 | None
 
 | events
 | Handling dance evenings, workshops, courses,..
 | None
 
-| mail-server
-| External server that we use to send mails
+| SMTP-server
+| External server that we use to send mail
 | None
 
 |===
