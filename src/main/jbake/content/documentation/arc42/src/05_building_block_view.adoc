@@ -45,3 +45,18 @@ image:whitebox-overall-system.drawio.svg[]
 | None
 
 |===
+
+
+=== Blackbox SPA/Show-Dancer
+
+=== Blackbox Dancer
+
+=== Blackbox Recommendation
+
+=== Blackbox Chat-Dancer
+
+=== Blackbox Kikeriki
+
+=== Blackbox School
+
+=== Blackbox Events
