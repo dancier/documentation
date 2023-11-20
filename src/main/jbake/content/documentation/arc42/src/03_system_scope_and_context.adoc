@@ -1,7 +1,9 @@
 //:imagesdir: ../images
 
 [[section-system-scope-and-context]]
-== Functional Context
+== Context
+
+=== Business Context
 
 image:functional-context.drawio.svg[]
 
@@ -20,7 +22,7 @@ image:functional-context.drawio.svg[]
 
 |===
 
-== Technical Context
+=== Technical Context
 
 image:technical-context.drawio.svg[]
 
