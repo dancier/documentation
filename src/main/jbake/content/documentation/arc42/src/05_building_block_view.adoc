@@ -12,12 +12,12 @@ image:whitebox-overall-system.drawio.svg[]
 |===
 |Building Block |Description|Repo
 
-| show-dancer
+| (spa) show-dancer
 |Single Page Application, written in Angular, that contains all UIs from all Users (Dancers, Schools,...)
 | https://github.com/dancier/show-dancer[Repo]
 
 | dancer
-|Backend for Frontend (BFF) that connects the show-dancer, with all other components.
+|Backend for Frontend (BFF) that connects the show-dancer, with all other components. Contains also cross-sectional modules like user/account-handling.
 | https://github.com/dancier/dancer[Repo]
 
 | recommendation
