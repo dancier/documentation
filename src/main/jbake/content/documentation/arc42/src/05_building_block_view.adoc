@@ -8,55 +8,136 @@
 
 image:whitebox-overall-system.drawio.svg[]
 
-[options="header",cols="2,4,1"]
+[options="header",cols="2,4"]
 |===
-|Building Block |Description|Repo
+|Building Block |Description
 
 | (spa) show-dancer
 |Single Page Application, written in Angular, that contains all UIs from all Users (Dancers, Schools,...)
-| https://github.com/dancier/show-dancer[Repo]
 
 | dancer
 |Backend for Frontend (BFF) that connects the show-dancer, with all other components. Contains also cross-sectional modules like user/account-handling.
-| https://github.com/dancier/dancer[Repo]
 
 | recommendation
 | Computes all the recommendations (Dancer-Dancer, Dancer-Events, Dancer-Schools). Read Business Events from almost every system to achieve this.
-| https://github.com/dancier/recommendation[Repo]
 
 | chat-dancer
 | implements the functionality that lets the dancers chat with each other
-| https://github.com/dancier/chat-dancer[Repo]
 
 | kikeriki
 | System sending out mails via external SMTP server, depending on the certain business state. Determine the business state by reading Business Events from almost every system.
-| https://github.com/dancier/kikeriki[Repo]
 
 | school
 | Maintains schools. If they have events like course, those will be handled by _events_.
-| None
 
 | events
 | Handling dance evenings, workshops, courses,..
-| None
 
 | SMTP-server
 | External server that we use to send mail
-| None
 
 |===
 
 
 === Blackbox SPA/Show-Dancer
 
+[cols="h,4"]
+|===
+|Purpose
+|Provides all our UIs for dancer, schools,... 
+
+|Input-Interface
+|Web-Interface to be used with normal Web-Browsers. By using responsive web design methods, we make Dancier accessible to almost any device that runs a web browser.
+
+|Output-Interface
+|Connect to the "Dancer" our backend for frontend.
+
+|Risks
+|Could become a frontend monolith, as it handles the ui for really everything.
+
+|Repo
+|https://github.com/dancier/show-dancer
+|===
+
 === Blackbox Dancer
+
+[cols="h,4"]
+|===
+|Purpose
+|Backend for frontend to dancier. All calls from the internet go through this component. It handles also the User/Account/Profile management. This is the case as we started with a monolithic approach for Dancier, putting everything in one modular monolith. Having the mentioned functionalities included in Dancer, actually makes no problems, so we stick to this.
+
+|Input-Interface
+|Rest-API to be consumed by the show-dancer
+
+|Output-Interface
+|TBD
+
+|Risks
+|TBD
+
+|Repo
+|https://github.com/dancier/dancer
+|===
 
 === Blackbox Recommendation
 
+[cols="h,4"]
+|===
+|Purpose
+|TBD
+
+|Input-Interface
+|TBD
+
+|Output-Interface
+|TBD
+
+|Risks
+|TBD
+
+|Repo
+|https://github.com/dancier/recommendation
+|===
+
+
 === Blackbox Chat-Dancer
+
+[cols="h,4"]
+|===
+|Purpose
+|TBD
+
+|Input-Interface
+|TBD
+
+|Output-Interface
+|TBD
+
+|Risks
+|TBD
+
+|Repo
+|https://github.com/dancier/chat-dancer
+
+|===
+
 
 === Blackbox Kikeriki
 
-=== Blackbox School
+[cols="h,4"]
+|===
+|Purpose
+|TBD
 
-=== Blackbox Events
+|Input-Interface
+|TBD
+
+|Output-Interface
+|TBD
+
+|Risks
+|TBD
+
+|Repo
+|https://github.com/dancier/kikeriki
+|===
