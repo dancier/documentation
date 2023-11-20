@@ -17,15 +17,13 @@ For the rest, each engineer can use another option. In this case he has to write
 
 [discrete]
 ==== Influencing Factors
-@Sebastian
-maybe I mix this up with Assumptions. Can you have a look on the assumptions, if parts of them are influencing factors?
 
-
+[discrete]
 ==== Which quality goals are affected?
 
 This decision affects our Reliability Quality Goal.
 
-Issues with our persistence implementation could lead to wrong results, poor performance or even data loss.
+Issues with our persistent implementation could lead to wrong results, poor performance or even data loss.
 
 
 [discrete]
@@ -34,13 +32,12 @@ Issues with our persistence implementation could lead to wrong results, poor per
 Besides the quality goals that could be missed, choosing the wrong database could also negatively impact the developer experience. Eg. when we choose something that no one knows, we would have big efforts to learn. Some engineers will like this as they also participate in Dancier to learn something. Other engineers have another focus on what they want to learn and feel distracted to get into a new database system.
 In both cases, we will finish our goals later, because of the learning effort.
 
-
 [discrete]
 ==== Assumptions
 
 In most cases, we will have to deal with structured data. We also know that the current team has its best knowledge using SQL databases.
 
-We also expect that we are quite likely in a situation, where we need database transactions for implementing patterns like the outbox pattern.
+We also expect that we are quite likely in a situation, where we need database transactions for implementing patterns like the transactional outbox pattern.
 
 We also do not expect that most of our database will not need to scale horizontally. If this assumption turns out to be false, then we expect that moving to another database system will be not too expensive, as we follow the clean architecture style or at least the DAO pattern.
 
@@ -70,6 +67,8 @@ Everyone in the Team can use PostgreSQL as everyone is aware of the ideas of rel
 Relational Databases are pretty mature and supported by Frameworks like Boot that we use. Tooling is also very mature.
 
 We have also experience in operating PostgreSQL.
+
+To add: transactions, strong background with structured data
 
 
 [discrete]
