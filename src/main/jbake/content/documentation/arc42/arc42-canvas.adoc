@@ -7,7 +7,7 @@
 
 = Arc42 Canvas
 
-(click https://project.dancier.net/documentation/arc42/index.html[here] for full Arc42-documentation)
-(click link:https://canvas.arc42.org/[here] for more information to this kind of documentation)
+ * click link:https://project.dancier.net/documentation/arc42/index.html[here] for our "full" Arc42-documentation
+ * click link:https://canvas.arc42.org/[here] for more information on this kind of documentation
 
 image:./ArchitectureCommunicationCanvas-Dancier.drawio.svg[alt="Arc42-Communication-Canvas"]
