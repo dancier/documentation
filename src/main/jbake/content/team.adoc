@@ -26,7 +26,9 @@ a|
 * Product Vision
 * Founder
 
-a| nice guy
+a| 
+
+* Frontend Engineer
 
 | Xiaofei Gorzala
 
@@ -36,6 +38,13 @@ image:./images/xiaofei-profile.jpg[alt="Java Logo",  width=100, height=100]
 
 image:./images/jan-profile.jpg[alt="Java Logo",  width=100, height=100]
 
-| nice gal
-| nice guy
+a|
+
+* Frontend Engineer
+* Scrum Master
+
+a| 
+
+* Full Stack Engineer
+
 |===
