@@ -41,10 +41,10 @@ image:whitebox-overall-system.drawio.svg[]
 
 === Blackbox SPA/Show-Dancer
 
-[cols="h,4"]
+[cols="h,4", stripes=none]
 |===
 |Purpose
-|Provides all our UIs for dancer, schools,... 
+|Provides all our UIs for dancers, schools,... 
 
 |Input-Interface
 |Web-Interface to be used with normal Web-Browsers. By using responsive web design methods, we make Dancier accessible to almost any device that runs a web browser.
