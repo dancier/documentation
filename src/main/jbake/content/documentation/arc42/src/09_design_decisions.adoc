@@ -25,7 +25,6 @@ This decision affects our Reliability Quality Goal.
 
 Issues with our persistent implementation could lead to wrong results, poor performance or even data loss.
 
-
 [discrete]
 ==== Which risks are affected?
 
@@ -36,50 +35,46 @@ In both cases, we will finish our goals later, because of the additional time sp
 [discrete]
 ==== Assumptions
 
-In most cases, we will have to deal with structured data. We also know that the current team has its best knowledge using SQL databases.
+In most cases, we will have to deal with structured data. Also, our current team is well-versed in utilizing SQL databases.
 
 It's likely that we are in a situation where we need database transactions for implementing patterns like the transactional outbox pattern.
 
-We also do not expect that most of our databases will need to scale horizontally. If this assumption turns out to be false, then we expect that moving to another database system will be manageable for us, as we follow the clean architecture style (or at the very least the DAO pattern).
+We also do not expect that most of our databases will need to scale horizontally. If this assumption proves incorrect, we anticipate that moving to another database system will be manageable for us, given our adherence to the clean architecture style (or at the very least the DAO pattern).
 
 [discrete]
-==== Option we take a look on
+==== Options we considered
 
 [discrete]
 ==== MongoDB
 MongoDB's main advantage of offering transparent sharding does not pay off for us, as we (see assumptions) do not need horizontal scaling.
 
-Storing arbitrary JSON-Documents is also not an advantage (compared to PostgreSQL), as
+Storing arbitrary JSON documents is also not an advantage (compared to PostgreSQL), as
 
- 1. We in general deal with structured data (see assumptions)
- 1. PostgreSQL also can store JSON, in case we would need it
+ 1. We primarily deal with structured data (see assumptions)
+ 1. PostgreSQL can also store JSON if needed
 
-
-We also still have pretty limited know-how in the core team, as opposed to PostgreSQL.
-
+We also have relatively limited expertise within the core team, especially when compared to PostgreSQL.
 
 [discrete]
 ==== PostgreSQL
-SQL databases are still the most widely used database systems (links).
-PostgreSQL seems to be the most used Open Source database system used professionally (link).
+SQL databases remain the most widely used database systems (links) and PostgreSQL appears to be the most used open-source database system in professional settings (link).
 
-Everyone in the Team can use PostgreSQL as everyone is aware of the ideas of relational databases.
+Every team member can use PostgreSQL since everyone is familiar with the concepts of relational databases.
 
-Relational Databases are pretty mature and supported by Frameworks like Boot that we use. Tooling is also very mature.
+Relational databases are highly mature and well-supported by common frameworks like Spring Boot, the framework of our choice. The tooling support is also very mature.
 
-We have also experience in operating PostgreSQL.
+Moreover, we have experience in operating PostgreSQL.
 
 To add: transactions, strong background with structured data
 
-
 [discrete]
 ==== Cassandra
-Almost the same as with MongoDB, while Tooling Support is expected to be the least mature under our three options.
+This is a similar case as with MongoDB, but in addition to its drawbacks, Cassandra's tooling support is expected to be the least mature among our three options.
 
 [discrete]
 ==== Decision
 
-We decided that PostgreSQL is our default database.
+We have chosen PostgreSQL as our default database.
 
 This could be deducted from our link:https://project.dancier.net/architecture-decision-principles.html[architectural decision principles]:
 
