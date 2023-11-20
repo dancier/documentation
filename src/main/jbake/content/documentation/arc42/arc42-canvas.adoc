@@ -10,4 +10,4 @@
  * click link:https://project.dancier.net/documentation/arc42/index.html[here] for our "full" Arc42-documentation
  * click link:https://canvas.arc42.org/[here] for more information on this kind of documentation
 
-image:./ArchitectureCommunicationCanvas-Dancier.drawio.svg[Interactive,300,opts=interactive]
+image:./ArchitectureCommunicationCanvas-Dancier.drawio.svg[Interactive,opts=interactive]
