@@ -21,7 +21,7 @@ image:whitebox-overall-system.drawio.svg[]
 | https://github.com/dancier/dancer[Repo]
 
 | recommendation
-| computes all the recommendations (Dancer-Dancer, Dancer-Events, Dancer-Schools)
+| Computes all the recommendations (Dancer-Dancer, Dancer-Events, Dancer-Schools). Read Business Events from almost every system to achieve this.
 | https://github.com/dancier/recommendation[Repo]
 
 | chat-dancer
@@ -29,7 +29,7 @@ image:whitebox-overall-system.drawio.svg[]
 | https://github.com/dancier/chat-dancer[Repo]
 
 | kikeriki
-| System sending out mails via external SMTP server, depending on the certain business state.
+| System sending out mails via external SMTP server, depending on the certain business state. Determine the business state by reading Business Events from almost every system.
 | https://github.com/dancier/kikeriki[Repo]
 
 | school
