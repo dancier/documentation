@@ -1,7 +1,7 @@
 [[section-design-decisions]]
 == Design Decisions
 
-link:https://www.ozimmer.ch/practices/2023/04/03/ADRCreation.html[Try to stick to this guide]
+link:https://www.ozimmer.ch/practices/2023/04/03/ADRCreation.html[While writing decisions, try to stick to this guide.]
 
 === PostgreSQL as our default Database
 
