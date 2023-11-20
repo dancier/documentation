@@ -59,7 +59,7 @@ High
 | QS3 +
 High
 | Recommandations (QG2), Reliable (QG5)
-| When a dancer changes his personal information in his <<profile>>, he receives new recommendations latest after 24 hours.
+| When a dancer changes his personal information in his <<profile>>, his feed is updated with new recommendations after no more than 24 hours.
 
 | QS4 +
 High
@@ -69,7 +69,7 @@ High
 | QS5 +
 High
 | Team (QG3), Reliable (QG5)
-| In case our user base is doubling once per year, it is easy to adapt the whole system to remain stable and performant. 
+| In case our user base is doubling, it is easy to adapt the whole system to remain stable and performant. 
 
 | QS6 +
 High
