@@ -15,7 +15,7 @@ But this would surely be too restrictive, as we assume that we (at least after o
 
 So the question is, what database system is likely to address most of our demands best?
 
-For the rest, each engineer can use another option. In this case he has to write an ADR like this one, pointing out why the default database is not suitable.
+For the rest, each engineer can use another option. In this case, he has to write an ADR like this one, pointing out why the default database is not suitable.
 
 [discrete]
 ==== Influencing Factors
@@ -84,16 +84,19 @@ We decided that PostgreSQL is our default database.
 
 This could be deducted from our link:https://project.dancier.net/architecture-decision-principles.html[architectural decision principles]:
 
+[discrete]
 ===== Skills of team members(AP3)/Principle of least surprise(AP6)
  * bad experience with MongoDB and Cassandra on former work projects
  * best knowledge here will lead to less surprise as problems could be anticipated more, that with the other less known products
  
+[discrete]
 ===== Go Deep not wide (AP5)
 
 Defaulting to the world's most prominent database architecture (SQL) makes us more experts in that very important technology and less half experts in more than one.
 
 We expect a better overall result, by understanding better less technologies, than less understanding of more technologies.
 
+[discrete]
 ===== Favor what's proven
 For sure, SQL is the most proven database system out there (link?) and PostgreSQL is one of the top open-source candidates.
 
