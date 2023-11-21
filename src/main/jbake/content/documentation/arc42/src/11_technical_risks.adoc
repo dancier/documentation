@@ -1,6 +1,10 @@
 [[section-technical-risks]]
 == Risks and Technical Debts
 
+* Potential Overengineering
+* Can we reach the critical mass, that a kind of dating site like this will work
+* Adoption of Schools for Dancier is pretty much unclear
+* Potential Spam Problem
 
 
 
