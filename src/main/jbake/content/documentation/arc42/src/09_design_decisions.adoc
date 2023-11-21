@@ -76,23 +76,23 @@ This is a similar case as with MongoDB, but in addition to its drawbacks, Cassan
 
 We have chosen PostgreSQL as our default database.
 
-This could be deducted from our link:https://project.dancier.net/architecture-decision-principles.html[architectural decision principles]:
+This decision can be deducted from our link:https://project.dancier.net/architecture-decision-principles.html[architectural decision principles]:
 
 [discrete]
 ===== Skills of team members(AP3)/Principle of least surprise(AP6)
  * bad experience with MongoDB and Cassandra on former work projects
- * best knowledge here will lead to less surprise as problems could be anticipated more, that with the other less known products
+ * having more knowledge with this database reduces surprises, as potential issues can be anticipated more effectively compared to less familiar database systems
 
 [discrete]
 ===== Go Deep not wide (AP5)
 
-Defaulting to the world's most prominent database architecture (SQL) makes us more experts in that very important technology and less half experts in more than one.
+Defaulting to the world's most prominent database architecture (SQL) enables us to become experts in that crucial technology rather than having partial expertise in multiple areas.
 
-We expect a better overall result, by understanding better less technologies, than less understanding of more technologies.
+We anticipate achieving better overall results by deeply understanding fewer technologies, rather than having a superficial understanding of a broader range of technologies.
 
 [discrete]
 ===== Favor what's proven
-For sure, SQL is the most proven database system out there (link?) and PostgreSQL is one of the top open-source candidates.
+Certainly, SQL stands out as the most proven database system in existence ([insert link?]), and PostgreSQL is one of the leading open-source candidates.
 
 === Python for all Data science related tasks
 
