@@ -7,18 +7,16 @@ link:https://www.ozimmer.ch/practices/2023/04/03/ADRCreation.html[While writing 
 
 [discrete]
 ==== The problem
-Without having a default database, will have the discuss which database system to use for each new service.
+There are a lot of different database systems out there for a lot of different use cases.
 
-So you could argue, that having only one allowed database, would be best.
+As we don't want to have a discussion about what database to use for each new service we write, we want to decide on a default database that will cover most of our use cases.
 
-But this would surely be too restrictive, as we assume that we (at least after our MVP has launched) will have so many different use cases, that will not be addressed all with exactly one database system.
-
-So the question is, what database system is likely to address most of our demands best?
-
-For the rest, each engineer can use another option. In this case, he has to write an ADR like this one, pointing out why the default database is not suitable.
+Note: We take into account that the chosen database system will probably not cover all our future use cases, which is why we will then decide on a different solution for specific cases if the need arises (which will then be documented as a separate ADR).
 
 [discrete]
 ==== Influencing Factors
+@Sebastian
+maybe I mix this up with Assumptions. Can you have a look on the assumptions, if parts of them are influencing factors?
 
 [discrete]
 ==== Which quality goals are affected?
@@ -27,78 +25,74 @@ This decision affects our Reliability Quality Goal.
 
 Issues with our persistent implementation could lead to wrong results, poor performance or even data loss.
 
-
 [discrete]
 ==== Which risks are affected?
 
-Besides the quality goals that could be missed, choosing the wrong database could also negatively impact the developer experience. Eg. when we choose something that no one knows, we would have big efforts to learn. Some engineers will like this as they also participate in Dancier to learn something. Other engineers have another focus on what they want to learn and feel distracted to get into a new database system.
-In both cases, we will finish our goals later, because of the learning effort.
+Besides the quality goals that could be missed, choosing the wrong database system could also negatively impact the developer experience. E.g. when we choose a not well-established database system, learning and gaining experience will take up a lot of resources. Some engineers might like this as they also participate in Dancier to learn new technology while others might find it distracting and a waste of their resources to learn a completely new database system.
+
+In both cases, we will finish our goals later, because of the additional time spent on gaining experience.
 
 [discrete]
 ==== Assumptions
 
-In most cases, we will have to deal with structured data. We also know that the current team has its best knowledge using SQL databases.
+In most cases, we will have to deal with structured data. Also, our current team is well-versed in utilizing SQL databases.
 
-We also expect that we are quite likely in a situation, where we need database transactions for implementing patterns like the transactional outbox pattern.
+It's likely that we are in a situation where we need database transactions for implementing patterns like the transactional outbox pattern.
 
-We also do not expect that most of our database will not need to scale horizontally. If this assumption turns out to be false, then we expect that moving to another database system will be not too expensive, as we follow the clean architecture style or at least the DAO pattern.
+We also do not expect that most of our databases will need to scale horizontally. If this assumption proves incorrect, we anticipate that moving to another database system will be manageable for us, given our adherence to the clean architecture style (or at the very least the DAO pattern).
 
 [discrete]
-==== Option we take a look on
+==== Options we considered
 
 [discrete]
 ==== MongoDB
 MongoDB's main advantage of offering transparent sharding does not pay off for us, as we (see assumptions) do not need horizontal scaling.
 
-Storing arbitrary JSON-Documents is also not an advantage (compared to PostgreSQL), as 
+Storing arbitrary JSON documents is also not an advantage (compared to PostgreSQL), as
 
- 1. We in general deal with structured data (see assumptions)
- 1. PostgreSQL also can store JSON, in case we would need it
+ 1. We primarily deal with structured data (see assumptions)
+ 1. PostgreSQL can also store JSON if needed
 
-
-We also still have pretty limited know-how in the core team, as opposed to PostgreSQL.
-
+We also have relatively limited expertise within the core team, especially when compared to PostgreSQL.
 
 [discrete]
 ==== PostgreSQL
-SQL databases are still the most widely used database systems (links). 
-PostgreSQL seems to be the most used Open Source database system used professionally (link).
+SQL databases remain the most widely used database systems (links) and PostgreSQL appears to be the most used open-source database system in professional settings (link).
 
-Everyone in the Team can use PostgreSQL as everyone is aware of the ideas of relational databases.
+Every team member can use PostgreSQL since everyone is familiar with the concepts of relational databases.
 
-Relational Databases are pretty mature and supported by Frameworks like Boot that we use. Tooling is also very mature.
+Relational databases are highly mature and well-supported by common frameworks like Spring Boot, the framework of our choice. The tooling support is also very mature.
 
-We have also experience in operating PostgreSQL.
+Moreover, we have experience in operating PostgreSQL.
 
 To add: transactions, strong background with structured data
 
-
 [discrete]
 ==== Cassandra
-Almost the same as with MongoDB, while Tooling Support is expected to be the least mature under our three options.
+This is a similar case as with MongoDB, but in addition to its drawbacks, Cassandra's tooling support is expected to be the least mature among our three options.
 
 [discrete]
 ==== Decision
 
-We decided that PostgreSQL is our default database.
+We have chosen PostgreSQL as our default database.
 
-This could be deducted from our link:https://project.dancier.net/architecture-decision-principles.html[architectural decision principles]:
+This decision can be deducted from our link:https://project.dancier.net/architecture-decision-principles.html[architectural decision principles]:
 
 [discrete]
 ===== Skills of team members(AP3)/Principle of least surprise(AP6)
  * bad experience with MongoDB and Cassandra on former work projects
- * best knowledge here will lead to less surprise as problems could be anticipated more, that with the other less known products
- 
+ * having more knowledge with this database reduces surprises, as potential issues can be anticipated more effectively compared to less familiar database systems
+
 [discrete]
 ===== Go Deep not wide (AP5)
 
-Defaulting to the world's most prominent database architecture (SQL) makes us more experts in that very important technology and less half experts in more than one.
+Defaulting to the world's most prominent database architecture (SQL) enables us to become experts in that crucial technology rather than having partial expertise in multiple areas.
 
-We expect a better overall result, by understanding better less technologies, than less understanding of more technologies.
+We anticipate achieving better overall results by deeply understanding fewer technologies, rather than having a superficial understanding of a broader range of technologies.
 
 [discrete]
 ===== Favor what's proven
-For sure, SQL is the most proven database system out there (link?) and PostgreSQL is one of the top open-source candidates.
+Certainly, SQL stands out as the most proven database system in existence ([insert link?]), and PostgreSQL is one of the leading open-source candidates.
 
 === Python for all Data science related tasks
 
@@ -113,7 +107,7 @@ Our main langugage ist Java. So at first we could implement the recommender in J
 
 [discrete]
 ==== The problem
-As we decided to have have Python for all data science realted stuff. 
+As we decided to have have Python for all data science realted stuff.
 
 === Self Contained System for Kikerki
 
