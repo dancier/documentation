@@ -59,11 +59,9 @@ SQL databases remain the most widely used database systems (links) and PostgreSQ
 
 Every team member can use PostgreSQL since everyone is familiar with the concepts of relational databases.
 
-Relational databases are highly mature and well-supported by common frameworks like Spring Boot, the framework of our choice. The tooling support is also very mature.
+Relational databases are highly mature and well-supported by common frameworks like Spring Boot, the framework of our choice. The tooling support is also very mature. PostgreSQL offers the kind of transactions we likely need (see assumptions) and deals well with our mostly structured data.
 
 Moreover, we have experience in operating PostgreSQL.
-
-To add: transactions, strong background with structured data
 
 [discrete]
 ==== Cassandra
@@ -79,7 +77,7 @@ This decision can be deducted from our link:https://project.dancier.net/architec
 [discrete]
 ===== Skills of team members(AP3)/Principle of least surprise(AP6)
  * bad experience with MongoDB and Cassandra on former work projects
- * having more knowledge with this database reduces surprises, as potential issues can be anticipated more effectively compared to less familiar database systems
+ * having more knowledge of this database reduces surprises, as potential issues can be anticipated more compared to less familiar database systems
 
 [discrete]
 ===== Go Deep not wide (AP5)
@@ -96,16 +94,16 @@ Certainly, SQL stands out as the most proven database system in existence ([inse
 
 [discrete]
 ==== The problem
-One of our top quality goals is the the recommendations we offer to our dancers should be good.
-So we want to use best tooling and frameworks that helps us in implementing a good recommender.
-Our main langugage ist Java. So at first we could implement the recommender in Java.
+One of our top quality goals is that the recommendations we offer to our dancers should be good.
+So we want to use the best tooling and frameworks that help us in implementing a good recommender.
+Our main langugage ist Java. So at first, we could implement the recommender in Java.
 
 
 === Computing Recommendations in its own deployable
 
 [discrete]
 ==== The problem
-As we decided to have have Python for all data science realted stuff.
+We decided to have Python for all data science related stuff.
 
 === Self Contained System for Kikerki
 
