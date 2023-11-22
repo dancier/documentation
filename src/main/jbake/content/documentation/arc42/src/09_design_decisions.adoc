@@ -21,9 +21,7 @@ maybe I mix this up with Assumptions. Can you have a look on the assumptions, if
 [discrete]
 ==== Which quality goals are affected?
 
-This decision affects our Reliability Quality Goal.
-
-Issues with our persistent implementation could lead to wrong results, poor performance or even data loss.
+This decision affects our Reliability Quality Goal. Issues with our persistent implementation could lead to wrong results, poor performance or even data loss.
 
 [discrete]
 ==== Which risks are affected?
