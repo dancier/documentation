@@ -3,7 +3,7 @@
 
 === Quality Tree
 
-[plantuml, cloud-architecture, svg]
+[plantuml, quality-tree, svg]
 ....
 @startwbs
 * Quality

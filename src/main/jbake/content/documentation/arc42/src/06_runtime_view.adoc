@@ -3,7 +3,55 @@
 
 === Process how Recommendations are being computed
 
-TBD
+When a user changes his profile, this is likey to invalidate all score he has in relation to other dancers.
+
+It starts with a change of the profile...
+[plantuml, change-profile, svg]
+....
+@startuml
+
+actor user
+participant dancer
+database S3
+
+user -> dancer : change profile
+dancer -> S3 : change profile
+
+@enduml
+....
+
+Now it is time for the recommendation to compute all new recommendations. This is implemented as a batch job, that runs once a night.
+
+[plantuml, compute-recommendations, svg]
+....
+@startuml
+
+database S3
+participant recommendation
+
+loop for all profiles
+    recommendation -> S3 : import into local database
+end
+
+recommendation -> recommendation: greedy compute all dancer pair within 200km
+note left
+    and store is locally
+    while overwriting all
+    previously computed pairs
+end note
+
+loop for each pair
+    recommendation -> recommendation: compute score
+    note left
+        store the score
+        locally
+    end note
+end
+@enduml
+....
+
+Now the recommendation service can return for each dancer, a list of all dancer within a distance of 200km together with the computed <<score>>.
+
 
 === Process of how we are sending emails
 
