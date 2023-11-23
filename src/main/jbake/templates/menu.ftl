@@ -40,8 +40,12 @@
                             <a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>documentation/arc42/arc42-canvas.html">Arc42-Communication-Canvas</a>
                         <li>
                         <li>
-                            <a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>documentation/arc42/index.html">Architecture</a>
+                            <a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>documentation/arc42/index.html">Arc42</a>
                         <li>
+                        <li>
+                            <a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>documentation/arc42/adrs/index.html">Architecture Decsions Records</a>
+                        <li>
+
                         <li>
                             <a href="<#if (content.rootpath)??>${content.rootpath}<#else></#if>documentation/bookmarks.html">Bookmarks</a>
                         </li>
