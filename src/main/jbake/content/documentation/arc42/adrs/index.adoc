@@ -2,40 +2,13 @@
 :jbake-type: page
 :jbake-status: published
 :jbake-date: 2023-11-23
-:jbake-tags: architecture
+:jbake-tags: architecture adr
 :jbake-description: All of our ADRs
 :jbake-author: Marc Gorzala
 :idprefix:
 
 link:https://www.ozimmer.ch/practices/2023/04/03/ADRCreation.html[While writing decisions, try to stick to this guide.]
 
+* ADR01 - link:./ADR-001-PostgreSQL.html[PostgreSQL as our default database]
 
-
-*  ADR01 - link:./ADR-001-PostgreSQL.html[PostgreSQL as our default database]
-
-
-
-
-=== Python for all Data science related tasks
-
-[discrete]
-==== The problem
-One of our top quality goals is that the recommendations we offer to our dancers should be good.
-So we want to use the best tooling and frameworks that help us in implementing a good recommender.
-Our main langugage ist Java. So at first, we could implement the recommender in Java.
-
-
-=== Computing Recommendations in its own deployable
-
-[discrete]
-==== The problem
-We decided to have Python for all data science related stuff.
-
-=== Self Contained System for Kikerki
-
-
-=== Batch Mode for computing the recommendations
-
-
-
-
+* ADR02 - link:./ADR-002-Python.html[Python for all datascience related tasks]
