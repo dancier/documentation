@@ -61,7 +61,7 @@ image:whitebox-overall-system.drawio.svg[]
 
 === Blackbox Dancer
 
-[cols="h,4"]
+[cols="h,4", stripes=none]
 |===
 |Purpose
 |Backend for frontend to Dancier. All calls from the internet go through this component. It handles also the User/Account/Profile management. This is the case as we started with a monolithic approach for Dancier, putting everything in one modular monolith. Having the mentioned functionalities included in Dancier, actually makes no problems, so we stick to this.
@@ -81,7 +81,7 @@ image:whitebox-overall-system.drawio.svg[]
 
 === Blackbox Recommendation
 
-[cols="h,4"]
+[cols="h,4", stripes=none]
 |===
 |Purpose
 |TBD
@@ -102,7 +102,7 @@ image:whitebox-overall-system.drawio.svg[]
 
 === Blackbox Chat-Dancer
 
-[cols="h,4"]
+[cols="h,4", stripes=none]
 |===
 |Purpose
 |TBD
@@ -124,7 +124,7 @@ image:whitebox-overall-system.drawio.svg[]
 
 === Blackbox Kikeriki
 
-[cols="h,4"]
+[cols="h,4", stripes=none]
 |===
 |Purpose
 |TBD
