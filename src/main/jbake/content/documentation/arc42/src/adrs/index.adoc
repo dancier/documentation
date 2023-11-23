@@ -1,17 +1,19 @@
 = Architectural Decision Records
 :jbake-type: page
 :jbake-status: published
-:jbake-date: 2023-11-22
+:jbake-date: 2023-11-23
 :jbake-tags: architecture
-:jbake-description: All our ADRs
+:jbake-description: All of our ADRs
 :jbake-author: Marc Gorzala
 :idprefix:
 
-
-== ADR01 - 
-
-
 link:https://www.ozimmer.ch/practices/2023/04/03/ADRCreation.html[While writing decisions, try to stick to this guide.]
+
+
+
+*  ADR01 - link:./ADR-001-PostgreSQL.html[PostgreSQL as our default database]
+
+
 
 === PostgreSQL as our default Database
 
