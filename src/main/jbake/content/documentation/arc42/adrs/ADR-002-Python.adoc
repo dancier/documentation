@@ -1,0 +1,13 @@
+= Python for all datascience related tasks
+:jbake-type: page
+:jbake-status: published
+:jbake-date: 2023-11-23
+:jbake-tags: architecture
+:jbake-description: All of our ADRs
+:jbake-author: Marc Gorzala
+
+
+== The problem
+One of our top quality goals is that the recommendations we offer to our dancers should be good.
+So we want to use the best tooling and frameworks that help us in implementing a good recommender.
+Our main langugage ist Java. So at first, we could implement the recommender in Java.
