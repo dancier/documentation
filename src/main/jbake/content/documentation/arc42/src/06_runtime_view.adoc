@@ -50,9 +50,4 @@ end
 @enduml
 ....
 
-Now the recommendation service can return for each dancer, a list of all dancer within a distance of 200km together with the computed <<score>>.
-
-
-=== Process of how we are sending emails
-
-TBD
+Now the recommendation service can return for each dancer, a list of all dancers within a distance of 200km together with the computed <<score>>.

@@ -1,10 +1,18 @@
 [[section-technical-risks]]
 == Risks and Technical Debts
 
-* Potential Overengineering
-* Can we reach the critical mass, that a kind of dating site like this will work
-* Adoption of Schools for Dancier is pretty much unclear
-* Potential Spam Problem
+=== Potential Overengineering
+
+By trying to be an attractive learning project for developers, we are at risk of over-engineering.
+One example that falls into this category is that we split the system into more individual microservices as probably needed. A modular monolith would be likely to be easier to maintain and operate.
+
+It is also questionable if Kafka would be a good fit for our messaging requirements. 
+
+But we want a project that is a distributed system and uses those technologies that are quite dominant (at least in the companies we have worked).
+
+We should have a close eye on this, not introduce arbitrary more examples of things like this, to not risk the project as a whole.
 
 
+=== Spam could be a severe problem
 
+Providing a platform where individuals can chat with each other, could lead to problems with spamming people. As of now, we are not implementing anything against this problem, to get our MVP faster done. This could put us under pressure to react fast in case that turns out to be a problem. 

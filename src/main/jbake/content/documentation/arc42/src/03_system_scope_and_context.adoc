@@ -29,6 +29,6 @@ image:technical-context.drawio.svg[]
 [options="header", cols="1,5"]
 |===
 | Neighbor | Description
-| SMTP-Servier | Used to send emails to it's stakeholders
+| SMTP-Server | Used to send emails to its stakeholders
 | Web-Client | Each Stakeholder will access Dancier by a distinct Web-Application via a Web-Client
 |===
