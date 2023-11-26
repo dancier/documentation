@@ -87,16 +87,14 @@ Additionally the Dancer emits Business Events for every interessting use case th
 [cols="h,4", stripes=none]
 |===
 |Purpose
-|TBD
+|Identifiy all Pair of dancer that are liky to constitute a good dancing couple
 
-|Input-Interface
-|TBD
+|Input
 
-|Output-Interface
-|TBD
+The Recommendation System reads once a day, all profile updated events. Computes all scores new and offer them via a REST-Endpoint.
 
 |Risks
-|TBD
+|Computing Score only once a day could become to bad for our customers and we have to refactor to a degree, that you can call it more a rewrite.
 
 |Repo
 |https://github.com/dancier/recommendation
@@ -110,10 +108,7 @@ Additionally the Dancer emits Business Events for every interessting use case th
 |Purpose
 |TBD
 
-|Input-Interface
-|TBD
-
-|Output-Interface
+|Input
 |TBD
 
 |Risks
@@ -132,11 +127,7 @@ Additionally the Dancer emits Business Events for every interessting use case th
 |Purpose
 |TBD
 
-|Input-Interface
-|TBD
-
-|Output-Interface
-|TBD
+|Input
 
 |Risks
 |TBD
