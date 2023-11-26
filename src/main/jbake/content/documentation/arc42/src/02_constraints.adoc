@@ -10,7 +10,7 @@ The only constraint we have is, to obey our architectural principles. Find them 
 |Id|Constraint|Description
 |OC1
 |Founder is Marc
-| Is a dancer, who wants a platform to connect Dancers. Wants to learn how to drive a product holistically. Have a reference project. May earn something, somewhen with it.
+|Is a dancer, who wants a platform to connect Dancers. Wants to learn how to drive a product holistically. Have a reference project. May earn something, somewhen with it.
 
 |OC2
 |Team's Motivation
