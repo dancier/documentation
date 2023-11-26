@@ -3,6 +3,15 @@
 [options="header"]
 |===
 | Term         | Definition
+| [[BusinessEvent]]Buisiness Event
+
+a| An Event that is being sent out to Kafka, exactly after something interesting has happened. Like:
+
+* AccountValidated
+* ProfileUpdated
+* RecommendationComputed
+* ChatMessageReceived
+
 | [[profile]]Profile a| All the information that the dancer provides about himself. Those are things like:
 
 * age
