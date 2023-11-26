@@ -9,7 +9,7 @@
 image:whitebox-overall-system.drawio.svg[]
 
 
-see the following sections for a brief description of each black box.
+See the following sections for a brief description of each black box.
 
 === Blackbox SPA/Show-Dancer
 
@@ -21,7 +21,7 @@ see the following sections for a brief description of each black box.
 |Interface
 |Web-Interface to be used with normal Web-Browsers. By using responsive web design methods, we make Dancier accessible to almost any device that runs a web browser.
 
-Connect to the "Dancer" our backend for frontend.
+Connect to the "Dancer" with our <<BBF>>.
 
 |Risks
 |Could become a frontend monolith, as it handles the UI for really everything.
@@ -35,7 +35,7 @@ Connect to the "Dancer" our backend for frontend.
 [cols="h,4", stripes=none]
 |===
 |Purpose
-|Backend for frontend to Dancier. All calls from the internet go through this component. It handles also the User/Account/Profile management. This is the case as we started with a monolithic approach for Dancier, putting everything in one modular monolith. Having the mentioned functionalities included in Dancier, actually makes no problems, so we stick to this.
+|<<BBF>> to Dancier. All calls from the internet are handled by this component. Additionally, it also handles the User/Account/Profile management. This is the case as we started with a monolithic approach for Dancier, putting everything in one modular monolith. Having the mentioned functionalities included in Dancier, actually makes no problems, so we stick to this.
 
 |Interface
 |The Dancer has a link:https://editor.swagger.io/?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdancier%2Fdancer%2Fmaster%2Fswagger.yaml[Rest-API] to let our Angular Single Page Application (SPA) communicate with the whole Dancier System.
@@ -118,7 +118,7 @@ It then determines on certain rules, whether to send an email to the user or not
 |===
 
 
-=== Blackbox school
+=== Blackbox School
 
 [cols="h,4", stripes=none]
 |===
@@ -130,12 +130,25 @@ It then determines on certain rules, whether to send an email to the user or not
 
 |===
 
+=== Blackbox Events
+
+[cols="h,4", stripes=none]
+|===
+|Purpose
+|Handle events-related functionality
+
+|Status
+|Not Implemented
+
+|===
+
+
 === Blackbox SMTP-Server
 
 [cols="h,4", stripes=none]
 |===
 |Purpose
-| Third-party SMTP-Server for the outgoing E-mails.
+|Third-party SMTP-Server for outgoing E-mails.
 
 |===
 
