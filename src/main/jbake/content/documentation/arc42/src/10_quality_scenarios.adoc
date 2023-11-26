@@ -118,7 +118,7 @@ Middle
 
 | QS14 +
 Middle
-| Learning (QG4), Reliable (QG5)
+| Learning (QG4)
 | A new engineer starting at Dancier, can understand each technical building block fast, as it follows a clear and common code structure.
 
 |===
