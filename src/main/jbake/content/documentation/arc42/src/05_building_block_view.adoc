@@ -18,14 +18,13 @@ see the following sections for a brief description of each black box.
 |Purpose
 |Single Page Application, written in Angular, that contains the UIs for all parts of our system (Dancers, Schools,…​)
 
-|Input-Interface
+|Interface
 |Web-Interface to be used with normal Web-Browsers. By using responsive web design methods, we make Dancier accessible to almost any device that runs a web browser.
 
-|Output-Interface
-|Connect to the "Dancer" our backend for frontend.
+Connect to the "Dancer" our backend for frontend.
 
 |Risks
-|Could become a frontend monolith, as it handles the ui for really everything.
+|Could become a frontend monolith, as it handles the UI for really everything.
 
 |Repo
 |https://github.com/dancier/show-dancer
