@@ -16,15 +16,15 @@ See the following sections for a brief description of each black box.
 [cols="h,4", stripes=none]
 |===
 |Purpose
-|Single Page Application, written in Angular, that contains the UIs for all parts of our system (Dancers, Schools,…​)
+|Single Page Application, written in Angular, that contains the UI for all parts of our system (Dancers, Schools,…​)
 
 |Interface
-|Web-Interface to be used with normal Web-Browsers. By using responsive web design methods, we make Dancier accessible to almost any device that runs a web browser.
+|Web interface designed for use with standard web browsers. Utilizing responsive web design methods ensures Dancier's accessibility on nearly any device with a web browser.
 
 Connect to the "Dancer" with our <<BBF>>.
 
 |Risks
-|Could become a frontend monolith, as it handles the UI for really everything.
+|Could evolve into a frontend monolith that is hard to maintain. We have to be careful to keep the codebase clean and modular while we add new features to the UI.
 
 |Repo
 |https://github.com/dancier/show-dancer
@@ -35,19 +35,19 @@ Connect to the "Dancer" with our <<BBF>>.
 [cols="h,4", stripes=none]
 |===
 |Purpose
-|<<BBF>> to Dancier. All calls from the internet are handled by this component. Additionally, it also handles the User/Account/Profile management. This is the case as we started with a monolithic approach for Dancier, putting everything in one modular monolith. Having the mentioned functionalities included in Dancier, actually makes no problems, so we stick to this.
+|<<BBF>> to Dancier. All calls from the internet are handled by this component. Additionally, it's also responsible for user/account/profile management. We started with a monolithic approach for Dancer, putting everything in one modular monolith. Having the mentioned functionalities included in Dancer gave us no issues so far, so we continue with this approach.
 
 |Interface
-|The Dancer has a link:https://editor.swagger.io/?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdancier%2Fdancer%2Fmaster%2Fswagger.yaml[Rest-API] to let our Angular Single Page Application (SPA) communicate with the whole Dancier System.
+|Dancer provides a link:https://editor.swagger.io/?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdancier%2Fdancer%2Fmaster%2Fswagger.yaml[REST API], giving our Angular Single Page Application (SPA) an entrypoint to communicate with the entire Dancier System.
 
-See the link:https://project.dancier.net/documentation/arc42/index.html#whitebox_overall_system[whitebox overall system] to infer what services are used by the Dancer directly.
+Refer to the link:https://project.dancier.net/documentation/arc42/index.html#whitebox_overall_system[whitebox overall system] to identify the services used by Dancer directly.
 
-Additionally, the Dancer emits <<BusinessEvent>>s for every interesting use case the dancer is mainly responsible for. This means mostly the handling of accounts and user profiles. The Events are sent to an S3 Bucket and to Kafka to be picked up by other services, that need that information.
+Additionally, Dancer emits <<BusinessEvent>>s for every interesting use case it's primarily responsible for, particularly the handling of accounts and user profiles. These events are sent to an S3 Bucket and Kafka to be consumed by other services requiring this information.
 
 (The Dancer will forward also every event it receives via the REST Event Endpoing) it receives from the SPA, as it could not connect to Kafka.
 
 |Risks/Smells
-|The Dancer is something in between a pure Backend for Frontend and a little modulith, as it also contains some modules with business logic. This is the case because we initially wanted to start with a modulith instead of lots of Microservices. The current setup makes testing a little bit more cumbersome. In case this will be too tedious for us, we have to refactor that.
+|The Dancer is something in between a pure backend for frontend and a small modulith, as it also contains some modules with business logic. This hybrid design stems from the initial preference for a modulith over numerous microservices. The current setup may introduce some testing complexities, and if found too cumbersome over time, refactoring may be necessary.
 
 |Repo
 |https://github.com/dancier/dancer
@@ -58,14 +58,14 @@ Additionally, the Dancer emits <<BusinessEvent>>s for every interesting use case
 [cols="h,4", stripes=none]
 |===
 |Purpose
-|Identify all Pairs of dancers that are likely to constitute a good dancing couple and compute a <<score>> for them.
+|Identify all pairs of dancers that are likely to form a good dancing couple and compute a <<score>> for them.
 
 |Interface
 
-|The Recommendation System reads once a day, all profile updated events. Computes all scores new and offers them via a REST-Endpoint.
+|The Recommendation System reads all profile update events once a day, computes new scores, and offers them via a REST endpoint.
 
 |Risks
-|Computing Score only once a day could become too bad for our customers and we have to refactor to a degree, that you can call it more of a rewrite.
+|Computing scores only once a day could turn out to be insufficient to satify our customer's needs for receiving good recommendations. Because of this, we may need to refactor to a degree that could be considered more of a rewrite.
 
 |Repo
 |https://github.com/dancier/recommendation
@@ -77,14 +77,13 @@ Additionally, the Dancer emits <<BusinessEvent>>s for every interesting use case
 [cols="h,4", stripes=none]
 |===
 |Purpose
-|This is the backend for all chat-related functionality
+|This is the backend for all chat-related functionality.
 
 |Interface
-|Ist being invoked by the dancer via its REST-API to create/maintain chats. Write <<BusinessEvent>> to Kafka in all interesting cases like ChatCreated, and MessageReceived. They are meant to be consumed by other systems eg. to determine if you should write the customer an e-mail to inform him about a new chat message...
+|It's invoked by the Dancer via its REST API to create/maintain chats. It writes <<BusinessEvent>>s to Kafka that might be interesting for other services to consume, like ChatCreated or MessageReceived. Once use case for it could be for another services to determine if an email should be sent to inform the customer about a new chat message.
 
 |Risks
-|Maybe we could have found an open-source chat backend. We decided against it, as we considered the effort to integrate a third-party tool, could be on par with the effort to implement basic functionality. If this would be the case, then we would be more flexible with our solution.
-But this was mostly grounded and bare assumptions.
+|Choosing an open-source chat backend might have been an option. However, we opted against it, considering that the effort to integrate a third-party tool could be comparable to implementing the basic functionality we need ourselves. If this assumption holds true, our solution would be more flexible. However, this decision was mostly grounded in assumptions.
 
 |Repo
 |https://github.com/dancier/chat-dancer
@@ -97,20 +96,20 @@ But this was mostly grounded and bare assumptions.
 [cols="h,4", stripes=none]
 |===
 |Purpose
-|Determine when to send what kind of E-Mail to our stakeholders.
+|This component determines when to send specific emails to our stakeholders.
 
 |Interface
 
-a|Read Business Events from all other systems like:
+a|It consumes business events from all other systems, such as:
 
-* when a user logs in
-* when a user is active
-* when a user changes his profile
-* when there are new recommendations for a user
-* when a new chat message arrives for a user
+* a user logging in
+* a user being active on the platform
+* a user updating their profile
+* the recommendation system computing new scores
+* a user sending a message to another user
 * ...
 
-It then determines on certain rules, whether to send an email to the user or not.
+It then applies certain rules to decide whether to send an email to the user or not.
 
 
 |Repo
@@ -148,7 +147,7 @@ It then determines on certain rules, whether to send an email to the user or not
 [cols="h,4", stripes=none]
 |===
 |Purpose
-|Third-party SMTP-Server for outgoing E-mails.
+|Third-party SMTP-Server for outgoing emails.
 
 |===
 

@@ -1,14 +1,14 @@
 [[section-solution-strategy]]
 == Solution Strategy
 
-Dancier will use best of breed technology and best practices in achieving it's functional goals:
+Dancier will leverage best-of-breed technology and best practices to achieve its functional goals:
 
-* By developing a web-application with responsive web design will enable all users on all devices (Phone,Tablet,Desktop) to access Dancier.
+* By developing a web application with responsive web design, we enable all users on all devices (Phone, Tablet, Desktop) to access Dancier.
 
-* By using well established technology based on Python/Spark we support well working recommendation algorithms to give the dancers that best fitting other dancers, events, course and workshops.
+* By using well established technology based on Python/Spark, we support well-working recommendation algorithms to give dancers the best-fitting counterparts for other dancers, events, courses, and workshops.
 
-* By using Java, Spring-Boot and PostgreSQL, we are using top established Technology for our backend services.
+* By using Java, Spring-Boot, and PostgreSQL, we leverage established technology for our backend services.
 
-* By using Kafka, we decouple services where appropriate, eg. to achieve a higher resilience
+* By using Kafka, we decouple services where appropriate, e.g. to achieve a higher resilience.
 
-* By developing everything as K8s-ready as possible we aim to be able to scale with our certainly growing user-base.
+* By developing everything as K8s-ready as possible, we aim to be able to scale with our certainly growing user base.
