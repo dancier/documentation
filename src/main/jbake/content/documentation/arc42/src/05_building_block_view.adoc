@@ -8,43 +8,15 @@
 
 image:whitebox-overall-system.drawio.svg[]
 
-[options="header",cols="1,3"]
-|===
-|Building Block |Description
 
-| (spa) show-dancer
-|Single Page Application, written in Angular, that contains all UIs from all Users (Dancers, Schools,...)
-
-| dancer
-|Backend for Frontend (BFF) that connects the show-dancer, with all other components. Contains also cross-sectional modules like user/account-handling.
-
-| recommendation
-| Computes all the recommendations (Dancer-Dancer, Dancer-Events, Dancer-Schools). Read Business Events from almost every system to achieve this.
-
-| chat-dancer
-| implements the functionality that lets the dancers chat with each other
-
-| kikeriki
-| System sending out mails via external SMTP server, depending on the certain business state. Determine the business state by reading Business Events from almost every system.
-
-| school
-| Maintains schools. If they have events like course, those will be handled by _events_.
-
-| events
-| Handling dance evenings, workshops, courses,..
-
-| SMTP-server
-| External server that we use to send mail
-
-|===
-
+see the following sections for a brief description of each black box.
 
 === Blackbox SPA/Show-Dancer
 
 [cols="h,4", stripes=none]
 |===
 |Purpose
-|Provides all our UIs for dancers, schools,... 
+|Single Page Application, written in Angular, that contains the UIs for all parts of our system (Dancers, Schools,…​)
 
 |Input-Interface
 |Web-Interface to be used with normal Web-Browsers. By using responsive web design methods, we make Dancier accessible to almost any device that runs a web browser.
@@ -71,12 +43,12 @@ image:whitebox-overall-system.drawio.svg[]
 
 See the link:https://project.dancier.net/documentation/arc42/index.html#whitebox_overall_system[whitebox overall system] to infer what services are used by the Dancer directly.
 
-Additionally the Dancer emits Business Events for every interessting use case the dancer is mainly responsible for. This means mostly the handling of accounts and user profiles. The Events are send to an S3 Bucket and to Kafka to be picked up by other services, that need that information.
+Additionally, the Dancer emits Business Events for every interesting use case the dancer is mainly responsible for. This means mostly the handling of accounts and user profiles. The Events are sent to an S3 Bucket and to Kafka to be picked up by other services, that need that information.
 
 (The Dancer will forward also every event it receives via the REST Event Endpoing) it receives from the SPA, as it could not connect to Kafka.
 
 |Risks/Smells
-|The Dancer is something in between of a pure Backend For Frontend and a little modulith, das it also contains some modules with business logic. This is the case because we initially wanted to have started with a modulith instead of lot's of Microservices. The current setup makes testing a little bit more cumbersome. In case this will be to tedious for us, we have to refactor that.
+|The Dancer is something in between a pure Backend for Frontend and a little modulith, as it also contains some modules with business logic. This is the case because we initially wanted to start with a modulith instead of lots of Microservices. The current setup makes testing a little bit more cumbersome. In case this will be too tedious for us, we have to refactor that.
 
 |Repo
 |https://github.com/dancier/dancer
@@ -87,7 +59,7 @@ Additionally the Dancer emits Business Events for every interessting use case th
 [cols="h,4", stripes=none]
 |===
 |Purpose
-|Identify all Pairs of dancers that are likely to constitute a good dancing couple.
+|Identify all Pairs of dancers that are likely to constitute a good dancing couple and compute a <<score>> for them.
 
 |Interface
 
@@ -106,7 +78,7 @@ Additionally the Dancer emits Business Events for every interessting use case th
 [cols="h,4", stripes=none]
 |===
 |Purpose
-|This is the backend for al chat related functionality
+|This is the backend for all chat-related functionality
 
 |Interface
 |Ist being invoked by the dancer via its REST-API to create/maintain chats. Write <<BusinessEvent>> to Kafka in all interesting cases like ChatCreated, and MessageReceived. They are meant to be consumed by other systems eg. to determine if you should write the customer an e-mail to inform him about a new chat message...
@@ -126,7 +98,7 @@ But this was mostly grounded and bare assumptions.
 [cols="h,4", stripes=none]
 |===
 |Purpose
-|Send out mail to Danciers stakeholder
+|Determine when to send what kind of E-Mail to our stakeholders.
 
 |Interface
 
@@ -134,7 +106,7 @@ a|Read Business Events from all other systems like:
 
 * when a user logs in
 * when a user is active
-* when a user changes it's profile
+* when a user changes his profile
 * when there are new recommendations for a user
 * when a new chat message arrives for a user
 * ...
@@ -145,3 +117,26 @@ It then determines on certain rules, whether to send an email to the user or not
 |Repo
 |https://github.com/dancier/kikeriki
 |===
+
+
+=== Blackbox school
+
+[cols="h,4", stripes=none]
+|===
+|Purpose
+|Handle school-related functionality
+
+|Status
+|Not Implemented
+
+|===
+
+=== Blackbox SMTP-Server
+
+[cols="h,4", stripes=none]
+|===
+|Purpose
+| Third-party SMTP-Server for the outgoing E-mails.
+
+|===
+
