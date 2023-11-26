@@ -87,7 +87,7 @@ Additionally the Dancer emits Business Events for every interessting use case th
 [cols="h,4", stripes=none]
 |===
 |Purpose
-|Identifiy all Pair of dancer that are liky to constitute a good dancing couple
+|Identifiy all Pair of dancers that are likely to constitute a good dancing couple.
 
 |Input
 
@@ -106,13 +106,14 @@ The Recommendation System reads once a day, all profile updated events. Computes
 [cols="h,4", stripes=none]
 |===
 |Purpose
-|TBD
+|This is the backend for al chat related functionality
 
-|Input
-|TBD
+|Interface
+|Ist being invoked by dancer via its REST-API to create/maintain chats. Write Businsess Event to Kafka in all interessting cases like chat-created, message created, message read. They are meant to be consumed by other systems to eg. determine if you should write the customer an e-mail to inform him about a new chat message...
 
 |Risks
-|TBD
+|Maybe we could have found an open-source chat backend. We decided against it, as we considered the effort to ingegrate a third party tool, could be on par with the effort implemtend basic funtionality. If this would be the case, than we would be more flexible with our own solution.
+But this was mostly grounded and bare assumpptions.
 
 |Repo
 |https://github.com/dancier/chat-dancer
@@ -125,12 +126,19 @@ The Recommendation System reads once a day, all profile updated events. Computes
 [cols="h,4", stripes=none]
 |===
 |Purpose
-|TBD
+|Send out mail to Danciers stakeholder
 
-|Input
+|Interface
+Read Business Events from all other systems like:
+* when a user logs in
+* when a user is active
+* when a user changes it's profile
+* when there are new recommendations for a user
+* when a new chat message arrives for a user
+* ...
 
-|Risks
-|TBD
+It then determines on certain rules, whether to send an email to the user or not.
+
 
 |Repo
 |https://github.com/dancier/kikeriki
