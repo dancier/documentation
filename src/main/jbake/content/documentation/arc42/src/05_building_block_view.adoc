@@ -42,7 +42,7 @@ Connect to the "Dancer" with our <<BBF>>.
 
 See the link:https://project.dancier.net/documentation/arc42/index.html#whitebox_overall_system[whitebox overall system] to infer what services are used by the Dancer directly.
 
-Additionally, the Dancer emits Business Events for every interesting use case the dancer is mainly responsible for. This means mostly the handling of accounts and user profiles. The Events are sent to an S3 Bucket and to Kafka to be picked up by other services, that need that information.
+Additionally, the Dancer emits <<BusinessEvent>>s for every interesting use case the dancer is mainly responsible for. This means mostly the handling of accounts and user profiles. The Events are sent to an S3 Bucket and to Kafka to be picked up by other services, that need that information.
 
 (The Dancer will forward also every event it receives via the REST Event Endpoing) it receives from the SPA, as it could not connect to Kafka.
 

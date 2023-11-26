@@ -10,9 +10,9 @@
 
 == The content of that page has been moved
 
-We wrote here a list of general technical decision principles. Than we found out that we also need something hat it out there an deal mit more generic thing, where the term technology would be to narrow.
+We wrote here a list of general technical decision principles. Then we found out that we also need something generic.
 
-At first we thought, we could have two documents. But that would be to complex ;-)
+At first, we thought, we could have two documents. But that would be too complex ;-)
 
 So we put the information from this page into the new one.
 

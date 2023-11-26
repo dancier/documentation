@@ -114,6 +114,6 @@ Based on that, we provide details on what is required for our https://en.wikiped
 | None
 
 | Developer
-| Desires a holistic learning experience while working on a complete product. Also, looks forward to making friends and having a great time.
+| Wants to have a holistic learning experience while working on a complete product. Also, looks forward to making friends and having a great time.
 | Expect this documentation to serve as a central reference, providing an overview of project goals and functionality, explaining the building blocks and their interactions, and offering insights into decision-making processes.
 |===
