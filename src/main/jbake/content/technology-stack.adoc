@@ -10,7 +10,7 @@
 
 This is about the set of technologies we agreed on.
 
-It's a result of applying our https://project.dancier.net/technology-decision-principles.html[Technology Decision Principles].
+It's a result of applying our https://project.dancier.net/architecture-decision-principles.html[Architecture Decision Principles].
 
 == Backend/Data Science
 ---
