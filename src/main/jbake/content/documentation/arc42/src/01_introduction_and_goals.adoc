@@ -1,7 +1,7 @@
 [[section-introduction-and-goals]]
 == Introduction and Goals
 
-Partner dance is great from many perspectives:
+Participating in partner dances offers numerous benefits:
 
 * It brings people together _(social perspective)_
 * Dancing is a good full-body workout _(physical health perspective)_
@@ -9,11 +9,11 @@ Partner dance is great from many perspectives:
 * In general, people who dance seem to be less interested in starting wars _(society's perspective)_
 * Last but not least, you can find a partner for life _(mankind's survival perspective)_
 
-*BUT!*
+*HOWEVER*
 
-There is often one barrier for someone starting with a partner dance. You have to find a partner to dance with.
+There is often one barrier for individuals wanting to beging with partner dances — they need to find a dance partner.
 
-Dancier is there to help all those people!
+Dancier is here to help all those people!
 
 
 === Functional Requirements
@@ -43,8 +43,8 @@ Based on that, we provide details on what is required for our https://en.wikiped
 | Matched dancers (M2) should have the capability to communicate with their matches, to arrange a dance.
 
 | O1
-| Schools/Event-Organisers can provide information 
-| Dancier should match dance courses, and dance events in general to its main users. 
+| Schools/Event-Organisers can provide information
+| Dancier should match dance courses, and dance events in general to its main users.
 
 | O2
 | Match dance classes with dancers
