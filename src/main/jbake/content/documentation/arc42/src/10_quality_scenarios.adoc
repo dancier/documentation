@@ -34,11 +34,13 @@
 *** QS12
 
 ** Learning Project (QG4)
+*** QS13
+*** QS14
 
 @endwbs
 ....
 
-The leaves in this tree refers to the Quality-Scenarios from the following section...
+The leaves in this tree refer to the Quality-Scenarios from the following section...
 
 === Quality Scenarios
 
@@ -107,7 +109,16 @@ Low
 | QS12 +
 Low
 | Team (QG3)
-| Being asked how likely it is that they would recommend Dancier to another dancer, our customers answer with an saverage of 70.
+| Being asked how likely it is that they would recommend Dancier to another dancer, our customers answer with an average of 70.
+
+| QS13 +
+Middle
+| Learning (QG4)
+| A new engineer starting at Dancier, can understand the system as a whole by reading this documentation, to be able to participate in architectural discussions after 8 hours.
+
+| QS14 +
+Middle
+| Learning (QG4), Reliable (QG5)
+| A new engineer starting at Dancier, can understand each technical building block fast, as it follows a clear and common code structure.
 
 |===
-
