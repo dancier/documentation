@@ -65,7 +65,7 @@ Additionally, the Dancer emits Business Events for every interesting use case th
 |The Recommendation System reads once a day, all profile updated events. Computes all scores new and offers them via a REST-Endpoint.
 
 |Risks
-|Computing Score only once a day could become to bad for our customers and we have to refactor to a degree, that you can call it more of a rewrite.
+|Computing Score only once a day could become too bad for our customers and we have to refactor to a degree, that you can call it more of a rewrite.
 
 |Repo
 |https://github.com/dancier/recommendation
