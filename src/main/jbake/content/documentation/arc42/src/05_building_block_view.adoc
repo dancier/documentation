@@ -4,7 +4,7 @@
 
 == Building Block View
 
-=== Whitebox Overall System (Level 1)
+=== Whitebox Overall System
 
 image:whitebox-overall-system.drawio.svg[]
 
@@ -66,14 +66,17 @@ image:whitebox-overall-system.drawio.svg[]
 |Purpose
 |Backend for frontend to Dancier. All calls from the internet go through this component. It handles also the User/Account/Profile management. This is the case as we started with a monolithic approach for Dancier, putting everything in one modular monolith. Having the mentioned functionalities included in Dancier, actually makes no problems, so we stick to this.
 
-|Input-Interface
-|Rest-API to be consumed by the show-dancer
+|Interface
+|The Dancer has a link:https://editor.swagger.io/?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdancier%2Fdancer%2Fmaster%2Fswagger.yaml[Rest-API] to let our Angular Single Page Application (SPA) communicate with the whole Dancier System.
 
-|Output-Interface
-|TBD
+See the link:https://project.dancier.net/documentation/arc42/index.html#whitebox_overall_system[whitebox overall system] to infer what services are used by the Dancer directly.
 
-|Risks
-|TBD
+Additionally the Dancer emits Business Events for every interessting use case the dancer is mainly responsible for. This means mostly the handling of accounts and user profiles. The Events are send to an S3 Bucket and to Kafka to be picked up by other services, that need that information.
+
+(The Dancer will forward also every event it receives via the REST Event Endpoing) it receives from the SPA, as it could not connect to Kafka.
+
+|Risks/Smells
+|The Dancer is something in between of a pure Backend For Frontend and a little modulith, das it also contains some modules with business logic. This is the case because we initially wanted to have started with a modulith instead of lot's of Microservices. The current setup makes testing a little bit more cumbersome. In case this will be to tedious for us, we have to refactor that.
 
 |Repo
 |https://github.com/dancier/dancer
