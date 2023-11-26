@@ -3,7 +3,7 @@
 [options="header"]
 |===
 | Term         | Definition
-| [[BusinessEvent]]Buisiness Event
+| [[BusinessEvent]]Business Event
 
 a| An Event that is being sent out to Kafka, exactly after something interesting has happened. Like:
 
