@@ -44,7 +44,7 @@ Refer to the link:https://project.dancier.net/documentation/arc42/index.html#whi
 
 Additionally, Dancer emits <<BusinessEvent>>s for every interesting use case it's primarily responsible for. Particularly the handling of accounts and user profiles. These events are sent to an S3 Bucket and Kafka to be consumed by other services requiring this information.
 
-NOTE: As the SPA runs in the browser of our customer, they normally could not (directly) write Events to our Kafka Broker. For this reason, the dancer has a certain endpoint (see link:https://editor.swagger.io/?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdancier%2Fdancer%2Fmaster%2Fswagger.yaml[REST API]), to enable the SPA to publish events on our Kafka-Broker. Those will also be persisted in our S3-Bucket.
+NOTE: As the SPA runs in the browser of our customer, they normally could not (directly) write <<BusinessEvent>>s to our Kafka Broker. For this reason, the dancer has a certain endpoint (see link:https://editor.swagger.io/?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdancier%2Fdancer%2Fmaster%2Fswagger.yaml[REST API]), to enable the SPA to publish events on our Kafka-Broker. Those will also be persisted in our S3-Bucket.
 
 |Risks/Smells
 |The Dancer is something in between a pure backend for frontend and a small modulith, as it also contains some modules with business logic. This hybrid design stems from the initial preference for a modulith over numerous microservices. The current setup may introduce some testing complexities, and if found too cumbersome over time, refactoring may be necessary.
