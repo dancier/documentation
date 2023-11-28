@@ -21,7 +21,7 @@ See the following sections for a brief description of each black box.
 |Interface
 |Web interface designed for use with standard web browsers. Utilizing responsive web design methods ensures Dancier's accessibility on nearly any device with a web browser.
 
-Connect to the "Dancer" with our <<BBF>>.
+Connects to the "Dancer" with our <<BBF>>.
 
 |Risks
 |Could evolve into a frontend monolith that is hard to maintain. We have to be careful to keep the codebase clean and modular while we add new features to the UI.

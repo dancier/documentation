@@ -7,6 +7,10 @@
 :jbake-author: Marc Gorzala
 
 
+|===
+|Status|draft
+|===
+
 == The problem
 
 One of our top quality goals is that the recommendations we are offering to our dancers should be good.
@@ -54,3 +58,6 @@ Java, does not seem to be
 == Decision
 
 favor whats proven
+
+
+https://www.projectpro.io/article/java-vs-python-for-data-science-in-2021-whats-your-choice/433
