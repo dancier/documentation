@@ -5,6 +5,9 @@
 :jbake-tags: architecture
 :jbake-description: All of our ADRs
 :jbake-author: Marc Gorzala
+:jbake-disqus_enabled: true
+:jbake-disqus_identifier: 2126b0f2-8dce-11ee-b054-63b29a2812ce
+
 
 
 == The problem

@@ -3,6 +3,9 @@
 :jbake-date: 2023-11-11
 :jbake-tags: dance, dancer, partner, software, architecture, arc42, quality, building-blocks, adr
 :imagesdir: ./images
+:jbake-disqus_enabled: true
+:jbake-disqus_identifier: 0fa9d23c-8dce-11ee-bd1f-ff5773a9d8f2
+
 :idprefix:
 
 = Dancier
