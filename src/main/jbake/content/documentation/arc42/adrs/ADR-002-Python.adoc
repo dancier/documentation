@@ -15,7 +15,7 @@
 
 One of our top quality goals is that the recommendations we are offering to our dancers should be good.
 So we want to use the best tooling and frameworks that help us in implementing a good recommender.
-Our main langugage ist Java. So at first, we could implement the recommender in Java. We have the impression, that Java and its EcoSystem are not common when developing things like recommendation engines, as in example Python
+Our main langugage ist Java. So at first, we could implement the recommender in Java. We have the impression, that Java and its EcoSystem are not common when developing things like recommendation engines, as in the example Python.
 
 === Which quality goals are affected?
 
@@ -65,7 +65,7 @@ We are defaulting to Python as the language for all Data Science related tasks.
 
 This decision can be deducted from our link:https://project.dancier.net/architecture-decision-principles.html[architectural decision principles]:
 
-=== Favor what proven (AP4)
-Python is surely proven in this area. It is also likely to be more used than Java for the task of implementing a recommendation engine. We are also a learning project and people want to get into the Topic of Data Science and accept the fact to learn a new programming environment, to get to know the tools most Data Scientists todays are using.
+=== Favor what is proven (AP4)
+Python is surely proven in this area. It is also likely to be more used than Java for the task of implementing a recommendation engine. We are also a learning project and people want to get into the Topic of Data Science and accept the fact to learn a new programming environment, to get to know the tools most Data Scientists today are using.
 
-This outweighed the other principle to match decisions with teams' skill sets. We know this, togehter with the consequence to be likely at first slower.
+This outweighed the other principle of matching decisions with teams' skill sets. We know this, together with the consequence to be likely at first slower.
