@@ -38,7 +38,7 @@ We also do not expect that most of our databases will need to scale horizontally
 
 == Options we considered
 
-== MongoDB
+=== MongoDB
 MongoDB's main advantage of offering transparent sharding does not pay off for us, as we (see assumptions) do not need horizontal scaling.
 
 Storing arbitrary JSON documents is also not an advantage (compared to PostgreSQL), as
@@ -48,7 +48,7 @@ Storing arbitrary JSON documents is also not an advantage (compared to PostgreSQ
 
 We also have relatively limited expertise within the core team in using und operating MongoDB.
 
-== PostgreSQL
+=== PostgreSQL
 SQL databases remain the most widely used database systems (links) and PostgreSQL appears to be the most used open-source database system in professional settings (link).
 
 Every team member can use PostgreSQL since everyone is familiar with the concepts of relational databases.
@@ -57,7 +57,7 @@ Relational databases are highly mature and well-supported by common frameworks l
 
 Moreover, we have experience in operating PostgreSQL.
 
-== Cassandra
+=== Cassandra
 This is a similar case as with MongoDB, but in addition to its drawbacks, Cassandra's tooling support is expected to be the least mature among our three options.
 
 == Decision

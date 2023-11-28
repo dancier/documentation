@@ -1,4 +1,4 @@
-= Python for all datascience related tasks
+= Python for all data science related tasks
 :jbake-type: page
 :jbake-status: published
 :jbake-date: 2023-11-23
@@ -8,6 +8,49 @@
 
 
 == The problem
-One of our top quality goals is that the recommendations we offer to our dancers should be good.
+
+One of our top quality goals is that the recommendations we are offering to our dancers should be good.
 So we want to use the best tooling and frameworks that help us in implementing a good recommender.
-Our main langugage ist Java. So at first, we could implement the recommender in Java.
+Our main langugage ist Java. So at first, we could implement the recommender in Java. We have the impression, that Java and its EcoSystem is not common when developing things like recommendation engines.
+
+=== Which quality goals are affected?
+
+Certainly, this is the QG2 (Good Recommendations).
+
+=== Which risks are affected?
+
+We have pretty limited experience in this data science stuff in general and with recommendation engine in particular.
+Choosing something that would require us to learn more, would put the project at risk, in that way, that we will be (at first) slower. Also the overall complexity of the system would increase if we are leaving the default programming language/tooling stack.
+
+=== Assumptions
+
+We are pretty sure, that there are two dominant languages out there with strong support for developing stuff like we need here for our recommendations.
+
+* Python
+* R
+
+Takling with Datascientists in our company, showed that R is especially being used for people with a Mathematics/Statistic Background while Pyhton is strong in for all with a more Engeneering Background.
+
+Also in Total we expect that Python is more prominent when looking at it holistically.
+
+We expect that we could leverage our (also not too deep) knowledge of Python to not loose more than about a developer month, with respect to the penalty only for learning something knew.
+
+
+== Options we considered
+
+=== Python
+Seems to be the goto language/EcoSystem when developing things like a recommendation system.
+Python is one of the most dominiant lanugages  in the world.
+Pyhton has the reputation to be easy to learn, which is also assesed by team members.
+=== Java
+
+Java, does not seem to be 
+
+=== R
+
+
+
+
+== Decision
+
+favor whats proven
