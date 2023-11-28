@@ -15,7 +15,7 @@
 
 One of our top quality goals is that the recommendations we are offering to our dancers should be good.
 So we want to use the best tooling and frameworks that help us in implementing a good recommender.
-Our main langugage ist Java. So at first, we could implement the recommender in Java. We have the impression, that Java and its EcoSystem is not common when developing things like recommendation engines.
+Our main langugage ist Java. So at first, we could implement the recommender in Java. We have the impression, that Java and its EcoSystem are not common when developing things like recommendation engines, as in example Python
 
 === Which quality goals are affected?
 
@@ -23,41 +23,49 @@ Certainly, this is the QG2 (Good Recommendations).
 
 === Which risks are affected?
 
-We have pretty limited experience in this data science stuff in general and with recommendation engine in particular.
-Choosing something that would require us to learn more, would put the project at risk, in that way, that we will be (at first) slower. Also the overall complexity of the system would increase if we are leaving the default programming language/tooling stack.
+We have pretty limited experience in this data science stuff in general and with recommendation engines in particular.
+Choosing something that would require us to learn more, would put the project at risk, in that way, we will be (at first) slower. Also, the overall complexity of the system would increase if we are leaving the default programming language/tooling stack.
 
 === Assumptions
 
-We are pretty sure, that there are two dominant languages out there with strong support for developing stuff like we need here for our recommendations.
+We assume that Python is the default for most of todays Data Scientists. R is still also a big player here but seems to be the language of choice for people with a mathematics/statistics Background.
 
-* Python
-* R
-
-Takling with Datascientists in our company, showed that R is especially being used for people with a Mathematics/Statistic Background while Pyhton is strong in for all with a more Engeneering Background.
-
-Also in Total we expect that Python is more prominent when looking at it holistically.
-
-We expect that we could leverage our (also not too deep) knowledge of Python to not loose more than about a developer month, with respect to the penalty only for learning something knew.
-
+In general, we are assuming that link:https://www.projectpro.io/article/java-vs-python-for-data-science-in-2021-whats-your-choice/[This comparison between Java and Python] outlines well how Java and Python relate with respect to Data Science tasks. 
 
 == Options we considered
 
 === Python
+
 Seems to be the goto language/EcoSystem when developing things like a recommendation system.
-Python is one of the most dominiant lanugages  in the world.
-Pyhton has the reputation to be easy to learn, which is also assesed by team members.
+
+The main points with Python are:
+
+* Easy to use
+* Strong EcoSystem especially for all Data Science related tasks
+* Strong position in the area of Data Scientist with a Software Engineering focus
+*  Our engineers would have to get into a new language, its libraries and the way to operate it
+
 === Java
 
-Java, does not seem to be 
+Java seems to be less popular than Python.
 
-=== R
+The main points with Java would be:
 
-
+* Is considered as the more complicated language
+* Although faster
+* Harder to learn
+* More Code needs to be written, compared with Python
+* Less tooling
+* But, most of our engineers are more familiar with Java than with Python
 
 
 == Decision
 
-favor whats proven
+We are defaulting to Python as the language for all Data Science related tasks.
 
+This decision can be deducted from our link:https://project.dancier.net/architecture-decision-principles.html[architectural decision principles]:
 
-https://www.projectpro.io/article/java-vs-python-for-data-science-in-2021-whats-your-choice/433
+=== Favor what proven (AP4)
+Python is surely proven in this area. It is also likely to be more used than Java for the task of implementing a recommendation engine. We are also a learning project and people want to get into the Topic of Data Science and accept the fact to learn a new programming environment, to get to know the tools most Data Scientists todays are using.
+
+This outweighed the other principle to match decisions with teams' skill sets. We know this, togehter with the consequence to be likely at first slower.

@@ -82,8 +82,8 @@ No point in designing and implementing capabilities upfront may never be used
 - it is a waste of time and resources.
 
 |AP8
-| Match techniques with skills of core team members
-| The chosen technique should be either already known by the team (or part of the team) or the team must be willing to learn it.
+|Match techniques with skills of core team members
+|The chosen technique should be either already known by the team (or part of the team) or the team must be willing to learn it.
 
 |===
 

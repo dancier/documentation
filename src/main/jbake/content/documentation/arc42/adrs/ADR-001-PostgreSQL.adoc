@@ -9,7 +9,6 @@
 :jbake-disqus_identifier: 2126b0f2-8dce-11ee-b054-63b29a2812ce
 
 
-
 == The problem
 There are a lot of different database systems out there for a lot of different use cases.
 
@@ -79,6 +78,6 @@ Defaulting to the world's most prominent database architecture (SQL) enables us 
 
 We anticipate achieving better overall results by deeply understanding fewer technologies, rather than having a superficial understanding of a broader range of technologies.
 
-=== Favor what's proven
+=== Favor what's proven (AP4)
 Certainly, SQL stands out as the most proven database system in existence ([insert link?]), and PostgreSQL is one of the leading open-source candidates.
 
