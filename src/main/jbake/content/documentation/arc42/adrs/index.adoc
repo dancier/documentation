@@ -10,3 +10,5 @@
 link:https://www.ozimmer.ch/practices/2023/04/03/ADRCreation.html[While writing decisions, try to stick to this guide.]
 
 * ADR01 - link:./ADR-001-PostgreSQL.html[PostgreSQL as our default database]
+
+* ADR02 - link:./ADR-002-Python.html[Python as default language for Data Science related tasks]
