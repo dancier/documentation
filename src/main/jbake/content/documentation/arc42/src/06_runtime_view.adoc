@@ -30,12 +30,12 @@ database S3
 participant recommendation
 
 loop for all profiles
-    recommendation -> S3 : import into local database
+    recommendation -> S3 : import into a local database
 end
 
-recommendation -> recommendation: greedy compute all dancer pair within 200km
+recommendation -> recommendation: greedy computes all dancer pairs within 200km
 note left
-    and store is locally
+    and store them locally
     while overwriting all
     previously computed pairs
 end note
