@@ -21,7 +21,7 @@ See the following sections for a brief description of each black box.
 |Interface
 |Web interface designed for use with standard web browsers. Utilizing responsive web design methods ensures Dancier's accessibility on nearly any device with a web browser.
 
-Connects to the "Dancer" (our <<BBF>>).
+Connects to the "Dancer" (our <<BFF>>).
 
 |Risks
 |Could evolve into a frontend monolith that is hard to maintain. We have to be careful to keep the codebase clean and modular while we add new features to the UI.
@@ -35,7 +35,7 @@ Connects to the "Dancer" (our <<BBF>>).
 [cols="h,4", stripes=none]
 |===
 |Purpose
-|<<BBF>> to Dancier. All calls from the internet are handled by this component. Additionally, it's also responsible for user/account/profile management. We started with a monolithic approach for Dancer, putting everything in one modular monolith. Having the mentioned functionalities included in Dancer gave us no issues so far, so we continue with this approach.
+|<<BFF>> to Dancier. All calls from the internet are handled by this component. Additionally, it's also responsible for user/account/profile management. We started with a monolithic approach for Dancer, putting everything in one modular monolith. Having the mentioned functionalities included in Dancer gave us no issues so far, so we continue with this approach.
 
 |Interface
 a|Dancer provides a link:https://editor.swagger.io/?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdancier%2Fdancer%2Fmaster%2Fswagger.yaml[REST API], giving our Angular Single Page Application (SPA) an entrypoint to communicate with the entire Dancier System.

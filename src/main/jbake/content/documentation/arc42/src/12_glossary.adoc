@@ -3,7 +3,7 @@
 [options="header"]
 |===
 |Term         |Definition
-|[[BBF]]BBF
+|[[BFF]]BFF
 |link:https://christianlydemann.com/the-complete-guide-to-backend-for-frontend-bff/[Backend For Frontend]
 
 
