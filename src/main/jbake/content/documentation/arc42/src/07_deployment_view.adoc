@@ -3,9 +3,13 @@
 
 == Deployment View
 
+Everything we we are deploying is in a Docker Container...
+
+=== We are using/building thoose images
+
 image:deployment-components.drawio.svg[]
 
-those docker images are deployed in that way.
+=== We are deploying our images in these environments
 
 image:deployment.drawio.svg[]
 
