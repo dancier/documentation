@@ -3,4 +3,4 @@
 
 == Deployment View
 
-Nothing yet...
+image:deployment-components.drawio.svg[]
