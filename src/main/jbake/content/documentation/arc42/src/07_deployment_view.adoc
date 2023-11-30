@@ -3,7 +3,7 @@
 
 == Deployment View
 
-Everything we we are deploying is in a Docker Container...
+Everything we are deploying is inside of a Docker Container...
 
 === We are using/building thoose images
 
