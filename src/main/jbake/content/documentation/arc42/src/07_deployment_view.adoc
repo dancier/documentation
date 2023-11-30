@@ -4,3 +4,8 @@
 == Deployment View
 
 image:deployment-components.drawio.svg[]
+
+those docker images are deployed in that way.
+
+image:deployment.drawio.svg[]
+
