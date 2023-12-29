@@ -38,3 +38,5 @@ https://www.cl.cam.ac.uk/teaching/2122/ConcDisSys/dist-sys-notes.pdf
 https://www.fivetran.com/blog/building-an-idempotent-data-pipeline#:~:text=In%20order%20to%20construct%20idempotent%20data
 
 https://www.freecodecamp.org/news/a-thorough-introduction-to-distributed-systems-3b91562c9b3c/
+
+

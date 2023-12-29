@@ -27,3 +27,9 @@ This own is active when the developer runs his application locally
 
 IT stands for Integrations-Tests
 
+
+==== Clean Archchitecture
+
+https://speakerdeck.com/thombergs/lets-build-components-not-layers?slide=28
+
+
