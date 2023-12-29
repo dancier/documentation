@@ -1,0 +1,33 @@
+= Handling Timezones in our Microservices
+:jbake-type: page
+:jbake-status: published
+:jbake-date: 2023-12-10
+:jbake-tags: architecture
+:jbake-description: How we are dealing with timezones
+:jbake-author: Marc Gorzala
+:jbake-disqus_enabled: true
+:jbake-disqus_identifier: c7a95fa4-975d-11ee-a865-fbcdbd64ae80
+
+
+== The Problem
+
+
+== Decision
+
+In all Persistence Technologies we are storing Timestampes in UTC (with out timezone information)
+
+All Server run on UTC
+
+But Application is there for started with utc
+
+(show command line snippte)
+
+
+mvn spring-boot:run -Dspring-boot.run.jvmArguments="-Duser.timezone=UTC"
+
+offsetdatetime
+
+
+https://stackoverflow.com/questions/54316667/how-do-i-force-a-spring-boot-jvm-into-utc-time-zone
+
+everything from outwards ist being transformed

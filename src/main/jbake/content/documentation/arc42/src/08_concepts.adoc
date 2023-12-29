@@ -1,15 +1,6 @@
 [[section-concepts]]
 == Cross-cutting Concepts
 
-=== Handling of Timestamps
-
-* UTC in all Persistence Technologie
-* Storage without Timezone
-* Expose Timestamp in Formats with given (UTC)-Timezone
-
-=== Inverting the test-pyramid
-
-* Relying more on End2End-Test (what means more like System Tests)
-* Unit and Integration Test only for that parts with lots of branches in the code
+find our Cross Cutting Concepts link:https://project.dancier.net/documentation/arc42/concepts/index.html[here]
 
 

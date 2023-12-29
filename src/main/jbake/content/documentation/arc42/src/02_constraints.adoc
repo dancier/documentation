@@ -29,4 +29,8 @@ The only constraints we have is to obey our architectural principles. Find them 
 |Id|Convention|Description
 |C1|Be polite|being aggressive or rude... will never do anything good.
 |C2|Listen first, judge less|When confronted with a different point of view, give your colleague the chance to explain themselves.
+|C3|Name Convention Database names | SQL key words in UPPERCASE, identifiers (database names, tables, colums) in snake_case
+|C4|Name Convention (Kafka-)Topic names | use hyphens and all lower case: profile-updated
+
+
 |===
