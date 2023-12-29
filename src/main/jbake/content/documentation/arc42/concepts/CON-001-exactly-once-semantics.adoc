@@ -1,0 +1,40 @@
+= How we achieve excactly once semantics 
+:jbake-type: page
+:jbake-status: published
+:jbake-date: 2023-12-10
+:jbake-tags: architecture
+:jbake-description: How we are dealing with timezones
+:jbake-author: Marc Gorzala
+:jbake-disqus_enabled: true
+:jbake-disqus_identifier: c7a95fa4-975d-11ee-a865-fbcdbd64ae80
+
+
+== The Problem
+
+
+
+
+https://stackoverflow.com/questions/54316667/how-do-i-force-a-spring-boot-jvm-into-utc-time-zone
+
+everything from outwards ist being transformed
+
+
+https://blog.bulloak.io/post/20200917-the-impossibility-of-exactly-once/
+
+
+https://ably.com/blog/8-fallacies-of-distributed-computing
+
+https://www.freecodecamp.org/news/some-constraints-trade-offs-in-the-design-of-network-communications-a-summary-19589efd55d9/
+
+
+https://finematics.com/two-generals-problem/
+
+https://twogeneralsproblem.com/
+
+
+https://www.cl.cam.ac.uk/teaching/2122/ConcDisSys/dist-sys-notes.pdf
+
+
+https://www.fivetran.com/blog/building-an-idempotent-data-pipeline#:~:text=In%20order%20to%20construct%20idempotent%20data
+
+https://www.freecodecamp.org/news/a-thorough-introduction-to-distributed-systems-3b91562c9b3c/
