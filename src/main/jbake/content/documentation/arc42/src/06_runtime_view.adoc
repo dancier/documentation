@@ -68,6 +68,47 @@ end
 
 === <<Info-Mail>> Sending
 
+Currently we are sending out mails, to inform the customer about new chat-message that he has.
+For this to happen we have three processes in place.
+
+==== Maintaining the state per dancer
+[plantuml, state-dancer, svg]
+....
+@startuml
+
+autonumber
+
+participant "Some System" as ss
+participant KafkaAdapter
+participant ApplicationEventListener
+participant StateAdapter
+participant ScheduleInfoMailCheck
+
+ss -> KafkaAdapter : send Business Event
+KafkaAdapter -> ApplicationEventListener : via mapped Application Event
+
+ApplicationEventListener -> StateAdapter: load State
+ApplicationEventListener -> ApplicationEventListener: update State
+ApplicationEventListener -> StateAdapter: write State
+ApplicationEventListener -> ScheduleInfoMailCheck : schedule InfoMailCheck
+
+@enduml
+....
+==== Sending out the Mail to the dancer
+[plantuml, check-and-send, svg]
+....
+@startuml
+
+participant CheckAndSendService
+participant StateAdapter
+
+@enduml
+....
+
+
+
+==== Maintaining a dancier to email-address mapping
+
 === Process how Recommendations are being computed
 
 When a user changes his profile, this is likey to invalidate all score he has in relation to other dancers.
