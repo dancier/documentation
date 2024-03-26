@@ -51,7 +51,7 @@ ae -> Outbox: store
 
 loop for each stored mail
   oj -> Outbox : get Mail
-  Outbox -> smtp : send Mail
+  oj -> smtp : send Mail
 end
 
 @enduml
