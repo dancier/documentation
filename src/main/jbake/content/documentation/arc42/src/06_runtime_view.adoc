@@ -1,6 +1,59 @@
 [[section-runtime-view]]
 == Runtime View
 
+=== E-Mail Sending (not the Info-Mail)
+
+We are describing how _some_ System can send an arbitrary mail to some arbitrary recipient.
+
+From a high level perspective it looks like:
+
+[plantuml, send-mail, svg]
+....
+@startuml
+
+autonumber
+
+actor user
+participant "Some System" as ss
+participant kikeriki
+participant "SMTP-Server" as smtp
+
+ss -> kikeriki: send E-Mail Command
+kikeriki -> smtp: send the email
+
+@enduml
+....
+
+1. The E-Mail Command that some system sends... +
+ contains the complete Mail (as Text) and the recipients
+1. Kikeriki send the E-Mail via the SMTP-Server to the recipients
+
+==== More detailed look on how kikeriki send the E-Mail
+
+[plantuml, send-mail-kikeriki, svg]
+....
+@startuml
+
+autonumber
+
+participant "Some System" as ss
+participant "Kafka-Adapter" as ka
+participant "Application Event" as ae
+participant "Outbox"
+participant "Outbox Job" as oj
+participant "SMTP-Server" as smtp
+
+
+
+@enduml
+....
+
+
+
+
+
+=== Info-Mail Sending
+
 === Process how Recommendations are being computed
 
 When a user changes his profile, this is likey to invalidate all score he has in relation to other dancers.
