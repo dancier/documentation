@@ -16,6 +16,8 @@ a| An Event that is being sent out to Kafka, exactly after something interesting
 * ChatMessageReceived
 
 
+| [[Info-Mail]]Info-Mail
+| in this context we mean the mail that inform the dancers about new chat-messages, new recommendations...
 
 | [[profile]]Profile a| All the information that the dancer provides about himself. Those are things like:
 

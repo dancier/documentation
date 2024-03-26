@@ -1,7 +1,7 @@
 [[section-runtime-view]]
 == Runtime View
 
-=== E-Mail Sending (not the Info-Mail)
+=== E-Mail Sending (not the <<Info-Mail>>)
 
 We are describing how _some_ System can send an arbitrary mail to some arbitrary recipient.
 
@@ -66,7 +66,7 @@ end
   Every two seconds the Job looks for more Mails to be send.
 
 
-=== Info-Mail Sending
+=== <<Info-Mail>> Sending
 
 === Process how Recommendations are being computed
 
