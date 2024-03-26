@@ -99,8 +99,20 @@ ApplicationEventListener -> ScheduleInfoMailCheck : schedule InfoMailCheck
 ....
 @startuml
 
+participant InfoMailCheckJob
 participant CheckAndSendService
 participant StateAdapter
+participant UserInfoService
+
+InfoMailCheckJob -> CheckAndSendService: check
+CheckAndSendService -> StateAdapter: load
+
+alt candidate for sending?
+CheckAndSendService -> UserInfoService: load mail-address
+CheckAndSendService -> CheckAndSendService: build mail
+CheckAndSendService -> CheckAndSendService: throw mail command
+end
+
 
 @enduml
 ....
@@ -112,9 +124,17 @@ participant StateAdapter
 ....
 @startuml
 
+participant Dancer
+
+box kikeriki #LightBlue
 participant KafkaAdapter
 participant ApplicationEventListener
 participant UserInfoService
+end box
+
+Dancer --> KafkaAdapter: profile update event
+KafkaAdapter -> ApplicationEventListener: via mapped event
+ApplicationEventListener -> UserInfoService: update mail address
 
 @enduml
 ....
