@@ -108,6 +108,17 @@ participant StateAdapter
 
 
 ==== Maintaining a dancier to email-address mapping
+[plantuml, kikeriki-mail-addresses, svg]
+....
+@startuml
+
+participant KafkaAdapter
+participant ApplicationEventListener
+participant UserInfoService
+
+@enduml
+....
+
 
 === Process how Recommendations are being computed
 
