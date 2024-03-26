@@ -25,7 +25,7 @@ kikeriki -> smtp: send the email
 ....
 
 1. The E-Mail Command that some system sends... +
- contains the complete Mail (as Text) and the recipients
+ contains the complete Mail (as Text) and its recipients
 1. Kikeriki send the E-Mail via the SMTP-Server to the recipients
 
 ==== More detailed look on how kikeriki send the E-Mail
@@ -43,8 +43,14 @@ participant "Outbox"
 participant "Outbox Job" as oj
 participant "SMTP-Server" as smtp
 
+ss -> ka: send mail command
+ka -> ae : throw application event
+ae -> Outbox: store
 
-
+loop for each stored mail
+  oj -> Outbox : get Mail
+  Outbox -> smtp : send Mail
+end
 @enduml
 ....
 
