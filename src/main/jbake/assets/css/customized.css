@@ -1,75 +1,90 @@
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .navbar-default {
-    background-color: #b40720;
-    border-color: black;
+  background-color: #b40720;
+  border-color: black;
 }
 
 .navbar-icon {
-    width: 26px;
-    height: 30px;
-    margin: -6px 9px;
+  width: 26px;
+  height: 30px;
+  margin: -6px 9px;
 }
 
 .navbar-default .navbar-brand {
-    color: white;
-    display: flex;
+  color: white;
+  display: flex;
 }
 
-.navbar-default .navbar-brand:hover, .navbar-default .navbar-nav > li > a:hover {
-    color: white;
-    text-decoration: underline;
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-nav > li > a:hover {
+  color: white;
+  text-decoration: underline;
 }
 
-.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-    color: white;
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: white;
 }
 
 .dropdown-menu {
-    background-color: #b40720;
+  background-color: #b40720;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
-    background-color: white;
+  background-color: white;
 }
 
 .navbar-default .navbar-nav > li > a {
-    color: white;
+  color: white;
 }
 
 .navbar-default .navbar-toggle {
-    border-color: white;
+  border-color: white;
 }
 
-.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-    background-color: black;
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: black;
 }
 
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-    color: white;
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: white;
 }
 
-.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-    color: white;
-    background-color: transparent;
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: white;
+  background-color: transparent;
 }
 
 .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: white;
+  color: white;
 }
 
-.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: white;
-    text-decoration: underline;
-    background: transparent;
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+  color: white;
+  text-decoration: underline;
+  background: transparent;
 }
 
 .footer-container {
-    display: flex;
+  display: flex;
 }
 
 .dance-love {
-    margin: 18px auto;
+  margin: 18px auto;
+}
+
+/* Add a top margin to the target element to avoid it colliding with the top bar. */
+:target::before {
+  content: "";
+  display: block;
+  height: 70px; /* top bar height: 50px, additional 20px for padding */
+  margin: -70px 0 0;
 }
