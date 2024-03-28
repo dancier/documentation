@@ -39,18 +39,18 @@ autonumber
 participant "Some System" as ss
 box kikeriki #LightBlue
 participant "Kafka-Adapter" as ka
-participant "Application Event" as ae
-participant "Outbox"
+participant "Application Event Listener" as ael
+participant "DancierSendMailPort" as dsmp
 participant "Outbox Job" as oj
 end box
 participant "SMTP-Server" as smtp
 
 ss -> ka: send mail command
-ka -> ae : throw application event
-ae -> Outbox: store
+ka -> ael : throw application event
+ael -> dsmp: store
 
 loop for each stored mail
-  oj -> Outbox : get Mail
+  oj -> dsmp : get Mail
   oj -> smtp : send Mail
 end
 
@@ -59,7 +59,7 @@ end
 
 1. send mail command reaches kikeriki
 1. command is being mapped +
- Kikeriki uses https://docs.spring.io/spring-framework/reference/testing/testcontext-framework/application-events.html[Spring Application Events] to couple it's distince modules. The incoming Mail-Command from Kafka is being mapped into a an Application Event, that is being thrown.
+ Kikeriki uses https://docs.spring.io/spring-framework/reference/testing/testcontext-framework/application-events.html[Spring Application Events] to decouple it's distinct modules. The incoming Mail-Command from Kafka is being mapped into an Application Event, that is being thrown.
 1. The Mail Command is stored into an outbox +
    The Mail Command ist handled by storing it into on outbox table. (when this fails, also the Kafka-Adapter will try to reconsume the event until this is successfull)
 1. A Job polls the outbox +
