@@ -99,6 +99,8 @@ ApplicationEventListener -> ScheduleInfoMailCheck : schedule InfoMailCheck
 ....
 @startuml
 
+autonumber
+
 participant InfoMailCheckJob
 participant CheckAndSendService
 participant StateAdapter
@@ -117,9 +119,15 @@ end
 @enduml
 ....
 
+1. The InfoMailCheckJob is checking for scheduled Checks from the ScheduleInfoMailCheck, and hand the scheduled jobs over to the CheckAndSendService
+1. For a scheduled check, the CheckAndSendService loads the State for the dancer
+1. In case thate the state should lead to an info mail the corresponding E-Mail-Adress is loaded
+1. The Mail content is being build (something like: You have 2 unread chat messages...)
+1. a new mail command is being created and thrown to Springs Application Event mechanism.
 
 
-==== Maintaining a dancier to email-address mapping
+
+==== Maintaining a dancer to email-address mapping
 [plantuml, kikeriki-mail-addresses, svg]
 ....
 @startuml
@@ -132,13 +140,18 @@ participant ApplicationEventListener
 participant UserInfoService
 end box
 
-Dancer --> KafkaAdapter: profile update event
+autonumber
+
+Dancer --> KafkaAdapter: profile updated event
 KafkaAdapter -> ApplicationEventListener: via mapped event
 ApplicationEventListener -> UserInfoService: update mail address
 
 @enduml
 ....
 
+1. whenever a dancer changes his profile, the dancer-service send an profile_updated event.
+1. this is being picked up by Kikeriki's Kafka-Adapter, that maps it to an Application Event that is being trown
+1. The ApplicationEventListener updates the E-Mail-Adress with the UserInfoService
 
 === Process how Recommendations are being computed
 
