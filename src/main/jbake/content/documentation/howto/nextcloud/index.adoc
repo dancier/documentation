@@ -17,6 +17,13 @@ link:https://github.com/dancier/documentation/edit/master/src/main/jbake/content
 
 image::nextcloud-logo-white.png[align="center"]
 
+[IMPORTANT]
+.New Version of this How-To in progress
+====
+I acutally am writing a new new How-To on this topic.
+It is available on link:https://coden.in-der-kothe.de/setting-up-nextcloud-with-ansible-terraform-in-hetzner-cloud-en.html[Coden in der Kothe]. This one will not receive any updates.
+====
+
 This post explains how you _could_ setup your own link:https://nextcloud.com/[Nextcloud]
 with link:https://www.collaboraoffice.com/code/[Collabora Office] having SSL automatically managed via
 link:https://letsencrypt.org[Letsencrypt] and link:https://containo.us/traefik/[Traefik].
